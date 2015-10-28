@@ -1,0 +1,241 @@
+//
+// Blog posts
+// --------------------------------------------------
+
+.content {
+  font-size: 18px;
+  line-height: 30px;
+
+  // Headings
+  // h3 === h4 in posts
+  h3,
+  h4 {
+    margin: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    padding: 20px 0;
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+  }
+
+  img.emoji {
+    width: auto;
+    padding: 0px;
+  }
+}
+
+// Styles shared between blog posts and project pages
+// Placed here for now.
+.content,
+.static-content {
+  // “Owl selector” provides a 1em margin between each child element in our content
+  > * + * {
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+  }
+
+  p {
+    word-wrap: break-word;
+  }
+
+  ul li {
+    list-style: none;
+    text-indent: -0.8em;
+  }
+
+  ul li::before {
+    content: ' • ';
+    font-size: 15px;
+    vertical-align: middle;
+    padding-right: 5px;
+  }
+
+  ul li p {
+    display: inline;
+  }
+
+  // Inline code
+  code {
+    padding: 4px 8px;
+    margin: 0 2px;
+    font-size: 14px;
+    line-height: 1.6em;
+    color: #666;
+    // Ensure inline code elements have sufficient
+    // contrast to differentiate between pure white
+    background-color: #f4f4f4;
+  }
+
+  // Normal prose preformatted text
+  pre {
+    margin: 20px auto;
+    padding: 20px;
+    border: 3px solid #e9e9e9;
+    border-radius: 0;
+    word-break: break-word;
+    white-space: pre-wrap;
+
+    // Formatted code blocks
+    code {
+      display: block;
+      margin: -20px;
+      padding: 20px;
+      width: auto;
+      height: 100%;
+
+      // Do not allow code in preformatted blocks to wrap
+      white-space: pre;
+      word-wrap: normal;
+      word-break: normal;
+      overflow-x: auto;
+      overflow-y: hidden;
+      background-color: $mz-lightgray;
+      background-size: 8px 8px;
+      background-image: linear-gradient(
+        135deg,
+        transparent 25%,
+        rgba(0, 0, 0, 0.04) 25%,
+        rgba(0, 0, 0, 0.04) 50%,
+        transparent 50%,
+        transparent 75%,
+        rgba(0, 0, 0, 0.04) 75%,
+        rgba(0, 0, 0, 0.04)
+      );
+    }
+  }
+
+  .caption {
+    margin-top: -0.8em;
+    font-size: 0.9em;
+    font-weight: 300;
+    font-style: italic;
+    color: #666;
+  }
+
+  img[alt^='screenshot'],
+  img[alt^='Screenshot'] {
+    border: 3px solid #e9e9e9;
+  }
+
+  // These DOM elements are generated from (the non-standard) Markdown footnotes syntax
+  // via the Redcarpet extension. If the Markdown parser changes, please check to make
+  // sure these selectors will still be valid.
+  .footnotes {
+    ol {
+      font-size: 14px;
+      padding-left: 20px;
+    }
+    // Footnote return link
+    li a[rev] {
+      font-size: 10px;
+      margin-left: 0.25em;
+    }
+  }
+
+  // Footnote markers need invisible padding so that when they are linked to,
+  // the reference doesn't headbutt the top of the viewport and get hidden by
+  // the navgation bar.
+  sup[id^="fnref"]::before {
+    padding-top: 80px;
+    margin-top: -80px;
+    content: '';
+    display: inline-block;
+    pointer-events: none;
+  }
+}
+
+.demo-wrapper {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow: hidden;
+  }
+}
+
+.multimedia-wrapper {
+  width: 100%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+
+  @media (min-width: $screen-md-min) {
+    width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+
+  video,
+  iframe {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  iframe {
+    border: 0;
+  }
+}
+
+quote {
+  font-size: 18px;
+  font-family: 'Playfair Display', serif;
+  color: #3a3a3a;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 24px;
+  }
+}
+
+pullquote {
+  display: block;
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-align: center;
+  color: #3a3a3a;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 28px;
+  }
+}
+
+.static-content pullquote {
+  width: 100%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+
+  @media (min-width: $screen-md-min) {
+    width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+}
+
+.upside-down {
+  transform: rotate(180deg);
+}
+
+.post-meta {
+  background-color: $mz-lightgray;
+  padding: 30px 20px;
+}

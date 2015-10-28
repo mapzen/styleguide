@@ -1,0 +1,28 @@
+{
+  "name": "styleguide",
+  "version": "1.0.0",
+  "description": "Mapzen Styleguide powering everything part of the Mapzen brand",
+  "main": "server/server.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapzen/styleguide.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mapzen/styleguide/issues"
+  },
+  "homepage": "https://github.com/mapzen/styleguide#readme",
+  "devDependencies": {
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  }
+}
