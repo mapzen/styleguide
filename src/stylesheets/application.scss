@@ -1,0 +1,39 @@
+@charset 'utf-8';
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+// Note: these are copied over from mapzen/developer repo
+// to maintain parity.
+// TODO: A BETTER WAY OF MAKING SURE THIS DOESN'T GET OUT OF SYNC
+
+// Declare variables before importing Bootstrap
+@import 'common/variables';
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+//@import 'bootstrap-sprockets';
+@import 'bootstrap-custom';
+//@import 'bootstrap_and_overrides';
+
+// Mapzen site specific
+@import 'common/print';
+@import 'common/fonts';
+@import 'common/helpers';
+@import 'common/buttons';
+@import 'common/navbar';
+@import 'common/gallery';
+@import 'common/footer';
+@import 'common/pagination';
+@import 'common/cta';
+@import 'styles';
+@import 'posts';
+@import 'bylines';
+@import 'social';
+
+@import 'section-nav';
+
+// Page-specific styles
+@import 'media-resources';
+@import 'projects';
+@import 'projects-demo';
+@import 'job-list';
+@import 'documentation';
+@import 'legal';

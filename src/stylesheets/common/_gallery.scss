@@ -1,0 +1,88 @@
+//
+// Gallery (aka, carousel)
+// --------------------------------------------------
+.gallery {
+  // Default: do not display.
+  display: none;
+  position: relative;
+  background-color: $mz-lightgray;
+
+  max-height: $gallery-height-mobile;
+  overflow: hidden;
+
+  @media (min-width: $screen-sm-min) {
+    max-height: $gallery-height;
+  }
+
+  // Display the gallery shifted up for translucent navbar effect
+  &.full {
+    display: block;
+    margin-top: -50px;
+
+    @media (min-width: $screen-sm-min) {
+      margin-top: -60px;
+    }
+  }
+
+  // Display a small portion of the gallery
+  &.half {
+    display: block;
+    margin-top: -100px;
+
+    @media (min-width: $screen-sm-min) {
+      margin-top: -260px;
+    }
+  }
+}
+
+.gallery::before {
+  content: '';
+  // Attach mask to bottom of image container
+  // Fixes positioning bug in Firefox, IE
+  position: absolute;
+  bottom: -1px; // Ensure coverage of lower edge of image - sometimes a rounding error causes it to peek out
+  width: 100%;
+  height: $gallery-height-mobile;
+  // Data URI Component-encoded SVG
+  background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%222400%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.414%22%3E%3Cpath%20d%3D%22M2400%20238L1200%20490%200%20238v262h2400V238z%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M2400%20244L1200%20496%200%20244%22%20fill%3D%22none%22%20stroke-width%3D%221.33%22%20stroke%3D%22%23D4625C%22%2F%3E%3C%2Fsvg%3E');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+
+  /*
+    How to create the data-URI SVG mask for the carousel and the footer
+
+    1. SVGs were recreated from vector files. I used Affinity Designer,
+       but any program that can create SVGs will be okay. The source files
+       for these should be located in the Mapzen Google Drive.
+    2. The exported SVGs from Affinity Designer are minified using
+       SVGOMG (https://jakearchibald.github.io/svgomg/), using its
+       default settings.
+    3. The minified SVGs are then data-URI encoded on this site:
+          http://dopiaza.org/tools/datauri/index.php
+       Un-check "Use base64 encoding" (so that it will work with IE, possibly Firefox)
+       Select "Explicitly specify mime type" and set it to 'image/svg+xml'
+       Paste the new data-URI into the background-image property above.
+  */
+
+  @media (min-width: $screen-sm-min) {
+    height: $gallery-height;
+  }
+
+  // Special case for any screens wider than the
+  // width of the triangle mask; scale up the image
+  // to fit
+  @media (min-width: 2400px) {
+    background-size: 101%; // Fix literal "edge case" where some specific viewport widths create a rounding error where value of "cover" leaves a pixel or so of gap
+  }
+}
+
+.gallery-image {
+  // Use full width of container
+  width: 100%;
+
+  // Preserve aspect ratio
+  height: auto;
+
+  // Approximate repositioning
+  margin-top: -10%;
+}

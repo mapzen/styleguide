@@ -1,0 +1,33 @@
+//
+// Legal terms
+// --------------------------------------------------
+
+ol.legal-terms{
+  counter-reset: legal-counter;
+
+  h3 {
+    // Resets from .static-content
+    line-height: inherit;
+  }
+
+  > li {
+    // Hides the original "basic" list style so we can create our own
+    list-style-type: none;
+    position: relative;
+  }
+
+  > li:before {
+    // The top-most children of the .legal-terms list are headings.
+    // Borrowed style from h3 headings
+    // We don't really have a concept of inheriting these styles yet,
+    // so there is a bit of repetition here.
+    content: counter(legal-counter) '.';
+    counter-increment: legal-counter;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #666666;
+    position: absolute;
+    left: -40px;
+  }
+}
