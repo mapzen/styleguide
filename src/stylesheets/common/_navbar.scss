@@ -128,14 +128,14 @@ body {
 }
 
 li:hover .animated-key {
-  background-image: url('/resources/key_h.png');
+  background-image: url('/common/styleguide/images/key_h.png');
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
 li.active:hover .animated-key {
-  background-image: url('/resources/key.png');
+  background-image: url('/common/styleguide/images/key.png');
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
@@ -147,7 +147,7 @@ li.active:hover .animated-key {
   float: left;
   width: 23px;
   height: 28px;
-  background-image: url('/resources/key.png');
+  background-image: url('/common/styleguide/images/key.png');
   background-repeat: no-repeat;
   background-position: 0px 0px;
   background-size: 80% 80%;
