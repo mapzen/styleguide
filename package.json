@@ -2,12 +2,12 @@
   "name": "styleguide",
   "version": "1.0.0",
   "description": "Mapzen Styleguide powering everything part of the Mapzen brand",
-  "main": "server/server.js",
+  "main": "server.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No tests\" && exit 0",
     "start": "node server.js"
   },
   "repository": {
@@ -23,6 +23,8 @@
   "devDependencies": {
     "express": "^4.13.3",
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.0.4"
+    "gulp-s3-upload": "^1.5.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-util": "^3.0.7"
   }
 }
