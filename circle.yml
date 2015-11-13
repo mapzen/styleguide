@@ -1,0 +1,18 @@
+machine:
+  node:
+    version: 5.0.0
+
+dependencies:
+  post:
+    - npm install -g gulp-cli && gulp sass
+
+deployment:
+  staging:
+    branch: master
+    commands:
+      - gulp publish --target dev
+
+  production:
+    branch: production
+    commands:
+      - gulp publish --target prod
