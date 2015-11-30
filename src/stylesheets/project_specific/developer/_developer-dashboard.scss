@@ -1,0 +1,351 @@
+/* mapzen color code : #D4645C , #385D5C */
+$greenColor:#385D5C;
+$redcolor:#b4382f;
+
+$pendingColor:#E09500;
+$errorColor:#c62b28;
+$okColor:#63a240;
+
+$sansserif: 'Open Sans', sans-serif;
+$serif: 'Playfair Display', serif;
+
+
+#dev_dashboard{
+
+  a{color : $lightGreenColor;}
+  a:hover{
+    color:$greenColor;
+    text-decoration:none;
+  }
+
+  &.container{
+    @media(max-width:767px){width:100%;}
+    @media (min-width: 768px) {width:100%;}
+    @media (min-width: 992px) { width:970px;}
+    @media (min-width: 1200px) {width:1030px;}
+
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .row{
+    margin-left:0px;
+    margin-right:0px;
+  }
+
+  .login-info{
+    text-align: right;
+    float:right;
+  }
+
+  .info{
+    font-size:14px;
+    font-weight:400;
+    margin-bottom:0px;
+    float:left;
+    padding-right:20px;
+    p{
+      margin-bottom:0px;
+    }
+  }
+
+  .profile-picture{
+    border-radius: 50%;
+    border:1.5px solid $greenColor;
+    padding:2px;
+  }
+
+  img.dashboard-profile-pic{
+    @extend .profile-picture;
+    margin-top:-10px;
+    width:60px;
+    height:60px;
+    float:left;
+    box-shadow: 30px #FFF inset;
+  }
+
+  /*inside of dashboard*/
+  #projects{
+    width:100%;
+
+    .project-wrapper{
+      display:inline-block;
+      width:100%;
+      padding:10px;
+    }
+
+    .project-row{
+      width:100%;
+      margin-left:0px;
+      margin-right:0px;
+    }
+
+    .project-name{
+      margin-bottom:-5px;
+      float:left;
+      display:inline-block;
+      padding-right:15px;
+      font-family:$serif;
+      font-weight: 400;
+      font-size:34px;
+      text-transform: capitalize;
+      @media(max-width:767px){
+        width: 100%;
+      }
+    }
+
+    .project-link{
+      font-weight: 700;
+    }
+    .add-key{
+      width:210px;
+      display:inline-block;
+      position: absolute;
+      bottom: 23px;
+      right: 0;
+      letter-spacing:1.1px;
+      @media(max-width:767px){
+        position:relative;
+        width: 100%;
+      }
+    }
+    .add-key button{
+      height:60px;
+    }
+    .add-key form{
+      width:100%;
+      display:inline;
+      float:left;
+    }
+    .add-key button{
+      width:100%;
+      display:inline;
+      float:left;
+    }
+
+    .btn_mapzen.btn-add-key{
+      /*tweaked color to green*/
+      background-color: $lightGreenColor;
+      border: 1px solid $lightGreenColor;
+      font-weight:400;
+      text-transform: uppercase;
+    }
+
+    .btn_mapzen.btn-add-key:focus,.btn_mapzen.btn-add-key:hover{
+      background-color: $greenColor;
+      border: 1px solid $greenColor;
+      font-weight:400;
+      text-transform: uppercase;
+    }
+    .btn_transparent{
+      border:1px solid #000;
+    }
+
+   .no-key{
+     color:#666;
+     font-family: $serif;
+     font-size:18px;
+     font-style:italic;
+   }
+   .maximum-key{
+     color:#666;
+     font-family: $serif;
+     font-size:14px;
+     font-style:italic;
+   }
+
+   .block-add-key{
+      width:100%;
+      height:60px;
+      position:relative;
+      background-color: #fff;
+      z-index: 1000;
+      opacity: 0.7;
+      cursor: default;
+    }
+
+    .project-desc-row{
+      font-size:16px;
+      font-weight:300;
+      color:#666;
+      border-bottom:3px solid #eee;
+      padding-bottom:20px;
+      p{
+        width: calc(100% - 230px);
+        margin-bottom:0px;
+        @media(max-width:767px){
+          width: 100%;
+          margin-bottom:10px;
+        }
+      }
+
+    }
+
+    .scrumbs{
+      line-height:4.8em;
+      margin-bottom:-2em;
+      @media(max-width:767px){
+        line-height:2em;
+        margin-top:5px;
+        margin-bottom:5px;
+      }
+    }
+
+    .keys-row{
+      width:100%;
+    }
+
+    .key-row{
+      width:100%;
+      background-color: $greenColor;
+      padding:15px;
+      font-size:16px;
+      font-weight:400;
+      position:relative;
+      //for animation
+      transition: all 1s ease-out;
+      opacity:0;
+      height:0;
+      padding:0 15px 0 15px;
+    }
+
+    .key-row.show{
+      background-color:#f3f3f3;
+      opacity:1;
+      height:auto;
+      padding:15px;
+    }
+
+    .key-value{
+      color:#666;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .category{
+      display:inline;
+      font-size:14px;
+      font-weight: 300;
+      color:#666;
+    }
+
+    .key-name-row{
+      width:100%;
+    }
+    .key_name{
+      font-size:18px;
+      font-family: $serif;
+      color:$lightGreenColor;
+    }
+
+    .delete-form{
+      display:inline;
+    }
+
+    .stats{
+      width:100%;
+      height:auto;
+    }
+    .key-btns-wrapper{
+      width:205px;
+      position:absolute;
+      top:10px;
+      right:10px;
+      @media(max-width:767px){
+        width:85px;
+      }
+    }
+    .key-badge{
+      width:105px;
+      height:31px;
+      margin: 5px 10px 5px 5px;
+      padding-top:5px;
+      color:#fff;
+      text-align: center;
+      //because white letter looks bigger
+      font-size:14px;
+      letter-spacing:0.8px;
+      text-transform: uppercase;
+      @media(max-width:767px){
+        width:80px;
+        font-size:12px;
+        letter-spacing:0.6px;
+      }
+    }
+    .pending{background-color:$pendingColor;}
+    .error{background-color:$errorColor;}
+    .created{background-color:$okColor;}
+
+    .right-square{
+      width:30px;
+      height:30px;
+      margin:5px;
+      padding: 0;
+    }
+    .created-at{
+      padding-top:5px;
+      font-size:14px;
+      color:#666;
+    }
+  }
+
+  .divider-row{
+    width:100%;
+    height:100px;
+    background-image:image-url('divider/compass-red.png');
+    background-repeat:no-repeat;
+    background-position:center center;
+    &:last-child{
+      display:none;
+    }
+    @media(max-width:767px){
+      height:60px;
+    }
+  }
+
+  .notice{
+    position:fixed;
+    top:50%;
+    left:50%;
+    padding:10px;
+    font-size:20px;
+    text-align: center;
+    color:#666;
+    background-color:#fff;
+    z-index:1030;
+    &.created{
+      width:100%;
+      margin-left:-50%;
+    }
+    &.deleted{
+      width:100%;
+      margin-left:-50%;
+    }
+  }
+  .error-msg{
+    color:$redcolor;
+    font-weight:400;
+  }
+  .modal-content{
+    border-radius: 0px;
+    padding:20px;
+    display:inline-block;
+   // width:100%;
+  }
+  .modal-dialog{
+    margin:80px auto;
+  }
+}
+
+.block-body{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color:#000;
+  opacity:0.3;
+  z-index:1000;
+}

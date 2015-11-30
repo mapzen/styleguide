@@ -2,11 +2,17 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass');
 
-
 gulp.task('sass', function() {
-  gulp.src('./src/stylesheets/styleguide.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./examples/build'));
+  [
+    './src/stylesheets/project_specific/documentation/documentation.scss',
+    './src/stylesheets/project_specific/blog/blog.scss',
+    './src/stylesheets/project_specific/developer/developer.scss',
+    './src/stylesheets/styleguide.scss'
+  ].forEach(function(file_path) {
+    gulp.src(file_path)
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest('./examples/build'));
+  });
 });
 
 gulp.task('sass:watch', function() {
@@ -21,7 +27,7 @@ gulp.task('publish', function() {
   } else {
     s3bucket = process.env.MAPZEN_DEV_BUCKET;
   }
-  return gulp.src('examples/build/styleguide.css')
+  return gulp.src('examples/build/*.css')
     .pipe(s3({
       Bucket: s3bucket,
       ACL: 'public-read',
