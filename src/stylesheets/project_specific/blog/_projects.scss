@@ -1,0 +1,157 @@
+//
+// Project pages
+// --------------------------------------------------
+
+// Namespaced
+body.project {
+  color: #191919;
+
+  .demo-container {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    z-index: 1990; // Fixes header padding overlapping controls. See issue #308
+
+    > .demo-map {
+      width: 100%;
+      height: 100%;
+      z-index: 100; // Fix a Leaflet stacking bug
+    }
+  }
+}
+
+.static-content {
+  font-size: 16px;
+  line-height: 1.6;
+
+
+  //temp class for red compass on static pages
+  img.red-compass{
+    width: auto;
+    height: auto;
+
+    @media (min-width: $screen-md-min) {
+        width: auto;
+        height: auto;
+      }
+  }
+
+
+  @media (min-width: $screen-md-min) {
+    font-size: 18px;
+  }
+
+  h1 {
+    margin-top: 1.6em;
+    margin-bottom: 0.8em;
+    font-family: $mz-serif;
+    font-size: 2.5em;
+    font-weight: 400;
+    line-height: initial; // Reset
+    color: $mz-red;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 2.4em;
+    }
+  }
+
+  h2 {
+    margin-top: 1.6em;
+    margin-bottom: 0.8em;
+    font-family: $mz-serif;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: $mz-mediumgray;
+  }
+
+  h3 {
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+    font-family: $mz-sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    //color: #191919;
+    color: $mz-mediumgray;
+  }
+
+  h4 {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    font-family: $mz-sans-serif;
+    font-size: 1.0em;
+    font-weight: 600;
+    color: $mz-darkgray;
+  }
+
+  h5, h6 {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+    font-family: $mz-sans-serif;
+    font-size: 1.0em;
+    font-weight: 600;
+    color: $mz-mediumgray;
+  }
+
+  // Add a invisible padding block before each navigable heading
+  // (the ones with an id='', which can be linked to with a #fragment-identifier)
+  // Assumes the presense of the floating nav at all times
+  // Adjusts the height if fixed main nav is also present in the view
+  h1[id]:before,
+  h2[id]:before,
+  h3[id]:before,
+  h4[id]:before,
+  h5[id]:before,
+  h6[id]:before {
+    content: '';
+    display: block;
+    // These values must cancel each other out to maintain
+    // the top margin on the heading element itself
+    margin-top: -#{$section-nav-height + $header-height + 40px};
+    height: #{$section-nav-height + $header-height + 40px} ;
+    pointer-events: none;
+
+    body.hide-fixed-main-nav & {
+      margin-top: -#{$section-nav-height + 40px};
+      height: $section-nav-height + 40px;
+    }
+  }
+
+  a {
+    font-weight: 600;
+  }
+
+  // Only affect images not given a specific width and height attribute
+  img:not([width]):not([height]) {
+    width: 100%;
+
+    @media (min-width: $screen-md-min) {
+      width: 120%;
+      margin-left: -10%;
+      margin-right: -10%;
+    }
+  }
+
+  h1 + p > img,
+  h2 + p > img,
+  h3 + p > img,
+  h4 + p > img,
+  h5 + p > img,
+  h6 + p > img {
+    margin-top: 0;
+  }
+
+  ul{
+    list-style-type: disc;
+  }
+
+  ul.no-bullet{
+    list-style-type: none;
+  }
+
+  .image-bullet {
+    width: 100%;
+    margin-top: -2%;
+    margin-left: 0;
+  }
+
+}
