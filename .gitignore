@@ -1,4 +1,4 @@
 node_modules
-examples/build/*
+examples/styles/*
 .DS_Store
 *.log

@@ -1,8 +1,14 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass');
+var del = require('del');
 
-gulp.task('sass', function() {
+
+gulp.task('clean', function() {
+  return del(['examples/styles/**/*']);
+});
+
+gulp.task('sass', ['clean'], function() {
   [
     './src/stylesheets/project_specific/documentation/documentation.scss',
     './src/stylesheets/project_specific/blog/blog.scss',
@@ -11,7 +17,7 @@ gulp.task('sass', function() {
   ].forEach(function(file_path) {
     gulp.src(file_path)
       .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('./examples/build'));
+      .pipe(gulp.dest('./examples/styles'));
   });
 });
 
@@ -27,20 +33,12 @@ gulp.task('publish', function() {
   } else {
     s3bucket = process.env.MAPZEN_DEV_BUCKET;
   }
-  gulp.src('examples/build/*.css')
+  return gulp.src(['examples/styles/**/*', 'examples/images/**/*'])
     .pipe(s3({
       Bucket: s3bucket,
       ACL: 'public-read',
       keyTransform: function (relative_filename) {
         return 'common/styleguide/styles/' + relative_filename;
-      }
-    }));
-  gulp.src('examples/images/**/*')
-    .pipe(s3({
-      Bucket: s3bucket,
-      ACL: 'public-read',
-      keyTransform: function (relative_filename) {
-        return 'common/styleguide/images/' + relative_filename;
       }
     }));
 });
