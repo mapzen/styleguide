@@ -294,7 +294,7 @@ $serif: 'Playfair Display', serif;
   .divider-row{
     width:100%;
     height:100px;
-    background-image:image-url('../images/divider/compass-red.png');
+    background-image:url('../images/divider/compass-red.png');
     background-repeat:no-repeat;
     background-position:center center;
     &:last-child{
