@@ -33,12 +33,12 @@ gulp.task('publish', function() {
   } else {
     s3bucket = process.env.MAPZEN_DEV_BUCKET;
   }
-  return gulp.src(['examples/styles/**/*', 'examples/images/**/*'])
+  return gulp.src(['examples/styles/**/*', 'examples/images/**/*'], {base: 'examples'})
     .pipe(s3({
       Bucket: s3bucket,
       ACL: 'public-read',
       keyTransform: function (relative_filename) {
-        return 'common/styleguide/styles/' + relative_filename;
+        return 'common/styleguide/' + relative_filename;
       }
     }));
 });
