@@ -3,7 +3,7 @@
     position:relative;
     font-size:12px;
     .custom-dropdown-div{
-      background-image : image-url('icon_dropdown.png');
+      background-image : image-url('../images/icon_dropdown.png');
       width:88px;
       background-repeat: no-repeat;
       background-position: right center;
@@ -13,8 +13,8 @@
     select.custom-dropdown{
     font-weight:700;
     margin:0;
-    -webkit-appearance: none;  
-    -moz-appearance: none;  
+    -webkit-appearance: none;
+    -moz-appearance: none;
     background-color: transparent;
     width:88px;
     padding: 0 3px;
