@@ -117,7 +117,7 @@
         &.active {
           font-weight: 600;
           &::before {
-            background-image: image-url('marker.png');
+            background-image: image-url('../images/marker.png');
           }
         }
         &::before {
@@ -127,7 +127,7 @@
           position: absolute;
           left: 0;
           top: 0;
-          background-image: image-url('marker1.png');
+          background-image: image-url('../images/marker1.png');
           background-size: 25px 36px;
           background-repeat: no-repeat;
           background-position: center;

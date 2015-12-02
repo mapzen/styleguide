@@ -84,7 +84,7 @@ $signupbtnh:45px;
       .show-email{
         border:1px solid #666;
       }
-      
+
       .login-profile-pic{
         @extend .profile-picture;
         width:100px;
@@ -97,7 +97,7 @@ $signupbtnh:45px;
         width:150px;
         height:150px;
         background-size:90% 90%;
-        background-image:image-url('octocat.png');
+        background-image:image-url('../images/octocat.png');
         margin:0 auto;
         &:hover{
           background-image:url(//octodex.github.com/images/spidertocat.png);

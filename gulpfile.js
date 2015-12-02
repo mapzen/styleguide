@@ -27,12 +27,20 @@ gulp.task('publish', function() {
   } else {
     s3bucket = process.env.MAPZEN_DEV_BUCKET;
   }
-  return gulp.src('examples/build/*.css')
+  gulp.src('examples/build/*.css')
     .pipe(s3({
       Bucket: s3bucket,
       ACL: 'public-read',
       keyTransform: function (relative_filename) {
         return 'common/styleguide/styles/' + relative_filename;
+      }
+    }));
+  gulp.src('examples/images/**/*')
+    .pipe(s3({
+      Bucket: s3bucket,
+      ACL: 'public-read',
+      keyTransform: function (relative_filename) {
+        return 'common/styleguide/images/' + relative_filename;
       }
     }));
 });
