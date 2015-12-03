@@ -4527,30 +4527,32 @@ body.data-pages .leaflet-popup-content {
   .container.stats ul.adminnav {
     width: 100%;
     padding-left: 0px; }
-    .container.stats ul.adminnav a li {
-      width: 120px;
-      height: 70px;
-      float: left;
-      margin: 0 calc( ( 33.333% - 120px) / 2);
-      padding-top: 40px;
-      list-style-type: none;
-      position: relative;
-      text-align: center; }
-      .container.stats ul.adminnav a li.active {
-        font-weight: 600; }
-        .container.stats ul.adminnav a li.active::before {
-          background-image: url("../images/marker.png"); }
-      .container.stats ul.adminnav a li::before {
-        content: ' ';
+    .container.stats ul.adminnav a {
+      display: inline-block; }
+      .container.stats ul.adminnav a li {
         width: 120px;
-        height: 40px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background-image: url("../images/marker1.png");
-        background-size: 25px 36px;
-        background-repeat: no-repeat;
-        background-position: center; }
+        height: 70px;
+        float: left;
+        margin: 0 calc( ( 33.333% - 120px) / 2);
+        padding-top: 40px;
+        list-style-type: none;
+        position: relative;
+        text-align: center; }
+        .container.stats ul.adminnav a li.active {
+          font-weight: 600; }
+          .container.stats ul.adminnav a li.active::before {
+            background-image: url("../images/marker.png"); }
+        .container.stats ul.adminnav a li::before {
+          content: ' ';
+          width: 120px;
+          height: 40px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background-image: url("../images/marker1.png");
+          background-size: 25px 36px;
+          background-repeat: no-repeat;
+          background-position: center; }
   .container.stats ul.highlight {
     font-size: 18px;
     line-height: 28px; }
