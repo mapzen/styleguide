@@ -3585,6 +3585,94 @@ body {
     padding: 0 15px;
     height: auto; } }
 
+/*
+ * Side navigation (aka "toc" or "Table of Contents")
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content.
+ */
+/* First level of nav */
+.toc {
+  font-weight: 300;
+  background-color: #f8f8f8;
+  margin-bottom: 30px;
+  max-height: calc(100% - 120px);
+  overflow-x: hidden;
+  overflow-y: auto; }
+  .toc::-webkit-scrollbar {
+    height: 6px;
+    width: 6px; }
+  .toc::-webkit-scrollbar-thumb {
+    background-color: rgba(110, 160, 164, 0.75); }
+  .toc.affix {
+    position: static; }
+  .toc.affix-bottom {
+    max-height: none; }
+  .toc a {
+    display: block;
+    padding: 6px 15px;
+    z-index: 1;
+    color: #385d5c;
+    text-decoration: none;
+    -webkit-transition: box-shadow 100ms ease-in-out;
+    -moz-transition: box-shadow 100ms ease-in-out;
+    transition: box-shadow 100ms ease-in-out; }
+  .toc li.toc-top-level {
+    font-weight: bold; }
+  .toc li.toc-top-level.toc-current > a {
+    background-color: #385d5c;
+    color: white; }
+
+@media (max-width: 768px) {
+  .toc a,
+  .nav > li > a {
+    min-height: 44px;
+    padding: 15px; } }
+
+@media (min-width: 992px) {
+  .toc .nav > .active > ul {
+    display: block; }
+  .toc.affix,
+  .toc.affix-bottom {
+    width: 210px; }
+  .toc.affix {
+    position: fixed;
+    top: 75px; }
+  .toc.affix-bottom {
+    position: absolute; } }
+
+/*
+ul.nav > li:first-child:last-child {
+  display: none;
+}
+*/
+.toc-subnav {
+  list-style-type: none;
+  padding: 0;
+  font-weight: 400;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 200ms ease-in-out;
+  -moz-transition: max-height 200ms ease-in-out;
+  transition: max-height 200ms ease-in-out; }
+  .toc-subnav.toc-expand {
+    max-height: 10000px; }
+  .toc-subnav a:hover,
+  .toc-subnav a:focus {
+    background-color: #eee;
+    color: #6ea0a4; }
+  .toc-subnav li.toc-current.active > a,
+  .toc-subnav li.toc-current:not(.active) li.active > a {
+    box-shadow: none;
+    background-color: transparent;
+    color: inherit; }
+  .toc-subnav li.toc-current:not(.active) > a,
+  .toc-subnav li.active > a {
+    background-color: #eee;
+    box-shadow: inset 4px 0 0 #385d5c; }
+  .toc-subnav .toc-subnav > li > a {
+    padding-left: 30px; }
+
 @media print {
   a.btn[href]:after,
   a.no-print-link:after {
