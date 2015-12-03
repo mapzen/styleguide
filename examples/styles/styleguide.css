@@ -3568,6 +3568,55 @@ body {
   width: 100%;
   height: 100%; }
 
+.jobs h6.team-name {
+  font-family: 'Playfair Display';
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 1.5;
+  color: #666666;
+  text-transform: capitalize; }
+
+.jobs .job-info-container {
+  width: 100%;
+  display: table;
+  border-top: 1px dotted #ccc;
+  padding: 25px 0px;
+  font-size: 16px;
+  color: #666; }
+  @media (max-width: 767px) {
+    .jobs .job-info-container {
+      padding: 20px 0px; } }
+  .jobs .job-info-container.first {
+    border-top: 2px solid #ccc; }
+  .jobs .job-info-container .job-info {
+    display: table-cell; }
+    @media (max-width: 767px) {
+      .jobs .job-info-container .job-info {
+        display: table-row; } }
+    .jobs .job-info-container .job-info .location {
+      font-size: 14px; }
+      .jobs .job-info-container .job-info .location:before {
+        content: '·'; }
+      @media (max-width: 767px) {
+        .jobs .job-info-container .job-info .location {
+          display: block;
+          line-height: 1.8; }
+          .jobs .job-info-container .job-info .location:before {
+            content: none; } }
+    @media (max-width: 767px) {
+      .jobs .job-info-container .job-info .excerpt {
+        margin-bottom: 20px; } }
+  .jobs .job-info-container .read-more {
+    display: table-cell;
+    vertical-align: middle;
+    width: 150px;
+    text-align: center;
+    text-transform: capitalize; }
+    @media (max-width: 767px) {
+      .jobs .job-info-container .read-more {
+        display: table-row;
+        padding: 10px 0; } }
+
 .search-label {
   font-family: "Montserrat", "Open Sans", sans-serif;
   color: #606060;
@@ -3623,6 +3672,171 @@ body {
     line-height: 40px;
     padding: 0 15px;
     height: auto; } }
+
+.section-nav {
+  position: fixed;
+  top: 76px;
+  width: 100%;
+  height: 50px;
+  font-size: 1rem;
+  overflow: hidden;
+  z-index: 2000;
+  pointer-events: none;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  transform: translate(0, 0);
+  -webkit-transition: top 0.25s;
+  -moz-transition: top 0.25s;
+  transition: top 0.25s;
+  -webkit-font-smoothing: subpixel-antialiased; }
+  .section-nav a {
+    display: block;
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    outline: 0; }
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .section-nav a {
+        padding: 0 15px; } }
+  .section-nav a:hover,
+  .section-nav a:visited,
+  .section-nav a:active {
+    color: white; }
+  .section-nav.is-floating {
+    top: 20px; }
+    body.fixed-main-nav .section-nav.is-floating {
+      top: 76px; }
+  .section-nav.is-collapsed .section-nav-container {
+    width: 300px; }
+  .section-nav.is-collapsed .section-nav-items {
+    width: 150px; }
+  .section-nav.is-collapsed .section-nav-items {
+    background-color: #d4645c; }
+  .section-nav.is-collapsed ul {
+    position: absolute;
+    top: 0;
+    -webkit-transition: top 0.25s;
+    -moz-transition: top 0.25s;
+    transition: top 0.25s; }
+  .section-nav.is-collapsed li {
+    display: block; }
+  .section-nav.is-collapsed li.section-nav-item-egg {
+    display: block; }
+  .section-nav.is-collapsed a {
+    padding-right: 40px; }
+  .section-nav.is-collapsed .section-nav-dropdown {
+    display: block; }
+  @media (max-width: 767px) {
+    .section-nav {
+      top: 50px !important; }
+      body.hide-fixed-main-nav .section-nav {
+        top: 0 !important; }
+      .section-nav .container {
+        padding: 0; }
+      .section-nav .section-nav-container {
+        width: 100% !important; }
+      .section-nav .section-nav-items {
+        display: none; }
+      .section-nav a {
+        padding-right: 20px !important; } }
+
+@media (min-width: 768px) {
+  .section-nav > .container {
+    max-width: calc(100% - 70px); } }
+
+.section-nav-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(15, 15, 15, 0.75);
+  overflow: hidden;
+  z-index: 2000;
+  pointer-events: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
+  .section-nav.enable-animation .section-nav-container {
+    -webkit-transition: width 0.25s;
+    -moz-transition: width 0.25s;
+    transition: width 0.25s; }
+
+.section-nav-title {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  color: white;
+  text-shadow: 0 1px 1px black;
+  vertical-align: top;
+  opacity: 1; }
+  .section-nav-title h2 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 50px; }
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .section-nav-title h2 {
+        font-size: 1.8em; } }
+
+.section-nav-items {
+  display: inline-block;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  overflow: hidden; }
+  .section-nav-items ul {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    white-space: nowrap;
+    float: right; }
+  .section-nav-items li {
+    display: inline-block;
+    line-height: 50px;
+    font-size: 14px;
+    color: white; }
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .section-nav-items li {
+        font-size: 13px; } }
+    .section-nav-items li:not(.active):not(:hover) {
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
+    .section-nav-items li:hover {
+      background-color: #af554e; }
+    body:not(.is-scrolling) .section-nav-items li.active, .section-nav-items li.active:hover, .section-nav-items li.activated {
+      background-color: #d4645c; }
+    .section-nav-items li.section-nav-item-egg {
+      display: none;
+      padding: 0 20px; }
+
+.section-nav-dropdown {
+  display: none;
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+  color: white;
+  font-size: 8px;
+  opacity: 0.85;
+  pointer-events: none; }
+
+.section-nav-hitbox {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none; }
+  .section-nav.enable-hitbox + .section-nav-hitbox {
+    pointer-events: auto; }
+  body.fixed-main-nav .section-nav-hitbox {
+    height: 156px; }
+  @media (max-width: 767px) {
+    .section-nav-hitbox {
+      display: none; } }
 
 /*
  * Side navigation (aka "toc" or "Table of Contents")
