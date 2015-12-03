@@ -7,22 +7,6 @@
 // GLOBAL
 // --------------------------------------------------
 
-// Mapzen official colors
-$mz-red: #d4645c;
-$mz-blue: #6ea0a4;
-$mz-gray: #898989;
-$mz-yellow: #e6ead2;
-
-// Mapzen misc colors
-$mz-darkyellow: #d3c756;
-$mz-darkred: #993434;
-$mz-darkblue: #385d5c;
-$mz-darkgray: #444;
-$mz-mediumgray: #666666;
-$mz-black: #191919;
-$mz-lightgray: #f8f8f8;
-$mz-brown: #563630;
-
 // Typography
 $mz-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
 $mz-serif: 'Playfair Display', serif;
@@ -35,7 +19,6 @@ $mz-body-font: $mz-sans-serif;
 // For the full list of variables, see here: http://getbootstrap.com/customize/#less-variables
 
 // Links
-$link-color: $mz-blue;
 $link-hover-color: $mz-darkblue;
 $link-hover-decoration: none;
 
@@ -86,4 +69,3 @@ $divider-color: #e0e0e0;
 // Replacement fonts with Montserrat
 $docs-heading-font: 'Montserrat', 'Open Sans', sans-serif;
 $docs-accent-font: 'Montserrat', 'Open Sans', sans-serif;
-
