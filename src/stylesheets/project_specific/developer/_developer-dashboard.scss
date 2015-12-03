@@ -6,9 +6,6 @@ $pendingColor:#E09500;
 $errorColor:#c62b28;
 $okColor:#63a240;
 
-$sansserif: 'Open Sans', sans-serif;
-$serif: 'Playfair Display', serif;
-
 
 #dev_dashboard{
 
@@ -87,7 +84,7 @@ $serif: 'Playfair Display', serif;
       float:left;
       display:inline-block;
       padding-right:15px;
-      font-family:$serif;
+      font-family:$mz-serif;
       font-weight: 400;
       font-size:34px;
       text-transform: capitalize;
@@ -145,13 +142,13 @@ $serif: 'Playfair Display', serif;
 
    .no-key{
      color:#666;
-     font-family: $serif;
+     font-family: $mz-serif;
      font-size:18px;
      font-style:italic;
    }
    .maximum-key{
      color:#666;
-     font-family: $serif;
+     font-family: $mz-serif;
      font-size:14px;
      font-style:italic;
    }
@@ -236,7 +233,7 @@ $serif: 'Playfair Display', serif;
     }
     .key_name{
       font-size:18px;
-      font-family: $serif;
+      font-family: $mz-serif;
       color:$lightGreenColor;
     }
 

@@ -3521,6 +3521,45 @@ tbody.collapse.in {
 .breadcrumb > li + li:before {
   content: "" " "; }
 
+.doc-hitboxes {
+  margin-top: -15px; }
+  @media (min-width: 768px) {
+    .doc-hitboxes {
+      margin-top: -30px; } }
+
+.doc-hitbox {
+  min-height: 260px;
+  position: relative;
+  background-color: #eee;
+  text-align: center; }
+  .doc-hitbox.doc-hitbox-small {
+    min-height: 160px; }
+  .doc-hitbox:hover {
+    background-color: #385d5c; }
+    .doc-hitbox:hover a {
+      color: white; }
+    .doc-hitbox:hover h5 {
+      color: white; }
+    .doc-hitbox:hover .btn {
+      color: white;
+      border-color: white; }
+  .doc-hitbox .btn:hover {
+    background-color: transparent; }
+  .doc-hitbox a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  .doc-hitbox p {
+    margin-top: 1em; }
+
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
