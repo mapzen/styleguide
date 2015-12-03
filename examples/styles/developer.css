@@ -3411,22 +3411,6 @@ tbody.collapse.in {
   .hidden-print {
     display: none !important; } }
 
-.breadcrumb {
-  margin-bottom: 0; }
-  .breadcrumb li::before {
-    font: normal normal normal 14px/1 FontAwesome; }
-
-.breadcrumb > li + li:before {
-  content: "" " "; }
-
-body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  background: transparent;
-  overflow-x: hidden;
-  width: 100%;
-  height: 100%; }
-
 .byline {
   color: #666; }
 
@@ -3528,6 +3512,78 @@ body {
 .author-blurb-text {
   display: table-cell;
   vertical-align: top; }
+
+.breadcrumb {
+  margin-bottom: 0; }
+  .breadcrumb li::before {
+    font: normal normal normal 14px/1 FontAwesome; }
+
+.breadcrumb > li + li:before {
+  content: "" " "; }
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  background: transparent;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%; }
+
+.search-label {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  color: #606060;
+  margin-bottom: 0.5em; }
+
+.search-container form {
+  margin-top: 8px; }
+
+.search-results-container {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 0;
+  box-sizing: border-box;
+  right: 15px;
+  left: 15px;
+  border: 1px solid #e1e1e1;
+  border-top: 0;
+  margin-top: 0;
+  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+  overflow-y: auto; }
+  .search-results-container::-webkit-scrollbar {
+    height: 6px;
+    width: 6px; }
+  .search-results-container::-webkit-scrollbar-thumb {
+    background-color: rgba(110, 160, 164, 0.75); }
+  .search-results-container h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 0.5em; }
+  .search-results-container p:first-child:last-child {
+    padding: 0.85em 10px;
+    margin: 0;
+    font-weight: bold; }
+  .search-results-container article {
+    padding: 10px;
+    cursor: pointer; }
+  .search-results-container article:not(:last-child) {
+    border-bottom: 1px solid #e1e1e1; }
+  .search-results-container article:hover {
+    background-color: rgba(192, 192, 192, 0.1); }
+    .search-results-container article:hover a {
+      color: #385d5c; }
+  .search-results-container article.selected {
+    background-color: rgba(128, 128, 128, 0.1); }
+  .search-results-container strong {
+    color: #385d5c;
+    background-color: papayawhip; }
+
+@media (max-width: 768px) {
+  .form-control {
+    line-height: 40px;
+    padding: 0 15px;
+    height: auto; } }
 
 @media print {
   a.btn[href]:after,
