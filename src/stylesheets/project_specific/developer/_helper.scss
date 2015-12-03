@@ -2,11 +2,6 @@ $xsValue: 5px;
 $sValue: 10px;
 $mValue: 20px;
 $lValue: 30px;
-$redColor: #D4645C;
-$lightGreenColor:#6ea0a4;
-$greenColor:#385D5C;
-$whiteColor: #fff;
-$grayColor: #666;
 
 $margint: margin-top;
 $marginl: margin-left;
@@ -19,7 +14,7 @@ $paddingb: padding-bottom;
 $paddingr: padding-right;
 
 @mixin helper($prop, $val){
-  #{$prop}: $val; 
+  #{$prop}: $val;
 }
 
 @mixin ver-helper($prop, $ver){
@@ -66,7 +61,7 @@ $paddingr: padding-right;
 
 .no-padding    { @include helper(padding,0); }
 
-.green-text{ color : $greenColor; }
+.green-text{ color : $mz-darkblue; }
 .white-text{ color: $whiteColor; }
 .gray-text{ color: $grayColor; }
 

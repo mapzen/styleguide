@@ -1,17 +1,11 @@
 /* mapzen color code : #D4645C , #385D5C */
-$greenColor:#385D5C;
-$redcolor:#b4382f;
-
-$pendingColor:#E09500;
-$errorColor:#c62b28;
-$okColor:#63a240;
 
 
 #dev_dashboard{
 
-  a{color : $lightGreenColor;}
+  a{color : $mz-blue;}
   a:hover{
-    color:$greenColor;
+    color:$mz-darkblue;
     text-decoration:none;
   }
 
@@ -50,7 +44,7 @@ $okColor:#63a240;
 
   .profile-picture{
     border-radius: 50%;
-    border:1.5px solid $greenColor;
+    border:1.5px solid $mz-darkblue;
     padding:2px;
   }
 
@@ -124,15 +118,15 @@ $okColor:#63a240;
 
     .btn_mapzen.btn-add-key{
       /*tweaked color to green*/
-      background-color: $lightGreenColor;
-      border: 1px solid $lightGreenColor;
+      background-color: $mz-blue;
+      border: 1px solid $mz-blue;
       font-weight:400;
       text-transform: uppercase;
     }
 
     .btn_mapzen.btn-add-key:focus,.btn_mapzen.btn-add-key:hover{
-      background-color: $greenColor;
-      border: 1px solid $greenColor;
+      background-color: $mz-darkblue;
+      border: 1px solid $mz-darkblue;
       font-weight:400;
       text-transform: uppercase;
     }
@@ -196,7 +190,7 @@ $okColor:#63a240;
 
     .key-row{
       width:100%;
-      background-color: $greenColor;
+      background-color: $mz-darkblue;
       padding:15px;
       font-size:16px;
       font-weight:400;
@@ -234,7 +228,7 @@ $okColor:#63a240;
     .key_name{
       font-size:18px;
       font-family: $mz-serif;
-      color:$lightGreenColor;
+      color:$mz-blue;
     }
 
     .delete-form{
@@ -322,7 +316,7 @@ $okColor:#63a240;
     }
   }
   .error-msg{
-    color:$redcolor;
+    color:$devErrorRed;
     font-weight:400;
   }
   .modal-content{
