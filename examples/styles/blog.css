@@ -3411,6 +3411,14 @@ tbody.collapse.in {
   .hidden-print {
     display: none !important; } }
 
+.breadcrumb {
+  margin-bottom: 0; }
+  .breadcrumb li::before {
+    font: normal normal normal 14px/1 FontAwesome; }
+
+.breadcrumb > li + li:before {
+  content: "" " "; }
+
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;

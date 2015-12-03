@@ -1,18 +1,4 @@
 
-// Customize breadcrumb
-.breadcrumb {
-  margin-bottom: 0;
-
-  // Need to set this font for our divider character to work
-  li::before {
-    font: normal normal normal 14px/1 FontAwesome;
-  }
-}
-// Override for libsass bug
-// See https://github.com/twbs/bootstrap-sass/issues/919
-.breadcrumb > li + li:before {
-    content: $breadcrumb-separator '\00a0';
-}
 
 .documentation-hero {
   background-color: $mz-darkblue;
