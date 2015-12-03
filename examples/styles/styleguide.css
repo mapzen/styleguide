@@ -3874,6 +3874,94 @@ ol.legal-terms {
     .section-nav-hitbox {
       display: none; } }
 
+.post-meta .byline + .social-buttons {
+  margin-top: 20px; }
+
+.social-buttons > ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  .social-buttons > ul > li {
+    display: inline-block;
+    width: 44px;
+    height: 44px; }
+    @media (max-width: 767px) {
+      .social-buttons > ul > li {
+        width: calc(25% - 1em); } }
+  .social-buttons > ul > li:not(:last-of-type) {
+    margin-right: 1em; }
+
+.social-buttons a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-transition: background-color 100ms linear;
+  -moz-transition: background-color 100ms linear;
+  transition: background-color 100ms linear; }
+  .social-buttons a:hover svg path,
+  .social-buttons a:hover svg polygon {
+    fill: white; }
+
+.social-buttons svg {
+  position: relative;
+  width: 22px;
+  top: 7px; }
+
+.social-buttons svg path,
+.social-buttons svg polygon {
+  -webkit-transition: fill 100ms linear;
+  -moz-transition: fill 100ms linear;
+  transition: fill 100ms linear; }
+
+.social-button-email a {
+  border-color: #0a88ff; }
+
+.social-button-email a:hover {
+  background-color: #0a88ff; }
+
+.social-button-email svg {
+  width: 20px; }
+
+.social-button-email svg path,
+.social-button-email svg polygon {
+  fill: #0a88ff; }
+
+.social-button-facebook a {
+  border-color: #306199; }
+
+.social-button-facebook a:hover {
+  background-color: #306199; }
+
+.social-button-facebook svg {
+  width: 20px; }
+
+.social-button-facebook svg path,
+.social-button-facebook svg polygon {
+  fill: #306199; }
+
+.social-button-twitter a {
+  border-color: #26c4f1; }
+
+.social-button-twitter a:hover {
+  background-color: #26c4f1; }
+
+.social-button-twitter svg path,
+.social-button-twitter svg polygon {
+  fill: #26c4f1; }
+
+.social-button-pinterest a {
+  border-color: #b81621; }
+
+.social-button-pinterest a:hover {
+  background-color: #b81621; }
+
+.social-button-pinterest svg path,
+.social-button-pinterest svg polygon {
+  fill: #b81621; }
+
 /*
  * Side navigation (aka "toc" or "Table of Contents")
  *
