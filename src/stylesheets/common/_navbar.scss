@@ -5,7 +5,6 @@
 nav {
   width: 100%;
   height: $header-height-mobile;
-  box-shadow: 0px 1px 0px rgba(255,255,255,0.15) inset, 0px 2px 8px rgba(0,0,0,0.10);
 
   -webkit-transform: translate(0,0);
   -moz-transform: translate(0,0);
@@ -56,7 +55,6 @@ body {
   .navbar-nav {
     background: rgba(255,255,255,0.95);
     margin-top: 0;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
 
     li > a {
       display: inline-block;
@@ -68,6 +66,7 @@ body {
 // Overwrite Bootstrap styles by matching selectors
 .navbar {
   border: 0; // Overwrite 1px border width
+  border-bottom: 1px solid #e9e9e9;
 }
 .navbar-nav > li > a {
   line-height: 26px; // Make link fit the height of the navbar

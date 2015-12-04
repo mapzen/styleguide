@@ -1,6 +1,3 @@
-$redcolor:#D4645C;
-$lightGreenColor:#6ea0a4;
-$greenColor:#385D5C;
 $signupbtnh:45px;
 
 #dev_login{
@@ -12,7 +9,7 @@ $signupbtnh:45px;
       background-repeat:no-repeat;
       background-position:center center;
       border-radius: 50%;
-      border:1.5px solid $greenColor;
+      border:1.5px solid $mz-darkblue;
       padding:3px;
     }
 
@@ -33,7 +30,7 @@ $signupbtnh:45px;
         font-weight:400;
         text-transform: uppercase;
         top:0px;
-        border:1px solid $redcolor;
+        border:1px solid $mz-red;
         cursor:pointer;
         z-index:1;
         a{
@@ -78,7 +75,7 @@ $signupbtnh:45px;
       }
 
       .scrumb{
-        border-bottom:1px solid $lightGreenColor;
+        border-bottom:1px solid $mz-blue;
       }
 
       .show-email{

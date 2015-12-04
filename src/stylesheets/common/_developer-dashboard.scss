@@ -1,20 +1,11 @@
 /* mapzen color code : #D4645C , #385D5C */
-$greenColor:#385D5C;
-$redcolor:#b4382f;
-
-$pendingColor:#E09500;
-$errorColor:#c62b28;
-$okColor:#63a240;
-
-$sansserif: 'Open Sans', sans-serif;
-$serif: 'Playfair Display', serif;
 
 
 #dev_dashboard{
 
-  a{color : $lightGreenColor;}
+  a{color : $mz-blue;}
   a:hover{
-    color:$greenColor;
+    color:$mz-darkblue;
     text-decoration:none;
   }
 
@@ -53,7 +44,7 @@ $serif: 'Playfair Display', serif;
 
   .profile-picture{
     border-radius: 50%;
-    border:1.5px solid $greenColor;
+    border:1.5px solid $mz-darkblue;
     padding:2px;
   }
 
@@ -87,7 +78,7 @@ $serif: 'Playfair Display', serif;
       float:left;
       display:inline-block;
       padding-right:15px;
-      font-family:$serif;
+      font-family:$mz-serif;
       font-weight: 400;
       font-size:34px;
       text-transform: capitalize;
@@ -127,15 +118,15 @@ $serif: 'Playfair Display', serif;
 
     .btn_mapzen.btn-add-key{
       /*tweaked color to green*/
-      background-color: $lightGreenColor;
-      border: 1px solid $lightGreenColor;
+      background-color: $mz-blue;
+      border: 1px solid $mz-blue;
       font-weight:400;
       text-transform: uppercase;
     }
 
     .btn_mapzen.btn-add-key:focus,.btn_mapzen.btn-add-key:hover{
-      background-color: $greenColor;
-      border: 1px solid $greenColor;
+      background-color: $mz-darkblue;
+      border: 1px solid $mz-darkblue;
       font-weight:400;
       text-transform: uppercase;
     }
@@ -145,13 +136,13 @@ $serif: 'Playfair Display', serif;
 
    .no-key{
      color:#666;
-     font-family: $serif;
+     font-family: $mz-serif;
      font-size:18px;
      font-style:italic;
    }
    .maximum-key{
      color:#666;
-     font-family: $serif;
+     font-family: $mz-serif;
      font-size:14px;
      font-style:italic;
    }
@@ -199,7 +190,7 @@ $serif: 'Playfair Display', serif;
 
     .key-row{
       width:100%;
-      background-color: $greenColor;
+      background-color: $mz-darkblue;
       padding:15px;
       font-size:16px;
       font-weight:400;
@@ -236,8 +227,8 @@ $serif: 'Playfair Display', serif;
     }
     .key_name{
       font-size:18px;
-      font-family: $serif;
-      color:$lightGreenColor;
+      font-family: $mz-serif;
+      color:$mz-blue;
     }
 
     .delete-form{
@@ -325,7 +316,7 @@ $serif: 'Playfair Display', serif;
     }
   }
   .error-msg{
-    color:$redcolor;
+    color:$devErrorRed;
     font-weight:400;
   }
   .modal-content{
