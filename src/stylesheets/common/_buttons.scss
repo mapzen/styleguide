@@ -1,10 +1,6 @@
 
 /* button styles */
 
-button:focus {
-  outline: 0;
-}
-
 .btn {
   border-radius: 0;
   border-width: 1px;
@@ -14,12 +10,13 @@ button:focus {
 }
 
 // Red button
-.btn_mapzen,
 .btn-mapzen {
   border-color: $mz-red;
   background-color: $mz-red;
   color: #fff;
   text-shadow: none;
+  text-transform: uppercase;
+  font-weight:400;
 
   &:hover,
   &:focus {
@@ -31,7 +28,6 @@ button:focus {
 
 // Transparent button
 // Sometimes on white, sometimes on light gray
-.btn_transparent,
 .btn-transparent {
   background: transparent;
   border-color: $mz-darkgray;
@@ -45,17 +41,5 @@ button:focus {
   }
 }
 
-// Gray button
-// Rarely (never?) used
-.btn-dark {
-  border-color: #333;
-  background-color: #333;
-  color: #fff;
 
-  &:hover,
-  &:focus {
-    border-color: #000;
-    background-color: #000;
-    color: #fff;
-  }
-}
+//Blue button used in developer dashboard
