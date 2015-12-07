@@ -105,11 +105,10 @@
     width: 100%;
     padding-left: 0px;
     a {
-      display: inline-block;
       li {
+        display: inline-block;
         width: 120px;
         height: 70px;
-        float: left;
         margin: 0 calc( ( 33.333% - 120px) / 2);
         padding-top: 40px;
         list-style-type: none;
