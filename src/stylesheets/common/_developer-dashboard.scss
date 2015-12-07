@@ -3,12 +3,6 @@
 
 #dev_dashboard{
 
-  a{color : $mz-blue;}
-  a:hover{
-    color:$mz-darkblue;
-    text-decoration:none;
-  }
-
   &.container{
     @media(max-width:767px){width:100%;}
     @media (min-width: 768px) {width:100%;}
@@ -106,10 +100,11 @@
       }
     }
 
-    .btn_mapzen.btn-add-key{
+    .btn-add-key{
       /*tweaked color to green*/
       background-color: $mz-blue;
       border: 1px solid $mz-blue;
+      color: #fff;
 
       width: 100%;
       height: 60px;
@@ -118,12 +113,9 @@
       text-transform: uppercase;
     }
 
-    .btn_mapzen.btn-add-key:focus,.btn_mapzen.btn-add-key:hover{
+    .btn-add-key:focus,.btn_mapzen.btn-add-key:hover{
       background-color: $mz-darkblue;
       border: 1px solid $mz-darkblue;
-    }
-    .btn_transparent{
-      border:1px solid #000;
     }
 
    .no-key{
@@ -230,11 +222,6 @@
       color:$mz-blue;
     }
 
-    .delete-form{
-      display: inline;
-      margin-bottom: 30px;
-    }
-
     .stats{
       width:100%;
       height:auto;
@@ -275,6 +262,7 @@
       height:30px;
       margin: 5px;
       padding: 0;
+      border:1px solid #000;
       &.selected {
         background: $mz-gray;
       }
@@ -318,6 +306,10 @@
       width:100%;
       margin-left:-50%;
     }
+  }
+
+  .delete-confirm {
+    margin-bottom: 30px;
   }
   .error-msg{
     color:$devErrorRed;
