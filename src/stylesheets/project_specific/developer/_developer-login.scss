@@ -42,11 +42,14 @@ $signupbtnh:45px;
         border-radius: 0px;
         color: white;
         background-color: #444444;
-        border: 1px solid $mz-darkgray;
+        border: 1px solid #444444;
         text-transform: uppercase;
         font-weight: 600;
         padding: 16px 18px;
         margin-top: 30px;
+        letter-spacing:1px;
+        font-size:18px;
+        
       }
 
       .login-title {
