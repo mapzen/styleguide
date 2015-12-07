@@ -273,8 +273,11 @@
     .right-square{
       width:30px;
       height:30px;
-      margin:5px;
+      margin: 5px;
       padding: 0;
+      &.selected {
+        background: $mz-gray;
+      }
     }
     .created-at{
       padding-top:5px;
