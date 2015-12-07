@@ -28,7 +28,8 @@
 
   .login-info{
     text-align: right;
-    float:right;
+    float: right;
+    padding-top: 20px;
   }
 
   .info{
@@ -60,11 +61,13 @@
   /*inside of dashboard*/
   #projects{
     width:100%;
+    padding-top: 20px;
 
     .project-wrapper{
       display:inline-block;
       width:100%;
       padding:10px;
+      margin-bottom: 30px;
     }
 
     .project-row{
@@ -74,7 +77,7 @@
     }
 
     .project-name{
-      margin-bottom:-5px;
+      margin-bottom: 5px;
       float:left;
       display:inline-block;
       padding-right:15px;
@@ -90,61 +93,50 @@
     .project-link{
       font-weight: 700;
     }
+
     .add-key{
-      width:210px;
-      display:inline-block;
+      width: 210px;
+      float: left;
       position: absolute;
-      bottom: 23px;
+      bottom: 20px;
       right: 0;
-      letter-spacing:1.1px;
       @media(max-width:767px){
         position:relative;
         width: 100%;
       }
-    }
-    .add-key button{
-      height:60px;
-    }
-    .add-key form{
-      width:100%;
-      display:inline;
-      float:left;
-    }
-    .add-key button{
-      width:100%;
-      display:inline;
-      float:left;
     }
 
     .btn_mapzen.btn-add-key{
       /*tweaked color to green*/
       background-color: $mz-blue;
       border: 1px solid $mz-blue;
-      font-weight:400;
+
+      width: 100%;
+      height: 60px;
+
+      letter-spacing:1.1px;
       text-transform: uppercase;
     }
 
     .btn_mapzen.btn-add-key:focus,.btn_mapzen.btn-add-key:hover{
       background-color: $mz-darkblue;
       border: 1px solid $mz-darkblue;
-      font-weight:400;
-      text-transform: uppercase;
     }
     .btn_transparent{
       border:1px solid #000;
     }
 
    .no-key{
-     color:#666;
+     color: #mz-darkgray;
      font-family: $mz-serif;
-     font-size:18px;
-     font-style:italic;
+     font-size: 18px;
+     font-style: italic;
    }
    .maximum-key{
-     color:#666;
+     color: #666;
      font-family: $mz-serif;
-     font-size:14px;
-     font-style:italic;
+     font-size: 14px;
+     font-style: italic;
    }
 
    .block-add-key{
@@ -163,7 +155,7 @@
       color:#666;
       border-bottom:3px solid #eee;
       padding-bottom:20px;
-      p{
+      p {
         width: calc(100% - 230px);
         margin-bottom:0px;
         @media(max-width:767px){
@@ -177,24 +169,28 @@
     .scrumbs{
       line-height:4.8em;
       margin-bottom:-2em;
+      margin-right: 20px;
       @media(max-width:767px){
         line-height:2em;
         margin-top:5px;
         margin-bottom:5px;
+        margin-right: 10px;
       }
     }
 
     .keys-row{
-      width:100%;
+      width: 100%;
+      float: left;
+      margin-top: 20px;
     }
 
     .key-row{
       width:100%;
-      background-color: $mz-darkblue;
-      padding:15px;
       font-size:16px;
       font-weight:400;
       position:relative;
+      margin-top: 10px;
+      float: left;
       //for animation
       transition: all 1s ease-out;
       opacity:0;
@@ -207,6 +203,8 @@
       opacity:1;
       height:auto;
       padding:15px;
+      margin-top: 10px;
+      margin-bottom: 5px;
     }
 
     .key-value{
@@ -224,6 +222,7 @@
 
     .key-name-row{
       width:100%;
+      margin-bottom: 10px;
     }
     .key_name{
       font-size:18px;
@@ -232,7 +231,8 @@
     }
 
     .delete-form{
-      display:inline;
+      display: inline;
+      margin-bottom: 30px;
     }
 
     .stats{
@@ -254,6 +254,7 @@
       margin: 5px 10px 5px 5px;
       padding-top:5px;
       color:#fff;
+      float: left;
       text-align: center;
       //because white letter looks bigger
       font-size:14px;
@@ -272,8 +273,11 @@
     .right-square{
       width:30px;
       height:30px;
-      margin:5px;
+      margin: 5px;
       padding: 0;
+      &.selected {
+        background: $mz-gray;
+      }
     }
     .created-at{
       padding-top:5px;
@@ -327,6 +331,9 @@
   }
   .modal-dialog{
     margin:80px auto;
+  }
+  .no-padding {
+    padding: 0px;
   }
 }
 
