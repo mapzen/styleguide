@@ -30,7 +30,7 @@
 // Sometimes on white, sometimes on light gray
 .btn-transparent {
   background: transparent;
-  border-color: $mz-darkgray;
+  border: 1px solid $mz-darkgray;
   color: $mz-darkgray;
 
   &:hover,

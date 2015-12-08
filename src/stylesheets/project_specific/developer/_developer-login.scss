@@ -9,7 +9,6 @@ $signupbtnh:45px;
       background-repeat:no-repeat;
       background-position:center center;
       border-radius: 50%;
-      border:1.5px solid $mz-darkblue;
       padding:3px;
     }
 
@@ -23,44 +22,38 @@ $signupbtnh:45px;
         height:$signupbtnh;
       }
 
-      .sign_up{
+      #sign-up {
         height:$signupbtnh;
-        position:relative;
-        font-size:16px;
+        font-size: 16px;
         font-weight:400;
+        border: 1px solid $mz-red;
         text-transform: uppercase;
-        top:0px;
-        border:1px solid $mz-red;
-        cursor:pointer;
-        z-index:1;
-        a{
-          color:#fff;
-        }
+        margin-top: 20px;
       }
-      .block-sign-up{
-        width:100%;
-        height:$signupbtnh  +15px;
-        position:relative;
-        top:45px;
-        background-color: #fff;
-        z-index: 1000;
-        opacity: 0.7;
+      
+      button#sign-up[disabled] {
+        background: $mz-gray;
+        border: 1px solid $mz-gray;
         cursor: default;
       }
 
-      .btn-github{
+
+      .btn-github {
         border-radius: 0px;
         color: white;
         background-color: #444444;
-        border-color: rgba(0,0,0,0.2);
-        border-width: 1px;
+        border: 1px solid #444444;
         text-transform: uppercase;
         font-weight: 600;
         padding: 16px 18px;
+        margin-top: 30px;
+        letter-spacing:1px;
+        font-size:18px;
+        
       }
 
-      .login-title{
-      font-weight: 400;
+      .login-title {
+        font-weight: 400;
       }
 
       .login-btn{
@@ -78,7 +71,7 @@ $signupbtnh:45px;
         border-bottom:1px solid $mz-blue;
       }
 
-      .show-email{
+      .show-email {
         border:1px solid #666;
       }
 
@@ -87,6 +80,7 @@ $signupbtnh:45px;
         width:100px;
         height:100px;
         margin-top:5px;
+        border:1.5px solid $mz-darkblue;
         display:block;
       }
 
@@ -96,19 +90,27 @@ $signupbtnh:45px;
         background-size:90% 90%;
         background-image:url('../images/octocat.png');
         margin:0 auto;
+        border: 1px solid $mz-darkgray;
         &:hover{
-          background-image:url(//octodex.github.com/images/spidertocat.png);
+          background-image:url('//octodex.github.com/images/spidertocat.png');
         }
       }
       .info-box{
         width:100%;
         border:1px solid #666;
+        padding: 20px 10px;
+        margin-top: 10px;
+        font-weight: 600;
+        letter-spacing:1px;
         .username{
           font-size:16px;
         }
         .email-info{
           font-size:16px;
         }
+      }
+      .instruction {
+        margin-top: 30px;
       }
     }
   }
