@@ -1,0 +1,42 @@
+// documentation
+
+
+// Tables
+.table {
+  border: 2px solid $table-border-color;
+  margin-bottom: 0;
+
+  th {
+    font-family: $docs-heading-font;
+    color: $mz-darkblue;
+    font-size: 18px;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+  td, th {
+    border-right: 1px dotted $table-border-color;
+  }
+
+  td {
+    line-height: inherit !important;
+  }
+
+  // Break long code strings in table cells on small windows
+  @media (max-width: 768px) {
+    td code {
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+  }
+}
+
+// To allow scrolling wide tables
+.table-wrapper {
+  overflow-x: auto;
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 20px; // Replace bottom table margin
+}
