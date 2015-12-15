@@ -1,0 +1,61 @@
+// Headings
+
+h1 {
+  font-family: 'Playfair Display';
+  font-weight: 300;
+  font-size: 44px;
+  line-height: 1.2em;
+  margin: 0px;
+
+  @media (min-width: $screen-sm) {
+    font-size: 60px;
+  }
+}
+
+
+h2 {
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 1.2em;
+
+  @media (min-width: $screen-sm) {
+    font-size: 48px;
+  }
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0px;
+  padding: 0px;
+
+  @media (min-width: $screen-sm) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+// For use in blogs
+h4 {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0px;
+  padding: 0px;
+
+  @media (min-width: $screen-sm) {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+// footer get involved
+h5 {
+  font-family: 'Playfair Display';
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 1.4;
+  color: $mz-mediumgray;
+}
