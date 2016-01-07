@@ -3,7 +3,7 @@ var gutil = require('gulp-util');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
-
+var fileinclude = require('gulp-file-include');
 
 gulp.task('clean', function() {
   return del(['examples/styles/**/*']);
@@ -25,8 +25,19 @@ gulp.task('sass', ['clean'], function() {
   });
 });
 
+gulp.task('fileinclude', function() {
+  gulp.src(['./src/components/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./examples/'));
+});
+
+
 gulp.task('sass:watch', function() {
   gulp.watch('./src/stylesheets/**/*.scss',['sass']);
+  gulp.watch('./src/components/index.html', ['fileinclude']);
 });
 
 gulp.task('publish', function() {
@@ -49,4 +60,5 @@ gulp.task('publish', function() {
   }));
 });
 
-gulp.task('default', ['sass','sass:watch']);
+
+gulp.task('default', ['sass','fileinclude','sass:watch']);
