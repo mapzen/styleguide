@@ -16,3 +16,7 @@ deployment:
     branch: production
     commands:
       - gulp publish --target prod
+
+general:
+  artifacts:
+    - "examples"
