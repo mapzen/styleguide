@@ -4,43 +4,46 @@
     <meta charset="utf-8">
     <title>styleguide</title>
     <link rel="stylesheet" type="text/css" href="styles/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="./lib/X-rayHTML.css">
 </head>
 <body>
-  <div class="container">
+<div class="container">
+    <h1>Mapzen Web Styleguide</h1>
 
-      <div class="row">
-      <div class="col-md-6 blog-excerpt">
+    <h2>How To Use</h2>
+    <p>
+        <a href="https://github.com/mapzen/styleguide">Find it on Github at <code>mapzen/styleguide</code></a>.
+    </p>
+    <p>
+        Use CSS from the Styleguide on any Mapzen-branded page by including
+        this link tag in your HTML document head:
+    </p>
+    <pre>&lt;link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/blog.css" type="text/css"&gt;</pre>
+
+    <h2>Components</h2>
+    <hr>
+
+    <div>
         <p>This is the primary button style for important calls to action. Two primary buttons cannot be used next to each other.</p>
-        <button class="btn btn-mapzen">primary button</button>
-      </div>
-      <div class="col-md-6">
-        <pre><code class="language-text">&lt;button class="btn btn-mapzen"&gt;button &lt;/button&gt;</code></pre>
-      </div>
+        <div data-xrayhtml>
+          <a class="btn btn-mapzen">primary button</a>
+        </div>
     </div>
 
-    <div class="row headroom-large">
-      <div class="col-md-6">
-        <button class="btn btn-transparent">secondary button</button>
+    <div>
         <p>This is the primary button style for important calls to action. Two primary buttons cannot be used next to each other.</p>
-      </div>
-      <div class="col-md-6">
-        <pre>&lt;button class="btn btn-transparent"&gt;secondary button &lt;/button&gt;</pre>
-      </div>
+        <div data-xrayhtml>
+          <a class="btn btn-transparent">secondary button</a>
+        </div>
     </div>
-      <div class="row headroom-large">
-      <h1>This is the H1 text style</h1>
-      <h2>This is the H2 text style</h2>
-      <h3>This is the H3 text style</h3>
-      <h4>This is the H4 text style</h4>
-      <h5>This is the H5 text style</h5>
-      <h6>This is the H6 text style</h6>
-      <pre>&lt;h1&gt;This is the H1 text style&lt;/h1&gt;
-&lt;h2&gt;This is the H2 text style&lt;/h2&gt;
-&lt;h3&gt;This is the H3 text style&lt;/h3&gt;
-&lt;h4&gt;This is the H4 text style&lt;/h4&gt;
-&lt;h5&gt;This is the H5 text style&lt;/h5&gt;
-&lt;h6&gt;This is the H6 text style&lt;/h6&gt;</pre>
+
+    <div data-xrayhtml>
+        <h1>This is the H1 text style</h1>
+        <h2>H2 text style</h2>
+        <h3>H3 is very important as well!</h3>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="./lib/X-rayHTML.js"></script>
 </body>
 </html>
