@@ -37,7 +37,7 @@ gulp.task('fileinclude', function() {
 
 gulp.task('sass:watch', function() {
   gulp.watch('./src/stylesheets/**/*.scss',['sass']);
-  gulp.watch('./src/components/index.html', ['fileinclude']);
+  gulp.watch('./src/components/**/*', ['fileinclude']);
 });
 
 gulp.task('publish', function() {
