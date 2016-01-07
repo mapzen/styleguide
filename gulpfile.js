@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 
 
@@ -16,7 +17,10 @@ gulp.task('sass', ['clean'], function() {
     './src/stylesheets/styleguide.scss'
   ].forEach(function(file_path) {
     gulp.src(file_path)
-      .pipe(sass().on('error', sass.logError))
+      .pipe(sourcemaps.init())
+      .pipe(sass())
+      .pipe(sourcemaps.write())
+      .on('error', sass.logError)
       .pipe(gulp.dest('./examples/styles'));
   });
 });
