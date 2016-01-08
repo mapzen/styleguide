@@ -7,11 +7,6 @@
 // GLOBAL
 // --------------------------------------------------
 
-// Typography
-$mz-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
-$mz-serif: 'Playfair Display', serif;
-$mz-body-font: $mz-sans-serif;
-
 // BOOTSTRAP OVERRIDES
 // --------------------------------------------------
 // Whenever possible, customize styles by setting Bootstrap variables and
@@ -63,11 +58,6 @@ $gallery-height-mobile: $gallery-height / 2;
 
 // Misc
 $divider-color: #e0e0e0;
-
-// Documentation
-// Replacement fonts with Montserrat
-$docs-heading-font: 'Montserrat', 'Open Sans', sans-serif;
-$docs-accent-font: 'Montserrat', 'Open Sans', sans-serif;
 
 // Section nav/projects
 $section-nav-height: 50px;

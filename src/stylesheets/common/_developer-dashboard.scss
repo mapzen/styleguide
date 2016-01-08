@@ -75,7 +75,7 @@
       float:left;
       display:inline-block;
       padding-right:15px;
-      font-family:$mz-serif;
+      font-family: $mz-serif;
       font-weight: 400;
       font-size:34px;
       text-transform: capitalize;
@@ -119,13 +119,13 @@
     }
 
    .no-key{
-     color: #mz-darkgray;
+     color: $mz-darkgray;
      font-family: $mz-serif;
      font-size: 18px;
      font-style: italic;
    }
    .maximum-key{
-     color: #666;
+     color: $mz-mediumgray;
      font-family: $mz-serif;
      font-size: 14px;
      font-style: italic;
