@@ -1,12 +1,4 @@
-/********** for ekta/hanbyul to fix **********/
-
-// developer dashboard colors (from common/developer-dashboard.scss and developer/developer-login.scss)
-$devErrorRed:#b4382f;
-$pendingColor:#E09500;
-$errorColor:#c62b28;
-$okColor:#63a240;
-
-/********** end fix **********/
+//Variables
 
 // Mapzen primary colors
 $mz-red: #d4645c;
@@ -48,45 +40,54 @@ $disabled: $mz-mediumgray;
 $background-light: $mz-lightgray;
 $button-secondary-border: $mz-black;
 
+// developer dashboard colors (from common/developer-dashboard.scss and developer/developer-login.scss)
+$devErrorRed:#b4382f;
+$pendingColor:#E09500;
+$errorColor:#c62b28;
+$okColor:#63a240;
 
 
-
-.primary1 {
+//Classes
+.mz-red {
     background-color: $mz-red;
 }
 
-.primary2 {
+.mz-blue {
     background-color: $mz-blue;
 }
 
-.primary3 {
+.mz-yellow{
     background-color: $mz-yellow;
 }
 
-.secondary2 {
+.mz-black {
+    background-color: $mz-black;
+}
+
+.mz-darkgray {
     background-color: $mz-darkgray;
 }
 
-.secondary3 {
+.mz-mediumgray {
     background-color: $mz-mediumgray;
 }
 
-.secondary4 {
+.mz-lightgray {
     background-color: $mz-lightgray;
 }
 
-.tertiary1 {
+.mz-darkred {
     background-color: $mz-darkred;
 }
 
-.tertiary2 {
+.mz-darkblue {
     background-color: $mz-darkblue;
 }
 
-.tertiary3 {
+.mz-darkyellow {
     background-color: $mz-darkyellow;
 }
 
-.tertiary4 {
+.mz-brown {
     background-color: $mz-brown;
 }

@@ -1,8 +1,12 @@
-.color_value {
+.color-value {
     display: block;
     border: 1px solid #ccc;
     padding: 20px;
-    margin: 5px;
+    margin-bottom: 10px;
+    height: 75px;
+}
+
+.color-value code {
     text-align: center;
 }
 

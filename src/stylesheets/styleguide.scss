@@ -6,6 +6,9 @@
 
 @import 'bootstrap-custom';
 
+//Style dependencies
+@import 'common/typography';
+
 // Mapzen site specific
 @import 'common/admonition';
 @import 'common/buttons';
@@ -37,4 +40,3 @@
 @import 'common/styleguide';
 @import 'common/tables';
 @import 'common/toc';
-@import 'common/typography';

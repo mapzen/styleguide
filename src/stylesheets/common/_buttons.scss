@@ -42,4 +42,17 @@
 }
 
 
-//Blue button used in developer dashboard
+// tag links for blog posts
+.tag-list {
+  text-align: center;
+  padding: 0;
+  a {
+    li {
+      display: inline-block;
+      color: $mz-mediumgray;
+      background-color: $mz-lightgray;
+      padding: .35em .8em;
+      margin: 0 .4em;
+    }
+  }
+}

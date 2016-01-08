@@ -143,41 +143,6 @@
   }
 }
 
-quote {
-  font-size: 18px;
-  font-family: 'Playfair Display', serif;
-  color: #3a3a3a;
-
-  @media (min-width: $screen-md-min) {
-    font-size: 24px;
-  }
-}
-
-pullquote {
-  display: block;
-  font-size: 24px;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  text-align: center;
-  color: #3a3a3a;
-
-  @media (min-width: $screen-md-min) {
-    font-size: 28px;
-  }
-}
-
-.static-content pullquote {
-  width: 100%;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-
-  @media (min-width: $screen-md-min) {
-    width: 120%;
-    margin-left: -10%;
-    margin-right: -10%;
-  }
-}
-
 .upside-down {
   transform: rotate(180deg);
 }

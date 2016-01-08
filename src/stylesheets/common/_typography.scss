@@ -1,7 +1,16 @@
+// Variables
+$mz-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
+$mz-serif: 'Playfair Display', serif;
+$mz-body-font: $mz-sans-serif;
+
+$docs-heading-font: 'Montserrat', 'Open Sans', sans-serif;
+$docs-accent-font: 'Montserrat', 'Open Sans', sans-serif;
+
+
 // Headings
 
 h1 {
-  font-family: 'Playfair Display';
+  font-family: $mz-serif;
   font-weight: 300;
   font-size: 44px;
   line-height: 1.2em;
@@ -54,7 +63,7 @@ h4 {
 
 // footer get involved
 h5 {
-  font-family: 'Playfair Display';
+  font-family: $mz-serif;
   font-weight: 600;
   font-size: 2em;
   line-height: 1.4;
@@ -62,19 +71,17 @@ h5 {
 }
 
 
-.body-text {
-  font-family: 'Open Sans', sans-serif;
+.body-text, p {
+  font-family: $mz-sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
   color: $mz-darkgray;
 }
 
-.link {
-  font-family: 'Open Sans', sans-serif;
+.link, a {
+  font-family: $mz-sans-serif;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 28px;
   color: $mz-blue;
 
   &:hover {
@@ -138,3 +145,46 @@ pre {
     );
   }
 }
+
+quote {
+  font-size: 18px;
+  font-family: $mz-serif;
+  color: $mz-darkgray;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 24px;
+  }
+}
+
+pullquote {
+  width: 100%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  display: block;
+  font-size: 24px;
+  font-family: $mz-serif;
+  font-style: italic;
+  text-align: center;
+  color: $mz-darkgray;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 28px;
+    width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+}
+
+
+// Seems unnecessary. All pullquote stuff has been combined above
+// .static-content pullquote {
+//   width: 100%;
+//   margin-top: 1.5em;
+//   margin-bottom: 1.5em;
+
+//   @media (min-width: $screen-md-min) {
+//     width: 120%;
+//     margin-left: -10%;
+//     margin-right: -10%;
+//   }
+// }
