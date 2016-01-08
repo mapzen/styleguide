@@ -1,40 +1,11 @@
-@charset 'utf-8';
+.color_value {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 5px;
+    text-align: center;
+}
 
-// Declare variables before importing Bootstrap
-@import 'common/colors';
-@import 'common/variables';
-
-@import 'bootstrap-custom';
-
-// Mapzen site specific
-@import 'common/admonition';
-@import 'common/buttons';
-@import 'common/bylines';
-@import 'common/breadcrumb';
-@import 'common/components';
-@import 'common/cta';
-@import 'common/data-pages';
-@import 'common/developer-dashboard';
-@import 'common/doc-hitboxes';
-@import 'common/documentation';
-@import 'common/fonts';
-@import 'common/footer';
-@import 'common/gallery';
-@import 'common/general';
-@import 'common/helpers';
-@import 'common/job-list';
-@import 'common/legal';
-@import 'common/media-resources';
-@import 'common/navbar';
-@import 'common/pagination';
-@import 'common/posts';
-@import 'common/print';
-@import 'common/projects';
-@import 'common/projects-demo';
-@import 'common/search';
-@import 'common/section-nav';
-@import 'common/social';
-@import 'common/styleguide';
-@import 'common/tables';
-@import 'common/toc';
-@import 'common/typography';
+.xrayhtml pre {
+    padding-top: 10px;
+}
