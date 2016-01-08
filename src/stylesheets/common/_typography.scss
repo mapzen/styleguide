@@ -62,7 +62,7 @@ h5 {
 }
 
 
-.body-text {
+.body-text, p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -70,11 +70,9 @@ h5 {
   color: $mz-darkgray;
 }
 
-.link {
+.link, a {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 28px;
   color: $mz-blue;
 
   &:hover {
@@ -138,3 +136,46 @@ pre {
     );
   }
 }
+
+quote {
+  font-size: 18px;
+  font-family: 'Playfair Display', serif;
+  color: $mz-darkgray;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 24px;
+  }
+}
+
+pullquote {
+  width: 100%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  display: block;
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-align: center;
+  color: $mz-darkgray;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 28px;
+    width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+}
+
+
+// Seems unnecessary. All pullquote stuff has been combined above
+// .static-content pullquote {
+//   width: 100%;
+//   margin-top: 1.5em;
+//   margin-bottom: 1.5em;
+
+//   @media (min-width: $screen-md-min) {
+//     width: 120%;
+//     margin-left: -10%;
+//     margin-right: -10%;
+//   }
+// }
