@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 5.1.0
+    version: 5.4.0
 
 dependencies:
   post:
@@ -19,4 +19,4 @@ deployment:
 
 general:
   artifacts:
-    - "examples"
+    - "dist"
