@@ -34,8 +34,7 @@ gulp.task('fileinclude', function() {
     .pipe(gulp.dest('./dist/'));
 });
 
-
-gulp.task('sass:watch', function() {
+gulp.task('watch', function() {
   gulp.watch('./src/stylesheets/**/*.scss',['sass']);
   gulp.watch('./src/components/**/*', ['fileinclude']);
 });
@@ -60,5 +59,6 @@ gulp.task('publish', function() {
   }));
 });
 
+gulp.task('build', ['sass','fileinclude']);
 
-gulp.task('default', ['sass','fileinclude','sass:watch']);
+gulp.task('default', ['build','watch']);
