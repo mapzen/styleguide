@@ -1,19 +1,17 @@
-// documentation
-
-
-// Tables
 .table {
   border: 2px solid $table-border-color;
   margin-bottom: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: $mz-darkgray;
 
   th {
     font-family: $docs-heading-font;
     color: $mz-darkblue;
-    font-size: 18px;
     font-weight: 700;
 
     @media (max-width: 768px) {
-      font-size: 16px;
     }
   }
   td, th {

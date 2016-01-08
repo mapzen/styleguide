@@ -1,7 +1,16 @@
+// Variables
+$mz-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
+$mz-serif: 'Playfair Display', serif;
+$mz-body-font: $mz-sans-serif;
+
+$docs-heading-font: 'Montserrat', 'Open Sans', sans-serif;
+$docs-accent-font: 'Montserrat', 'Open Sans', sans-serif;
+
+
 // Headings
 
 h1 {
-  font-family: 'Playfair Display';
+  font-family: $mz-serif;
   font-weight: 300;
   font-size: 44px;
   line-height: 1.2em;
@@ -54,7 +63,7 @@ h4 {
 
 // footer get involved
 h5 {
-  font-family: 'Playfair Display';
+  font-family: $mz-serif;
   font-weight: 600;
   font-size: 2em;
   line-height: 1.4;
@@ -63,7 +72,7 @@ h5 {
 
 
 .body-text, p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $mz-sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
@@ -71,7 +80,7 @@ h5 {
 }
 
 .link, a {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $mz-sans-serif;
   font-weight: 600;
   color: $mz-blue;
 
@@ -139,7 +148,7 @@ pre {
 
 quote {
   font-size: 18px;
-  font-family: 'Playfair Display', serif;
+  font-family: $mz-serif;
   color: $mz-darkgray;
 
   @media (min-width: $screen-md-min) {
@@ -153,7 +162,7 @@ pullquote {
   margin-bottom: 1.5em;
   display: block;
   font-size: 24px;
-  font-family: 'Playfair Display', serif;
+  font-family: $mz-serif;
   font-style: italic;
   text-align: center;
   color: $mz-darkgray;

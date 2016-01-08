@@ -1,12 +1,4 @@
-/********** for ekta/hanbyul to fix **********/
-
-// developer dashboard colors (from common/developer-dashboard.scss and developer/developer-login.scss)
-$devErrorRed:#b4382f;
-$pendingColor:#E09500;
-$errorColor:#c62b28;
-$okColor:#63a240;
-
-/********** end fix **********/
+//Variables
 
 // Mapzen primary colors
 $mz-red: #d4645c;
@@ -48,9 +40,14 @@ $disabled: $mz-mediumgray;
 $background-light: $mz-lightgray;
 $button-secondary-border: $mz-black;
 
+// developer dashboard colors (from common/developer-dashboard.scss and developer/developer-login.scss)
+$devErrorRed:#b4382f;
+$pendingColor:#E09500;
+$errorColor:#c62b28;
+$okColor:#63a240;
 
 
-
+//Classes
 .mz-red {
     background-color: $mz-red;
 }
