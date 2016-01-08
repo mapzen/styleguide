@@ -14,6 +14,7 @@ gulp.task('sass', ['clean'], function() {
     './src/stylesheets/project_specific/documentation/documentation.scss',
     './src/stylesheets/project_specific/blog/blog.scss',
     './src/stylesheets/project_specific/developer/developer.scss',
+    './src/stylesheets/project_specific/styleguidepage/styleguidepage.scss',
     './src/stylesheets/styleguide.scss'
   ].forEach(function(file_path) {
     gulp.src(file_path)
