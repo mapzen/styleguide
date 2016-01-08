@@ -6,7 +6,7 @@ var del = require('del');
 var fileinclude = require('gulp-file-include');
 
 gulp.task('clean', function() {
-  return del(['examples/styles/**/*']);
+  return del(['examples/dist/**/*']);
 });
 
 gulp.task('sass', ['clean'], function() {
@@ -21,7 +21,7 @@ gulp.task('sass', ['clean'], function() {
       .pipe(sass())
       .pipe(sourcemaps.write())
       .on('error', sass.logError)
-      .pipe(gulp.dest('./examples/styles'));
+      .pipe(gulp.dest('./dist/styles'));
   });
 });
 
@@ -31,13 +31,12 @@ gulp.task('fileinclude', function() {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('./examples/'));
+    .pipe(gulp.dest('./dist/'));
 });
 
-
-gulp.task('sass:watch', function() {
+gulp.task('watch', function() {
   gulp.watch('./src/stylesheets/**/*.scss',['sass']);
-  gulp.watch('./src/components/index.html', ['fileinclude']);
+  gulp.watch('./src/components/**/*', ['fileinclude']);
 });
 
 gulp.task('publish', function() {
@@ -49,8 +48,8 @@ gulp.task('publish', function() {
     s3bucket = process.env.MAPZEN_DEV_BUCKET;
   }
   return gulp.src(
-    ['examples/styles/**/*', 'examples/images/**/*', 'examples/index.html'],
-    {base: 'examples'}
+    ['dist/**/*'],
+    {base: 'dist'}
   ).pipe(s3({
     Bucket: s3bucket,
     ACL: 'public-read',
@@ -60,5 +59,6 @@ gulp.task('publish', function() {
   }));
 });
 
+gulp.task('build', ['sass','fileinclude']);
 
-gulp.task('default', ['sass','fileinclude','sass:watch']);
+gulp.task('default', ['build','watch']);

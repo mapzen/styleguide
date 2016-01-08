@@ -1,4 +1,5 @@
 node_modules
-examples/styles/*
+dist/styles/*
+dist/index.html
 .DS_Store
 *.log
