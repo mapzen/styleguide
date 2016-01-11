@@ -38,6 +38,19 @@
         $('.source-panel code').addClass('language-markup');
         Prism.highlightAll();
       }
+      // Trim blank lines from code snippets
+      var markupEls = document.querySelectorAll('code.language-markup');
+      for (var i = 0, j = markupEls.length; i < j; i++) {
+        var el = markupEls[i];
+        var start = el.childNodes[0];
+        var end = el.childNodes[el.childNodes.length - 1];
+        if (start.nodeType === Node.TEXT_NODE && start.nodeValue.trim() === '') {
+          el.removeChild(start);
+        }
+        if (end.nodeType === Node.TEXT_NODE && end.nodeValue.trim() === '') {
+          el.removeChild(end);
+        }
+      }
     });
   </script>
 </body>
