@@ -29,18 +29,18 @@
     @@include('./general/tables/index.html')
     @@include('./general/lists/index.html')
   </div>
-  <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="./lib/X-rayHTML.js"></script>
   <script src="./lib/prism.js"></script>
   <script>
-  $( window ).bind( "create.xrayhtml", function( e ) {
-    var prism = !!~e.target.getAttribute( "class" ).indexOf( "prism" );
+    $(window).on('create.xrayhtml', function(e) {
+      var prism = !!~e.target.getAttribute('class').indexOf('prism');
 
-    if( prism && "Prism" in window ) {
-      $( ".prism" ).find( "code" ).addClass( "language-markup" );
-      Prism.highlightAll();
-    }
-  });
+      if( prism && 'Prism' in window ) {
+        $('.prism').find('.source-panel').find('code').addClass('language-markup');
+        Prism.highlightAll();
+      }
+    });
   </script>
 </body>
 </html>
