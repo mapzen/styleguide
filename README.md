@@ -13,7 +13,9 @@ npm install
 #### Run locally
 
 ```sh
-gulp
+gulp build
 npm start
 open http://localhost:3000/
 ```
+
+To watch files for changes, run `gulp` in a separate terminal instance.
