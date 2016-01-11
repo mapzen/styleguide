@@ -4,8 +4,29 @@
     padding: 20px;
     margin-bottom: 10px;
     height: 75px;
+    vertical-align: middle;
+}
+
+.color-value code {
+  text-align: center;
+  padding: 5px;
 }
 
 .xrayhtml pre {
     padding-top: 10px;
+}
+
+.opensans {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+}
+
+.playfair {
+  font-family: 'Playfair display', serif;
+  font-size: 32px;
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
 }
