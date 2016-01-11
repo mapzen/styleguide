@@ -2,10 +2,6 @@
 
 /* small mobile devices */
 @media(max-width:767px){
-  .authors img.avatar {
-    display: none;
-  }
-
   ul.team {
     list-style: none;
     background-color: $mz-lightgray;
@@ -83,18 +79,6 @@
   font-size: 1.4em;
 }
 
-// Used in author bio at end of article
-img.avatar {
-  position: relative;
-  width: 64px;
-  height: 64px;
-  margin-right: 0.5em;
-  padding: 2px;
-  border: 1.5px solid $mz-blue;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 3px white;
-}
-
 //used in bylines
 img.avatar-byline {
   position: relative;
@@ -105,23 +89,6 @@ img.avatar-byline {
   border: 1.5px solid $mz-blue;
   border-radius: 50%;
   box-shadow: inset 0 0 0 3px white;
-}
-
-//used in about page
-img.avatar-about {
-  position: relative;
-  width: 42px;
-  height: 42px;
-  padding: 2px;
-  border: 1.5px solid $mz-blue;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 3px white;
-  z-index: 1;
-
-  @media (min-width: $screen-sm) {
-    width: 60px;
-    height: 60px;
-  }
 }
 
 .featured-item {
@@ -189,12 +156,4 @@ img.avatar-about {
   font-size: 26px;
   line-height: 32px;
   font-weight: 300;
-}
-
-
-/* about page styles */
-
-.team .name {
-  font-size: 16px;
-  font-family: "Playfair Display", serif;
 }

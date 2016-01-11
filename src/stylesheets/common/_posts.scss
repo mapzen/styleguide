@@ -17,23 +17,6 @@
     word-wrap: break-word;
   }
 
-  ul li {
-    list-style: none;
-    text-indent: -0.8em;
-  }
-
-  ul li::before {
-    content: ' • ';
-    font-size: 15px;
-    vertical-align: middle;
-    padding-right: 5px;
-  }
-
-  ul li p {
-    display: inline;
-  }
-
-
   img[alt^='screenshot'],
   img[alt^='Screenshot'] {
     border: 3px solid #e9e9e9;
@@ -46,6 +29,8 @@
 
   //table style, overwrapping with documentation site's table other than width & mobile behaviour
   //on mobile, it breaks down the word to keep its width fit to container.
+
+  //** we need to remove these table styles and start using styleguide styles. The only difference is the negative margin**
   table {
     width: 100%;
     border: 2px solid $table-border-color;
