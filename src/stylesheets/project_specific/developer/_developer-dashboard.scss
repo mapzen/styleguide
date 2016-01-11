@@ -41,21 +41,6 @@
     }
   }
 
-  .profile-picture{
-    border-radius: 50%;
-    border:1.5px solid $mz-darkblue;
-    padding:2px;
-  }
-
-  img.dashboard-profile-pic{
-    @extend .profile-picture;
-    margin-top:-10px;
-    width:60px;
-    height:60px;
-    float:left;
-    box-shadow: 30px #FFF inset;
-  }
-
   /*inside of dashboard*/
   #projects{
     width:100%;
