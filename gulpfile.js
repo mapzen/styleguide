@@ -27,7 +27,7 @@ gulp.task('sass', ['clean'], function() {
 });
 
 gulp.task('fileinclude', function() {
-  gulp.src(['./src/components/index.html'])
+  gulp.src(['./src/site/index.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -37,7 +37,7 @@ gulp.task('fileinclude', function() {
 
 gulp.task('watch', function() {
   gulp.watch('./src/stylesheets/**/*.scss', ['sass']);
-  gulp.watch('./src/components/**/*', ['fileinclude']);
+  gulp.watch('./src/site/**/*', ['fileinclude']);
 });
 
 gulp.task('publish', function() {
