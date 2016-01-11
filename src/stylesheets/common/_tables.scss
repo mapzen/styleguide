@@ -1,18 +1,26 @@
 .table {
+  width: 100%;
+  display: block;
   border: 2px solid $table-border-color;
   margin-bottom: 0;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
   color: $mz-darkgray;
+  word-break: break-all;
+
+  @media (min-width: $screen-sm-min) {
+    width: 100%;
+    word-break: keep-all;
+  }
+  @media (min-width: $screen-md-min) {
+    width: 120%;
+    margin-left: -10%;
+  }
 
   th {
     font-family: $docs-heading-font;
     color: $mz-darkblue;
     font-weight: 700;
-
-    @media (max-width: 768px) {
-    }
+    border-bottom: 2px solid $table-border-color;
+    padding: 8px;
   }
   td, th {
     border-right: 1px dotted $table-border-color;
@@ -20,6 +28,12 @@
 
   td {
     line-height: inherit !important;
+    border-top:  1px solid $table-border-color;
+    border-right: 1px dotted $table-border-color;
+    padding: 8px;
+    font-size: 0.9em;
+    line-height: 1.1;
+    vertical-align: top;
   }
 
   // Break long code strings in table cells on small windows
@@ -38,3 +52,7 @@
   width: 100%;
   margin-bottom: 20px; // Replace bottom table margin
 }
+
+
+  //table style, overwrapping with documentation site's table other than width & mobile behaviour
+  //on mobile, it breaks down the word to keep its width fit to container.

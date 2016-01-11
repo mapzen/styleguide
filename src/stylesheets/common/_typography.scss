@@ -6,6 +6,15 @@ $mz-body-font: $mz-sans-serif;
 $docs-heading-font: 'Montserrat', 'Open Sans', sans-serif;
 $docs-accent-font: 'Montserrat', 'Open Sans', sans-serif;
 
+//Body text
+
+body {
+  font-family: $mz-sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $mz-darkgray;
+}
 
 // Headings
 
@@ -36,13 +45,12 @@ h2 {
 h3 {
   font-weight: 300;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 1.2em;
   margin: 0px;
   padding: 0px;
 
   @media (min-width: $screen-sm) {
     font-size: 24px;
-    line-height: 32px;
   }
 }
 
@@ -50,7 +58,7 @@ h3 {
 h4 {
   font-weight: 300;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 27px;
   margin: 0px;
   padding: 0px;
 
@@ -66,21 +74,11 @@ h5 {
   font-family: $mz-serif;
   font-weight: 600;
   font-size: 2em;
-  line-height: 1.4;
+  line-height: 1.4em;
   color: $mz-mediumgray;
 }
 
-
-.body-text, p {
-  font-family: $mz-sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  color: $mz-darkgray;
-}
-
-.link, a {
-  font-family: $mz-sans-serif;
+a {
   font-weight: 600;
   color: $mz-blue;
 
