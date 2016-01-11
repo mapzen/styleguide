@@ -27,13 +27,17 @@
   }
 
   .info{
-    font-size:14px;
-    font-weight:400;
-    margin-bottom:0px;
+
     float:left;
-    padding-right:20px;
-    p{
+    p {
+      font-size:14px;
+      font-weight:400;
       margin-bottom:0px;
+      padding-right:20px;
+      line-height: 1.3em;
+    }
+    a {
+      font-weight:400;
     }
   }
 
@@ -151,6 +155,9 @@
       p {
         width: calc(100% - 230px);
         margin-bottom:0px;
+        font-weight: 300;
+        font-size: 14px;
+        color: #444;
         @media(max-width:767px){
           width: 100%;
           margin-bottom:10px;
@@ -220,6 +227,7 @@
     .key_name{
       font-size:18px;
       font-family: $mz-serif;
+      font-weight: 400;
       color:$mz-blue;
     }
 
