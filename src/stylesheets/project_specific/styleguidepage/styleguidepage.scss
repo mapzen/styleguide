@@ -4,10 +4,16 @@
     padding: 20px;
     margin-bottom: 10px;
     height: 75px;
+    vertical-align: middle;
+}
+
+.color-value code {
+  text-align: center;
+  padding: 5px;
 }
 
 .xrayhtml pre {
-  
+
   padding-top: 10px;
   background-size: 8px 8px;
   background-image: linear-gradient(135deg, transparent 25%, rgba(0, 0, 0, 0.04) 25%, rgba(0, 0, 0, 0.04) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, 0.04) 75%, rgba(0, 0, 0, 0.04));
@@ -26,3 +32,19 @@
 pre[class*="language-"] {
   background-color: #f5f5f5;
 }
+
+.opensans {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+}
+
+.playfair {
+  font-family: 'Playfair display', serif;
+  font-size: 32px;
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+}
+
