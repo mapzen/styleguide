@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="https://mapzen.com/resources/favicon.ico" rel="shortcut icon">
+  <title>Add search to a map - Mapzen Search</title>
+  <link href="https://mapzen.com/documentation/search/css/font-awesome-4.0.3.css" rel="stylesheet">
+  <link href="https://mapzen.com/common/styleguide/styles/documentation.css" rel="stylesheet">
+  <link href="https://mapzen.com/documentation/search/css/highlight.css" rel="stylesheet">
+  <link href="https://mapzen.com/documentation/search/css/codehilite/mapzen.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]>
+    <script src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'></script>
+    <script src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js'></script>
+  <![endif]-->
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-target="#navbar-menu" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="/">
+        <div class="mapzen-logo"></div>
+        <h1 class="sr-only">Mapzen</h1></a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-menu">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="inactive">
+            <a href="/projects/">Projects</a>
+          </li>
+          <li class="inactive">
+            <a href="/data/">Data</a>
+          </li>
+          <li class="active">
+            <a href="/documentation/">Documentation</a>
+          </li>
+          <li class="inactive">
+            <a href="/blog/">Blog</a>
+          </li>
+          <li class="inactive">
+            <a href="/developers/">
+            <div class="animated-key"></div>Developers</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="documentation-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <h1>Mapzen Search</h1>
+          <p>Find places and addresses with this geographic search service built on open tools and open data.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container documentation-nav hidden-print">
+    <div class="row headroom">
+      <div class="col-xs-12 col-md-8">
+        <ol class="breadcrumb">
+          <li>
+            <a href="/documentation/">Documentation</a>
+          </li>
+          <li>
+            <a href="..">Mapzen Search</a>
+          </li>
+          <li class="active">Add search to a map</li>
+        </ol>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div aria-hidden="true" aria-labelledby="Search Modal" class="search-container" id="mkdocs_search_modal" tabindex="-1">
+          <!--h4 class='search-label modal-title' id='exampleModalLabel'>Search in Mapzen Search documentation</h4-->
+          <form role="form">
+            <!--div class='form-group'--><input class="form-control" id="mkdocs-search-query" placeholder="Search documentation" type="text"> <!--/div-->
+          </form>
+          <div class="search-results-container" id="mkdocs-search-results"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container documentation-container">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <div class="toc hidden-print affix-top" id="toc" role="directory">
+          <ul class="nav toc-nav">
+            <li class="toc-top-level">
+              <a href="..">Home</a>
+            </li>
+            <li class="toc-top-level">
+              <a href="../get-started/">Get started</a>
+            </li>
+            <li class="toc-top-level toc-current">
+              <a href="./">Add search to a map</a>
+            </li>
+            <li style="list-style: none; display: inline">
+              <ul class="toc-subnav toc-expand">
+                <li class="main active">
+                  <a href="#add-the-mapzen-search-geocoder-to-a-map">Add the Mapzen Search geocoder to a map</a>
+                </li>
+                <li>
+                  <a href="#sign-up-for-a-mapzen-search-api-key">Sign up for a Mapzen Search API key</a>
+                </li>
+                <li>
+                  <a href="#create-an-index-page">Create an index page</a>
+                </li>
+                <li>
+                  <a href="#add-references-to-css-and-javascript-files">Add references to CSS and JavaScript files</a>
+                </li>
+                <li>
+                  <a href="#add-a-map-to-the-page">Add a map to the page</a>
+                </li>
+                <li>
+                  <a href="#add-the-search-box">Add the Search box</a>
+                </li>
+                <li>
+                  <a href="#search-for-places-on-the-map">Search for places on the map</a>
+                </li>
+                <li>
+                  <a href="#walkthrough-summary">Walkthrough summary</a>
+                </li>
+                <li>
+                  <a href="#completed-html-for-this-walkthrough">Completed HTML for this walkthrough</a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc-top-level">
+              <a href="../api-keys-rate-limits/">API keys and rate limits</a>
+            </li>
+            <li class="toc-top-level">
+              <a href="../search/">Search</a>
+            </li>
+            <li class="toc-top-level">
+              <a href="../reverse/">Reverse geocoding</a>
+            </li>
+            <li class="toc-top-level">
+              <a href="../autocomplete/">Autocomplete</a>
+            </li>
+            <li class="toc-top-level">
+              <a href="../place/">Place</a>
+            </li>
+            <li class="toc-top-level">
+              <a href="../response/">API responses</a>
+            </li>
+            <li class="toc-top-level">
+              <a href="../data-sources/">Data sources</a>
+            </li>
+            <li class="toc-top-level">
+              <a href="../use-cors/">Load data from the browser</a>
+            </li>
+            <li class="toc-top-level">
+              <a href="../glossary/">Terminology</a>
+            </li>
+            <li class="toc-top-level">
+              <a href="../http-status-codes/">HTTP status codes</a>
+            </li>
+            <li class="toc-top-level">
+              <a href="../transition-from-beta/">Transition from Pelias beta</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-9" role="main">
+        <div class="documentation-content">
+          <section class="section1" id="add-the-mapzen-search-geocoder-to-a-map">
+            <h1>Add the Mapzen Search geocoder to a map <a class="headerlink" href="#add-the-mapzen-search-geocoder-to-a-map" title="Permanent link"></a></h1>
+            <p><a href="https://mapzen.com/projects/search">Mapzen Search</a> is a modern, geographic search service based entirely on open-source tools and open data. Use this functionality to enhance any app that has a geographic context, such as ones that assist in delivering goods, locating hotels or venues, or providing local weather forecasts.</p>
+            <p>Through a process known as <a href="https://en.wikipedia.org/wiki/Geocoding">geocoding</a>, Mapzen Search allows you to enter an address or the name of a landmark or business, and the service translates the result into geographic coordinates for mapping. Mapzen Search is built on <a href="https://github.com/pelias">Pelias</a>, an open-source geocoding project.</p>
+            <p>In this walkthrough, you will learn how to make a map with a search box that allows you to enter addresses and place names and locate them on a map. To complete the tutorial, you should have some familiarity with HTML and JavaScript, although all the source code is provided. You also need a Mapzen Search <a href="https://mapzen.com/developers">API key</a>, which requires a <a href="https://help.github.com/articles/signing-up-for-a-new-github-account/">GitHub account</a> for authorization. You can use any text editor and operating system, but must maintain an Internet connection while you are working.</p>
+            <section class="section2" id="sign-up-for-a-mapzen-search-api-key">
+              <h2>Sign up for a Mapzen Search API key <a class="headerlink" href="#sign-up-for-a-mapzen-search-api-key" title="Permanent link"></a></h2>
+              <p>To use the geocoding service, you must first obtain a Mapzen Search <a href="https://en.wikipedia.org/wiki/Application_programming_interface_key">API key</a>. Because the search service is shared among many users, an API key is a way to make sure that the performance is acceptable for everyone. Sign in at <a href="https://mapzen.com/developers">https://mapzen.com/developers</a> to create and manage your API keys.</p>
+              <ol>
+                <li>Go to <a href="https://mapzen.com/developers">https://mapzen.com/developers</a>.
+                </li>
+                <li>Sign in with your <a href="https://help.github.com/articles/signing-up-for-a-new-github-account/">GitHub account</a>. If you have not done this before, you need to agree to the terms first.
+                </li>
+                <li>Create a new key for Search, and optionally, give it a project name so you can remember the purpose of the key.</li>
+                <li>Keep the web page open so you can copy the key into the source code later.</li>
+              </ol>
+            </section>
+            <section class="section2" id="create-an-index-page">
+              <h2>Create an index page <a class="headerlink" href="#create-an-index-page" title="Permanent link"></a></h2>
+              <p>You are ready to start building your map. You will need to use a text editor to update the HTML.</p>
+              <p>Suggested text editor applications include <a href="https://atom.io/">Atom - OS X, Windows, Linux</a>; <a href="https://notepad-plus-plus.org/">Notepad++ - Windows</a>; <a href="http://www.barebones.com/products/textwrangler/">TextWrangler - OS X</a>; and <a href="http://www.sublimetext.com/">Sublime - OS X, Windows, Linux; free trial</a>. While you can use the apps installed with your operating system, such as Notepad or TextEdit, they do not provide the helpful indentations, code coloring and autocomplete, or text alignment options found in the other editors. For TextEdit, you must go to the Format menu and click Make Plain Text to use the plain-text version of the file. Do not use an app that applies rich formatting, such as Word or Wordpad.</p>
+              <p>The end of this walkthrough has a finished version of the HTML that you can use to check your work or review if you need to troubleshoot an error.</p>
+              <ol>
+                <li>
+                  <p>Start your text editor with a blank document and copy and paste the following HTML. (Note: If the text editor you are using requires you to name and save a document at the time when it is first created, call the file <code>index.html</code>.)</p>
+                  <div class="codehilite">
+                    <pre>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+                  </div>
+                  <p>These form the basic structure of an HTML document. <code>&lt;!DOCTYPE html&gt;</code> goes at the top of every HTML page and indicates that it is written for HTML5, and the <code>&lt;html&gt;</code> tags tell your browser that the content is HTML. The <code>&lt;head&gt;</code> tag contains the title for the page and other metadata about the page, while the <code>&lt;body&gt;</code> is where you add the code and the rest of the content on your page. There are many <a href="http://www.w3schools.com/html/default.asp">web tutorials</a> available to help you experiment with and learn more about HTML documents and the tags in them.</p>
+                </li>
+                <li>
+                  <p>In the <code>&lt;head&gt;</code> tag, add a title, such as <code>&lt;title&gt;My Geocoding Map&lt;/title&gt;</code>.</p>
+                </li>
+                <li>
+                  <p>On the next line, add a metadata tag so you can properly display diacritics and characters from different languages.</p>
+                  <div class="codehilite">
+                    <pre>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+</pre>
+                  </div>
+                </li>
+                <li>
+                  <p>Name your the document <code>index.html</code> (where the file name is <code>index</code> and the type is <code>.html</code>) and save it.</p>
+                </li>
+                <li>
+                  <p>Drag your index.html file onto a web browser tab. It should show your title, <code>My Geocoding Map</code>, but the web page canvas will be blank.</p>
+                  <p><img alt="Blank html page" src="https://mapzen.com/documentation/search/images/geocoder-blank-tab.png"></p>
+                </li>
+              </ol>
+              <p>Your HTML should look like this:</p>
+              <div class="codehilite">
+                <pre>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>My Geocoding Map<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+              </div>
+            </section>
+            <section class="section2" id="add-references-to-css-and-javascript-files">
+              <h2>Add references to CSS and JavaScript files <a class="headerlink" href="#add-references-to-css-and-javascript-files" title="Permanent link"></a></h2>
+              <p>The Leaflet JavaScript library provides tools for building an interactive map for web and mobile devices. Leaflet is extensible, and developers have built additional tools for Leaflet maps, including the Mapzen Search geocoder plug-in.</p>
+              <p>A cascading style sheet (CSS) is used to style a webpage, including layout and fonts, and JavaScript adds functionality to the page. In your <code>index.html</code> file, you need to list the CSS and JavaScript files required for building a page with Leaflet and the geocoder plug-in.</p>
+              <ol>
+                <li>
+                  <p>In <code>index.html</code>, at the bottom of the <code>&lt;head&gt;</code> section, add references to the Leaflet CSS and JavaScript files. You are linking to these from a remote website, rather than from a file on your machine.</p>
+                  <div class="codehilite">
+                    <pre>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre>
+                  </div>
+                </li>
+                <li>
+                  <p>In the <code>&lt;head&gt;</code> section, immediately after the lines you added for Leaflet, add references to the geocoder’s CSS and JavaScript files. These are also being linked to on a website.</p>
+                  <div class="codehilite">
+                    <pre>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.4.0/leaflet-geocoder-mapzen.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.4.0/leaflet-geocoder-mapzen.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre>
+                  </div>
+                </li>
+                <li>
+                  <p>Save your edits and refresh the browser. The webpage should still appear empty because you have not added any code to interact with these references.</p>
+                </li>
+              </ol>
+              <p>After adding these, your index.html file should look something like this.</p>
+              <div class="codehilite">
+                <pre>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>My Geocoding Map<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.4.0/leaflet-geocoder-mapzen.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.4.0/leaflet-geocoder-mapzen.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+              </div>
+              <p>Note that you are linking to a website that is serving the geocoder’s CSS and JavaScript, but you can also <a href="https://github.com/mapzen/leaflet-geocoder">view, download, and contribute to the source code</a> if you want to access the contents of the plug-in.</p>
+            </section>
+            <section class="section2" id="add-a-map-to-the-page">
+              <h2>Add a map to the page <a class="headerlink" href="#add-a-map-to-the-page" title="Permanent link"></a></h2>
+              <p>To display a Leaflet map on a page, you need a <code>&lt;div&gt;</code> element, which is a container on the page that groups elements, with an ID value. If you want to know more about initializing a Leaflet map, see the <a href="http://leafletjs.com/examples/quick-start.html">Leaflet getting started documentation</a>.</p>
+              <ol>
+                <li>
+                  <p>At the bottom of the <code>&lt;head&gt;</code> section, after the references you added in the previous steps, add a <code>&lt;style&gt;</code> tag and the following attributes to set the size of the map on your webpage.</p>
+                  <div class="codehilite">
+                    <pre>
+<span class="nt">&lt;style&gt;</span>
+  <span class="nf">#map</span> <span class="p">{</span>
+    <span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">html</span><span class="o">,</span><span class="nt">body</span><span class="p">{</span><span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span> <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</pre>
+                  </div>
+                </li>
+                <li>
+                  <p>At the top of the <code>&lt;body&gt;</code> section, add the <code>&lt;div&gt;</code>.</p>
+                  <div class="codehilite">
+                    <pre>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre>
+                  </div>
+                </li>
+                <li>
+                  <p>Immediately after the <code>&lt;div&gt;</code>, add this JavaScript code within a <code>&lt;script&gt;</code> tag to initialize Leaflet.</p>
+                  <div class="codehilite">
+                    <pre>
+<span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">'map'</span><span class="p">).</span><span class="nx">setView</span><span class="p">([</span><span class="mf">37.804146</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.275045</span><span class="p">],</span> <span class="mi">16</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre>
+                  </div>
+                  <p><code>L.xxxxx</code> is a convention used with the Leaflet API. The <code>setView([37.804146, -122.275045], 16)</code> part sets the center of the map, in decimal degrees, and the zoom level. The map is centered in Oakland, California, with a zoom level that allows you to see the streets and features of the city. Zoom levels are similar to map scales or resolutions, where a smaller value shows a larger area in less detail, and a larger zoom level value depicts smaller area in great detail.</p>
+                </li>
+                <li>
+                  <p>Within the same <code>&lt;script&gt;</code> tag, start a new line and set the data source for the map. This line adds the default OpenStreetMap tiles and an attribution.</p>
+                  <p></p>
+                  <div class="codehilite">
+                    <pre>
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution: '<span class="ni">&amp;copy;</span> <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://openstreetmap.org/copyright"</span><span class="nt">&gt;</span>OpenStreetMap contributors<span class="nt">&lt;/a&gt;</span>'
+}).addTo(map);
+</pre>
+                  </div><br>
+                  5. Save your edits and refresh the browser.
+                  <p></p>
+                </li>
+              </ol>
+              <p>Your index.html should look something like this:</p>
+              <div class="codehilite">
+                <pre>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>My Geocoding Map<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.4.0/leaflet-geocoder-mapzen.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.4.0/leaflet-geocoder-mapzen.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+    <span class="nf">#map</span> <span class="p">{</span>
+      <span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+      <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+      <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">html</span><span class="o">,</span><span class="nt">body</span><span class="p">{</span><span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span> <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">'map'</span><span class="p">).</span><span class="nx">setView</span><span class="p">([</span><span class="mf">37.804146</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.275045</span><span class="p">],</span> <span class="mi">16</span><span class="p">);</span>
+    <span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">'http://{s}.tile.osm.org/{z}/{x}/{y}.png'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">attribution</span><span class="o">:</span> <span class="s1">'&amp;copy; &lt;a href="http://openstreetmap.org/copyright"&gt;OpenStreetMap contributors&lt;/a&gt;'</span>
+    <span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+              </div>
+              <p>At this point, you have a map! You should see a map with OpenStreetMap tiles, zoom controls, and a Leaflet attribution in the bottom corner.</p>
+              <p><img alt="Leaflet canvas map with controls and attribution" src="https://mapzen.com/documentation/search/images/geocoder-osm-leaflet.png"></p>
+            </section>
+            <section class="section2" id="add-the-search-box">
+              <h2>Add the Search box <a class="headerlink" href="#add-the-search-box" title="Permanent link"></a></h2>
+              <p>So far, you have referenced the necessary files, initialized Leaflet with a map container on the page, and added data to the map. Now, you are ready to add the Search box from the Mapzen Search plug-in.</p>
+              <ol>
+                <li>Go back to the <a href="https://mapzen.com/developers">https://mapzen.com/developers</a> page and copy your API key to the clipboard.
+                </li>
+                <li>
+                  <p>Inside the same <code>&lt;script&gt;</code> tag, start a new line after the <code>}).addTo(map);</code> line. Initialize a search box with the following code and your own API key substituted for the placeholder text of <code>search-xxxxxx</code>.</p>
+                  <div class="codehilite">
+                    <pre>
+<span class="kd">var</span> <span class="nx">geocoder</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">geocoder</span><span class="p">(</span><span class="s1">'search-xxxxxx'</span><span class="p">).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+</pre>
+                  </div>
+                  <p>The <code>search-xxxxxx</code> text is the Mapzen Search API key; paste your own API key inside the single quotes.</p>
+                </li>
+                <li>
+                  <p>Save your edits and refresh the browser. You should see a small magnifying glass icon in the left corner, near the zoom controls.</p>
+                  <p><img alt="Search icon on the map canvas" src="https://mapzen.com/documentation/search/images/geocoder-search-icon.png"></p>
+                </li>
+                <li>
+                  <p>Click the button to display the Search box on the map. The Search box closes if you click away from it.</p>
+                  <p><img alt="Expanded Search box on the map canvas" src="https://mapzen.com/documentation/search/images/geocoder-search-box.png"></p>
+                </li>
+              </ol>
+              <p>Your <code>&lt;body&gt;</code> section should look like this:</p>
+              <div class="codehilite">
+                <pre>
+[...]
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">'map'</span><span class="p">).</span><span class="nx">setView</span><span class="p">([</span><span class="mf">37.804146</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.275045</span><span class="p">],</span> <span class="mi">16</span><span class="p">);</span>
+    <span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">'http://{s}.tile.osm.org/{z}/{x}/{y}.png'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">attribution</span><span class="o">:</span> <span class="s1">'&amp;copy; &lt;a href="http://openstreetmap.org/copyright"&gt;OpenStreetMap contributors&lt;/a&gt;'</span>
+    <span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">geocoder</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">geocoder</span><span class="p">(</span><span class="s1">'search-xxxxxx'</span><span class="p">).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+[...]
+</pre>
+              </div>
+            </section>
+            <section class="section2" id="search-for-places-on-the-map">
+              <h2>Search for places on the map <a class="headerlink" href="#search-for-places-on-the-map" title="Permanent link"></a></h2>
+              <ol>
+                <li>On the map, type <code>555 12th</code> in the Search box. As you type, the text automatically completes to suggest matching results.</li>
+                <li>
+                  <p>In the results list, find the entry for <code>555 12th Street, Oakland, CA</code> and click it to zoom and add a point to the map at that location. (The point is only on your map, and does not update OpenStreetMap.)</p>
+                  <p><img alt="Entering an address to find on the map" src="https://mapzen.com/documentation/search/images/geocoder-address-search.png"></p>
+                </li>
+              </ol>
+              <p>If you want to <a href="https://github.com/pelias/leaflet-geocoder#customizing-the-plugin">customize the geocoder plug-in behavior</a> beyond the defaults in this Walkthrough, you can set additional options in your code. For example, the Search box collapses to an icon by default, but you can specify that the text box be shown at full width. There are also options for customizing the parameters for the Mapzen Search service, such as limiting the search to the map’s extent or prioritizing results near the current view. Right now, you may notice that results from around the world appear in the list.</p>
+              <p>Mapzen Search uses a <a href="https://mapzen.com/documentation/search/data-sources/">variety of open data sources</a>, including OpenStreetMap. Part of the power of open data is that anyone can modify the source data and improve the quality for everyone. If you are unable to find a location, the place could be missing or incorrect in the source datasets. Mapzen is also building a comprehensive, open database of places known as <a href="https://github.com/whosonfirst/whosonfirst-data">Who’s on First</a> that can be publicly edited, and is working on integrating it into the geocoder.</p>
+            </section>
+            <section class="section2" id="walkthrough-summary">
+              <h2>Walkthrough summary <a class="headerlink" href="#walkthrough-summary" title="Permanent link"></a></h2>
+              <p>In this walkthrough, you learned the basics of adding the Mapzen Search geocoding engine to a Leaflet map. If you want to learn more about Mapzen Search, review the <a href="..">documentation</a>.</p>
+              <p>Because the geocoder is still under development and considered experimental, if you are getting unexpected search results, please add an issue to the <a href="https://github.com/pelias/pelias/issues">Pelias GitHub repository</a>. The developers can investigate and determine if the problem is caused by software or data, and work to fix it either way.</p>
+              <p>To take your map even further, you can follow along with some additional Mapzen tutorials. One exercise you can try is to use <a href="https://mapzen.com/documentation/turn-by-turn/add-routing-to-a-map/#add-a-tangram-map-to-the-frame">Mapzen’s Tangram rendering engine</a> and vector tiles to draw the data on the map, instead of the OpenStreetMap raster tile layer you used in this walkthrough. When you get your map the way you want, you might be interested in <a href="https://mapzen.com/documentation/tangram/walkthrough/#put-your-tangram-map-on-the-web">putting your map on the web</a> so you can share your work with others.</p>
+            </section>
+            <section class="section2" id="completed-html-for-this-walkthrough">
+              <h2>Completed HTML for this walkthrough <a class="headerlink" href="#completed-html-for-this-walkthrough" title="Permanent link"></a></h2>
+              <p>You can refer to this HTML if you want to review your work or troubleshoot an error. You will need to substitute your own API key for the placeholder text in the source code.</p>
+              <div class="codehilite">
+                <pre>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>My Geocoding Map<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.4.0/leaflet-geocoder-mapzen.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.4.0/leaflet-geocoder-mapzen.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+    <span class="nf">#map</span> <span class="p">{</span>
+      <span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+      <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+      <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">html</span><span class="o">,</span><span class="nt">body</span><span class="p">{</span><span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span> <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">'map'</span><span class="p">).</span><span class="nx">setView</span><span class="p">([</span><span class="mf">37.804146</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.275045</span><span class="p">],</span> <span class="mi">16</span><span class="p">);</span>
+    <span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">'http://{s}.tile.osm.org/{z}/{x}/{y}.png'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">attribution</span><span class="o">:</span> <span class="s1">'&amp;copy; &lt;a href="http://openstreetmap.org/copyright"&gt;OpenStreetMap contributors&lt;/a&gt;'</span>
+    <span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+
+    <span class="c1">//Use your own API key in place of search-xxxxxx. Get a key at mapzen.com/developers.</span>
+    <span class="kd">var</span> <span class="nx">geocoder</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">geocoder</span><span class="p">(</span><span class="s1">'search-xxxxxx'</span><span class="p">).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+              </div>
+            </section>
+            <section class="section2" id="search-an-id-to-get-details-on-a-place">
+<h2>Search an ID to get details on a place<a class="headerlink" href="#search-an-id-to-get-details-on-a-place" title="Permanent link"> </a></h2> <p>When you know an identification number and the source it came from, you can use Mapzen Search to get details on the location.</p> <p>To get started with a <code>/place</code> search, you need a <a href="https://mapzen.com/developers">free, developer API key</a> and these three pieces of information:</p> <ul> <li>source - the data source, such as OpenStreetMap</li> <li>layer - the type of place, such as a venue, address, or country.</li> <li>id - the identification number of the item</li> </ul> <p>If you have all of those, join them together with semicolons and pass them in with the <code>ids</code> parameter.</p> <p>For example, this <code>/place</code> query looks up the Eiffel Tower in OpenStreetMap (OSM):</p> <p><a href="https://search.mapzen.com/v1/place?api_key=search-XXXXXXX&amp;ids=osm:venue:5013364">https://search.mapzen.com/v1/place?api_key=search-XXXXXXX&amp;ids=osm:venue:5013364</a></p>
+</section>
+<section class="section2" id="search-for-multiple-places-in-a-query"><h2>Search for multiple places in a query<a class="headerlink" href="#search-for-multiple-places-in-a-query" title="Permanent link"> </a></h2> <p>To search for more than one <code>/place</code> in a request, join multiple values together and separate them with a comma. For example, this /place query looks up the Eiffel Tower in OSM and <code>30 West 26th St, New York, NY</code> in OpenAddresses:</p> <p><a href="https://search.mapzen.com/v1/place?api_key=search-XXXXXXX&amp;ids=osm:venue:5013364,oa:address:65cf57e4eb5548eca9bb548fb1461633">https://search.mapzen.com/v1/place?api_key=search-XXXXXXX&amp;ids=osm:venue:5013364,oa:address:65cf57e4eb5548eca9bb548fb1461633</a></p> <p>The results are returned in the order requested.</p> <p>One reason you’d want to do this is to exclude a particular dataset from being searched; you would include all the other data sources you do want to search.</p> <p>Keep in mind that if you enter a <code>source:layer:id</code> combination that cannot be found, then the <code>features</code> array in the response contains a different number of elements than the number of requests. This will be most noticeable in requests with multiple IDs, as your request may have three IDs requested but only two results returned. The reason for this is that the <code>features</code> section of the response is GeoJSON-compliant and there is currently no way to convey an exception condition (not even an empty JSON element, <code>{}</code>). For this reason, if your application is dependent upon the results mapping directly to the individual input requests in order, then you’ll have to do your own bookkeeping to handle exception conditions.</p> </section><section class="section2" id="valid-combinations-of-place-searches"><h2>Valid combinations of place searches<a class="headerlink" href="#valid-combinations-of-place-searches" title="Permanent link"> </a></h2> <p>Some combinations of <code>sources</code> and <code>layers</code> can be used together while others cannot. This table shows valid combinations.</p> <div class="table-wrapper"><table class="table"> <thead> <tr> <th>source</th> <th>layers</th> </tr> </thead> <tbody> <tr> <td><code>osm</code> or <code>openstreetmap</code></td> <td><code>venue</code>, <code>address</code></td> </tr> <tr> <td><code>oa</code> or <code>openaddresses</code></td> <td><code>address</code></td> </tr> <tr> <td><code>gn</code> or <code>geonames</code></td> <td><code>venue</code>, <code>address</code>, <code>neighbourhood</code>, <code>locality</code>, <code>county</code>, <code>region</code>, <code>country</code>, <code>coarse</code></td> </tr> <tr> <td><code>qs</code> or <code>quattroshapes</code></td> <td><code>neighbourhood</code>, <code>locality</code>, <code>county</code>, <code>region</code>, <code>country</code>, <code>coarse</code></td> </tr> </tbody> </table></div> </section>
+
+          </section>
+        </div>
+        <div class="documentation-edit headroom-large">
+          <a href="https://github.com/pelias/pelias-doc/blob/master/add-search-to-a-map.md">Edit this page on GitHub <i class="fa fa-2x fa-fw fa-github"></i></a>
+        </div>
+        <div class="pagination pagination-alt headroom">
+          <a class="pagination-link pagination-previous" href="../get-started/" rel="next"><i class="fa fa-fw fa-angle-left"></i> <span class="pagination-link-text">Get started</span></a> <a class="pagination-link pagination-next" href="../api-keys-rate-limits/" rel="prev"><span class="pagination-link-text">API keys and rate limits</span> <i class="fa fa-fw fa-angle-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container headroom-large footroom-large hidden-print">
+    <div class="cta-container">
+      <div class="cta-text">
+        <p>Get your API key for access to Mapzen services.</p>
+      </div>
+      <div class="cta-btn">
+        <a class="btn btn-mapzen" href="/developers/">Sign up</a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container hidden-print">
+      <div class="row headroom-extra-large">
+        <div class="col-xs-12 text-center">
+          <img src="https://mapzen.com/resources/compass-lg-red.png">
+          <h5 class="headroom">Get involved</h5>
+        </div>
+      </div>
+      <div class="row headroom footroom-large">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center text-18 gray-text">
+          <p>Got an interesting problem? Want to know more about things we’re doing? Just want to say hi? <a href="https://twitter.com/mapzen/" target="_blank">Send us &lt;3</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="headroom-large footer-background">
+      <div class="container">
+        <div class="row headroom">
+          <div class="col-xs-12 text-center">
+            <img height="81px" src="https://mapzen.com/resources/mapzen_logo@2x.png">
+            <div class="text-18 gray-text headroom">
+              <span class="slogan">start where you are</span>
+            </div>
+          </div>
+        </div>
+        <div class="row headroom-large footer-menu hidden-print">
+          <div class="col-xs-5 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-6 footer-column">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 footer-section">
+                <h6><a href="/projects/">Projects</a></h6>
+                <ul>
+                  <li>
+                    <a href="/projects/tangram/">Tangram</a>
+                  </li>
+                  <li>
+                    <a href="/projects/search">Mapzen Search</a>
+                  </li>
+                  <li>
+                    <a href="/projects/valhalla">Mapzen Turn-by-Turn</a>
+                  </li>
+                  <li>
+                    <a href="/projects/vector-tiles/">Vector Tile Service</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 footer-section">
+                <h6><a href="/data/">Data</a></h6>
+                <ul>
+                  <li>
+                    <a href="/data/metro-extracts/">Metro Extracts</a>
+                  </li>
+                  <li>
+                    <a href="/data/borders/">Borders</a>
+                  </li>
+                  <li>
+                    <a href="https://transit.land/">Transitland</a>
+                  </li>
+                  <li>
+                    <a href="https://whosonfirst.mapzen.com/">Who’s On First</a>
+                  </li>
+                </ul>
+                <h6>Developers</h6>
+                <ul>
+                  <li>
+                    <a href="/developers/">Developer Platform</a>
+                  </li>
+                  <li>
+                    <a href="/documentation/">Documentation</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-5 col-sm-6 col-md-6 footer-column">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 footer-section">
+                <h6>About</h6>
+                <ul>
+                  <li>
+                    <a href="/about/">Who we are</a>
+                  </li>
+                  <li>
+                    <a href="/about/#team">Team</a>
+                  </li>
+                  <li>
+                    <a href="/jobs/">Jobs</a>
+                  </li>
+                  <li>
+                    <a href="/terms/">Terms</a>
+                  </li>
+                  <li>
+                    <a href="/privacy/">Privacy</a>
+                  </li>
+                  <li>
+                    <a href="/media-resources/">Media resources</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 footer-section">
+                <h6>Hello</h6>
+                <ul>
+                  <li>
+                    <a href="/blog/"><i class="fa fa-fw fa-rss"></i>Blog</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/mapzen/"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/mapzen/"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </li>
+                  <li>
+                    <a href="https://www.pinterest.com/mapzen/"><i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
+                  </li>
+                  <li>
+                    <a href="mailto:hello@mapzen.com"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row headroom-large footroom-large">
+          <div class="col-xs-12 text-center">
+            <small class="copyright">© 2016 Mapzen</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://mapzen.com/documentation/search/js/jquery-1.10.2.min.js"></script>
+  <script src="https://mapzen.com/documentation/search/js/bootstrap.min.js"></script>
+  <script src="https://mapzen.com/documentation/search/js/highlight.pack.js"></script>
+  <script>
+    var base_url = 'https://mapzen.com/documentation/search';
+  </script>
+  <script data-main="https://mapzen.com/documentation/search/mkdocs/js/search.js" src="https://mapzen.com/documentation/search/mkdocs/js/require.js"></script>
+  <script src="https://mapzen.com/documentation/search/js/base.js"></script>
+</body>
+</html>
