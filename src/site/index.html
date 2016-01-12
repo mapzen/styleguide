@@ -19,7 +19,7 @@
       Use CSS from the Styleguide on any Mapzen-branded page by including
       this link tag in your HTML document head:
     </p>
-    <pre>&lt;link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/blog.css" type="text/css"&gt;</pre>
+    <pre class="language-markup">&lt;link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/blog.css" type="text/css"&gt;</pre>
     <h2 class="headroom-extra-large">Components</h2>
     <hr>
 
@@ -30,18 +30,16 @@
     @@include('./general/tables/index.html')
     @@include('./general/lists/index.html')
   </div>
-  <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="./lib/X-rayHTML.js"></script>
   <script src="./lib/prism.js"></script>
   <script>
-  $( window ).bind( "create.xrayhtml", function( e ) {
-    var prism = !!~e.target.getAttribute( "class" ).indexOf( "prism" );
-
-    if( prism && "Prism" in window ) {
-      $( ".prism" ).find( "code" ).addClass( "language-markup" );
-      Prism.highlightAll();
-    }
-  });
+    $(window).on('create.xrayhtml', function (e) {
+      if (Prism) {
+        $('.source-panel code').addClass('language-markup');
+        Prism.highlightAll();
+      }
+    });
   </script>
 </body>
 </html>

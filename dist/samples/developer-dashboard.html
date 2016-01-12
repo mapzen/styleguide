@@ -1,0 +1,1650 @@
+<html lang="en" data-ember-extension="1"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Mapzen · start where you are.</title>
+<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-3cc028e11153a365fe25aca29da9edf0.ico">
+<link rel="apple-touch-icon" type="image/x-icon" href="/assets/favicon-3cc028e11153a365fe25aca29da9edf0.ico">
+<link rel="stylesheet" media="all" href="../styles/developer.css">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+</head>
+<body class="mz fixed-main-nav">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#navbar-menu" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/">
+<div class="mapzen-logo"></div>
+<h1 class="sr-only">Mapzen</h1>
+</a>
+</div>
+<div class="collapse navbar-collapse" id="navbar-menu">
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a href="/admin/stats">Admin</a>
+</li>
+<li>
+<a href="/projects/">Projects</a>
+</li>
+<li>
+<a href="/data/">Data</a>
+</li>
+<li>
+<a href="/documentation/">Documentation</a>
+</li>
+<li>
+<a href="/blog">Blog</a>
+</li>
+<li class="active">
+<a href="/developers">
+<div class="animated-key"></div>
+Developers
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class="container" id="dev_dashboard">
+<div class="login-info">
+<div class="info">
+<p>Hanbyul Jo</p>
+<p><a rel="nofollow" data-method="delete" href="/developers/sign_out">Logout</a></p>
+</div>
+<img class="dashboard-profile-pic" src="https://avatars.githubusercontent.com/u/4583806?v=3">
+</div>
+<div id="projects">
+<div class="project-wrapper">
+<div class="project-row float-left">
+<div class="col-sm-12 no-padding">
+<div class="project-name float-left">
+Vector Tiles
+</div>
+<div class="float-left scrumbs project-link m-right-margin">
+  <a href="/documentation/vector-tiles/" target="_blank">Documentation</a>
+</div>
+<div class="float-left scrumbs project-link m-right-margin">
+  <a href="//github.com/mapzen/vector-datasource/releases" target="_blank">Release notes</a>
+</div>
+
+</div>
+<div class="col-xs-12 no-padding">
+<div class="project-desc-row float-left col-xs-12 no-padding">
+<p class="description">
+  Add open geospatial data to your applications with the vector tile map service.
+</p>
+
+</div>
+<div class="add-key float-left">
+<form data-remote="true" action="/developers/api/create_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ=="><input type="hidden" name="project_id" id="project_id" value="1">
+<button name="button" type="submit" class="btn-add-key add-btn" title="add key"><strong>+ new key</strong>
+</button></form>
+<div class="block-add-key no-show"></div>
+
+</div>
+</div>
+</div>
+<div class="keys-row float-left" data-max-keys="10" id="1">
+
+<div class="key-row show float-left" id="vector-tiles-xaDJOzg">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="2662">
+Untitled
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+vector-tiles-xaDJOzg
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="vector-tiles-xaDJOzg" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x0000000422a778>" data-target="#vector-tiles-xaDJOzgmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="vector-tiles-xaDJOzg">Created at Dec 14 2015 16:58</div>
+</div>
+<div class="meta" data-createdat="1450130299862" data-qpd="2000000" data-qps="2000" key_value="vector-tiles-xaDJOzg"></div>
+</div>
+<div class="modal fade targetmodal" id="vector-tiles-xaDJOzgmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+vector-tiles-xaDJOzg
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="2662">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+<div class="key-row show float-left" id="vector-tiles-IHKOJtk">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="2066">
+Untitled
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+vector-tiles-IHKOJtk
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="vector-tiles-IHKOJtk" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x00000004229e18>" data-target="#vector-tiles-IHKOJtkmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="vector-tiles-IHKOJtk">Created at Nov  4 2015 15:47</div>
+</div>
+<div class="meta" data-createdat="1446670075146" data-qpd="2000000" data-qps="2000" key_value="vector-tiles-IHKOJtk"></div>
+</div>
+<div class="modal fade targetmodal" id="vector-tiles-IHKOJtkmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+vector-tiles-IHKOJtk
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="2066">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+<div class="key-row show float-left" id="vector-tiles-vbkgY9g">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="746">
+Untitled
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+vector-tiles-vbkgY9g
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="vector-tiles-vbkgY9g" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x0000000479bdd8>" data-target="#vector-tiles-vbkgY9gmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="vector-tiles-vbkgY9g">Created at Aug  5 2015 14:39</div>
+</div>
+<div class="meta" data-createdat="1438799982037" data-qpd="2000000" data-qps="2000" key_value="vector-tiles-vbkgY9g"></div>
+</div>
+<div class="modal fade targetmodal" id="vector-tiles-vbkgY9gmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+vector-tiles-vbkgY9g
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="746">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+<div class="key-row show float-left" id="vector-tiles-PVjBJ_8">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="661">
+rename
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+vector-tiles-PVjBJ_8
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="vector-tiles-PVjBJ_8" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x0000000479b680>" data-target="#vector-tiles-PVjBJ_8modal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="vector-tiles-PVjBJ_8">Created at Jul 15 2015 17:41</div>
+</div>
+<div class="meta" data-createdat="1436996497486" data-qpd="2000000" data-qps="2000" key_value="vector-tiles-PVjBJ_8"></div>
+</div>
+<div class="modal fade targetmodal" id="vector-tiles-PVjBJ_8modal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+vector-tiles-PVjBJ_8
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="661">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+
+<div class="key-row show float-left" id="vector-tiles-V9BtVBY">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="655">
+what
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+vector-tiles-V9BtVBY
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="vector-tiles-V9BtVBY" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x00000004799150>" data-target="#vector-tiles-V9BtVBYmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="vector-tiles-V9BtVBY">Created at Jul 15 2015 14:56</div>
+</div>
+<div class="meta" data-createdat="1436986566659" data-qpd="2000000" data-qps="2000" key_value="vector-tiles-V9BtVBY"></div>
+</div>
+<div class="modal fade targetmodal" id="vector-tiles-V9BtVBYmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+vector-tiles-V9BtVBY
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="655">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="key-row show float-left" id="vector-tiles-re4QuLo">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="465">
+nice world
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+vector-tiles-re4QuLo
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="vector-tiles-re4QuLo" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x00000004757e30>" data-target="#vector-tiles-re4QuLomodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="vector-tiles-re4QuLo">Created at Jun  9 2015 15:14</div>
+</div>
+<div class="meta" data-createdat="1433877250031" data-qpd="2000000" data-qps="2000" key_value="vector-tiles-re4QuLo"></div>
+</div>
+<div class="modal fade targetmodal" id="vector-tiles-re4QuLomodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+vector-tiles-re4QuLo
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="465">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+<div class="key-row show float-left" id="vector-tiles-nccaBBc">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="461">
+ho ho ho
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+vector-tiles-nccaBBc
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="vector-tiles-nccaBBc" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x00000004756ad0>" data-target="#vector-tiles-nccaBBcmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="vector-tiles-nccaBBc">Created at Jun  9 2015 15:13</div>
+</div>
+<div class="meta" data-createdat="1433877182064" data-qpd="2000000" data-qps="2000" key_value="vector-tiles-nccaBBc"></div>
+</div>
+<div class="modal fade targetmodal" id="vector-tiles-nccaBBcmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+vector-tiles-nccaBBc
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="461">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+
+
+
+<div class="key-row show float-left" id="vector-tiles-ZxELuEQ">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="133">
+Vectortiles
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+vector-tiles-ZxELuEQ
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="vector-tiles-ZxELuEQ" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x0000000432fee8>" data-target="#vector-tiles-ZxELuEQmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="vector-tiles-ZxELuEQ">Created at May 14 2015 16:27</div>
+</div>
+<div class="meta" data-createdat="1431635261347" data-qpd="2000000" data-qps="2000" key_value="vector-tiles-ZxELuEQ"></div>
+</div>
+<div class="modal fade targetmodal" id="vector-tiles-ZxELuEQmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+vector-tiles-ZxELuEQ
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="133">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="divider-row"></div>
+<div class="project-wrapper">
+<div class="project-row float-left">
+<div class="col-sm-12 no-padding">
+<div class="project-name float-left">
+Turn by Turn
+</div>
+<div class="float-left scrumbs project-link m-right-margin">
+  <a href="/documentation/turn-by-turn/" target="_blank">Documentation</a>
+</div>
+
+</div>
+<div class="col-xs-12 no-padding">
+<div class="project-desc-row float-left col-xs-12 no-padding">
+<p class="description">
+  Let navigation find its way into your maps using Mapzen’s Valhalla open-source routing service!
+</p>
+
+</div>
+<div class="add-key float-left">
+<form data-remote="true" action="/developers/api/create_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ=="><input type="hidden" name="project_id" id="project_id" value="2">
+<button name="button" type="submit" class="btn-add-key add-btn" title="add key"><strong>+ new key</strong>
+</button></form>
+<div class="block-add-key no-show"></div>
+
+</div>
+</div>
+</div>
+<div class="keys-row float-left" data-max-keys="10" id="2">
+
+
+<div class="key-row show float-left" id="valhalla-FGIVMDg">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="2639">
+Untitled
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+valhalla-FGIVMDg
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="valhalla-FGIVMDg" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x0000000422a3e0>" data-target="#valhalla-FGIVMDgmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="valhalla-FGIVMDg">Created at Dec 11 2015 17:41</div>
+</div>
+<div class="meta" data-createdat="1449873699234" data-qpd="50000" data-qps="2" key_value="valhalla-FGIVMDg"></div>
+</div>
+<div class="modal fade targetmodal" id="valhalla-FGIVMDgmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+valhalla-FGIVMDg
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="2639">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+
+
+
+
+<div class="key-row show float-left" id="valhalla-PVA4Y8g">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="658">
+valhalla gh-pages
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+valhalla-PVA4Y8g
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="valhalla-PVA4Y8g" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x0000000479a6e0>" data-target="#valhalla-PVA4Y8gmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="valhalla-PVA4Y8g">Created at Jul 15 2015 14:59</div>
+</div>
+<div class="meta" data-createdat="1436986744332" data-qpd="50000" data-qps="2" key_value="valhalla-PVA4Y8g"></div>
+</div>
+<div class="modal fade targetmodal" id="valhalla-PVA4Y8gmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+valhalla-PVA4Y8g
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="658">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+<div class="key-row show float-left" id="valhalla-IEQUNLA">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="657">
+Untitled
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+valhalla-IEQUNLA
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="valhalla-IEQUNLA" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x00000004799cb8>" data-target="#valhalla-IEQUNLAmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="valhalla-IEQUNLA">Created at Jul 15 2015 14:56</div>
+</div>
+<div class="meta" data-createdat="1436986583070" data-qpd="50000" data-qps="2" key_value="valhalla-IEQUNLA"></div>
+</div>
+<div class="modal fade targetmodal" id="valhalla-IEQUNLAmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+valhalla-IEQUNLA
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="657">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="key-row show float-left" id="valhalla-RfDii2g">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="468">
+webmap
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+valhalla-RfDii2g
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="valhalla-RfDii2g" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x00000004779a30>" data-target="#valhalla-RfDii2gmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="valhalla-RfDii2g">Created at Jun  9 2015 15:15</div>
+</div>
+<div class="meta" data-createdat="1433877358186" data-qpd="50000" data-qps="2" key_value="valhalla-RfDii2g"></div>
+</div>
+<div class="modal fade targetmodal" id="valhalla-RfDii2gmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+valhalla-RfDii2g
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="468">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+<div class="key-row show float-left" id="valhalla-IFIRbAE">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="467">
+Untitled
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+valhalla-IFIRbAE
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="valhalla-IFIRbAE" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x00000004779440>" data-target="#valhalla-IFIRbAEmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="valhalla-IFIRbAE">Created at Jun  9 2015 15:16</div>
+</div>
+<div class="meta" data-createdat="1433877360938" data-qpd="50000" data-qps="2" key_value="valhalla-IFIRbAE"></div>
+</div>
+<div class="modal fade targetmodal" id="valhalla-IFIRbAEmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+valhalla-IFIRbAE
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="467">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+<div class="key-row show float-left" id="valhalla-_rn2rJs">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="466">
+Untitled
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+valhalla-_rn2rJs
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="valhalla-_rn2rJs" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x00000004778d60>" data-target="#valhalla-_rn2rJsmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="valhalla-_rn2rJs">Created at Jun  9 2015 15:14</div>
+</div>
+<div class="meta" data-createdat="1433877280925" data-qpd="50000" data-qps="2" key_value="valhalla-_rn2rJs"></div>
+</div>
+<div class="modal fade targetmodal" id="valhalla-_rn2rJsmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+valhalla-_rn2rJs
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="466">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="key-row show float-left" id="valhalla-ZlAPmjs">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="416">
+nothing
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+valhalla-ZlAPmjs
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="valhalla-ZlAPmjs" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x000000047550b8>" data-target="#valhalla-ZlAPmjsmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="valhalla-ZlAPmjs">Created at Jun  5 2015 11:06</div>
+</div>
+<div class="meta" data-createdat="1433516810132" data-qpd="50000" data-qps="2" key_value="valhalla-ZlAPmjs"></div>
+</div>
+<div class="modal fade targetmodal" id="valhalla-ZlAPmjsmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+valhalla-ZlAPmjs
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="416">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="divider-row"></div>
+<div class="project-wrapper">
+<div class="project-row float-left">
+<div class="col-sm-12 no-padding">
+<div class="project-name float-left">
+Elevation Service
+</div>
+<div class="float-left scrumbs project-link m-right-margin">
+  <a href="/documentation/elevation/" target="_blank">Documentation</a>
+</div>
+
+</div>
+<div class="col-xs-12 no-padding">
+<div class="project-desc-row float-left col-xs-12 no-padding">
+<p class="description">
+  Take your map to new heights with Mapzen's Elevation Service!
+</p>
+
+</div>
+<div class="add-key float-left">
+<form data-remote="true" action="/developers/api/create_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ=="><input type="hidden" name="project_id" id="project_id" value="7">
+<button name="button" type="submit" class="btn-add-key add-btn" title="add key"><strong>+ new key</strong>
+</button></form>
+<div class="block-add-key no-show"></div>
+
+</div>
+</div>
+</div>
+<div class="keys-row float-left" data-max-keys="10" id="7">
+
+
+
+
+
+<div class="key-row show float-left" id="elevation-qA_5AqU">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="1504">
+Untitled
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+elevation-qA_5AqU
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="elevation-qA_5AqU" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x000000042293f0>" data-target="#elevation-qA_5AqUmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="elevation-qA_5AqU">Created at Oct  5 2015 11:36</div>
+</div>
+<div class="meta" data-createdat="1444059417542" data-qpd="20000" data-qps="2" key_value="elevation-qA_5AqU"></div>
+</div>
+<div class="modal fade targetmodal" id="elevation-qA_5AqUmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+elevation-qA_5AqU
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="1504">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="divider-row"></div>
+<div class="project-wrapper">
+<div class="project-row float-left">
+<div class="col-sm-12 no-padding">
+<div class="project-name float-left">
+Mapzen Search
+</div>
+<div class="float-left scrumbs project-link m-right-margin">
+  <a href="https://mapzen.com/documentation/search/" target="_blank">Documentation</a>
+</div>
+
+</div>
+<div class="col-xs-12 no-padding">
+<div class="project-desc-row float-left col-xs-12 no-padding">
+<p class="description">
+  A geographic search service based entirely on open-source tools and powered by entirely open data.
+</p>
+
+</div>
+<div class="add-key float-left">
+<form data-remote="true" action="/developers/api/create_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ=="><input type="hidden" name="project_id" id="project_id" value="9">
+<button name="button" type="submit" class="btn-add-key add-btn" title="add key"><strong>+ new key</strong>
+</button></form>
+<div class="block-add-key no-show"></div>
+
+</div>
+</div>
+</div>
+<div class="keys-row float-left" data-max-keys="10" id="9">
+
+
+
+
+<div class="key-row show float-left" id="search--NA8UXg">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="1610">
+web map
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+search--NA8UXg
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="search--NA8UXg" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x00000004229a58>" data-target="#search--NA8UXgmodal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="search--NA8UXg">Created at Oct  9 2015 17:31</div>
+</div>
+<div class="meta" data-createdat="1444426287574" data-qpd="30000" data-qps="6" key_value="search--NA8UXg"></div>
+</div>
+<div class="modal fade targetmodal" id="search--NA8UXgmodal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+search--NA8UXg
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="1610">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="divider-row"></div>
+<div class="project-wrapper">
+<div class="project-row float-left">
+<div class="col-sm-12 no-padding">
+<div class="project-name float-left">
+Time Distance Matrix
+</div>
+<div class="float-left scrumbs project-link m-right-margin">
+  <a href="/documentation/matrix/" target="_blank">Documentation</a>
+</div>
+
+</div>
+<div class="col-xs-12 no-padding">
+<div class="project-desc-row float-left col-xs-12 no-padding">
+
+</div>
+<div class="add-key float-left">
+<form data-remote="true" action="/developers/api/create_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ=="><input type="hidden" name="project_id" id="project_id" value="11">
+<button name="button" type="submit" class="btn-add-key add-btn" title="add key"><strong>+ new key</strong>
+</button></form>
+<div class="block-add-key no-show"></div>
+
+</div>
+</div>
+</div>
+<div class="keys-row float-left" data-max-keys="10" id="11">
+<div class="key-row show float-left" id="matrix-2sGyHs0">
+<div class="key-part">
+<div class="col-sm-9 no-padding key-name-row">
+<div class="category hidden-xs">
+Project name :
+</div>
+<a class="key_name editable editable-click" data-key-id="2974">
+Untitled
+</a>
+</div>
+<div class="col-sm-9 col-xs-8 no-padding">
+<div class="key-value no-padding">
+<div class="category hidden-xs">
+Key :
+</div>
+matrix-2sGyHs0
+</div>
+</div>
+<div class="key-btns-wrapper no-padding">
+<div class="created key-badge">
+created
+</div>
+<button class="right-square hidden-xs stats-btn" data-key-value="matrix-2sGyHs0" title="show stat">
+<i class="fa fa-bar-chart"></i>
+</button>
+<button class="right-square hidden-xs delete-btn" data-key="#<Key:0x0000000422aa70>" data-target="#matrix-2sGyHs0modal" data-toggle="modal" title="delete the key">
+<i class="fa fa-trash-o"></i>
+</button>
+<div class="col-md-12 hidden-sm hidden-xs no-padding center-text">
+<div class="created-at" key_value="matrix-2sGyHs0">Created at Jan  7 2016 11:01</div>
+</div>
+<div class="meta" data-createdat="1452182482167" data-qpd="5000" data-qps="2" key_value="matrix-2sGyHs0"></div>
+</div>
+<div class="modal fade targetmodal" id="matrix-2sGyHs0modal">
+<div aria-hidden="true" aria-labelledby="Label" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="delete-confirm">
+Are you sure you want to delete the key
+<b>
+matrix-2sGyHs0
+</b>
+?
+</div>
+<form class="delete-form" data-remote="true" action="/developers/api/disable_key" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="put"><input type="hidden" name="authenticity_token" value="/WxbLwSKVliBWYokLCVIAv3XLzyGeN361E8O4c93MvwQqgI1mT2rsv43OSdEyOlFZAKCRiIs1HWGfz4ect6vYQ==">
+<input type="hidden" name="key_id" id="key_id" value="2974">
+<button class="btn btn-transparent col-md-5 col-sm-5 col-xs-5" data-dismiss="modal">CANCEL</button>
+<div class="col-md-2 col-sm-2 col-xs-2">&nbsp;</div>
+<button name="button" type="submit" class="btn btn-transparent col-md-5 col-sm-5 col-xs-5">DELETE
+</button></form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stats"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="divider-row"></div>
+</div>
+<div class="notice created no-show"></div>
+<div class="notice deleted no-show"></div>
+<div class="block-body no-show"></div>
+</div>
+
+<footer>
+<div class="container">
+<div class="row headroom-extra-large">
+<div class="col-xs-12 text-center">
+<img src="https://mapzen.com/resources/compass-lg-red.png" alt="Compass lg red">
+<h5 class="headroom">Get involved</h5>
+</div>
+</div>
+<div class="row headroom footroom-large">
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center text-18 gray-text">
+<p>
+Got an interesting problem? Want to know more about things we’re doing?
+Just want to say hi?
+<a href="https://twitter.com/mapzen" target="_blank">Send us &lt;3</a>
+</p>
+</div>
+</div>
+</div>
+<div class="headroom-large footer-background">
+<div class="container">
+<div class="row headroom">
+<div class="col-xs-12 text-center">
+<img height="81" src="https://mapzen.com/resources/mapzen_logo@2x.png" alt="Mapzen logo@2x">
+<div class="text-18 gray-text headroom">
+<span class="slogan">start where you are</span>
+</div>
+</div>
+</div>
+<div class="row headroom-large footer-menu">
+<div class="col-xs-5 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-6 footer-column">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-6 footer-section">
+<h6>
+<a href="/projects/">Projects</a>
+</h6>
+<ul>
+<li>
+<a href="/projects/tangram/">Tangram</a>
+</li>
+<li>
+<a href="/projects/search/">Mapzen Search</a>
+</li>
+<li>
+<a href="/projects/valhalla">Mapzen Turn-by-Turn</a>
+</li>
+<li>
+<a href="/projects/vector-tiles/">Vector Tile Service</a>
+</li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 footer-section">
+<h6>
+<a href="/data/">Data</a>
+</h6>
+<ul>
+<li>
+<a href="/data/metro-extracts/">Metro Extracts</a>
+</li>
+<li>
+<a href="/data/borders/">Borders</a>
+</li>
+<li>
+<a href="https://transit.land">Transitland</a>
+</li>
+<li>
+<a href="https://whosonfirst.mapzen.com/">Who’s On First</a>
+</li>
+</ul>
+<h6>Developers</h6>
+<ul>
+<li>
+<a href="/developers/">Developer Platform</a>
+</li>
+<li>
+<a href="/documentation/">Documentation</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-xs-5 col-sm-6 col-md-6">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-6 footer-section">
+<h6>About</h6>
+<ul>
+<li>
+<a href="/about/">Who we are</a>
+</li>
+<li>
+<a href="/about/#team">Team</a>
+</li>
+<li>
+<a href="/jobs/">Jobs</a>
+</li>
+<li>
+<a href="/terms/">Terms</a>
+</li>
+<li>
+<a href="/privacy/">Privacy</a>
+</li>
+<li>
+<a href="/media-resources/">Media resources</a>
+</li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 footer-section">
+<h6>Hello</h6>
+<ul>
+<li>
+<a href="/blog/">
+<i class="fa fa-fw fa-rss"></i>
+Blog
+</a>
+</li>
+<li>
+<a href="https://github.com/mapzen/">
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</li>
+<li>
+<a href="https://twitter.com/mapzen/">
+<i class="fa fa-fw fa-twitter"></i>
+Twitter
+</a>
+</li>
+<li>
+<a href="https://www.pinterest.com/mapzen/">
+<i class="fa fa-fw fa-pinterest"></i>
+Pinterest
+</a>
+</li>
+<li>
+<a href="mailto:hello@mapzen.com">
+<i class="fa fa-fw fa-envelope"></i>
+E-mail
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="row headroom-large footroom-large">
+<div class="col-xs-12 text-center">
+<small class="copyright">
+© 2016 Mapzen
+</small>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

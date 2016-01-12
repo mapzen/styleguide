@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+<head>
+  <meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<title>Tangram · Mapzen</title>
+
+<meta name='description' content='Tangram is a flexible, hackable mapping engine, designed for real-time rendering of 2D and 3D maps using vector tiles and the OpenGL family of graphics libra...'>
+
+
+
+<link rel='shortcut icon' href='https://mapzen.com/resources/favicon.ico'>
+
+<link rel='stylesheet' href='../styles/blog.css' type='text/css'>
+<link rel='canonical' href='https://mapzen.com/projects/tangram/'>
+
+
+  <link rel='alternate' type='application/atom+xml' title='Mapzen (Atom)' href='/atom.xml'>
+  <link rel='alternate' type='application/rss+xml' title='Mapzen (RSS)' href='/rss.xml'>
+
+
+</head>
+<body class='project'>
+
+  <nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar-menu'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' href='/'>
+        <div class='mapzen-logo'></div>
+        <h1 class='sr-only'>Mapzen</h1>
+      </a>
+    </div>
+    <div class='collapse navbar-collapse' id='navbar-menu'>
+      <ul class='nav navbar-nav navbar-right'>
+        <li class='active'><a href='/projects/'>Projects</a></li>
+        <li class='inactive'><a href='/data/'>Data</a></li>
+        <li class='inactive'><a href='/documentation/'>Documentation</a></li>
+        <li class='inactive'><a href='/blog/'>Blog</a></li>
+        <li class='inactive'><a href='/developers/'><div class='animated-key'></div>Developers</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <div class='section-nav' id='project-nav' role='navigation' aria-label='project-name'>
+    <div class='container'>
+      <div class='section-nav-container'>
+        <div class='section-nav-title'>
+          <h2 id='project-name'><a href='#'>Tangram</a></h2>
+        </div>
+        <div class='section-nav-items'>
+          <ul class='section-nav-scroll-container'>
+          </ul>
+          <div class='section-nav-dropdown'>&#9698;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='section-nav-hitbox'></div>
+
+  <section class='demo-container js-section-navigable' id='demo' data-section-name='Demo' data-section-nav-collapse='false'>
+    <div class='project-demo'>
+      <iframe id='demo-frame' class='demo-frame' frameborder='0'></iframe>
+
+    </div>
+    <div class='demo-controls' id='demo-controls'>
+      <div class='demo-control-previous'><i class='fa fa-fw fa-angle-left'></i></div>
+      <ul class='demo-control-list'></ul>
+      <div class='demo-control-next'><i class='fa fa-fw fa-angle-right'></i></div>
+    </div>
+    <div class='demo-blocker disable-blocker'></div>
+  </section>
+
+  <section class='project-content' id='content' role='main'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-xs-12 col-md-10 col-md-offset-1 static-content'>
+          <h1 id="highlights">Highlights</h1>
+
+<p>Tangram is a map renderer designed to grant you ludicrous levels of control over your map design. By drawing vector tiles live in a web browser, it allows real-time map design, display, and interactivity.</p>
+
+<p>Using WebGL, Tangram saddles and rides your graphics card into a new world of cartographic exploration. Animated shaders, 3D buildings, and dynamic filtering can be combined to produce effects normally seen only in science fiction.</p>
+
+<p>Map styles, data filters, labels, and even graphics card code can be defined in a human-readable and -writable plaintext scene file, and a JavaScript API permits direct interactive control of the style.</p>
+
+<h1 id="examples">Examples</h1>
+
+<h2 id="day/night">Day/Night</h2>
+
+<p><em>Real-time design</em></p>
+
+<p><a href="https://tangrams.github.io/carousel/?daynight"><img src="https://mapzen.com/resources/projects/tangram/daynight.png" alt="daynight"></a></p>
+
+<p>Because Tangram draws maps live in your browser, you can update styling properties in real-time, instantly. But changing the color is just the beginning&mdash;as every Tangram map is a 3D scene, you also have control over lights and cameras.</p>
+
+<p>In this example, an isometric camera’s perspective is varied along with the color and direction of a light, resulting in a time-lapse drone’s-eye view.</p>
+
+<p>Check out the <a href="https://tangrams.github.io/carousel/?daynight">full demo</a>&mdash;then check out the <a href="//github.com/tangrams/carousel/blob/gh-pages/daynight.yaml">styling code</a>!</p>
+
+<h2 id="highways">Highways</h2>
+
+<p><em>Real-time filtering, sorting, and styling</em></p>
+
+<p><a href="https://tangrams.github.io/carousel/?highways"><img src="https://mapzen.com/resources/projects/tangram/highways.png" alt="highways"></a></p>
+
+<p>Tangram is designed to use vector data sources such as Mapzen’s <a href="/projects/vector-tiles">Vector Tile Service</a>, which is a tiled, hosted version of the OpenStreetMap database. Besides points and lines, these data sources contain metadata, which Tangram can use to filter the data and change drawing styles live on stage.</p>
+
+<p>This example, inspired by <a href="https://github.com/migurski/HighRoad">Stamen’s High Road demo</a>, sorts and styles roads based on a variety of OSM tags, including “layer”, “tunnel”, and “link” for on- and off-ramps.</p>
+
+<p>Check out the <a href="https://tangrams.github.io/carousel/?highways">full demo</a>&mdash;then check out the <a href="//github.com/tangrams/highways-demo">code</a>!</p>
+
+<h2 id="crosshatch">Crosshatch</h2>
+
+<p><em>Real-time shaders</em></p>
+
+<p><a href="https://tangrams.github.io/carousel/?crosshatch"><img src="https://mapzen.com/resources/projects/tangram/crosshatch.png" alt="crosshatch"></a></p>
+
+<p>All of these effects are possible thanks to WebGL, which is a browser-based mainline straight to your graphics card. Using Tangram&rsquo;s plain-text markup language, you can write graphics card programs (called “shaders”) and even straight-up JavaScript to add interactivity, mix datasources, and control the design of your maps.</p>
+
+<p>This example uses a shader to color geometry with hand-drawn textures, blending between them based on the color, angle, and amount of light on each face.</p>
+
+<p>Check out the <a href="https://tangrams.github.io/carousel/?crosshatch">full demo</a>&mdash;then check out <a href="https://github.com/tangrams/tangram-sandbox/blob/gh-pages/styles/crosshatch.yaml">the code</a>!</p>
+
+<h2 id="tron">Tron</h2>
+
+<p><em>Mathematical!</em></p>
+
+<p><a href="https://tangrams.github.io/carousel/?tron"><img src="https://mapzen.com/resources/projects/tangram/tron.png" alt="tron"></a></p>
+
+<p>This map uses procedural shaders to create a view of the future, circa 1982. The shaders, defined by mathematical functions, are applied to various data layers with UV maps, just like texturing an object in a 3D application like Blender.</p>
+
+<p>Check out the <a href="https://tangrams.github.io/carousel/?tron">full demo</a>&mdash;then check out the <a href="//github.com/tangrams/tangram-sandbox/blob/gh-pages/styles/tron.yaml">code</a>!</p>
+
+<h2 id="traditional">Traditional</h2>
+
+<p><em>Cartographical!</em></p>
+
+<p><a href="https://tangrams.github.io/tangram"><img src="https://mapzen.com/resources/projects/tangram/traditional.png" alt="traditional"></a></p>
+
+<p>Making a beautiful, useful, traditionally-styled map is really difficult! Map-making is a fascinating blend of art and science, encompassing graphic design, typography, math, history, space, time, and life itself. Our ultimate goal is to make it easier to connect your knowledge, skills, and imagination to your maps. We can’t wait to hear from professional designers and cartographers, so we can continue to improve Tangram&rsquo;s capabilities.</p>
+
+<p>Check out the <a href="https://tangrams.github.io/tangram">full demo</a>&mdash;then check out the <a href="//github.com/tangrams/tangram/blob/master/demos/scene.yaml">code</a>!</p>
+
+<h2 id="more-examples">More Examples</h2>
+
+<p>More examples? More examples!</p>
+
+<p><a href="https://tangrams.github.io/tangram-sandbox/tangram.html?styles/lego.yaml">Lego</a></p>
+
+<p><a href="https://tangrams.github.io/tangram-sandbox/tangram.html?styles/lego.yaml"><img class="image-bullet" src="https://mapzen.com/resources/projects/tangram/tangram-lego.png" target="_blank"></a></p>
+
+<p><a href="https://tangrams.github.io/tangram-sandbox/tangram.html?styles/matrix.yaml">Matrix</a></p>
+
+<p><a href="https://tangrams.github.io/tangram-sandbox/tangram.html?styles/matrix.yaml"><img class="image-bullet" src="https://mapzen.com/resources/projects/tangram/tangram-matrix.png" target="_blank"></a></p>
+
+<p><a href="https://tangrams.github.io/tangram-sandbox/tangram.html?styles/specular-dust.yaml">Glitter</a></p>
+
+<p><a href="https://tangrams.github.io/tangram-sandbox/tangram.html?styles/specular-dust.yaml"><img class="image-bullet" src="https://mapzen.com/resources/projects/tangram/tangram-dust.png" target="_blank"></a></p>
+
+<p><a href="https://tangrams.github.io/tangram-sandbox/tangram.html?styles/patterns.yaml">Patterns</a></p>
+
+<p><a href="https://tangrams.github.io/tangram-sandbox/tangram.html?styles/patterns.yaml"><img class="image-bullet" src="https://mapzen.com/resources/projects/tangram/tangram-patterns.png" target="_blank"></a></p>
+
+<ul>
+<li><a href="https://tangrams.github.io/gui-demo/">Interactive design</a></li>
+<li><a href="https://tangrams.github.io/lights-cameras-demo/">Lights and cameras</a></li>
+</ul>
+
+<h1 id="get-started">Get Started</h1>
+
+<h2 id="let&#39;s-do-this">Let&rsquo;s Do This</h2>
+
+<p>Here&rsquo;s a <a href="https://tangrams.github.io/simple-demo/">simple demo</a> (<a href="https://github.com/tangrams/simple-demo/">repo here</a>) with a very basic example of a Tangram setup. You can learn how to modify this demo by following a <a href="https://mapzen.com/documentation/tangram/walkthrough/">tutorial</a>.</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>The <a href="https://mapzen.com/documentation/tangram/">Tangram documentation</a> has conceptual overviews and technical reference galore.</p>
+
+<h2 id="contribution">Contribution</h2>
+
+<p>Tangram is open source, and we welcome contributions via our <a href="https://github.com/tangrams/tangram">git repo</a>!</p>
+
+<h2 id="talk-to-us">Talk to Us</h2>
+
+<p>Questions? Comments? Tweet &lsquo;em to <a href="http://twitter.com/TangramJS">@TangramJS</a>, open a <a href="https://github.com/tangrams/tangram/issues">GitHub issue</a>, or write us at <a href="mailto:tangram@mapzen.com">tangram@mapzen.com</a>.</p>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer>
+  <div class='container hidden-print'>
+    <div class='row headroom-extra-large'>
+      <div class='col-xs-12 text-center'>
+        <img src='https://mapzen.com/resources/compass-lg-red.png'>
+        <h5 class="headroom">Get involved</h5>
+      </div>
+    </div>
+    <div class='row headroom footroom-large'>
+      <div class='col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center text-18 gray-text'>
+        <p>
+          Got an interesting problem? Want to know more about things we’re doing?
+          Just want to say hi?
+          <a href='https://twitter.com/mapzen/' target='_blank'>Send us &lt;3</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class='headroom-large footer-background'>
+    <div class='container'>
+      <div class='row headroom'>
+        <div class='col-xs-12 text-center'>
+          <img height='81px' src='https://mapzen.com/resources/mapzen_logo@2x.png'>
+          <div class='text-18 gray-text headroom'>
+            <span class='slogan'>start where you are</span>
+          </div>
+        </div>
+      </div>
+      <div class='row headroom-large footer-menu hidden-print'>
+        <div class='col-xs-5 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-6 footer-column'>
+          <div class='row'>
+            <div class='col-xs-12 col-sm-6 col-md-6 footer-section'>
+              <h6><a href='/projects/'>Projects</a></h6>
+              <ul>
+                <li><a href='/projects/tangram/'>Tangram</a></li>
+                <li><a href='/projects/search'>Mapzen Search</a></li>
+                <li><a href='/projects/valhalla'>Mapzen Turn-by-Turn</a></li>
+                <li><a href='/projects/vector-tiles/'>Vector Tile Service</a></li>
+              </ul>
+            </div>
+            <div class='col-xs-12 col-sm-6 col-md-6 footer-section'>
+              <h6><a href='/data/'>Data</a></h6>
+              <ul>
+                <li><a href='/data/metro-extracts/'>Metro Extracts</a></li>
+                <li><a href='/data/borders/'>Borders</a></li>
+                <li><a href='https://transit.land/'>Transitland</a></li>
+                <li><a href='https://whosonfirst.mapzen.com/'>Who’s On First</a></li>
+              </ul>
+
+              <h6>Developers</h6>
+              <ul>
+                <li><a href='/developers/'>Developer Platform</a></li>
+                <li><a href='/documentation/'>Documentation</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class='col-xs-5 col-sm-6 col-md-6 footer-column'>
+          <div class='row'>
+            <div class='col-xs-12 col-sm-6 col-md-6 footer-section'>
+              <h6>About</h6>
+              <ul>
+                <li><a href='/about/'>Who we are</a></li>
+                <li><a href='/about/#team'>Team</a></li>
+                <li><a href='/jobs/'>Jobs</a></li>
+                <li><a href='/terms/'>Terms</a></li>
+                <li><a href='/privacy/'>Privacy</a></li>
+                <li><a href='/media-resources/'>Media resources</a></li>
+              </ul>
+            </div>
+            <div class='col-xs-12 col-sm-6 col-md-6 footer-section'>
+              <h6>Hello</h6>
+              <ul>
+                <li><a href='/blog/'><i class='fa fa-fw fa-rss'></i>Blog</a></li>
+                <li><a href='https://github.com/mapzen/'><i class='fa fa-fw fa-github'></i>GitHub</a></li>
+                <li><a href='https://twitter.com/mapzen/'><i class='fa fa-fw fa-twitter'></i>Twitter</a></li>
+                <li><a href='https://www.pinterest.com/mapzen/'><i class='fa fa-fw fa-pinterest'></i>Pinterest</a></li>
+                <li><a href='mailto:hello@mapzen.com'><i class='fa fa-fw fa-envelope'></i>E-mail</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='row headroom-large footroom-large'>
+        <div class='col-xs-12 text-center'>
+          <small class='copyright'>&#169; 2016 Mapzen</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src='https://mapzen.com/resources/application.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js'></script>
+  <script src='https://mapzen.com/resources/section-nav.js'></script>
+  <script src='https://mapzen.com/resources/demo-switcher.js'></script>
+  <script src='https://mapzen.com/resources/projects.js'></script>
+  <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css'>
+<script type="text/javascript">
+  (function () {
+    'use strict';
+
+    var iframe_source = "https://cdn.rawgit.com/tangrams/carousel/c45161c7c6acdf9f45b827b32717615406f7f87d/index.html"; // CDN link for prod
+    //iframe_source = "https://tangrams.github.io/carousel/index.html"; // direct link for dev/testing
+
+    var source_domain = iframe_source.split("/").splice(0, 3).join("/");
+    var iframe = document.getElementById("demo-frame")
+        , _window = iframe.contentWindow;
+    iframe.src = iframe_source;
+    var childFrameReady = false;
+
+    window.addEventListener("message", function(e) {
+      //security check
+      if (e.data == "loaded" && e.origin === iframe.src.split("/").splice(0, 3).join("/")) {
+        childFrameReady = true;
+      }
+    });
+
+    new DemoSwitcher({
+      sources: [
+        {title: 'Day/Night', msg:'daycycle'},
+        {title: 'Highways', msg:'highways'},
+        {title: 'Crosshatch', msg:'crosshatch'},
+        {title: 'Tron', msg:'tron'},
+        {title: 'Traditional', msg:'traditional'}
+      ],
+      onClick: function (source) {
+        _window.postMessage(source.msg, source_domain);
+      }
+    })
+  }());
+</script>
+
+
+
+</body>
+</html>
