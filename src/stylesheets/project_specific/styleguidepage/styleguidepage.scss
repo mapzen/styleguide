@@ -4,6 +4,12 @@
     padding: 20px;
     margin-bottom: 10px;
     height: 75px;
+    vertical-align: middle;
+}
+
+.color-value code {
+  text-align: center;
+  padding: 5px;
 }
 
 .xrayhtml .source-panel pre {
@@ -25,4 +31,19 @@
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background-color: #f5f5f5;
+}
+
+.opensans {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+}
+
+.playfair {
+  font-family: 'Playfair display', serif;
+  font-size: 32px;
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
 }
