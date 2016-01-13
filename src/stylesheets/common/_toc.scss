@@ -7,7 +7,9 @@
 
 /* First level of nav */
 .toc {
+  font-size: $body-small;
   font-weight: 300;
+  line-height: 1.4;
   background-color: $mz-lightgray;
 
   // For mobile layout, add a margin between TOC and documentation content.
@@ -114,6 +116,10 @@ ul.nav > li:first-child:last-child {
   -webkit-transition: max-height 200ms ease-in-out;
   -moz-transition: max-height 200ms ease-in-out;
   transition: max-height 200ms ease-in-out;
+
+  a {
+    font-weight: 400;
+  }
 
   // If expanded
   // We are animating to a super high max-height
