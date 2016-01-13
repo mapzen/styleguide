@@ -10,6 +10,7 @@
 .color-value code {
   text-align: center;
   padding: 5px;
+  font-weight: 600;
 }
 
 .xrayhtml .source-panel pre {
@@ -46,4 +47,8 @@ pre[class*="language-"] {
 .montserrat {
   font-family: 'Montserrat', sans-serif;
   font-size: 32px;
+}
+
+.simple-shadow {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
 }
