@@ -24,6 +24,7 @@
     text-align: right;
     float: right;
     padding-top: 20px;
+    margin: 20px 0;
   }
 
   .info{
@@ -59,22 +60,37 @@
       margin-right:0px;
     }
 
-    .project-name{
+    .title-row {
+      display: flex;
+      padding: 0;
+      margin-bottom: 10px;
+      @media(max-width:767px){
+        display: block;
+      }
+    }
+    .project-name {
       margin-bottom: 5px;
-      float:left;
-      display:inline-block;
-      padding-right:15px;
+      float: left;
+      align-self: flex-end;
+      padding-right: 15px;
       font-family: $mz-serif;
       font-weight: 400;
-      font-size:34px;
+      font-size: 34px;
       text-transform: capitalize;
       @media(max-width:767px){
         width: 100%;
       }
     }
 
-    .project-link{
-      font-weight: 700;
+    .project-link {
+      align-self: flex-end;
+      margin-right: 20px;
+
+      @media(max-width:767px){
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: 10px;
+      }
     }
 
     .add-key{
@@ -149,18 +165,6 @@
         }
       }
 
-    }
-
-    .scrumbs{
-      line-height:4.8em;
-      margin-bottom:-2em;
-      margin-right: 20px;
-      @media(max-width:767px){
-        line-height:2em;
-        margin-top:5px;
-        margin-bottom:5px;
-        margin-right: 10px;
-      }
     }
 
     .keys-row{
