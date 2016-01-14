@@ -6,6 +6,7 @@
 
 .byline {
   color: $mz-mediumgray;
+  font-size: $body-small;
 }
 
 .byline-authors {
@@ -27,7 +28,7 @@
   margin-bottom: 0.4em;
 
   > a {
-    font-weight: bold;
+    font-weight: 700;
     color: $mz-mediumgray;
     text-decoration: none;
   }
