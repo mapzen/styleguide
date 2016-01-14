@@ -24,32 +24,22 @@
     text-align: right;
     float: right;
     padding-top: 20px;
+    margin: 20px 0;
   }
 
   .info{
-    font-size:14px;
-    font-weight:400;
-    margin-bottom:0px;
+
     float:left;
-    padding-right:20px;
-    p{
+    p {
+      font-size:14px;
+      font-weight:400;
       margin-bottom:0px;
+      padding-right:20px;
+      line-height: 1.3em;
     }
-  }
-
-  .profile-picture{
-    border-radius: 50%;
-    border:1.5px solid $mz-darkblue;
-    padding:2px;
-  }
-
-  img.dashboard-profile-pic{
-    @extend .profile-picture;
-    margin-top:-10px;
-    width:60px;
-    height:60px;
-    float:left;
-    box-shadow: 30px #FFF inset;
+    a {
+      font-weight:400;
+    }
   }
 
   /*inside of dashboard*/
@@ -70,22 +60,37 @@
       margin-right:0px;
     }
 
-    .project-name{
-      margin-bottom: 5px;
-      float:left;
-      display:inline-block;
-      padding-right:15px;
-      font-family:$mz-serif;
+    .title-row {
+      display: flex;
+      padding: 0;
+      margin-bottom: 10px;
+      @media(max-width:767px){
+        display: block;
+      }
+    }
+    .project-name {
+      margin-bottom: -5px;
+      float: left;
+      align-self: flex-end;
+      padding-right: 15px;
+      font-family: $mz-serif;
       font-weight: 400;
-      font-size:34px;
+      font-size: 34px;
       text-transform: capitalize;
       @media(max-width:767px){
         width: 100%;
       }
     }
 
-    .project-link{
-      font-weight: 700;
+    .project-link {
+      align-self: flex-end;
+      margin-right: 20px;
+
+      @media(max-width:767px){
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: 10px;
+      }
     }
 
     .add-key{
@@ -119,13 +124,13 @@
     }
 
    .no-key{
-     color: #mz-darkgray;
+     color: $mz-darkgray;
      font-family: $mz-serif;
      font-size: 18px;
      font-style: italic;
    }
    .maximum-key{
-     color: #666;
+     color: $mz-mediumgray;
      font-family: $mz-serif;
      font-size: 14px;
      font-style: italic;
@@ -151,24 +156,15 @@
       p {
         width: calc(100% - 230px);
         margin-bottom:0px;
+        font-weight: 300;
+        font-size: 16px;
+        color: #444;
         @media(max-width:767px){
           width: 100%;
           margin-bottom:10px;
         }
       }
 
-    }
-
-    .scrumbs{
-      line-height:4.8em;
-      margin-bottom:-2em;
-      margin-right: 20px;
-      @media(max-width:767px){
-        line-height:2em;
-        margin-top:5px;
-        margin-bottom:5px;
-        margin-right: 10px;
-      }
     }
 
     .keys-row{
@@ -220,6 +216,7 @@
     .key_name{
       font-size:18px;
       font-family: $mz-serif;
+      font-weight: 400;
       color:$mz-blue;
     }
 

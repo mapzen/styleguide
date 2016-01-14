@@ -23,8 +23,11 @@
   "devDependencies": {
     "express": "^4.13.3",
     "gulp": "^3.9.0",
+    "gulp-file-include": "^0.13.7",
     "gulp-s3-upload": "^1.5.0",
     "gulp-sass": "^2.0.4",
+    "gulp-snippet-highlight": "^1.0.0",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7"
   },
   "dependencies": {

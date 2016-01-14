@@ -70,6 +70,8 @@ body {
 }
 .navbar-nav > li > a {
   line-height: 26px; // Make link fit the height of the navbar
+  font-size: $body-small;
+  font-weight: 400;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -150,5 +152,5 @@ li.active:hover .animated-key {
   background-repeat: no-repeat;
   background-position: 0px 0px;
   background-size: 80% 80%;
-  transition: all 0.5s ease-out;
+  transition: transform 0.5s ease-out;
 }

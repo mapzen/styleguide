@@ -1,11 +1,12 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
-
+var fileinclude = require('gulp-file-include');
 
 gulp.task('clean', function() {
-  return del(['examples/styles/**/*']);
+  return del(['examples/dist/**/*']);
 });
 
 gulp.task('sass', ['clean'], function() {
@@ -13,16 +14,30 @@ gulp.task('sass', ['clean'], function() {
     './src/stylesheets/project_specific/documentation/documentation.scss',
     './src/stylesheets/project_specific/blog/blog.scss',
     './src/stylesheets/project_specific/developer/developer.scss',
+    './src/stylesheets/project_specific/styleguidepage/styleguidepage.scss',
     './src/stylesheets/styleguide.scss'
   ].forEach(function(file_path) {
     gulp.src(file_path)
-      .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('./examples/styles'));
+      .pipe(sourcemaps.init())
+      .pipe(sass())
+      .pipe(sourcemaps.write())
+      .on('error', sass.logError)
+      .pipe(gulp.dest('./dist/styles'));
   });
 });
 
-gulp.task('sass:watch', function() {
-  gulp.watch('./src/stylesheets/**/*.scss',['sass']);
+gulp.task('fileinclude', function() {
+  gulp.src(['./src/site/*'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('watch', function() {
+  gulp.watch('./src/stylesheets/**/*.scss', ['sass']);
+  gulp.watch('./src/site/**/*', ['fileinclude']);
 });
 
 gulp.task('publish', function() {
@@ -34,8 +49,8 @@ gulp.task('publish', function() {
     s3bucket = process.env.MAPZEN_DEV_BUCKET;
   }
   return gulp.src(
-    ['examples/styles/**/*', 'examples/images/**/*', 'examples/index.html'],
-    {base: 'examples'}
+    ['dist/**/*'],
+    {base: 'dist'}
   ).pipe(s3({
     Bucket: s3bucket,
     ACL: 'public-read',
@@ -45,4 +60,6 @@ gulp.task('publish', function() {
   }));
 });
 
-gulp.task('default', ['sass','sass:watch']);
+gulp.task('build', ['sass', 'fileinclude']);
+
+gulp.task('default', ['build', 'watch']);

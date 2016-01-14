@@ -1,27 +1,22 @@
-// documentation
-
-
-// Tables
 .table {
+  width: 100%;
   border: 2px solid $table-border-color;
   margin-bottom: 0;
+  word-break: break-all;
 
   th {
     font-family: $docs-heading-font;
     color: $mz-darkblue;
-    font-size: 18px;
     font-weight: 700;
-
-    @media (max-width: 768px) {
-      font-size: 16px;
-    }
-  }
-  td, th {
     border-right: 1px dotted $table-border-color;
+    border-bottom: 2px solid $table-border-color;
+    padding: 8px;
   }
 
   td {
     line-height: inherit !important;
+    border-right: 1px dotted $table-border-color;
+    border-top:  1px solid $table-border-color;
   }
 
   // Break long code strings in table cells on small windows

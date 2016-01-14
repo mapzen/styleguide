@@ -1,0 +1,17 @@
+article {
+  ul li {
+      list-style: none;
+      text-indent: -0.8em;
+    }
+
+  ul li::before {
+    content: ' • ';
+    font-size: 15px;
+    vertical-align: middle;
+    padding-right: 5px;
+  }
+
+  ul li.static p {
+    display: inline;
+  }
+}

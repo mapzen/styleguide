@@ -1,11 +1,22 @@
+//Body text
+
+body {
+  font-family: $mz-sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $mz-darkgray;
+}
+
 // Headings
 
 h1 {
-  font-family: 'Playfair Display';
+  font-family: $mz-serif;
   font-weight: 300;
   font-size: 44px;
   line-height: 1.2em;
   margin: 0px;
+  color: $mz-red;
 
   @media (min-width: $screen-sm) {
     font-size: 60px;
@@ -26,13 +37,12 @@ h2 {
 h3 {
   font-weight: 300;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 1.2em;
   margin: 0px;
   padding: 0px;
 
   @media (min-width: $screen-sm) {
     font-size: 24px;
-    line-height: 32px;
   }
 }
 
@@ -40,7 +50,7 @@ h3 {
 h4 {
   font-weight: 300;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 27px;
   margin: 0px;
   padding: 0px;
 
@@ -53,9 +63,125 @@ h4 {
 
 // footer get involved
 h5 {
-  font-family: 'Playfair Display';
+  font-family: $mz-serif;
   font-weight: 600;
   font-size: 2em;
-  line-height: 1.4;
+  line-height: 1.4em;
   color: $mz-mediumgray;
 }
+
+a {
+  font-weight: 600;
+  color: $mz-blue;
+
+  &:hover {
+    color: $mz-darkblue;
+  }
+}
+
+.caption {
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    color: $mz-mediumgray;
+}
+
+// Inline code
+code {
+  padding: 4px 8px;
+  margin: 0 2px;
+  font-size: 14px;
+  line-height: 1.6em;
+  color: $mz-mediumgray;
+  // Ensure inline code elements have sufficient
+  // contrast to differentiate between pure white
+  background-color: $mz-lightgray;
+}
+
+// Normal prose preformatted text
+pre {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid $mz-lightgray;
+  border-radius: 0;
+  word-break: break-word;
+  white-space: pre-wrap;
+
+  // Formatted code blocks
+  code {
+    display: block;
+    margin: -20px;
+    padding: 20px;
+    width: auto;
+    height: 100%;
+
+    // Do not allow code in preformatted blocks to wrap
+    white-space: pre;
+    word-wrap: normal;
+    word-break: normal;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: $mz-lightgray;
+    background-size: 8px 8px;
+    background-image: linear-gradient(
+      135deg,
+      transparent 25%,
+      rgba(0, 0, 0, 0.04) 25%,
+      rgba(0, 0, 0, 0.04) 50%,
+      transparent 50%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.04) 75%,
+      rgba(0, 0, 0, 0.04)
+    );
+  }
+}
+
+quote {
+  font-size: 18px;
+  font-family: $mz-serif;
+  color: $mz-darkgray;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 24px;
+  }
+}
+
+pullquote {
+  width: 100%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  display: block;
+  font-size: 24px;
+  font-family: $mz-serif;
+  font-style: italic;
+  text-align: center;
+  color: $mz-darkgray;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 28px;
+    width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+}
+
+/* about page styles */
+
+.team .name {
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
+}
+
+
+// Seems unnecessary. All pullquote stuff has been combined above
+// .static-content pullquote {
+//   width: 100%;
+//   margin-top: 1.5em;
+//   margin-bottom: 1.5em;
+
+//   @media (min-width: $screen-md-min) {
+//     width: 120%;
+//     margin-left: -10%;
+//     margin-right: -10%;
+//   }
+// }

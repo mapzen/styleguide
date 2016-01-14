@@ -17,80 +17,6 @@
     word-wrap: break-word;
   }
 
-  ul li {
-    list-style: none;
-    text-indent: -0.8em;
-  }
-
-  ul li::before {
-    content: ' • ';
-    font-size: 15px;
-    vertical-align: middle;
-    padding-right: 5px;
-  }
-
-  ul li p {
-    display: inline;
-  }
-
-  // Inline code
-  code {
-    padding: 4px 8px;
-    margin: 0 2px;
-    font-size: 14px;
-    line-height: 1.6em;
-    color: #666;
-    // Ensure inline code elements have sufficient
-    // contrast to differentiate between pure white
-    background-color: #f4f4f4;
-  }
-
-  // Normal prose preformatted text
-  pre {
-    margin: 20px auto;
-    padding: 20px;
-    border: 3px solid #e9e9e9;
-    border-radius: 0;
-    word-break: break-word;
-    white-space: pre-wrap;
-
-    // Formatted code blocks
-    code {
-      display: block;
-      margin: -20px;
-      padding: 20px;
-      width: auto;
-      height: 100%;
-
-      // Do not allow code in preformatted blocks to wrap
-      white-space: pre;
-      word-wrap: normal;
-      word-break: normal;
-      overflow-x: auto;
-      overflow-y: hidden;
-      background-color: $mz-lightgray;
-      background-size: 8px 8px;
-      background-image: linear-gradient(
-        135deg,
-        transparent 25%,
-        rgba(0, 0, 0, 0.04) 25%,
-        rgba(0, 0, 0, 0.04) 50%,
-        transparent 50%,
-        transparent 75%,
-        rgba(0, 0, 0, 0.04) 75%,
-        rgba(0, 0, 0, 0.04)
-      );
-    }
-  }
-
-  .caption {
-    margin-top: -0.8em;
-    font-size: 0.9em;
-    font-weight: 300;
-    font-style: italic;
-    color: #666;
-  }
-
   img[alt^='screenshot'],
   img[alt^='Screenshot'] {
     border: 3px solid #e9e9e9;
@@ -103,6 +29,8 @@
 
   //table style, overwrapping with documentation site's table other than width & mobile behaviour
   //on mobile, it breaks down the word to keep its width fit to container.
+
+  //** we need to remove these table styles and start using styleguide styles. The only difference is the negative margin**
   table {
     width: 100%;
     border: 2px solid $table-border-color;
@@ -117,8 +45,8 @@
       width: 120%;
       margin-left: -10%;
     }
-      
-    th { 
+
+    th {
       border-right: 1px dotted $table-border-color;
       border-bottom: 2px solid $table-border-color;
       padding: 8px;
@@ -197,41 +125,6 @@
 
   iframe {
     border: 0;
-  }
-}
-
-quote {
-  font-size: 18px;
-  font-family: 'Playfair Display', serif;
-  color: #3a3a3a;
-
-  @media (min-width: $screen-md-min) {
-    font-size: 24px;
-  }
-}
-
-pullquote {
-  display: block;
-  font-size: 24px;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  text-align: center;
-  color: #3a3a3a;
-
-  @media (min-width: $screen-md-min) {
-    font-size: 28px;
-  }
-}
-
-.static-content pullquote {
-  width: 100%;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-
-  @media (min-width: $screen-md-min) {
-    width: 120%;
-    margin-left: -10%;
-    margin-right: -10%;
   }
 }
 

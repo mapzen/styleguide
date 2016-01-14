@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>styleguide</title>
+    <link rel="stylesheet" type="text/css" href="styles/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="./lib/X-rayHTML.css">
+    <link rel="stylesheet" type="text/css" href="./lib/prism.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleguidepage.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Mapzen Web Styleguide</h1>
+    <h2 class="headroom-extra-large">How To Use</h2>
+    <hr>
+    <p><a href="https://github.com/mapzen/styleguide">Find it on Github at <code>mapzen/styleguide</code></a>.
+    </p>
+    <p>
+      Use CSS from the Styleguide on any Mapzen-branded page by including
+      this link tag in your HTML document head:
+    </p>
+    <pre class="language-markup">&lt;link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/blog.css" type="text/css"&gt;</pre>
+    <h2 class="headroom-extra-large">Design Elements</h2>
+    <hr>
+
+    @@include('./general/fonts/index.html')
+    @@include('./general/colors/index.html')
+    @@include('./general/typography/index.html')
+    @@include('./general/buttons/index.html')
+    @@include('./general/tables/index.html')
+    @@include('./general/lists/index.html')
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="./lib/X-rayHTML.js"></script>
+  <script src="./lib/prism.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
