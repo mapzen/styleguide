@@ -70,6 +70,7 @@ body {
 }
 .navbar-nav > li > a {
   line-height: 26px; // Make link fit the height of the navbar
+  font-size: $body-small;
   font-weight: 400;
 }
 
