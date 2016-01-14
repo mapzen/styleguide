@@ -110,6 +110,48 @@ img.avatar-byline {
 
 
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// This is old style that should be deprecated after proper markup is merged into production//
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+.blogpost-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: auto;
+  max-height: 350px;
+  overflow: hidden;
+
+  // The actual image is used as a sizing device, but otherwise hidden
+  img {
+    visibility: hidden;
+    // Overrides for .content (TODO: HACK)
+    max-height: none !important;
+    height: auto !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.content.excerpt img {
+  width: 100%;
+  height: 200px;
+}
+
+.content.excerpt_feed img {
+  width: 100%;
+  max-height: 600px;
+  margin:10px 0;
+}
+//////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////// old style end/////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 // The template supplies its own background-image value. We use this
 // as opposed to an image tag, because it allows us to set the max-height and
 // cut off super tall images that will otherwise behave badly
@@ -161,46 +203,6 @@ img.avatar-byline {
   background-repeat: no-repeat;
   height: 350px;
 }
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-// This is old style that should be deprecated after proper markup is merged into production//
-//////////////////////////////////////////////////////////////////////////////////////////////
-
-.blogpost-image {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: auto;
-  max-height: 350px;
-  overflow: hidden;
-
-  // The actual image is used as a sizing device, but otherwise hidden
-  img {
-    visibility: hidden;
-    // Overrides for .content (TODO: HACK)
-    max-height: none !important;
-    height: auto !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-}
-
-.content.excerpt img {
-  width: 100%;
-  height: 200px;
-}
-
-.content.excerpt_feed img {
-  width: 100%;
-  max-height: 600px;
-  margin:10px 0;
-}
-//////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////// old style end/////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 /* community section styles */
