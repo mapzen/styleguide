@@ -1,0 +1,58 @@
+<div class="headroom-large">
+    <h5>Side navigation</h5>
+    <p>
+      Side navigation is used when there are multiple pages in a section. It can have up to three levels of information.
+    </p>
+    <p>
+      This component will take up 100% width of its parent container. To put it on the side of a page, place it inside a grid containing element, such as <code>.col-sm-2</code> for a two-column wide navigation element. On mobile screens, this component should be the full width of the device.
+    </p>
+    <ul>
+      <li>Use the ARIA roles 'directory', 'navigation', or 'complementary' where appropriate</li>
+      <li>Use the <code>.affix-*</code> classes to force it to never scroll off the page</li>
+      <li>The <code>.nav</code> base class is from Bootstrap and some functionality is inherited from it</li>
+    </ul>
+
+    <div data-xrayhtml>
+      <div class="toc" role="directory">
+        <ul class="nav toc-nav">
+          <li class="toc-top-level">
+            <a href="#">Home</a>
+          </li>
+          <li class="toc-top-level">
+            <a href="#">Pods</a>
+          </li>
+          <li class="toc-top-level">
+            <a href="#">Speeders</a>
+          </li>
+          <li class="toc-top-level toc-current">
+            <a href="#" class="toc-subnav-toggle">Starfighters</a>
+            <ul class="toc-subnav toc-expand">
+              <li class="main active"><a href="#">TIE Fighter</a></li>
+              <li><a href="#">X-Wing</a></li>
+              <li><a href="#">Y-Wing</a></li>
+              <li><a href="#">B-Wing</a></li>
+              <li><a href="#">ETA-2 Jedi Starfighter</a></li>
+            </ul>
+          </li>
+          <li class="toc-top-level">
+            <a href="#" class="toc-subnav-toggle">Spacecraft</a>
+            <ul class="toc-subnav">
+              <li class="main active"><a href="#">Millenium Falcon</a></li>
+              <li><a href="#">Sith Infiltrator</a></li>
+              <li><a href="#">Tantive IV</a></li>
+              <li><a href="#">Slave I</a></li>
+            </ul>
+          </li>
+          <li class="toc-top-level">
+            <a href="#" class="toc-subnav-toggle">Supermassives</a>
+            <ul class="toc-subnav">
+              <li class="main active"><a href="#">Imperial Star Destroyer</a></li>
+              <li><a href="#">Mon Calamari Star Cruiser</a></li>
+              <li><a href="#">GR-75 Medium Transport</a></li>
+              <li><a href="#">Trade Federation Battleship</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
