@@ -13,8 +13,7 @@
   <h2 class="headroom-extra-large">UI Components</h2>
   <hr>
   <div class="headroom-large">
-  <div>
-    <h5>Sub-navigation (vertical)</h5>
+    <h5>Sub-navigation </h5>
     <p>
       The horizontal sub-navigation is used when there are multiple pages in a section. It can have up to three levels of information.
     </p>
@@ -70,19 +69,6 @@
         </ul>
       </div>
     </div>
-  </div>
-  <div>
-    <h5>Sub-navigation (horizontal)</h5>
-    <p>
-      The vertical sub-navigation is used to expose high level headers on a single page so the user can find what they are looking for quickly and jump to it. It acts like a Table of contents with anchor links.
-    </p>
-    <p>
-      This component is designed so it can sit on top of images and interactive demos but at the same time stay below the main navigation on the site. It has a open/closed state. It stays open by default when user first lands on the page and collapses on scroll. Hovering the mouse close to it opens it again for the user to see the available links.
-    </p>
-
-    <!--Insert code for navigation here -->
-
-  </div>
 </div>
   <div class="headroom-large">
   <h5>Breadcrumb Navigation</h5>
@@ -104,12 +90,66 @@
 </div>
   <div class="headroom-large">
   <h5>Developer Sign up/ Sign in Call to Action</h5>
+  <p>
+    The sign up CTA is used in different places on the site to prompt signing up for a Mapzen developer account or a key to a particular project. On project pages, it is customized to use the current project name which makes it more targeted.
+  </p>
+  <div data-xrayhtml>
+    <div class="cta-container headroom">
+      <div class="cta-text">
+        <p>
+          Get your API key for access to
+          {% if page.layout == 'project' %}
+            {{ page.title }}.
+          {% else %}
+            Mapzen services.
+          {% endif %}
+        </p>
+      </div>
+      <div class="cta-btn">
+        <a href="/" class="btn btn-mapzen">Sign up</a>
+      </div>
+    </div>
+  </div>
 </div>
   <div class="headroom-large">
-  <h5>Image box with Call to Action (image-left)</h5>
+  <h5>Feature Card (image left)</h5>
+  <div data-xrayhtml>
+    <div class="row feature-card">
+      <div class="col-md-6 no_padding">
+        <div class="background-image-lg" style='background-image: url("http://www.space.news/wp-content/uploads/sites/38/2015/12/Big-Death-Star.jpg");'></div>
+      </div>
+      <div class="col-md-6 hor-pad-left">
+        <h5>Death Star</h5>
+        <p class="footroom">
+          Split up and head back to the surface. See if you can get a few of those TIE fighters to follow you. Copy, Gold Leader. That was too close. We've got to give those fighters more time. Concentrate all fire on that Super Star Destroyer.
+        </p>
+        <div>
+          <a class="btn btn-mapzen" href="/projects/tangram">RUN TO DAGOBAH</a>
+          <a class="btn btn-transparent" href="https://github.com/tangram-map/tangram" target="_blank">ABORT!</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
   <div class="headroom-large">
-  <h5>Image box with Call to Action (image-right)</h5>
+  <h5>Feature Card (image right)</h5>
+  <div data-xrayhtml>
+    <div class="row feature-card">
+      <div class="col-md-6 no_padding">
+        <h5>The Starkiller Base</h5>
+        <p class="footroom">
+          Your fleet has lost. And your friends on the Endor moon will not survive. There is no escape, my young apprentice. The Alliance will die...as will your friends. Good. I can feel your anger. I am defenseless. Take your weapon! Strike me down with all your hatred, and your journey towards the dark side will be complete.
+        </p>
+        <div>
+          <a class="btn btn-mapzen horz-marg-right" href="/projects/tangram">RUN TO DAGOBAH</a>
+          <a class="btn btn-transparent" href="https://github.com/tangram-map/tangram" target="_blank">ABORT!</a>
+        </div>
+      </div>
+      <div class="col-md-6 hor-pad-left">
+        <div class="background-image-lg" style='background-image: url("http://img.lum.dolimg.com/v1/images/starkiller-base_c089ce4c.jpeg?region=0%2C49%2C1560%2C780");'></div>
+      </div>
+    </div>
+  </div>
 </div>
 
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
