@@ -1,17 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="utf-8">
-    <title>styleguide</title>
-    <link rel="stylesheet" type="text/css" href="styles/styleguide.css">
-    <link rel="stylesheet" type="text/css" href="./lib/X-rayHTML.css">
-    <link rel="stylesheet" type="text/css" href="./lib/prism.css">
-    <link rel="stylesheet" type="text/css" href="styles/styleguidepage.css">
-</head>
-<body>
-  <div class="container">
+@@include('./includes/head.html')
+
+<body data-spy="scroll" data-target=".side-nav" data-offset="100">
+
+<div class='side-nav col-xs-12 col-md-2'>
+    <div class="toc hidden-print affix" role="directory" id="toc"> 
+      <ul class="nav toc-nav"> 
+          <li class="toc-top-level toc-current"> <a href="#design-elements">Design Elements</a> </li> 
+            <ul class="toc-subnav toc-expand"> 
+              <li><a href="#fonts">Fonts</a></li>
+              <li><a href="#colors">Colors</a></li>
+              <li><a href="#typography">Typography</a></li>
+              <li><a href="#buttons">Buttons</a></li>
+              <li><a href="#tables">Tables</a></li>
+              <li><a href="#lists">Lists</a></li>
+            </ul>
+          <li class="toc-top-level"> <a href="./ui-components.html">UI Components</a> </li> 
+          <li class="toc-top-level"> <a href="./hs-components.html">JS Components</a> </li> 
+        </li> 
+      </ul> 
+    </div>
+  </div>
+
+  <div class="container col-xs-12 col-md-9">
     <h1>Mapzen Web Styleguide</h1>
-    <h2 class="headroom-extra-large">How To Use</h2>
+    <h2 id="how-to-use" class="headroom-extra-large">How To Use</h2>
     <hr>
     <p><a href="https://github.com/mapzen/styleguide">Find it on Github at <code>mapzen/styleguide</code></a>.
     </p>
@@ -20,13 +32,7 @@
       this link tag in your HTML document head:
     </p>
     <pre class="language-markup">&lt;link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/blog.css" type="text/css"&gt;</pre>
-    <p class="headroom">
-      Here are some sample page templates that are being built using the styleguide.
-    </p>
-    <p>
-      <a href="samples/blog-main.html">Blog Landing</a> &bull; <a href="samples/blog-post.html">Blog Post</a> &bull; <a href="samples/developer-dashboard.html">Developers</a> &bull; <a href="samples/documentation.html">Documentation</a> &bull; <a href="samples/projects.html">Projects Landing</a> &bull; <a href="samples/projects-tangram.html">Project (Tangram)</a>
-    </p>
-    <h2 class="headroom-extra-large">Design Elements</h2>
+    <h2 id="design-elements" class="headroom-extra-large">Design Elements</h2>
     <hr>
 
     @@include('./general/fonts/index.html')
@@ -37,6 +43,7 @@
     @@include('./general/lists/index.html')
   </div>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="./lib/X-rayHTML.js"></script>
   <script src="./lib/prism.js"></script>
   <script src="main.js"></script>
