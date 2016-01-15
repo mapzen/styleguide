@@ -28,10 +28,21 @@
   }
 }
 
+//overriding side-nav style 
+.toc.affix {
+  width: auto;
+}
+
 //overriding prism style
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background-color: #f5f5f5;
+}
+
+
+//overriding side-nav style 
+.toc.affix {
+  width: auto;
 }
 
 .opensans {
