@@ -28,6 +28,11 @@
   }
 }
 
+//overriding side-nav style 
+.toc.affix {
+  width: auto;
+}
+
 //overriding prism style
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
