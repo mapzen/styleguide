@@ -1,5 +1,4 @@
 @@include('./includes/head.html')
-
 <body data-spy="scroll" data-target=".side-nav" data-offset="100">
 
 <div class='side-nav col-xs-12 col-md-2'>
@@ -15,26 +14,16 @@
               <li><a href="#lists">Lists</a></li>
             </ul>
           <li class="toc-top-level"> <a href="./ui-components.html">UI Components</a> </li> 
-          <li class="toc-top-level"> <a href="./hs-components.html">JS Components</a> </li> 
+          <li class="toc-top-level"> <a href="./js-components.html">JS Components</a> </li> 
         </li> 
       </ul> 
     </div>
   </div>
 
   <div class="container col-xs-12 col-md-9">
-    <h1>Mapzen Web Styleguide</h1>
-    <h2 id="how-to-use" class="headroom-extra-large">How To Use</h2>
-    <hr>
-    <p><a href="https://github.com/mapzen/styleguide">Find it on Github at <code>mapzen/styleguide</code></a>.
-    </p>
-    <p>
-      Use CSS from the Styleguide on any Mapzen-branded page by including
-      this link tag in your HTML document head:
-    </p>
-    <pre class="language-markup">&lt;link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/blog.css" type="text/css"&gt;</pre>
+    @@include('./includes/intro.html')
     <h2 id="design-elements" class="headroom-extra-large">Design Elements</h2>
     <hr>
-
     @@include('./design-elements/fonts/index.html')
     @@include('./design-elements/colors/index.html')
     @@include('./design-elements/typography/index.html')
