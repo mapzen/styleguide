@@ -1,9 +1,9 @@
 //
-// Call-to-action
+// Developer sign up Call-to-action for the component 'signup-cta'
 // --------------------------------------------------
 
 .cta-container {
-  background-color: #f8f8f8;
+  background-color: $mz-lightgray;
   padding: 25px 20px;
   position: relative;
   text-align: center;
@@ -15,11 +15,8 @@
 }
 
 .cta-text {
-  // Match text size and line height to button.
   padding: 10px 16px;
-  font-size: 14px;
   font-weight: 700;
-  line-height: 1.42857;
 
   p {
     margin: 0;
