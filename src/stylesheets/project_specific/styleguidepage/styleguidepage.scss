@@ -1,3 +1,8 @@
+@import "../../bootstrap/variables";
+@import "../../bootstrap/mixins";
+
+@import "../../bootstrap/dropdowns";
+
 .color-value {
     border: 1px solid #ccc;
     padding: 25px 20px;
@@ -25,10 +30,6 @@
   }
 }
 
-//overriding side-nav style
-.toc.affix {
-  width: auto;
-}
 
 //overriding prism style
 :not(pre) > code[class*="language-"],
