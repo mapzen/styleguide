@@ -34,8 +34,8 @@
   table {
     width: 100%;
     border: 2px solid $table-border-color;
-    display: block;
     word-break: break-all;
+
     @media (min-width: $screen-sm-min) {
       width: 100%;
       word-break: keep-all;
