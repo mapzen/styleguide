@@ -1,0 +1,34 @@
+@@include('./includes/head.html')
+
+<body data-spy="scroll" data-target=".side-nav" data-offset="100">
+@@include('./includes/main-nav.html',{"styleguide":"active","sample-pages":"inactive"})
+@@include('./includes/title-section.html')
+  <div class="row headroom-large">
+    <div class="container">
+      <div class='side-nav col-xs-12 col-md-3'>
+          <div class="toc hidden-print affix-top" role="directory" id="toc">
+            <ul class="nav toc-nav">
+              <li class="toc-top-level toc-current"> <a href="./">Introduction</a> </li>
+              <li class="toc-top-level"> <a href="/index.html">Design Elements</a> </li>
+              <li class="toc-top-level"> <a href="./ui-components.html">UI Components</a> </li>
+              <li class="toc-top-level"> <a href="./js-components.html">JS Components</a> </li>
+              <li class="toc-top-level"> <a href="./resources.html">Resources</a> </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container col-xs-12 col-md-9">
+        <h2>Introduction</h2>
+        <hr>
+
+        @@include('./introduction/how-to/index.html')
+        </div>
+      </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="./lib/X-rayHTML.js"></script>
+  <script src="./lib/prism.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

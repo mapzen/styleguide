@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Mapzen Styleguide</title>
+    <meta name="description" content="Mapzen Styleguide">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="./lib/X-rayHTML.css">
+    <link rel="stylesheet" type="text/css" href="./lib/prism.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleguidepage.css">
+</head>
+
+<body data-spy="scroll" data-target=".side-nav" data-offset="100">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <div class="styleguide-logo"></div>
+        <h1 class="sr-only">Mapzen</h1>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-menu">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="/">Web</a></li>
+        <li class="@@brand-guidelines"><a href="//">Brand</a></li>
+        <!-- <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> Sample Layouts <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="./samples/blog-main.html"> Blog Feed</a>
+            </li>
+            <li>
+              <a href="./samples/blog-post.html"> Blog Post</a>
+            </li>
+            <li>
+              <a href="./samples/projects.html"> Projects Landing Page</a>
+            </li>
+            <li>
+              <a href="./samples/projects-tangram.html"> Projects Detail Page</a>
+            </li>
+          </ul>
+        </li> -->
+
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Content<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="https://github.com/mapzen/ui/blob/master/guides/common-terms-and-conventions.md"> Conventions</a>
+            </li>
+            <li>
+              <a href="https://github.com/mapzen/ui/blob/master/guides/writing-style.md"> Writing Styles</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="documentation-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h1>Mapzen Web Styleguide</h1>
+        <p>
+          Philosophy of styleguide: Stretch out with your feelings. In my experience, there's no such thing as luck.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="row headroom-large">
+    <div class="container">
+      <div class='side-nav col-xs-12 col-md-3'>
+          <div class="toc hidden-print affix-top" role="directory" id="toc">
+            <ul class="nav toc-nav">
+              <li class="toc-top-level toc-current"> <a href="./">Introduction</a> </li>
+              <li class="toc-top-level"> <a href="/index.html">Design Elements</a> </li>
+              <li class="toc-top-level"> <a href="./ui-components.html">UI Components</a> </li>
+              <li class="toc-top-level"> <a href="./js-components.html">JS Components</a> </li>
+              <li class="toc-top-level"> <a href="./resources.html">Resources</a> </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container col-xs-12 col-md-9">
+        <h2>Introduction</h2>
+        <hr>
+
+        <div id="author-blurb-multiple" class="headroom-large">
+  <h5>How To Use the Styleguide</h5>
+  <p>
+    <a href="https://github.com/mapzen/styleguide">Find it on Github at <code>mapzen/styleguide</code></a>.
+  </p>
+  <p>
+    Use CSS from the Styleguide on any Mapzen-branded page by including this link tag in your HTML document head:
+  </p>
+  <pre>
+    &lt;link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/blog.css" type="text/css"&gt;
+  </pre>
+  <p> You can find sample layouts below.</p>
+  <div class="btn-group">
+    <a class="btn btn-transparent" href="./samples/blog-main.html"> Blog Feed</a>
+    <a class="btn btn-transparent" href="./samples/blog-post.html"> Blog Post </a>
+    <a class="btn btn-transparent" href="./samples/projects.html"> Project Landing</a>
+    <a class="btn btn-transparent" href="./samples/projects-tangram.html"> Project Detail</a>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="./lib/X-rayHTML.js"></script>
+  <script src="./lib/prism.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
