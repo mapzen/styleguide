@@ -94,3 +94,41 @@ pre[class*="language-"] {
 .simple-shadow {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
 }
+
+.documentation-hero {
+  background-color: #563630;
+}
+
+.styleguide-logo {
+  width: 270px;
+  height: 40px;
+  background-image: url("./images/styleguide-logo.png");
+  background-repeat: no-repeat;
+  background-position: 0 -40px;
+  background-size: 270px;
+}
+
+.toc {
+  a {
+    color: #563630;
+  }
+
+  a:hover,
+  a:focus {
+    background-color: rgba(86,54,48, 0.2);
+    color: #563630;
+  }
+
+  .toc-top-level {
+    a:hover,
+    a:focus {
+      background-color: rgba(86,54,48, 0.2);
+      color: #563630;
+    }
+  }
+
+  li.toc-top-level.toc-current > a {
+      background-color: #563630;
+      color: white;
+  }
+}
