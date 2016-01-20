@@ -5,6 +5,8 @@
 *
 * Copyright (c) 2012 Filament Group, Inc.
 * Licensed under the MIT, GPL licenses.
+
+	edited by Hanbyul Jo @Mapzen to insert the copy button
  */
 
 window.jQuery = window.jQuery || window.shoestring;
@@ -90,6 +92,7 @@ window.jQuery = window.jQuery || window.shoestring;
 			var wrap = document.createElement( "div" );
 			var sourcepanel = document.createElement( "div" );
 			var copyBtn = document.createElement('button');
+			var copyTxt = document.createTextNode('Copy snippet')
 			var code;
 			var leadingWhiteSpace;
 			var source;
@@ -120,9 +123,11 @@ window.jQuery = window.jQuery || window.shoestring;
 			$( el ).wrapInner( wrap );
 
 			codeel.appendChild( source );
+
 			preel.appendChild( codeel );
 
-			copyBtn.setAttribute( "class", "btn btn-transparent copy-btn");
+			copyBtn.setAttribute( "class", "btn btn-transparent copy-btn hide");
+			copyBtn.appendChild(copyTxt);
 			copyBtn.setAttribute("data-clipboard-text", code);
 			preel.appendChild(copyBtn);
 
@@ -131,6 +136,13 @@ window.jQuery = window.jQuery || window.shoestring;
 
 			this.appendChild( sourcepanel );
 			this.insertBefore( title, this.firstChild );
+
+			sourcepanel.addEventListener('mouseenter', function(e) {
+        copyBtn.setAttribute('class', 'btn btn-transparent copy-btn show');
+    	});
+    	sourcepanel.addEventListener('mouseleave', function(e) {
+        copyBtn.setAttribute('class', 'btn btn-transparent copy-btn hide');
+    	});
 		}
 	};
 

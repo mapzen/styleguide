@@ -48,9 +48,7 @@ function initClipboard() {
   });
 
   clipboard.on('error', function(e) {
-    e.trigger.setAttribute('class', 'btn btn-transparent copy-btn not-copied');
-      console.error('Action:', e.action);
-      console.error('Trigger:', e.trigger);
+    e.trigger.setAttribute('class', 'btn btn-transparent copy-btn no-copied');
   });
 
   var copyBtns = document.querySelectorAll('.copy-btn');
