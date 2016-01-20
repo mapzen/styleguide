@@ -21,16 +21,53 @@
   },
   "homepage": "https://github.com/mapzen/styleguide#readme",
   "devDependencies": {
+    "browserify-shim": "^3.8.12",
+    "del": "^2.1.0",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-file-include": "^0.13.7",
+    "gulp-rename": "^1.2.2",
     "gulp-s3-upload": "^1.5.0",
     "gulp-sass": "^2.0.4",
     "gulp-snippet-highlight": "^1.0.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-util": "^3.0.7"
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "del": "^2.1.0"
+    "bootstrap": "^3.3.6",
+    "browserify": "^13.0.0",
+    "jquery": "^2.2.0"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "bootstrap/js/affix": "./node_modules/bootstrap/js/affix.js",
+    "bootstrap/js/dropdown": "./node_modules/bootstrap/js/dropdown.js",
+    "bootstrap/js/scrollspy": "./node_modules/bootstrap/js/scrollspy.js"
+  },
+  "browserify-shim": {
+    "jquery": "jQuery",
+    "bootstrap/js/affix": {
+      "depends": [
+        "jquery"
+      ]
+    },
+    "bootstrap/js/dropdown": {
+      "depends": [
+        "jquery"
+      ]
+    },
+    "bootstrap/js/scrollspy": {
+      "depends": [
+        "jquery"
+      ]
+    }
   }
 }
