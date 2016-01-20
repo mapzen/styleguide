@@ -1,15 +1,14 @@
 @@include('./includes/head.html')
 
 <body data-spy="scroll" data-target=".side-nav" data-offset="100">
-@@include('./includes/main-nav.html',{"styleguide":"active","sample-pages":"inactive"})
 @@include('./includes/title-section.html')
   <div class="row headroom-large">
     <div class="container">
       <div class='side-nav col-xs-12 col-md-3'>
           <div class="toc hidden-print affix-top" role="directory" id="toc">
             <ul class="nav toc-nav">
-              <li class="toc-top-level"> <a href="./introduction.html">Introduction</a> </li>
-              <li class="toc-top-level"> <a href="/">Design Elements</a> </li>
+              <li class="toc-top-level"> <a href="./index.html">Introduction</a> </li>
+              <li class="toc-top-level"> <a href="./design-elements.html">Design Elements</a> </li>
               <li class="toc-top-level toc-current"> <a href="./">UI Components</a> </li>
               <ul class="toc-subnav toc-expand">
                 <li><a href="#sub-navigation">Sub-Navigation</a></li>
@@ -17,7 +16,7 @@
                 <li><a href="#pagination">Pagination</a></li>
                 <li><a href="#author-credit">Author Blurb</a></li>
                 <li><a href="#signup-cta">Sign Up</a></li>
-                <li><a href="#image-box">Feature Box</a></li>
+                <li><a href="#feature-card">Feature Card</a></li>
               </ul>
               <li class="toc-top-level"> <a href="./js-components.html">JS Components</a> </li>
               <li class="toc-top-level"> <a href="./resources.html">Resources</a> </li>
@@ -34,8 +33,8 @@
         @@include('./ui-components/author-blurb/single.html')
         @@include('./ui-components/author-blurb/multiple.html')
         @@include('./ui-components/signup-cta/index.html')
-        @@include('./ui-components/image-box-cta/image-left.html')
-        @@include('./ui-components/image-box-cta/image-right.html')
+        @@include('./ui-components/feature-card/image-left.html')
+        @@include('./ui-components/feature-card/image-right.html')
         </div>
       </div>
     </div>

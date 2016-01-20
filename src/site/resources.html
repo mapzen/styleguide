@@ -1,23 +1,21 @@
 @@include('./includes/head.html')
 
 <body data-spy="scroll" data-target=".side-nav" data-offset="100">
-@@include('./includes/main-nav.html',{"styleguide":"active","sample-pages":"inactive"})
 @@include('./includes/title-section.html')
   <div class="row headroom-large">
     <div class="container">
       <div class='side-nav col-xs-12 col-md-3'>
           <div class="toc hidden-print affix-top" role="directory" id="toc">
             <ul class="nav toc-nav">
-              <li class="toc-top-level"> <a href="./introduction.html">Introduction</a> </li>
-              <li class="toc-top-level"> <a href="/">Design Elements</a> </li>
-              <li class="toc-top-level"> <a href="./">UI Components</a> </li>
+              <li class="toc-top-level"> <a href="./index.html">Introduction</a> </li>
+              <li class="toc-top-level"> <a href="./design-elements.html">Design Elements</a> </li>
+              <li class="toc-top-level"> <a href="./ui-components.html">UI Components</a> </li>
               <li class="toc-top-level"> <a href="./js-components.html">JS Components</a> </li>
               <li class="toc-top-level toc-current"> <a href="./">Resources</a> </li>
                 <ul class="toc-subnav toc-expand">
-                  <li><a href="#sub-navigation">How To</a></li>
-                  <li><a href="#breadcrumb">Guidelines of Use</a></li>
-                  <li><a href="#pagination">Downloads</a></li>
-                  <li><a href="#author-credit">Icons</a></li>
+                  <li><a href="#content-guides">Content Guides</a></li>
+                  <li><a href="#downloads">Downloads</a></li>
+                  <li><a href="#guidelines-of-use">Guidelines of Use</a></li>
                 </ul>
             </ul>
           </div>
@@ -26,6 +24,8 @@
         <div class="container col-xs-12 col-md-9">
         <h2>Resources</h2>
         <hr>
+        @@include('./resources/content-guides/index.html')
+        @@include('./resources/downloads/index.html')
 
         </div>
       </div>
