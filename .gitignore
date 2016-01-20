@@ -1,5 +1,6 @@
 node_modules
 dist/styles/*
+dist/scripts/*
 dist/index.html
 dist/ui-components.html
 dist/js-components.html
