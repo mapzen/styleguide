@@ -17,6 +17,27 @@
 
 .xrayhtml .source-panel pre {
   padding: 0;
+  position: relative;
+  .copy-btn {
+    background-color: #f8f8f8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    padding: 5px;
+    &::after {
+      content: 'copy';
+    }
+  }
+  .copied {
+    &::after {
+      content: 'copied';
+      background-color: #d4645c;
+      position: relative;
+      left: 0px;
+      top: 0px;
+    }
+  }
 }
 
 .xrayhtml pre {
@@ -29,6 +50,7 @@
     background-image: none;
   }
 }
+
 
 
 //overriding prism style

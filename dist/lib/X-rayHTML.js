@@ -89,6 +89,7 @@ window.jQuery = window.jQuery || window.shoestring;
 			var codeel = document.createElement( "code" );
 			var wrap = document.createElement( "div" );
 			var sourcepanel = document.createElement( "div" );
+			var copyBtn = document.createElement('button');
 			var code;
 			var leadingWhiteSpace;
 			var source;
@@ -120,6 +121,10 @@ window.jQuery = window.jQuery || window.shoestring;
 
 			codeel.appendChild( source );
 			preel.appendChild( codeel );
+
+			copyBtn.setAttribute( "class", "btn btn-transparent copy-btn");
+			copyBtn.setAttribute("data-clipboard-text", code);
+			preel.appendChild(copyBtn);
 
 			sourcepanel.setAttribute( "class", o.classes.sourcepanel );
 			sourcepanel.appendChild( preel );
