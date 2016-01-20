@@ -1,7 +1,5 @@
 node_modules
 dist/styles/*
-dist/index.html
-dist/ui-components.html
-dist/js-components.html
+dist/*.html
 .DS_Store
 *.log
