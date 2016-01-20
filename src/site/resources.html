@@ -7,24 +7,26 @@
       <div class='side-nav col-xs-12 col-md-3'>
           <div class="toc hidden-print affix-top" role="directory" id="toc">
             <ul class="nav toc-nav">
-              <li class="toc-top-level toc-current"> <a href="./">Introduction</a> </li>
-                <ul class="toc-subnav toc-expand">
-                  <li><a href="#how-to">How To</a></li>
-                  <li><a href="#html-boilerplate">HTML Boilerplate</a></li>
-                </ul>
+              <li class="toc-top-level"> <a href="./index.html">Introduction</a> </li>
               <li class="toc-top-level"> <a href="./design-elements.html">Design Elements</a> </li>
               <li class="toc-top-level"> <a href="./ui-components.html">UI Components</a> </li>
               <li class="toc-top-level"> <a href="./js-components.html">JS Components</a> </li>
-              <li class="toc-top-level"> <a href="./resources.html">Resources</a> </li>
+              <li class="toc-top-level toc-current"> <a href="./">Resources</a> </li>
+                <ul class="toc-subnav toc-expand">
+                  <li><a href="#content-guides">Content Guides</a></li>
+                  <li><a href="#downloads">Downloads</a></li>
+                  <li><a href="#guidelines-of-use">Guidelines of Use</a></li>
+                </ul>
             </ul>
           </div>
         </div>
 
         <div class="container col-xs-12 col-md-9">
-        <h2>Introduction</h2>
+        <h2>Resources</h2>
         <hr>
+        @@include('./resources/content-guides/index.html')
+        @@include('./resources/downloads/index.html')
 
-        @@include('./introduction/how-to/index.html')
         </div>
       </div>
     </div>
@@ -32,7 +34,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="./lib/X-rayHTML.js"></script>
   <script src="./lib/prism.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
