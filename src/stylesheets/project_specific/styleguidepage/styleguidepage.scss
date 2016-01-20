@@ -22,20 +22,37 @@
     background-color: #f8f8f8;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 5px;
     font-size: 12px;
     padding: 5px;
-    &::after {
-      content: 'copy';
+    &.hide {
+      display: none;
+    }
+    &.show {
+      display: block;
     }
   }
   .copied {
+    // tool tip to show snippet was succdssfully copied
     &::after {
-      content: 'copied';
+      content: 'Copied!!';
+      background-color: #6ea0a4 ;
+      color: #fff;
+      position: absolute;
+      right: 0px;
+      top: 30px;
+      padding: 5px;
+    }
+  }
+  .no-copied {
+    &::after {
+      content: 'Copy failed';
       background-color: #d4645c;
-      position: relative;
-      left: 0px;
-      top: 0px;
+      color: #fff;
+      position: absolute;
+      right: 0px;
+      top: 30px;
+      padding: 5px;
     }
   }
 }
