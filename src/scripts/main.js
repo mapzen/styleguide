@@ -21,6 +21,7 @@ require('bootstrap/js/affix');
 var trackEvent = require('./event-tracking.js');
 var social = require('./social.js');
 var stickynav = require('./sticky-nav.js');
+var activelink = require('./active-nav-link.js');
 // TODO: side-nav component
 
 // Create a global MPZN object

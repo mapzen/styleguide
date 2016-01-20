@@ -22,6 +22,9 @@
 }(this, function () {
   'use strict'
 
+  // Bail if there is no navbar present on this page
+  if (!document.querySelector('nav.navbar')) return;
+
   // Constants
   // Tweak this to get your desired behavior.
   var SCROLL_COUNTER_LIFESPAN = 1000
