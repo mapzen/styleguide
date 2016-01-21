@@ -17,7 +17,6 @@
     </ul>
     <li class="toc-top-level" id='toc-ui-components'> <a class="toc-subnav-toggle" href="./ui-components.html">UI Components</a> </li>
     <ul class="toc-subnav">
-      <li><a href="./ui-components.html#sub-navigation">Sub-Navigation</a></li>
       <li><a href="./ui-components.html#breadcrumb">Breadcrumbs</a></li>
       <li><a href="./ui-components.html#pagination">Pagination</a></li>
       <li><a href="./ui-components.html#user-avatar">Avatars</a></li>
@@ -25,7 +24,6 @@
       <li><a href="./ui-components.html#signup-cta">Sign Up</a></li>
       <li><a href="./ui-components.html#feature-card">Feature Card</a></li>
       <li><a href="./ui-components.html#loading-spinner">Loading Spinners</a></li>
-      <li><a href="./js-components.html#tabbed-switcher">Tabbed Swicher</a></li>
     </ul>
     <li class="toc-top-level" id='toc-js-components'> <a class="toc-subnav-toggle" href="./js-components.html">JS Components</a> </li>
     <ul class="toc-subnav">
@@ -42,12 +40,23 @@
 </div>
 <script>
   (function () {
+    // The current page is set by an option in @@fileinclude
     var currentPage = '@@active';
     var activeNavItemId = 'toc-' + currentPage;
     var activeEl = document.getElementById(activeNavItemId);
     if (activeEl) {
+      // Highlight the current page
       activeEl.classList.add('toc-current');
-      activeEl.nextElementSibling.classList.add('toc-expand');
+      // Expand the 2nd-level menu
+      var subMenuEl = activeEl.nextElementSibling;
+      subMenuEl.classList.add('toc-expand');
+      // Modify the links to point to internal ids; this
+      // helps scrollspy function correctly
+      var subMenuLinks = subMenuEl.querySelectorAll('a');
+      for (var i = 0, j = subMenuLinks.length; i < j; i++) {
+        var link = subMenuLinks[i];
+        link.setAttribute('href', '#' + link.href.split('#')[1]);
+      }
     }
   })();
 </script>

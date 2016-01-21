@@ -22,7 +22,7 @@ var trackEvent = require('./event-tracking.js');
 var social = require('./social.js');
 var stickynav = require('./sticky-nav.js');
 var activelink = require('./active-nav-link.js');
-var subnav = require('./sub-nav.js');
+var sidenav = require('./side-nav.js');
 
 // Create a global MPZN object
 // Inherit it if already present from elsewhere

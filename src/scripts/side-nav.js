@@ -1,7 +1,7 @@
 // (c) 2016 Mapzen
 // LICENSE: MIT
 //
-// SUB-NAVIGATION COMPONENT
+// SIDE NAVIGATION COMPONENT
 //
 // Handles interaction on the sub-navigation component.
 //
