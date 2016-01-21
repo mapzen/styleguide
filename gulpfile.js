@@ -64,6 +64,7 @@ gulp.task('fileinclude', function() {
 
 gulp.task('watch', function() {
   gulp.watch('./src/stylesheets/**/*.scss', ['sass']);
+  gulp.watch('./src/scripts/**/*.js', ['js']);
   gulp.watch('./src/site/**/*', ['fileinclude']);
 });
 
