@@ -1,3 +1,18 @@
 <div id="tabbed-switcher" class="headroom-large">
   <h5>Tabbed Demo Switcher without demo</h5>
+  <div id='demo-frame' class='demo-frame'> yo I am demo frame</div>
+  <div id="demo-controls"></div>
+  <script>
+    (function () {
+    'use strict'
+
+      new DemoSwitcher({
+        sources: demo_sources,
+        onClick: function (source) {
+          rr.setWaypoints(source.waypoints);
+          rr.route({transitmode: source.mode});
+        }
+      })
+    }());
+  </script>
 </div>
