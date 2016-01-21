@@ -2,13 +2,13 @@
 
 <body data-spy="scroll" data-target=".side-nav" data-offset="100">
   @@include('./includes/title-section.html')
-  <div class="row headroom-large">
-    <div class="container">
-      <div class='side-nav styleguide-side-nav col-xs-12 col-md-3'>
+  <div class="container">
+    <div class="row headroom-large">
+      <div class="side-nav styleguide-side-nav col-xs-12 col-md-3">
         <div class="toc hidden-print affix-top" role="directory" id="toc">
           <ul class="nav toc-nav">
             <li class="toc-top-level"> <a href="./index.html">Introduction</a> </li>
-            <li class="toc-top-level"> <a href="./design-elements">Design Elements</a> </li>
+            <li class="toc-top-level"> <a href="./design-elements.html">Design Elements</a> </li>
             <li class="toc-top-level"> <a href="./ui-components.html">UI Components</a> </li>
             <li class="toc-top-level toc-current"> <a href="./">JS Components</a> </li>
               <ul class="toc-subnav toc-expand">
@@ -19,12 +19,12 @@
           </ul>
         </div>
       </div>
-      <div class="container col-xs-12 col-md-9">
-      <h2>JS Components</h2>
-      <hr>
-      @@include('./js-components/social-share/index.html')
-      @@include('./js-components/tabbed-switcher/index.html')
-      @@include('./js-components/demo-tabbed-switcher/index.html')
+      <div class="col-xs-12 col-md-9">
+        <h2>JS Components</h2>
+        <hr>
+        @@include('./js-components/social-share/index.html')
+        @@include('./js-components/tabbed-switcher/index.html')
+        @@include('./js-components/demo-tabbed-switcher/index.html')
       </div>
     </div>
   </div>
