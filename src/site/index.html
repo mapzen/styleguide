@@ -30,5 +30,31 @@
   </div>
   @@include('./fragments/global-footer.html')
   @@include('./includes/scripts.html')
+
+  <script>
+  //we tweaked the code snippet part that is automated on other pages to show raw html
+  //so we are manually putting clipboard event only for this page
+  (function() {
+    var sourcePanel = document.querySelector('.source-panel');
+    var copyBtn = document.querySelector('.copy-btn');
+      sourcePanel.addEventListener('mouseenter', function(e) {
+        copyBtn.setAttribute('class', 'btn btn-transparent copy-btn show');
+      });
+      sourcePanel.addEventListener('mouseleave', function(e) {
+        copyBtn.setAttribute('class', 'btn btn-transparent copy-btn hide');
+      });
+      var clipboard = new Clipboard('.copy-btn');
+      clipboard.on('success', function(e) {
+          e.trigger.setAttribute('class', 'btn btn-transparent copy-btn copied');
+          e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        e.trigger.setAttribute('class', 'btn btn-transparent copy-btn no-copied');
+      });
+      copyBtn.addEventListener('mouseleave', function(e) {
+        e.currentTarget.setAttribute('class', 'btn btn-transparent copy-btn');
+      });
+    })();
+  </script>
 </body>
 </html>

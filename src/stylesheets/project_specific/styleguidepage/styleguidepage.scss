@@ -19,6 +19,13 @@ body {
   font-weight: 600;
 }
 
+//only for introduction part without rendering html part
+.xrayhtml.boilerplate {
+  .source-panel {
+    margin-top: 0;
+  }
+}
+
 .xrayhtml .source-panel pre {
   padding: 0;
   position: relative;
