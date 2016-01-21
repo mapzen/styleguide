@@ -140,3 +140,8 @@ pre[class*="language-"] {
     }
   }
 }
+
+// Override because there is no top nav bar
+.toc.affix {
+  top: 30px;
+}
