@@ -6,7 +6,8 @@
 // Handles interaction on the sub-navigation component.
 //
 // Dependencies: Bootstrap's "affix" JavaScript component
-// (attached to its jQuery)
+// (attached to its jQuery), and so there is a jQuery
+// dependency that should get refactored out
 // --------------------------------------------------------
 (function (root, factory) {
   // Universal Module Definition (UMD)
@@ -26,6 +27,7 @@
   // Bail if there is no sub-nav component present on this page
   // TODO: This class selector could change
   var el = document.querySelector('.toc');
+  var $el = $(el); // Remember the jQuery-wrapped version for affix
   if (!el) return;
 
   var nav = document.querySelector('nav.navbar');
@@ -42,7 +44,7 @@
   var affixState = false;
 
   if (el.offsetHeight < container.offsetHeight) {
-    $(el).affix({
+    $el.affix({
       offset: {
         top: function () {
           var navHeight = nav ? nav.offsetHeight : 0;
@@ -58,18 +60,22 @@
     affixState = true;
   }
 
-  $('.toc-subnav-toggle').on('click', function (e) {
-    e.preventDefault()
-    var $el = $(this).next('ul')
-    $el.toggleClass('toc-expand')
+  var toggleEls = document.querySelectorAll('.toc-subnav-toggle');
+  for (var i = 0, j = toggleEls.length; i < j; i++) {
+    var toggle = toggleEls[i];
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      var sublist = e.target.parentNode.nextElementSibling;
+      sublist.classList.toggle('toc-expand');
 
-    // Recalc affix position after expand transition finishes
-    if (affixState === true) {
-      $el.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function (e) {
-        $toc.affix('checkPosition')
-      })
-    }
-  })
+      // Recalc affix position after expand transition finishes
+      if (affixState === true) {
+        $(sublist).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function (e) {
+          $el.affix('checkPosition');
+        });
+      }
+    });
+  }
 
   // Guarantee only one active thing is up
   var activeEls = $('.toc li.active')

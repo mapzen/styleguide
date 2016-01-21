@@ -5,24 +5,7 @@
   <div class="container">
     <div class="row headroom-large">
       <div class="side-nav styleguide-side-nav col-xs-12 col-md-3">
-        <div class="toc hidden-print affix-top" role="directory" id="toc">
-          <ul class="nav toc-nav">
-            <li class="toc-top-level"> <a href="./index.html">Introduction</a> </li>
-            <li class="toc-top-level toc-current"> <a href="./">Design Elements</a> </li>
-              <ul class="toc-subnav toc-expand">
-                <li><a href="#fonts">Fonts</a></li>
-                <li><a href="#colors">Colors</a></li>
-                <li><a href="#typography">Typography</a></li>
-                <li><a href="#icons">Icons</a></li>
-                <li><a href="#buttons">Buttons</a></li>
-                <li><a href="#tables">Tables</a></li>
-                <li><a href="#lists">Lists</a></li>
-              </ul>
-            <li class="toc-top-level"> <a href="./ui-components.html">UI Components</a> </li>
-            <li class="toc-top-level"> <a href="./js-components.html">JS Components</a> </li>
-            <li class="toc-top-level"> <a href="./resources.html">Resources</a> </li>
-          </ul>
-        </div>
+        @@include('./includes/sub-nav.html', { "active": "design-elements" })
       </div>
 
       <div class="col-xs-12 col-md-9">
