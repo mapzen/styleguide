@@ -31,8 +31,7 @@ $demo-control-color: $mz-blue;
 }
 
 .demo-controls {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
   height: $demo-control-height;
   background-color: rgba(255,255,255,0.9);
