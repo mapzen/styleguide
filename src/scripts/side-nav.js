@@ -48,10 +48,10 @@
       offset: {
         top: function () {
           var navHeight = nav ? nav.offsetHeight : 0;
-          return $(container).offset().top - navHeight;
+          return container.offsetTop - navHeight;
         },
         bottom: function () {
-          return $(document).height() - $(container).offset().top - $(container).outerHeight(true);
+          return document.documentElement.scrollHeight - container.offsetTop - outerHeight(container);
         }
       }
     });
@@ -60,16 +60,18 @@
     affixState = true;
   }
 
+  // Handle navigation list items that toggle a submenu to appear
   var toggleEls = document.querySelectorAll('.toc-subnav-toggle');
   for (var i = 0, j = toggleEls.length; i < j; i++) {
     var toggle = toggleEls[i];
     toggle.addEventListener('click', function (e) {
-      // Expands the submenu if there is no link to another page
+      // Toggles the submenu if there is no link to another page
       if (!e.target.href || e.target.href === '#') {
         var sublist = e.target.parentNode.nextElementSibling;
         sublist.classList.toggle('toc-expand');
 
         // Recalc affix position after expand transition finishes
+        // TODO: Refactor out jQuery usage here.
         if (affixState === true) {
           $(sublist).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function (e) {
             $el.affix('checkPosition');
@@ -79,20 +81,50 @@
     });
   }
 
-  // Guarantee only one active thing is up
-  var activeEls = $('.toc li.active')
-  activeEls.each(function (index) {
-    if (index + 1 !== activeEls.length) {
-      $(activeEls[index]).removeClass('active')
+  // window.setTimeout(function () {
+  //   window.addEventListener('scroll', function (e) {
+  //     console.log(el);
+  //     if (!el.querySelector('.active')) {
+  //       var expanded = el.querySelector('.toc-expand');
+  //       if (expanded) {
+  //         expanded.firstChild.classList.add('active');
+  //       }
+  //     }
+  //   });
+  // }, 2000);
+$('body').on('activate.bs.scrollspy', function () {
+  console.log('test')
+})
+
+  // Guarantee only one active list item is highlighted at a time.
+  // Use case: on the Tangram documentation page, where there is
+  // a third level of navigation, we want to prevent scrollspy from
+  // highlighting both the second and third level nav items.
+  var activeEls = document.querySelectorAll('.toc li.active');
+  for (var i = 0, j = activeEls.length; i < j; i++) {
+    if (i + 1 !== activeEls.length) {
+      activeEls[i].classList.remove('active');
     }
-  })
+  }
 
   // Utility functions
+  // --------------------------------------------------------------------------
+
+  // Get the parent element of given node that matches a class name
   function getParentByClassName (el, parentClass) {
     while (el !== document.documentElement && !el.classList.contains(parentClass)) {
       el = el.parentNode;
     }
     return el;
+  }
+
+  // Get the full height of an element, including its margins
+  function outerHeight (el) {
+    var height = el.getBoundingClientRect().height;
+    var style = getComputedStyle(el);
+
+    height += parseInt(style.marginTop) + parseInt(style.marginBottom);
+    return height;
   }
 
   // Just return a value to define the module export.

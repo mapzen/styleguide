@@ -152,6 +152,9 @@ pre[class*="language-"] {
 }
 
 // Override because there is no top nav bar
+.toc {
+  max-height: calc(100% - 60px);
+}
 .toc.affix {
   top: 30px;
 }
