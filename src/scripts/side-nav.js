@@ -64,15 +64,17 @@
   for (var i = 0, j = toggleEls.length; i < j; i++) {
     var toggle = toggleEls[i];
     toggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      var sublist = e.target.parentNode.nextElementSibling;
-      sublist.classList.toggle('toc-expand');
+      // Expands the submenu if there is no link to another page
+      if (!e.target.href || e.target.href === '#') {
+        var sublist = e.target.parentNode.nextElementSibling;
+        sublist.classList.toggle('toc-expand');
 
-      // Recalc affix position after expand transition finishes
-      if (affixState === true) {
-        $(sublist).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function (e) {
-          $el.affix('checkPosition');
-        });
+        // Recalc affix position after expand transition finishes
+        if (affixState === true) {
+          $(sublist).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function (e) {
+            $el.affix('checkPosition');
+          });
+        }
       }
     });
   }
