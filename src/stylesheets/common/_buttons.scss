@@ -56,3 +56,9 @@
     }
   }
 }
+
+// Buttong groups
+// Giving margin-left to the buttons except the first one
+.btn-group .btn + .btn {
+  margin-left: 10px;
+}

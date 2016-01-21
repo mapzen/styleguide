@@ -1,38 +1,22 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="utf-8">
-    <title>styleguide</title>
-    <link rel="stylesheet" type="text/css" href="styles/styleguide.css">
-    <link rel="stylesheet" type="text/css" href="./lib/X-rayHTML.css">
-    <link rel="stylesheet" type="text/css" href="./lib/prism.css">
-    <link rel="stylesheet" type="text/css" href="styles/styleguidepage.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Mapzen Web Styleguide</h1>
-    <h2 class="headroom-extra-large">How To Use</h2>
-    <hr>
-    <p><a href="https://github.com/mapzen/styleguide">Find it on Github at <code>mapzen/styleguide</code></a>.
-    </p>
-    <p>
-      Use CSS from the Styleguide on any Mapzen-branded page by including
-      this link tag in your HTML document head:
-    </p>
-    <pre class="language-markup">&lt;link rel="stylesheet" href="https://mapzen.com/common/styleguide/styles/blog.css" type="text/css"&gt;</pre>
-    <h2 class="headroom-extra-large">Design Elements</h2>
-    <hr>
+@@include('./includes/head.html')
 
-    @@include('./general/fonts/index.html')
-    @@include('./general/colors/index.html')
-    @@include('./general/typography/index.html')
-    @@include('./general/buttons/index.html')
-    @@include('./general/tables/index.html')
-    @@include('./general/lists/index.html')
+<body data-spy="scroll" data-target=".side-nav" data-offset="30">
+  @@include('./includes/title-section.html')
+  <div class="container">
+    <div class="row headroom-large">
+      <div class="side-nav styleguide-side-nav col-xs-12 col-md-3">
+        @@include('./includes/side-nav.html', { "active": "introduction" })
+      </div>
+
+      <div class="col-xs-12 col-md-9">
+        <h2>Introduction</h2>
+        <hr>
+
+        @@include('./introduction/how-to/index.html')
+      </div>
+    </div>
   </div>
-  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-  <script src="./lib/X-rayHTML.js"></script>
-  <script src="./lib/prism.js"></script>
-  <script src="main.js"></script>
+  @@include('./fragments/global-footer.html')
+  @@include('./includes/scripts.html')
 </body>
 </html>

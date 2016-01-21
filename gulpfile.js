@@ -1,9 +1,14 @@
+var browserify = require('browserify');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
-var del = require('del');
 var fileinclude = require('gulp-file-include');
+var del = require('del');
+var buffer = require('vinyl-buffer');
+var source = require('vinyl-source-stream');
 
 gulp.task('clean', function() {
   return del(['examples/dist/**/*']);
@@ -26,6 +31,28 @@ gulp.task('sass', ['clean'], function() {
   });
 });
 
+gulp.task('js', function () {
+  var b = browserify({
+    entries: 'src/scripts/main.js',
+    debug: true
+  });
+
+  return b.bundle()
+    .pipe(source('src/main.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+      // Add transformation tasks to the pipeline here.
+      .pipe(uglify())
+      .pipe(rename({
+        dirname: '',
+        basename: 'mapzen-styleguide',
+        extname: '.min.js'
+      }))
+      .on('error', gutil.log)
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('dist/scripts/'));
+});
+
 gulp.task('fileinclude', function() {
   gulp.src(['./src/site/*'])
     .pipe(fileinclude({
@@ -37,6 +64,7 @@ gulp.task('fileinclude', function() {
 
 gulp.task('watch', function() {
   gulp.watch('./src/stylesheets/**/*.scss', ['sass']);
+  gulp.watch('./src/scripts/**/*.js', ['js']);
   gulp.watch('./src/site/**/*', ['fileinclude']);
 });
 
@@ -60,6 +88,6 @@ gulp.task('publish', function() {
   }));
 });
 
-gulp.task('build', ['sass', 'fileinclude']);
+gulp.task('build', ['sass', 'js', 'fileinclude']);
 
 gulp.task('default', ['build', 'watch']);

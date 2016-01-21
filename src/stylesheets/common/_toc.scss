@@ -1,5 +1,7 @@
 /*
- * Side navigation (aka "toc" or "Table of Contents")
+ * Sub-navigation (vertical) (aka "toc" or "Table of Contents")
+ *
+ * TODO: Rename this class and file name to something that's more generic
  *
  * Scrollspy and affixed enhanced navigation to highlight sections and secondary
  * sections of docs content.
@@ -49,6 +51,7 @@
     padding: 6px 15px; // Right-left padding matches Bootstrap .nav
     z-index: 1;
     color: $mz-darkblue;
+    font-weight: 700; // Bolder contrast with sub-navigation links
     text-decoration: none;
 
     -webkit-transition: box-shadow 100ms ease-in-out;
