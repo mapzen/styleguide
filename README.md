@@ -12,8 +12,9 @@ stuff, the guide is for you.
 * [Sample UI components](https://mapzen.com/common/styleguide/ui-components.html)
   like navigation, social buttons, search boxes, and pagination that can be
   combined to make new kinds of pages.
-* Complete sample pages like blog posts and developer documentation showing how
-  all the pieces fit together.
+* [Complete sample pages](https://mapzen.com/common/styleguide/#sample-pages)
+  like blog posts and developer documentation showing how all the pieces fit
+  together.
 
 Use
 ---
