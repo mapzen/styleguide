@@ -14,9 +14,12 @@ body {
 }
 
 .color-value code {
-  text-align: center;
   padding: 5px;
   font-weight: 600;
+  white-space: nowrap;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
 }
 
 //only for introduction part without rendering html part
