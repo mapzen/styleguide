@@ -1,3 +1,12 @@
 .disabled-key {
   opacity: 0.5;
 }
+
+#admin-container {
+  .table {
+    width: auto;
+    th {
+      text-align: center;
+    }
+  }
+}
