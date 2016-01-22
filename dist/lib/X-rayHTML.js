@@ -6,193 +6,191 @@
 * Copyright (c) 2012 Filament Group, Inc.
 * Licensed under the MIT, GPL licenses.
 
-	edited by Hanbyul Jo @Mapzen to insert the copy button
+  edited by Hanbyul Jo @Mapzen to insert the copy button
  */
 
 window.jQuery = window.jQuery || window.shoestring;
 
 (function( $ ) {
   var pluginName = "xrayhtml",
-		o = {
-		text: {
-			open: "View Source",
-			close: "View Demo",
-			titlePrefix: "",
-			antipattern: "Do Not Use"
-		},
-		classes: {
-			button: "btn btn-small",
-			open: "view-source",
-			sourcepanel: "source-panel",
-			title: "xraytitle",
-			antipattern: "antipattern"
-		},
-		initSelector: "[data-" + pluginName + "]",
-		defaultReveal: "inline",
+    o = {
+    text: {
+      open: "View Source",
+      close: "View Demo",
+      titlePrefix: "",
+      antipattern: "Do Not Use"
+    },
+    classes: {
+      button: "btn btn-small",
+      open: "view-source",
+      sourcepanel: "source-panel",
+      title: "xraytitle",
+      antipattern: "antipattern"
+    },
+    initSelector: "[data-" + pluginName + "]",
+    defaultReveal: "inline",
     //detecting this browser is Safari or not, to decide to enable copy button or not.
-		isSafari: navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && !navigator.userAgent.match('CriOS')
-	},
-	methods = {
-		_create: function() {
-			return $( this ).each(function() {
-				var init = $( this ).data( "init." + pluginName );
+    isSafari: navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && !navigator.userAgent.match('CriOS')
+  },
+  methods = {
+    _create: function() {
+      return $( this ).each(function() {
+        var init = $( this ).data( "init." + pluginName );
 
-				if( init ) {
-					return false;
-				}
+        if( init ) {
+          return false;
+        }
 
-				$( this )
-					.data( "init." + pluginName, true )
-					[ pluginName ]( "_init" )
-					.trigger( "create." +  pluginName );
-			});
-		},
-		_init: function() {
-			var method = $( this ).attr( "data-" + pluginName ) || o.defaultReveal;
+        $( this )
+          .data( "init." + pluginName, true )
+          [ pluginName ]( "_init" )
+          .trigger( "create." +  pluginName );
+      });
+    },
+    _init: function() {
+      var method = $( this ).attr( "data-" + pluginName ) || o.defaultReveal;
 
-			if( method === "flip" ) {
-				$( this )[ pluginName ]( "_createButton" );
-			}
+      if( method === "flip" ) {
+        $( this )[ pluginName ]( "_createButton" );
+      }
 
-			$( this )
-				.addClass( pluginName + " " + "method-" + method )
-				[ pluginName ]( "_createSource" );
-		},
-		_createButton: function() {
-			var btn = document.createElement( "a" ),
-				txt = document.createTextNode( o.text.open ),
-				el = $( this );
+      $( this )
+        .addClass( pluginName + " " + "method-" + method )
+        [ pluginName ]( "_createSource" );
+    },
+    _createButton: function() {
+      var btn = document.createElement( "a" ),
+        txt = document.createTextNode( o.text.open ),
+        el = $( this );
 
-			btn.setAttribute( "class", o.classes.button );
-			btn.href = "#";
-			btn.appendChild( txt );
+      btn.setAttribute( "class", o.classes.button );
+      btn.href = "#";
+      btn.appendChild( txt );
 
-			$( btn )
-				.bind( "click", function( e ) {
-					var isOpen = el.attr( "class" ).indexOf( o.classes.open ) > -1;
+      $( btn )
+        .bind( "click", function( e ) {
+          var isOpen = el.attr( "class" ).indexOf( o.classes.open ) > -1;
 
-					el[ isOpen ? "removeClass" : "addClass" ]( o.classes.open );
-					btn.innerHTML = ( isOpen ? o.text.open : o.text.close );
+          el[ isOpen ? "removeClass" : "addClass" ]( o.classes.open );
+          btn.innerHTML = ( isOpen ? o.text.open : o.text.close );
 
-					e.preventDefault();
+          e.preventDefault();
 
-				})
-				.insertBefore( el );
-		},
-		_createSource: function() {
-			var el = this;
-			var getPrefixText = function () {
-				if( el.className.match( new RegExp( "\\b" + o.classes.antipattern + "\\b", "gi" ) ) ) {
-					return o.text.antipattern;
-				}
-				return o.text.titlePrefix;
-			};
-			var title = el.getElementsByClassName( o.classes.title );
-			var deprecatedTitle;
-			var preel = document.createElement( "pre" );
-			var codeel = document.createElement( "code" );
-			var wrap = document.createElement( "div" );
-			var sourcepanel = document.createElement( "div" );
-			var code;
-			var leadingWhiteSpace;
-			var source;
+        })
+        .insertBefore( el );
+    },
+    _createSource: function() {
+      var el = this;
+      var getPrefixText = function () {
+        if( el.className.match( new RegExp( "\\b" + o.classes.antipattern + "\\b", "gi" ) ) ) {
+          return o.text.antipattern;
+        }
+        return o.text.titlePrefix;
+      };
+      var title = el.getElementsByClassName( o.classes.title );
+      var deprecatedTitle;
+      var preel = document.createElement( "pre" );
+      var codeel = document.createElement( "code" );
+      var wrap = document.createElement( "div" );
+      var sourcepanel = document.createElement( "div" );
+      var code;
+      var leadingWhiteSpace;
+      var source;
 
-			if( title.length ) {
-				title = title[ 0 ];
-				title.parentNode.removeChild( title );
-				title.innerHTML = getPrefixText() + ": " + title.innerHTML;
-			} else {
-				deprecatedTitle = el.getAttribute( "data-title" );
-				title = document.createElement( "div" );
-				title.className = o.classes.title;
-				title.innerHTML = getPrefixText() + ( deprecatedTitle ? ": " + deprecatedTitle : "" );
-			}
+      if( title.length ) {
+        title = title[ 0 ];
+        title.parentNode.removeChild( title );
+        title.innerHTML = getPrefixText() + ": " + title.innerHTML;
+      } else {
+        deprecatedTitle = el.getAttribute( "data-title" );
+        title = document.createElement( "div" );
+        title.className = o.classes.title;
+        title.innerHTML = getPrefixText() + ( deprecatedTitle ? ": " + deprecatedTitle : "" );
+      }
 
-			// remove empty value attributes
-			code = el.innerHTML.replace( /\=\"\"/g, '' );
-			leadingWhiteSpace = code.match( /(^[\s]+)/ );
+      // remove empty value attributes
+      code = el.innerHTML.replace( /\=\"\"/g, '' );
+      leadingWhiteSpace = code.match( /(^[\s]+)/ );
 
-			if( leadingWhiteSpace ) {
-				code = code.replace( new RegExp( leadingWhiteSpace[ 1 ], "gmi" ), "\n" );
-			}
+      if( leadingWhiteSpace ) {
+        code = code.replace( new RegExp( leadingWhiteSpace[ 1 ], "gmi" ), "\n" );
+      }
 
-			source = document.createTextNode( code );
+      source = document.createTextNode( code );
 
-			wrap.setAttribute( "class", "snippet" );
+      wrap.setAttribute( "class", "snippet" );
 
-			$( el ).wrapInner( wrap );
+      $( el ).wrapInner( wrap );
 
-			codeel.appendChild( source );
-			preel.appendChild( codeel );
+      codeel.appendChild( source );
+      preel.appendChild( codeel );
 
-			var copySuccess = false;
-	    try {
-	    	//try to copy current data on clipboard, to see it works
-	      copySuccess = document.execCommand ("copy", false, null);
-	    }
-	    catch (e) {
-	      //do nothing if browser doesn't support copy&paste
-	    }
+      var copySuccess = false;
+      try {
+        //try to copy current data on clipboard, to see it works
+        copySuccess = document.execCommand ("copy", false, null);
+      }
+      catch (e) {
+        //do nothing if browser doesn't support copy&paste
+      }
 
-			sourcepanel.setAttribute( "class", o.classes.sourcepanel );
-			sourcepanel.appendChild( preel );
+      sourcepanel.setAttribute( "class", o.classes.sourcepanel );
+      sourcepanel.appendChild( preel );
 
-			this.appendChild( sourcepanel );
-			this.insertBefore( title, this.firstChild );
-      console.log('bulelelele');
-      console.log(o.isSafari);
+      this.appendChild( sourcepanel );
+      this.insertBefore( title, this.firstChild );;
       //Safari doesn't support execCommand('copy'), so it doesn't bother with copy button when browser is safari
-	    if(!o.isSafari) {
-	    	var copyBtn = document.createElement('button');
-				var copyTxt = document.createTextNode('Copy snippet');
-				copyBtn.setAttribute( "class", "btn btn-transparent copy-btn hide");
-				copyBtn.appendChild(copyTxt);
-				copyBtn.setAttribute("data-clipboard-text", code);
-				preel.appendChild(copyBtn);
+      if(!o.isSafari) {
+        var copyBtn = document.createElement('button');
+        var copyTxt = document.createTextNode('Copy snippet');
+        copyBtn.setAttribute( "class", "btn btn-transparent copy-btn hide");
+        copyBtn.appendChild(copyTxt);
+        copyBtn.setAttribute("data-clipboard-text", code);
+        preel.appendChild(copyBtn);
 
-				sourcepanel.addEventListener('mouseenter', function(e) {
-        	copyBtn.setAttribute('class', 'btn btn-transparent copy-btn show');
-    		});
-    		sourcepanel.addEventListener('mouseleave', function(e) {
-        	copyBtn.setAttribute('class', 'btn btn-transparent copy-btn hide');
-    		});
-			}
-		}
-	};
+        sourcepanel.addEventListener('mouseenter', function(e) {
+          copyBtn.setAttribute('class', 'btn btn-transparent copy-btn show');
+        });
+        sourcepanel.addEventListener('mouseleave', function(e) {
+          copyBtn.setAttribute('class', 'btn btn-transparent copy-btn hide');
+        });
+      }
+    }
+  };
 
-	// Collection method.
-	$.fn[ pluginName ] = function( arrg, a, b, c ) {
-		return this.each(function() {
+  // Collection method.
+  $.fn[ pluginName ] = function( arrg, a, b, c ) {
+    return this.each(function() {
 
-			// if it's a method
-			if( arrg && typeof( arrg ) === "string" ){
-				return $.fn[ pluginName ].prototype[ arrg ].call( this, a, b, c );
-			}
+      // if it's a method
+      if( arrg && typeof( arrg ) === "string" ){
+        return $.fn[ pluginName ].prototype[ arrg ].call( this, a, b, c );
+      }
 
-			// don't re-init
-			if( $( this ).data( pluginName + "data" ) ){
-				return $( this );
-			}
+      // don't re-init
+      if( $( this ).data( pluginName + "data" ) ){
+        return $( this );
+      }
 
-			// otherwise, init
-			$( this ).data( pluginName + "active", true );
-			$.fn[ pluginName ].prototype._create.call( this );
-		});
-	};
+      // otherwise, init
+      $( this ).data( pluginName + "active", true );
+      $.fn[ pluginName ].prototype._create.call( this );
+    });
+  };
 
-	// add methods
-	$.extend( $.fn[ pluginName ].prototype, methods );
+  // add methods
+  $.extend( $.fn[ pluginName ].prototype, methods );
 
-	//  auto-init
-	var initted;
-	function init(){
-		if( !initted ){
-			$( o.initSelector )[ pluginName ]();
-			initted = true;
-		}
-	}
-	// init either on beforeenhance event or domready, whichever comes first.
-	$( document ).bind("beforeenhance", init );
-	$( init );
+  //  auto-init
+  var initted;
+  function init(){
+    if( !initted ){
+      $( o.initSelector )[ pluginName ]();
+      initted = true;
+    }
+  }
+  // init either on beforeenhance event or domready, whichever comes first.
+  $( document ).bind("beforeenhance", init );
+  $( init );
 
 }( jQuery ));
