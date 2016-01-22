@@ -1,3 +1,5 @@
+// https://github.com/drvic10k/bootstrap-sortable
+
 table.sortable span.sign {
     display: block;
     position: absolute;
@@ -8,9 +10,13 @@ table.sortable span.sign {
     color: #bfbfc1;
 }
 
+/*********** edit by evan@mapzen.com *********/
+
+// stop arrows from overlapping column headers
 table.sortable th.sorted {
   padding-right: 20px;
 }
+/***************** end edit ******************/
 
 table.sortable th:after {
     display: block;
