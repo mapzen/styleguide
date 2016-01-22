@@ -23,6 +23,7 @@ var social = require('./social.js');
 var stickynav = require('./sticky-nav.js');
 var activelink = require('./active-nav-link.js');
 var sidenav = require('./side-nav.js');
+var tablewrap = require('./table-wrap.js');
 
 // Create a global MPZN object
 // Inherit it if already present from elsewhere
