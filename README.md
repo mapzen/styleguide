@@ -37,6 +37,14 @@ testing.
 
 🚧 `master` branch is live 🚧
 
+If you’d like to edit locally, Styleguide requires [Node](https://nodejs.org/)
+and can be built and tested with these commands:
+
+1. `npm install`
+2. `gulp build` (or `./node_modules/.bin/gulp build` if _gulp_ not found)
+3. `npm start`
+4. Open [http://localhost:3000](http://localhost:3000) in a browser.
+
 Maintainers are [Ekta](https://github.com/souperneon),
 [Lou](https://github.com/louh), [Mike M](https://github.com/migurski),
 and [Hanbyul](https://github.com/hanbyul-here).
