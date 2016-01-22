@@ -28,7 +28,9 @@ window.jQuery = window.jQuery || window.shoestring;
 			antipattern: "antipattern"
 		},
 		initSelector: "[data-" + pluginName + "]",
-		defaultReveal: "inline"
+		defaultReveal: "inline",
+    //detecting this browser is Safari or not, to decide to enable copy button or not.
+		isSafari: navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && !navigator.userAgent.match('CriOS')
 	},
 	methods = {
 		_create: function() {
@@ -121,7 +123,6 @@ window.jQuery = window.jQuery || window.shoestring;
 			$( el ).wrapInner( wrap );
 
 			codeel.appendChild( source );
-
 			preel.appendChild( codeel );
 
 			var copySuccess = false;
@@ -133,27 +134,29 @@ window.jQuery = window.jQuery || window.shoestring;
 	      //do nothing if browser doesn't support copy&paste
 	    }
 
-	    if(copySuccess)	{
+			sourcepanel.setAttribute( "class", o.classes.sourcepanel );
+			sourcepanel.appendChild( preel );
+
+			this.appendChild( sourcepanel );
+			this.insertBefore( title, this.firstChild );
+      console.log('bulelelele');
+      console.log(o.isSafari);
+      //Safari doesn't support execCommand('copy'), so it doesn't bother with copy button when browser is safari
+	    if(!o.isSafari) {
 	    	var copyBtn = document.createElement('button');
 				var copyTxt = document.createTextNode('Copy snippet');
 				copyBtn.setAttribute( "class", "btn btn-transparent copy-btn hide");
 				copyBtn.appendChild(copyTxt);
 				copyBtn.setAttribute("data-clipboard-text", code);
 				preel.appendChild(copyBtn);
+
+				sourcepanel.addEventListener('mouseenter', function(e) {
+        	copyBtn.setAttribute('class', 'btn btn-transparent copy-btn show');
+    		});
+    		sourcepanel.addEventListener('mouseleave', function(e) {
+        	copyBtn.setAttribute('class', 'btn btn-transparent copy-btn hide');
+    		});
 			}
-
-			sourcepanel.setAttribute( "class", o.classes.sourcepanel );
-			sourcepanel.appendChild( preel );
-
-			this.appendChild( sourcepanel );
-			this.insertBefore( title, this.firstChild );
-
-			sourcepanel.addEventListener('mouseenter', function(e) {
-        copyBtn.setAttribute('class', 'btn btn-transparent copy-btn show');
-    	});
-    	sourcepanel.addEventListener('mouseleave', function(e) {
-        copyBtn.setAttribute('class', 'btn btn-transparent copy-btn hide');
-    	});
 		}
 	};
 
