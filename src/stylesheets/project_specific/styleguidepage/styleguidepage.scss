@@ -62,7 +62,7 @@ body {
   }
   .no-copied {
     &::after {
-      content: 'Copy failed';
+      content: 'Copy Failed';
       background-color: #d4645c;
       color: #fff;
       position: absolute;
