@@ -31,6 +31,10 @@
     td code {
       word-break: break-word;
       overflow-wrap: break-word;
+
+      // Cleaner break; non-standard & webkit only
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
     }
   }
 }
