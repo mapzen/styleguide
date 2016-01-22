@@ -91,8 +91,6 @@ window.jQuery = window.jQuery || window.shoestring;
 			var codeel = document.createElement( "code" );
 			var wrap = document.createElement( "div" );
 			var sourcepanel = document.createElement( "div" );
-			var copyBtn = document.createElement('button');
-			var copyTxt = document.createTextNode('Copy snippet')
 			var code;
 			var leadingWhiteSpace;
 			var source;
@@ -126,10 +124,23 @@ window.jQuery = window.jQuery || window.shoestring;
 
 			preel.appendChild( codeel );
 
-			copyBtn.setAttribute( "class", "btn btn-transparent copy-btn hide");
-			copyBtn.appendChild(copyTxt);
-			copyBtn.setAttribute("data-clipboard-text", code);
-			preel.appendChild(copyBtn);
+			var copySuccess = false;
+	    try {
+	    	//try to copy current data on clipboard, to see it works
+	      copySuccess = document.execCommand ("copy", false, null);
+	    }
+	    catch (e) {
+	      //do nothing if browser doesn't support copy&paste
+	    }
+
+	    if(copySuccess)	{
+	    	var copyBtn = document.createElement('button');
+				var copyTxt = document.createTextNode('Copy snippet');
+				copyBtn.setAttribute( "class", "btn btn-transparent copy-btn hide");
+				copyBtn.appendChild(copyTxt);
+				copyBtn.setAttribute("data-clipboard-text", code);
+				preel.appendChild(copyBtn);
+			}
 
 			sourcepanel.setAttribute( "class", o.classes.sourcepanel );
 			sourcepanel.appendChild( preel );

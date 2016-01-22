@@ -62,7 +62,7 @@ body {
   }
   .no-copied {
     &::after {
-      content: 'Press Ctrl+C to copy';
+      content: 'Copy Failed';
       background-color: #d4645c;
       color: #fff;
       position: absolute;
