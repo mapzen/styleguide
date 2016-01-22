@@ -1,10 +1,6 @@
 <div class="toc hidden-print affix-top" role="directory" id="toc">
   <ul class="nav toc-nav">
     <li class="toc-top-level" id='toc-get-started'> <a class="toc-subnav-toggle" href="./">Get Started</a> </li>
-    <!----Without this dummy child ul, design-elements link becomes #undefined link-->!
-    <ul class="toc-subnav">
-    </ul>
-    <!---- dummy child over ---->
     <li class="toc-top-level" id='toc-design-elements'> <a class="toc-subnav-toggle" href="./design-elements.html">Design Elements</a> </li>
     <ul class="toc-subnav">
       <li><a href="./design-elements.html#fonts">Fonts</a></li>
@@ -49,13 +45,15 @@
       activeEl.classList.add('toc-current');
       // Expand the 2nd-level menu
       var subMenuEl = activeEl.nextElementSibling;
-      subMenuEl.classList.add('toc-expand');
-      // Modify the links to point to internal ids; this
-      // helps scrollspy function correctly
-      var subMenuLinks = subMenuEl.querySelectorAll('a');
-      for (var i = 0, j = subMenuLinks.length; i < j; i++) {
-        var link = subMenuLinks[i];
-        link.setAttribute('href', '#' + link.href.split('#')[1]);
+      if(subMenuEl.tagName.match(/^UL$/)) {
+        subMenuEl.classList.add('toc-expand');
+        // Modify the links to point to internal ids; this
+        // helps scrollspy function correctly
+        var subMenuLinks = subMenuEl.querySelectorAll('a');
+        for (var i = 0, j = subMenuLinks.length; i < j; i++) {
+          var link = subMenuLinks[i];
+          link.setAttribute('href', '#' + link.href.split('#')[1]);
+        }
       }
     }
   })();
