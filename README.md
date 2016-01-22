@@ -38,7 +38,8 @@ testing.
 🚧 `master` branch is live 🚧
 
 If you’d like to edit locally, Styleguide requires [Node](https://nodejs.org/)
-and can be built and tested with these commands:
+and uses [Gulp](http://gulpjs.com) to generate files in `dist` directory from
+sources in `src/site`. Build and test with these commands:
 
 1. `npm install`
 2. `gulp build` (or `./node_modules/.bin/gulp build` if _gulp_ not found)
