@@ -2,6 +2,7 @@
   width: 100%;
   border: 2px solid $table-border-color;
   margin-bottom: 0;
+  font-size: $body-small;
 
   th {
     font-family: $docs-heading-font;
@@ -17,7 +18,14 @@
     border-right: 1px dotted $table-border-color;
     border-top:  1px solid $table-border-color;
   }
+}
 
+// Apply this class to a table if you want to permit
+// word break rules. Currently this is pretty scoped: it
+// only forces breaks inside code strings when the viewport
+// is smaller. In the future, this may have add word breaks
+// and hyphenations to text, depending on browser support.
+.table-word-break {
   // Break long code strings in table cells on small windows
   @media (max-width: 768px) {
     td code {
