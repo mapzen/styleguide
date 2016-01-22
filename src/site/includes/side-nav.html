@@ -45,13 +45,15 @@
       activeEl.classList.add('toc-current');
       // Expand the 2nd-level menu
       var subMenuEl = activeEl.nextElementSibling;
-      subMenuEl.classList.add('toc-expand');
-      // Modify the links to point to internal ids; this
-      // helps scrollspy function correctly
-      var subMenuLinks = subMenuEl.querySelectorAll('a');
-      for (var i = 0, j = subMenuLinks.length; i < j; i++) {
-        var link = subMenuLinks[i];
-        link.setAttribute('href', '#' + link.href.split('#')[1]);
+      if(subMenuEl.tagName.match(/^UL$/)) {
+        subMenuEl.classList.add('toc-expand');
+        // Modify the links to point to internal ids; this
+        // helps scrollspy function correctly
+        var subMenuLinks = subMenuEl.querySelectorAll('a');
+        for (var i = 0, j = subMenuLinks.length; i < j; i++) {
+          var link = subMenuLinks[i];
+          link.setAttribute('href', '#' + link.href.split('#')[1]);
+        }
       }
     }
   })();
