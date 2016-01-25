@@ -107,7 +107,7 @@ body {
 .mapzen-logo {
   width: 130px;
   height: 40px;
-  background-image: url('/resources/mapzen-logo.png');
+  background-image: url('https://mapzen.com/resources/mapzen-logo.png');
   background-repeat: no-repeat;
   background-position: 0 -40px;
   background-size: 130px;
@@ -124,19 +124,19 @@ body {
   }
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    background-image: url('/resources/mapzen-logo@2x.png');
+    background-image: url('https://mapzen.com/resources/mapzen-logo@2x.png');
   }
 }
 
 li:hover .animated-key {
-  background-image: url('/resources/key_h.png');
+  background-image: url('https://mapzen.com/resources/key_h.png');
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
 li.active:hover .animated-key {
-  background-image: url('/resources/key.png');
+  background-image: url('https://mapzen.com/resources/key.png');
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
@@ -148,7 +148,7 @@ li.active:hover .animated-key {
   float: left;
   width: 23px;
   height: 28px;
-  background-image: url('/resources/key.png');
+  background-image: url('https://mapzen.com/resources/key.png');
   background-repeat: no-repeat;
   background-position: 0px 0px;
   background-size: 80% 80%;
