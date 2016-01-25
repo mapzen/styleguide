@@ -2,7 +2,6 @@
   width: 100%;
   border: 2px solid $table-border-color;
   margin-bottom: 0;
-  font-size: $body-small;
 
   th {
     font-family: $docs-heading-font;
@@ -17,6 +16,7 @@
     line-height: inherit !important;
     border-right: 1px dotted $table-border-color;
     border-top:  1px solid $table-border-color;
+    font-size: $body-small;
   }
 }
 
