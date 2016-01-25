@@ -14,9 +14,19 @@ body {
 }
 
 .color-value code {
-  text-align: center;
   padding: 5px;
   font-weight: 600;
+  white-space: nowrap;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+}
+
+//only for introduction part without rendering html part
+.xrayhtml.boilerplate {
+  .source-panel {
+    margin-top: 0;
+  }
 }
 
 .xrayhtml .source-panel pre {
@@ -52,7 +62,7 @@ body {
   }
   .no-copied {
     &::after {
-      content: 'Copy failed';
+      content: 'Copy Failed';
       background-color: #d4645c;
       color: #fff;
       position: absolute;

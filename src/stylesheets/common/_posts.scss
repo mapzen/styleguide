@@ -27,39 +27,22 @@
     padding: 0px;
   }
 
-  //table style, overwrapping with documentation site's table other than width & mobile behaviour
-  //on mobile, it breaks down the word to keep its width fit to container.
-
-  //** we need to remove these table styles and start using styleguide styles. The only difference is the negative margin**
-  table {
-    width: 100%;
-    border: 2px solid $table-border-color;
-    word-break: break-all;
-
-    @media (min-width: $screen-sm-min) {
-      width: 100%;
-      word-break: keep-all;
-    }
-
+  // Wider table area on wider screens.
+  .table-wrapper {
     @media (min-width: $screen-md-min) {
-      width: 120%;
       margin-left: -10%;
-    }
-
-    th {
-      border-right: 1px dotted $table-border-color;
-      border-bottom: 2px solid $table-border-color;
-      padding: 8px;
-    }
-    td {
-      border-top:  1px solid $table-border-color;
-      border-right: 1px dotted $table-border-color;
-      padding: 8px;
-      font-size: 0.9em;
-      line-height: 1.1;
-      vertical-align: top;
+      margin-right: 10%;
+      max-width: 120%;
+      width: 120%;
     }
   }
+
+  // TODO:
+  // REMOVE THIS AFTER JEKYLL GENERATED TABLES PICK UP THE .table CLASS
+  table {
+    @extend .table;
+  }
+
   // These DOM elements are generated from (the non-standard) Markdown footnotes syntax
   // via the Redcarpet extension. If the Markdown parser changes, please check to make
   // sure these selectors will still be valid.

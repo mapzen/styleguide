@@ -5,18 +5,64 @@
   <div class="container">
     <div class="row headroom-large">
       <div class="side-nav styleguide-side-nav col-xs-12 col-md-3">
-        @@include('./includes/side-nav.html', { "active": "introduction" })
+        @@include('./includes/side-nav.html', { "active": "get-started" })
       </div>
 
       <div class="col-xs-12 col-md-9">
-        <h2>Introduction</h2>
-        <hr>
+        <p>
+        Mapzen Styleguide makes it easy for us to create right-looking websites that
+        work well across platforms and into the future. If you’re publishing Mapzen
+        stuff, the guide is for you.
+        </p>
 
-        @@include('./introduction/how-to/index.html')
+        <h4>Batteries included:</h4>
+
+        <ul>
+            <li>Basic page structure with standard linked CSS and Javascript resources.</li>
+            <li><a href="ui-components.html">Sample UI components</a> like navigation, social buttons, search boxes, and pagination that can be combined to make new kinds of pages.</li>
+            <li><a href="#sample-pages">Complete sample pages</a> like blog posts and developer documentation showing how all the pieces fit together.</li>
+        </ul>
+
+        <h2>Get Started</h2>
+        <hr>
+        @@include('./get-started/index.html')
       </div>
     </div>
   </div>
   @@include('./fragments/global-footer.html')
   @@include('./includes/scripts.html')
+
+  <script>
+  //we tweaked the code snippet part that is automated on other pages to show raw html
+  //so we are manually putting clipboard event only for this page
+  (function() {
+    //Safari doesn't support copy command, detecting ti and not enabling copy button
+    if(!isThisSafari()) {
+      var sourcePanel = document.querySelector('.source-panel');
+      var copyBtn = document.querySelector('.copy-btn');
+        sourcePanel.addEventListener('mouseenter', function(e) {
+          copyBtn.setAttribute('class', 'btn btn-transparent copy-btn show');
+        });
+        sourcePanel.addEventListener('mouseleave', function(e) {
+          copyBtn.setAttribute('class', 'btn btn-transparent copy-btn hide');
+        });
+        var clipboard = new Clipboard('.copy-btn');
+        clipboard.on('success', function(e) {
+            e.trigger.setAttribute('class', 'btn btn-transparent copy-btn copied');
+            e.clearSelection();
+        });
+        clipboard.on('error', function(e) {
+          e.trigger.setAttribute('class', 'btn btn-transparent copy-btn no-copied');
+        });
+        copyBtn.addEventListener('mouseleave', function(e) {
+          e.currentTarget.setAttribute('class', 'btn btn-transparent copy-btn');
+        });
+      }
+
+      function isThisSafari() {
+        return navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && !navigator.userAgent.match('CriOS');
+      }
+    })();
+  </script>
 </body>
 </html>
