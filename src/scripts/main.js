@@ -13,9 +13,11 @@ var $ = require('jquery');
 // visibility to actual jQuery global.
 // If this needs to be modified, be sure to also make the
 // same updates in the browserify-shim config in package.json
+require('bootstrap/js/transition');
 require('bootstrap/js/dropdown');
 require('bootstrap/js/scrollspy');
 require('bootstrap/js/affix');
+require('bootstrap/js/collapse');
 
 // Mapzen-styleguide specific bundled JavaScripts
 var trackEvent = require('./event-tracking.js');
