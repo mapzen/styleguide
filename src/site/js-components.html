@@ -10,7 +10,32 @@
 
       <div class="col-xs-12 col-md-9">
         <h2>JS Components</h2>
+
+        <p>
+          Some components will require JavaScript in order to function correctly. In addition, we assume that all of our pages will be measured by <a href="https://www.google.com/analytics/">Google Analytics</a>. So, we've bundled all of the baseline JavaScript requirements into one package:
+        </p>
+
+        <pre><code>&lt;script src=&quot;https://mapzen.com/common/styleguide/scripts/mapzen-styleguide.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+        <p>
+          This file is about 35kb minified and gzipped. For best results, insert this script tag at the bottom of a webpage, just before the closing <code>&lt;/body&gt;</code> tag, as opposed to in the <code>&lt;head&gt;</code>. You can see its preferred placement in the <a href="./#boilerplate">HTML Boilerplate</a>.
+        </p>
+
+        <p>
+          These third-party libraries are included:
+        </p>
+
+        <ul>
+          <li><a href="http://getbootstrap.com/javascript/">Bootstrap JavaScript</a> <em>(version 3.3.6)</em> for these plugins: Transitions, Dropdown, Scrollspy, Collapse, and Affix. Other Bootstrap plugins are not supported by our styleguide at this time.</li>
+          <li><a href="https://www.google.com/analytics/">Google Analytics</a> using Mapzen's Universal Analytics ID. We also include a helper function for tracking specific events <em>(documentation forthcoming)</em>.</li>
+        </ul>
+
+        <p>
+          In addition, client-side JavaScript is used to make sure our top navigation bar works correctly, and to handle <a href="./design-elements.html#tables">very wide tables</a>. Specific design components that depend on these JavaScript files are described in greater detail below. If you need other JavaScript libraries that are not included in this list above, please include them in your page separately. (For instance, jQuery is <em>not</em> provided by the Styleguide.)
+        </p>
+
         <hr>
+
         @@include('./js-components/social-share/index.html')
         @@include('./js-components/side-navigation/index.html')
       </div>
