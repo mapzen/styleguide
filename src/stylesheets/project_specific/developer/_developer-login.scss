@@ -10,6 +10,7 @@ $signupbtnh:45px;
       background-position:center center;
       border-radius: 50%;
       padding:3px;
+      margin: 0 auto;
     }
 
     .login-wrapper{
@@ -30,7 +31,7 @@ $signupbtnh:45px;
         text-transform: uppercase;
         margin-top: 20px;
       }
-      
+
       button#sign-up[disabled] {
         background: $mz-gray;
         border: 1px solid $mz-gray;
@@ -49,7 +50,7 @@ $signupbtnh:45px;
         margin-top: 30px;
         letter-spacing:1px;
         font-size:18px;
-        
+
       }
 
       .login-title {
