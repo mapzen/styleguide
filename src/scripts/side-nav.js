@@ -66,7 +66,7 @@
     toggle.addEventListener('click', function (e) {
       // Expands the submenu if there is no link to another page
       if (!e.target.href || e.target.href === '#') {
-        var sublist = e.target.parentNode.nextElementSibling;
+        var sublist = e.target.nextElementSibling;
         sublist.classList.toggle('toc-expand');
 
         // Recalc affix position after expand transition finishes
