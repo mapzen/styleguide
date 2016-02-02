@@ -18,6 +18,7 @@ require('bootstrap/js/dropdown');
 require('bootstrap/js/scrollspy');
 require('bootstrap/js/affix');
 require('bootstrap/js/collapse');
+require('bootstrap/js/modal');
 
 // Mapzen-styleguide specific bundled JavaScripts
 var trackEvent = require('./event-tracking.js');
