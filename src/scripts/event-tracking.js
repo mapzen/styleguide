@@ -24,10 +24,8 @@
   var trackEvent = function (category, action, label, value) {
     // Fail silently if Google Analytics is not present
     if (typeof window.ga !== 'function') {
-      console.log('Event tracking: Analytics not loaded.');
       return false;
     }
-    console.log('Event tracked:', [category || '(null)', action || '(null)', label || '(null)', value || '(null)'].join(', '));
     ga('send', 'event', category, action, label, value);
   }
 
