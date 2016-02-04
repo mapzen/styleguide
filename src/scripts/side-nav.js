@@ -48,7 +48,7 @@
       offset: {
         top: function () {
           var navHeight = nav ? nav.offsetHeight : 0;
-          return $(container).offset().top - navHeight;
+          return $(container).offset().top - navHeight + 1;
         },
         bottom: function () {
           return $(document).height() - $(container).offset().top - $(container).outerHeight(true);
