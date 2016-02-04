@@ -48,6 +48,11 @@
       offset: {
         top: function () {
           var navHeight = nav ? nav.offsetHeight : 0;
+          // in bootstrap/affix.js line 45 there appears to be an off by 1 bug
+          // which in some layouts causes the affix to incorrectly toggle
+          // on mouseclick if the screen is scrolled all the way to the top
+          // see: http://stackoverflow.com/questions/19711202/bootstrap-3-affix-plugin-click-bug
+          // to avoid this we're adding 1 to offset.top
           return $(container).offset().top - navHeight + 1;
         },
         bottom: function () {
