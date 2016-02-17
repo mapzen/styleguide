@@ -70,7 +70,8 @@
     var toggle = toggleEls[i];
     toggle.addEventListener('click', function (e) {
       // Expands the submenu if there is no link to another page
-      if (!e.target.href || e.target.href === '#') {
+      // e.target.href expands to a fully qualified URL; don't use it
+      if (!e.target.href || e.target.getAttribute('href') === '#') {
         var sublist = e.target.nextElementSibling;
         sublist.classList.toggle('toc-expand');
 
