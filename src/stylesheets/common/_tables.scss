@@ -4,18 +4,20 @@
   margin-bottom: 0;
 
   th {
-    font-family: $docs-heading-font;
-    color: $mz-darkblue;
-    font-weight: 700;
+    padding: 8px;
     border-right: 1px dotted $table-border-color;
     border-bottom: 2px solid $table-border-color;
-    padding: 8px;
+    color: $mz-darkblue;
+    font-family: $docs-heading-font;
+    font-weight: 700;
+    // Force this to be 16px, since it inherits 18px in blogs.
+    font-size: $body-normal;
   }
 
   td {
     line-height: inherit !important;
     border-right: 1px dotted $table-border-color;
-    border-top:  1px solid $table-border-color;
+    border-top: 1px solid $table-border-color;
     font-size: $body-small;
   }
 }
