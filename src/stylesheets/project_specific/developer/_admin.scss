@@ -10,3 +10,35 @@
     }
   }
 }
+
+.query-tab {
+  margin: 5px;
+  color: $link-color;
+}
+
+.query-tab:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.query-tab.active {
+  border-bottom: 3px solid black;
+  padding-bottom: 3px;
+  color: black;
+}
+
+.query-with-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+
+  h3 {
+    display: inline-block;
+    flex-grow: 1;
+  }
+
+  .query-tab {
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+}
