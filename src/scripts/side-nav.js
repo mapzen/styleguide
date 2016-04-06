@@ -24,11 +24,14 @@
 }(this, function () {
   'use strict';
 
-  // Bail if there is no sub-nav component present on this page
   // TODO: This class selector could change
   var el = document.querySelector('.toc');
+
+  // Bail if there is no sub-nav component present on this page
+  // or if the js-disable class is present
+  if (!el || el.className.split(' ').indexOf('js-disable') !== -1) return;
+
   var $el = $(el); // Remember the jQuery-wrapped version for affix
-  if (!el) return;
 
   var nav = document.querySelector('nav.navbar');
 
