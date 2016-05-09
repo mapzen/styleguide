@@ -50,6 +50,7 @@ Organization
 ------------
 
 To add a new sub-section to the styleguide:
+
 1. Add a new folder and `index.html` to the appropriate section under `src/site/`
 2. Add a new `@@include` to the appropriate HTML file for the section you are working on in `src/site/`
 3. Add a new `<a>` link to the index file in `src/site/includes/side-nav.hmtl`

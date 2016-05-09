@@ -2,3 +2,24 @@ input[type="search"] {
   background: url("../images/search.png") no-repeat 4px 50%;
   padding: 0 0 0 25px;
 }
+
+input[type="range"] {
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding: 2px;
+  background-color: #f8f8f8;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #385d5c;
+  height: 10px;
+  width: 15px;
+  background: #6ea0a4;
+}
+input[type=range]::-moz-range-thumb {
+  border: 1px solid #385d5c;
+  height: 10px;
+  width: 15px;
+  background: #6ea0a4; 
+}
