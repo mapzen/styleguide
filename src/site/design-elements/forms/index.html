@@ -12,19 +12,13 @@
         <label>Second Label</label>
         <input type="text" />
       </div>
+      <input type="submit" class="btn btn-mapzen">
     </form>
   </div>
 
   <h3 class="headroom-large footroom">Search Input</h3>
   <div data-xrayhtml>
     <input type="search">
-  </div>
-
-  <h3 class="headroom-large footroom">Submit Buttons</h3>
-  
-  <p>Typically a submit button will be styled like the standard button style:</p>
-  <div data-xrayhtml>
-    <input type="submit" class="btn btn-transparent">
   </div>
 
   <p>There is a condensed style for buttons adjacent to a text field:</p>
@@ -37,7 +31,9 @@
     </form>
   </div>
 
-  <h3 class="headroom-large footroom">Select Dropdown</h3>
+  <h3 class="headroom-large footroom">Selections</h3>
+
+  <p>This is the drop-down menu style.</p>
   <div data-xrayhtml>
     <select>
       <option>One</option>
@@ -46,7 +42,7 @@
     </select>
   </div>
 
-  <h3 class="headroom-large footroom">Checkboxes</h3>
+  <p>Ah, but what if you needed checkboxes?</p>
   <div data-xrayhtml>
     <form>
       <div class="form-group">
@@ -60,21 +56,21 @@
     </form>
   </div>
 
-  <h3 class="headroom-large footroom">Radio Buttons</h3>
+  <p>Likewise, here are radio button styles</p>
   <div data-xrayhtml>
     <form>
       <div class="form-group">
-        <input type="radio">
+        <input type="radio" name="options" value="first">
         First Option
       </div>
       <div class="form-group">
-        <input type="radio" checked>
+        <input type="radio" name="options" value="second" checked>
         Second Option
       </div>
     </form>
   </div>
 
-  <h3 class="headroom-large footroom">Slider</h3>
+  <p>Finally, here is the slider style:</p>
   <div data-xrayhtml>
     <input type="range">
   </div>
