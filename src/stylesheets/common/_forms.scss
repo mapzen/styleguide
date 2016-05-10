@@ -1,6 +1,19 @@
 input[type="search"] {
   background: url("../images/search.png") no-repeat 4px 50%;
   padding: 0 0 0 25px;
+  border: 1px solid #ccc;
+}
+
+.inline-submit {
+  height: 26px;
+  input {
+    float: left;
+  }
+  .btn {
+    margin-left: -1px;
+    padding: 3px 12px 2px;
+    border-color: #ccc;
+  }
 }
 
 input[type="checkbox"] {
