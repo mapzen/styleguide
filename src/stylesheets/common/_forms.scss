@@ -3,13 +3,20 @@ input[type="search"] {
   padding: 0 0 0 25px;
 }
 
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
 input[type="range"] {
   -webkit-appearance: none;
   cursor: pointer;
   padding: 2px;
   background-color: #f8f8f8;
 }
-
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #385d5c;
