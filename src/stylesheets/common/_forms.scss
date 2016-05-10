@@ -4,7 +4,6 @@
 
 label {
   margin-right: 10px;
-  display: block;
 }
 
 input[type="search"] {
@@ -32,9 +31,14 @@ input[type="range"]:focus,
 select:focus {
   outline: 0;
 }
-
 input[type="checkbox"],
 input[type="radio"] {
+  opacity: .01;
+  position: absolute;
+  cursor: pointer;
+}
+input[type="checkbox"] + *:before,
+input[type="radio"] + *:before {
   background: url("../images/selection-sprite.png");
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -43,28 +47,30 @@ input[type="radio"] {
   cursor: pointer;
   background-size: 100%;
   margin: 0 8px -3px 0;
+  content: '';
+  display: inline-block;
 }
 
-input[type="checkbox"]:hover {
+input[type="checkbox"]:hover + *:before {
   background-position: 0 126px;
 }
-input[type="checkbox"]:checked {
+input[type="checkbox"]:checked + *:before {
   background-position: 0 108px;
 }
-input[type="checkbox"]:checked:hover {
+input[type="checkbox"]:checked:hover + *:before {
   background-position: 0 90px;
 }
 
-input[type="radio"] {
+input[type="radio"] + *:before {
   background-position: 0 72px;
 }
-input[type="radio"]:hover {
+input[type="radio"]:hover + *:before {
   background-position: 0 54px;
 }
-input[type="radio"]:checked {
+input[type="radio"]:checked + *:before {
   background-position: 0 36px;
 }
-input[type="radio"]:checked:hover {
+input[type="radio"]:checked:hover + *:before {
   background-position: 0 18px;
 }
 
