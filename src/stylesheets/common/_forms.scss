@@ -25,6 +25,16 @@ input[type="search"] {
   }
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #ccc;
+  background: url("../images/dropdown.png") no-repeat right center;
+  background-size: 25px auto;
+  padding: 2px 38px 2px 10px;
+  border-radius: 0;
+}
+
 input[type="checkbox"]:focus,
 input[type="radio"]:focus,
 input[type="range"]:focus,
