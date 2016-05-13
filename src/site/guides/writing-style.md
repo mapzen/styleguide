@@ -1,0 +1,5 @@
+- conversational tone, but be professional.
+- phrases and terms that are clear and easy to understand. Avoid idioms or phrasing that is unfamiliar to the audience or would not translate to other languages directly.
+- active voice is generally preferred over passive.
+- address the audience as "you" (second person. Avoid first person (I, we) and third person (the user, them). First person is acceptable in blogs or informal texts, but generally should be avoided in technical documentation. Using "you" also avoids the potential for gender-based terms, such as he or she.
+- in command line code blocks, do not include the $ or other prompt text before what the reader needs to type. If you copy the code, you end up pasting extra text. The exception to this is if you are showing a series of commands and responses when including the $ is useful to show which lines are input.
