@@ -46,17 +46,6 @@ sources in `src/site`. Build and test with these commands:
 3. `npm start`
 4. Open [http://localhost:3000](http://localhost:3000) in a browser.
 
-Organization
-------------
-
-To add a new sub-section to the styleguide:
-
-1. Add a new folder and `index.html` to the appropriate section under `src/site/`
-2. Add a new `@@include` to the appropriate HTML file for the section you are working on in `src/site/`
-3. Add a new `<a>` link to the index file in `src/site/includes/side-nav.hmtl`
-4. Add a new `.scss` file for your sub-section in `src/stylesheets/common`
-5. Add a link to your stylesheet in `src/stylesheets/styleguide.scss` so that gulp will bundle it on build
-
 Maintainers are [Ekta](https://github.com/souperneon),
 [Lou](https://github.com/louh), [Mike M](https://github.com/migurski),
 and [Hanbyul](https://github.com/hanbyul-here).
