@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"No tests\" && exit 0",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-file-include": "^0.13.7",
+    "gulp-if": "^2.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-s3-upload": "^1.5.0",
     "gulp-sass": "^2.0.4",

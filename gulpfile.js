@@ -9,6 +9,7 @@ var fileinclude = require('gulp-file-include');
 var del = require('del');
 var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
+var gulpif = require('gulp-if');
 
 gulp.task('clean', function() {
   return del(['examples/dist/**/*']);
@@ -23,9 +24,9 @@ gulp.task('sass', ['clean'], function() {
     './src/stylesheets/styleguide.scss'
   ].forEach(function(file_path) {
     gulp.src(file_path)
-      .pipe(sourcemaps.init())
+      .pipe(gulpif((gutil.env.target !== "prod"), sourcemaps.init()))
       .pipe(sass())
-      .pipe(sourcemaps.write())
+      .pipe(gulpif((gutil.env.target !== "prod"), sourcemaps.write()))
       .on('error', sass.logError)
       .pipe(gulp.dest('./dist/styles'));
   });
@@ -40,7 +41,7 @@ gulp.task('js', function () {
   return b.bundle()
     .pipe(source('src/main.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(gulpif((gutil.env.target !== "prod"), sourcemaps.init({ loadMaps: true })))
       // Add transformation tasks to the pipeline here.
       .pipe(uglify())
       .pipe(rename({
@@ -49,7 +50,7 @@ gulp.task('js', function () {
         extname: '.min.js'
       }))
       .on('error', gutil.log)
-    .pipe(sourcemaps.write('./'))
+    .pipe(gulpif((gutil.env.target !== "prod"), sourcemaps.write('./')))
     .pipe(gulp.dest('dist/scripts/'));
 });
 
