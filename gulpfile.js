@@ -69,7 +69,7 @@ gulp.task('watch', function() {
   gulp.watch('./src/site/**/*', ['fileinclude']);
 });
 
-gulp.task('publish', function() {
+gulp.task('publish', ['build'], function() {
   var s3 = require('gulp-s3-upload')();
   var s3bucket;
   if (gutil.env.target === "prod") {
