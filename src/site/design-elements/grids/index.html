@@ -1,18 +1,29 @@
 <div id="grids" class="headroom-large">
   <h5>Grids</h5>
   <p>
-    We use Bootstrap's 12-column responsive grid and prebuilt grid classes for layouts that scale and stack based on device and viewport size.
-    To use the grid with set max-width (960px), wrap your content in a <code>&lt;div&gt;</code> with the <code>.container</code> class.
+    We use Bootstrap's 12-column responsive grid, on both desktop and mobile, and prebuilt grid classes for layouts that scale and stack based on device and viewport size. Columns allow us to adjust the placement and size of modules within layouts, making the best use of the space available at each breakpoint and maintaining hierarchy within layouts.
+    To use the grid, wrap your content in a <code>&lt;div&gt;</code> within the <code>.container</code> class.
   </p>
   <div data-xrayhtml>
     <div class="row">
-      <div class="col-xs-12 col-md-6"> This is two column layout.</div>
-      <div class="col-xs-12 col-md-6"> It becomes one column layout on mobile.</div>
+      <div class="col-xs-12 col-md-6"> This is a sample two-column layout.</div>
+      <div class="col-xs-12 col-md-6"> It becomes one-column layout on mobile.</div>
     </div>
   </div>
   <p>
-    You can find more grid examples at <a href="http://getbootstrap.com/css/#grid-options">Bootstrap grid  examples</a>
-    <a href="http://getbootstrap.com/css/#grid-media-queries">Bootstrap media queries</a> are used to make content work in small, medium and large sizes.
+    You can find more grid examples at <a href="http://getbootstrap.com/css/#grid-options">here.</a>
   </p>
   <p class="caption">(Protip: Pages with text only should not be more than 10 columns wide or text lines become too wide and  hard to read.)</p>
+  <p>
+    We use the following <a href="http://getbootstrap.com/css/#grid-media-queries">Bootstrap media queries</a>to mark where there are big changes to our grid. This allows us to optimise the page layout for all screen widths across many devices.
+  </p>
+  <p>
+    We are currently using the following breakpoints:
+    <ul>
+      <li><strong>Extra Small</strong> - 480px (Phones)</li>
+      <li><strong>Small</strong> - 768px (Tablets)</li>
+      <li><strong>Medium</strong> - 992px (Desktops)</li>
+      <li><strong>Large</strong> - 1200px (Wide Screens)</li>
+    </ul>
+  </p>
 </div>
