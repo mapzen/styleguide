@@ -1,15 +1,32 @@
 <div id="forms" class="headroom-large">
   <h5>Forms</h5>
 
-  <h3 class="headroom-large footroom">Text Input with Labels</h3>
+  <h3 class="headroom-large footroom">Text Inputs</h3>
+
+  <p>Below is the style for a left-aligned form, with labels and inputs on the same line. You'll want to tweak the width and proportion of your form, based on the label length and required text input. Set the max-width variable in the <code>form</code> tag, and then adjust the <code>col-xs-*</code> classes such that the total number in each group is 12.</p>
   <div data-xrayhtml>
-    <form>
+    <form style="max-width: 350px;">
+      <div class="form-group row">
+        <label class="col-xs-5">First Label:</label>
+        <input type="text" class="col-xs-7" />
+      </div>
+      <div class="form-group row">
+        <label class="col-xs-5">Second Label:</label>
+        <input type="text" class="col-xs-7" />
+      </div>
+      <input type="submit" class="btn btn-mapzen">
+    </form>
+  </div>
+
+  <p>If you have limited horizontal space, or don't want to deal with left-aligned lables, here is a tall form:</p>
+  <div data-xrayhtml>
+    <form class="tall">
       <div class="form-group">
-        <label>First Label</label>
+        <label>First Label:</label>
         <input type="text" />
       </div>
       <div class="form-group">
-        <label>Second Label</label>
+        <label>Second Label:</label>
         <input type="text" />
       </div>
       <input type="submit" class="btn btn-mapzen">

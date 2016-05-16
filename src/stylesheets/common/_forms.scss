@@ -10,12 +10,19 @@ label {
   margin-right: 10px;
   font-weight: normal;
 }
+.row label {
+  margin: 0;
+}
 
 input[type="search"] {
   background: url("../images/search.png") no-repeat 4px 50%;
   padding: 2px 2px 2px 25px;
   border: 1px solid #ccc;
   height: 30px;
+}
+
+.tall {
+  label { display: block; }
 }
 
 .inline-submit {
