@@ -1,9 +1,14 @@
+.form-group-header {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
 .form-group {
   margin-bottom: 10px;
 }
 
 label {
   margin-right: 10px;
+  font-weight: normal;
 }
 
 input[type="search"] {
