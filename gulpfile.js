@@ -78,7 +78,7 @@ var svgConfig = {
     }
   },
   mode: {
-    css: {
+    view: {
       dest: '.',
       bust: false,
       sprite: 'form-sprite',
