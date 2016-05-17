@@ -11,7 +11,20 @@ label {
   font-weight: normal;
 }
 .row label {
-  margin: 0;
+  margin: 5px 0;
+}
+input[type="text"] {
+  padding: 3px 5px;
+}
+::-webkit-input-placeholder { color: #ccc; font-size: 14px; }
+::-moz-placeholder { color: #ccc; font-size: 14px; }
+:-ms-input-placeholder { color: #ccc; font-size: 14px; }
+
+textarea {
+  width: 100%;
+  padding: 5px;
+  height: 6em;
+  border-color: #ccc;
 }
 
 input[type="search"] {

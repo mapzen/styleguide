@@ -8,12 +8,12 @@
     <div class="row">
       <form class="col-xs-6">
         <div class="form-group row">
-          <label class="col-xs-5">First Label:</label>
-          <input type="text" class="col-xs-7" />
+          <label class="col-xs-5">Start Point:</label>
+          <input type="text" name="start-point" placeholder="start point" class="col-xs-7" />
         </div>
         <div class="form-group row">
-          <label class="col-xs-5">Second Label:</label>
-          <input type="text" class="col-xs-7" />
+          <label class="col-xs-5">End Point:</label>
+          <input type="text" name="end-point" placeholder="end point" class="col-xs-7" />
         </div>
         <input type="submit" class="btn btn-mapzen">
       </form>
@@ -24,27 +24,33 @@
   <div data-xrayhtml>
     <form class="tall">
       <div class="form-group">
-        <label>First Label:</label>
-        <input type="text" />
+        <label>Start Point:</label>
+        <input type="text" name="start-point" placeholder="start point" />
       </div>
       <div class="form-group">
-        <label>Second Label:</label>
-        <input type="text" />
+        <label>End Point:</label>
+        <input type="text" name="end-point" placeholder="end point" />
       </div>
       <input type="submit" class="btn btn-mapzen">
     </form>
   </div>
 
-  <h3 class="headroom-large footroom">Search Input</h3>
+  <p>If you need mulitple entry lines, try a textarea!</p>
   <div data-xrayhtml>
-    <input type="search">
+    <textarea placeholder="start typing here"></textarea>
+  </div>
+
+  <h3 class="headroom-large footroom">Search Input</h3>
+
+  <div data-xrayhtml>
+    <input type="search" placeholder="type in an address">
   </div>
 
   <p>There is a condensed style for buttons adjacent to a text field:</p>
   <div data-xrayhtml>
     <form>
       <div class="form-group inline-submit">
-        <input type="search">
+        <input type="search" placeholder="type in an address">
         <input type="submit" class="btn btn-transparent">
       </div>
     </form>
@@ -55,7 +61,7 @@
     <form action="https://www.google.com/search" method="get">
       <div class="form-group inline-submit">
         <input type="hidden" name="as_sitesearch" value="mapzen.com" />
-        <input type="search" name="q" />
+        <input type="search" name="q" placeholder="search mapzen.com" />
         <input type="submit" class="btn btn-transparent" value="search">
       </div>
     </form>
