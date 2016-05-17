@@ -1,16 +1,42 @@
+.form-group-header {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
 .form-group {
   margin-bottom: 10px;
 }
 
 label {
   margin-right: 10px;
+  font-weight: normal;
+}
+.row label {
+  margin: 5px 0;
+}
+input[type="text"] {
+  padding: 3px 5px;
+  border: 1px solid #ccc;
+}
+::-webkit-input-placeholder { font-size: 14px; }
+::-moz-placeholder { font-size: 14px; }
+:-ms-input-placeholder { font-size: 14px; }
+
+textarea {
+  width: 100%;
+  padding: 5px;
+  height: 6em;
+  border: 1px solid #ccc;
 }
 
 input[type="search"] {
   background: url("../images/search.png") no-repeat 4px 50%;
-  padding: 2px 2px 2px 25px;
+  padding: 2px 2px 2px 27px;
   border: 1px solid #ccc;
   height: 30px;
+}
+
+.tall {
+  label { display: block; }
 }
 
 .inline-submit {
@@ -45,6 +71,8 @@ input[type="radio"] {
   opacity: .01;
   position: absolute;
   cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
 input[type="checkbox"] + *:before,
 input[type="radio"] + *:before {

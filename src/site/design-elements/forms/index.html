@@ -1,31 +1,56 @@
 <div id="forms" class="headroom-large">
   <h5>Forms</h5>
 
-  <h3 class="headroom-large footroom">Text Input with Labels</h3>
+  <h3 class="headroom-large footroom">Text Inputs</h3>
+
+  <p>Below is the style for a left-aligned form, with labels and inputs on the same line. You'll want to tweak the width and proportion of your form, based on the label length and required text input. Choose an appropriate column width for the <code>form</code> class, and then adjust the <code>col-xs-*</code> classes such that the total number in each <code>form-group</code> is 12.</p>
   <div data-xrayhtml>
-    <form>
+    <div class="row">
+      <form class="col-xs-6">
+        <div class="form-group row">
+          <label class="col-xs-5">Start Point:</label>
+          <input type="text" name="start-point" placeholder="start point" class="col-xs-7" />
+        </div>
+        <div class="form-group row">
+          <label class="col-xs-5">End Point:</label>
+          <input type="text" name="end-point" placeholder="end point" class="col-xs-7" />
+        </div>
+        <input type="submit" class="btn btn-mapzen">
+      </form>
+    </div>
+  </div>
+
+  <p>If you have limited horizontal space, or don't want to deal with left-aligned lables, here is a tall form:</p>
+  <div data-xrayhtml>
+    <form class="tall">
       <div class="form-group">
-        <label>First Label</label>
-        <input type="text" />
+        <label>Start Point:</label>
+        <input type="text" name="start-point" placeholder="start point" />
       </div>
       <div class="form-group">
-        <label>Second Label</label>
-        <input type="text" />
+        <label>End Point:</label>
+        <input type="text" name="end-point" placeholder="end point" />
       </div>
       <input type="submit" class="btn btn-mapzen">
     </form>
   </div>
 
-  <h3 class="headroom-large footroom">Search Input</h3>
+  <p>If you need to input a bunch of text, try a textarea!</p>
   <div data-xrayhtml>
-    <input type="search">
+    <textarea placeholder="start typing here"></textarea>
+  </div>
+
+  <h3 class="headroom-large footroom">Search Input</h3>
+
+  <div data-xrayhtml>
+    <input type="search" placeholder="type in an address">
   </div>
 
   <p>There is a condensed style for buttons adjacent to a text field:</p>
   <div data-xrayhtml>
     <form>
       <div class="form-group inline-submit">
-        <input type="search">
+        <input type="search" placeholder="type in an address">
         <input type="submit" class="btn btn-transparent">
       </div>
     </form>
@@ -36,7 +61,7 @@
     <form action="https://www.google.com/search" method="get">
       <div class="form-group inline-submit">
         <input type="hidden" name="as_sitesearch" value="mapzen.com" />
-        <input type="search" name="q" />
+        <input type="search" name="q" placeholder="search mapzen.com" />
         <input type="submit" class="btn btn-transparent" value="search">
       </div>
     </form>
@@ -53,15 +78,16 @@
     </select>
   </div>
 
-  <p>Ah, but what if you needed checkboxes?</p>
+  <p>The checkbox pattern uses a background image to act as the checkbox. To make it appear, the checkbox input must have an adjacent sibling element in the wrapper div, to access the <code>::before</code> pseudosleector. For an increased hit area on the form elements, use a <code>label</code> after the <code>input</code>, and connect the two with the <code>id</code> and <code>for</code> attributes.</p>
   <div data-xrayhtml>
     <form>
+      <div class="form-group-header">Select Options:</div>
       <div class="form-group">
-        <input type="checkbox" id="check-1">
+        <input type="checkbox" id="check-1" name="option-one">
         <label for="check-1">First Option</label>
       </div>
       <div class="form-group">
-        <input type="checkbox" id="check-2" checked>
+        <input type="checkbox" id="check-2" name="option-two" checked>
         <label for="check-2">Second Option</label>
       </div>
     </form>
@@ -70,12 +96,13 @@
   <p>Likewise, here are radio button styles:</p>
   <div data-xrayhtml>
     <form>
+      <div class="form-group-header">Select One Option:</div>
       <div class="form-group">
-        <input type="radio" name="options" id="radio-1">
+        <input type="radio" id="radio-1" name="option-one">
         <label for="radio-1">First Option</label>
       </div>
       <div class="form-group">
-        <input type="radio" name="options" id="radio-2" checked>
+        <input type="radio" id="radio-2" name="option-two" checked>
         <label for="radio-2">Second Option</label>
       </div>
     </form>
