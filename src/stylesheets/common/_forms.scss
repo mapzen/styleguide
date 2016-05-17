@@ -10,9 +10,14 @@ label {
   margin-right: 10px;
   font-weight: normal;
 }
-.row label {
-  margin: 5px 0;
+.wide {
+  label { margin: 5px 0; }
 }
+.tall {
+  label { display: block; }
+  input[type="text"] { width: 100%; }
+}
+
 input[type="text"] {
   padding: 3px 5px;
   border: 1px solid #ccc;
@@ -35,15 +40,9 @@ input[type="search"] {
   height: 30px;
 }
 
-.tall {
-  label { display: block; }
-}
-
 .inline-submit {
   height: 26px;
-  input {
-    float: left;
-  }
+  input { float: left; }
   .btn {
     margin-left: -1px;
     padding: 5px 12px 4px;
