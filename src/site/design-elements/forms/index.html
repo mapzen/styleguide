@@ -3,19 +3,21 @@
 
   <h3 class="headroom-large footroom">Text Inputs</h3>
 
-  <p>Below is the style for a left-aligned form, with labels and inputs on the same line. You'll want to tweak the width and proportion of your form, based on the label length and required text input. Set the max-width variable in the <code>form</code> tag, and then adjust the <code>col-xs-*</code> classes such that the total number in each group is 12.</p>
+  <p>Below is the style for a left-aligned form, with labels and inputs on the same line. You'll want to tweak the width and proportion of your form, based on the label length and required text input. Choose an appropriate column width for the <code>form</code> class, and then adjust the <code>col-xs-*</code> classes such that the total number in each <code>form-group</code> is 12.</p>
   <div data-xrayhtml>
-    <form style="max-width: 350px;">
-      <div class="form-group row">
-        <label class="col-xs-5">First Label:</label>
-        <input type="text" class="col-xs-7" />
-      </div>
-      <div class="form-group row">
-        <label class="col-xs-5">Second Label:</label>
-        <input type="text" class="col-xs-7" />
-      </div>
-      <input type="submit" class="btn btn-mapzen">
-    </form>
+    <div class="row">
+      <form class="col-xs-6">
+        <div class="form-group row">
+          <label class="col-xs-5">First Label:</label>
+          <input type="text" class="col-xs-7" />
+        </div>
+        <div class="form-group row">
+          <label class="col-xs-5">Second Label:</label>
+          <input type="text" class="col-xs-7" />
+        </div>
+        <input type="submit" class="btn btn-mapzen">
+      </form>
+    </div>
   </div>
 
   <p>If you have limited horizontal space, or don't want to deal with left-aligned lables, here is a tall form:</p>
