@@ -15,21 +15,22 @@ label {
 }
 input[type="text"] {
   padding: 3px 5px;
+  border: 1px solid #ccc;
 }
-::-webkit-input-placeholder { color: #ccc; font-size: 14px; }
-::-moz-placeholder { color: #ccc; font-size: 14px; }
-:-ms-input-placeholder { color: #ccc; font-size: 14px; }
+::-webkit-input-placeholder { font-size: 14px; }
+::-moz-placeholder { font-size: 14px; }
+:-ms-input-placeholder { font-size: 14px; }
 
 textarea {
   width: 100%;
   padding: 5px;
   height: 6em;
-  border-color: #ccc;
+  border: 1px solid #ccc;
 }
 
 input[type="search"] {
   background: url("../images/search.png") no-repeat 4px 50%;
-  padding: 2px 2px 2px 25px;
+  padding: 2px 2px 2px 27px;
   border: 1px solid #ccc;
   height: 30px;
 }
@@ -70,6 +71,8 @@ input[type="radio"] {
   opacity: .01;
   position: absolute;
   cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
 input[type="checkbox"] + *:before,
 input[type="radio"] + *:before {
