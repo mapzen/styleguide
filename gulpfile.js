@@ -10,7 +10,6 @@ var del = require('del');
 var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
 var gulpif = require('gulp-if');
-var svgSprite = require('gulp-svg-sprite')
 
 gulp.task('clean', function() {
   return del(['examples/dist/**/*']);
