@@ -4,7 +4,8 @@ Contribution Guide
 
 ### Image assets
 
-- SVG is preferred over JPG, PNG.
+- SVG is preferred over JPG, PNG, SVG is recommended to be optimized through [SVGO](https://github.com/svg/svgo).
+- Image assets that were replaced by datauri are going into `src/image-assets/`
 
 ### Accessiblity
 
