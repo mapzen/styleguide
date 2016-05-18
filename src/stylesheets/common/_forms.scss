@@ -15,10 +15,10 @@ label {
 }
 .tall {
   label { display: block; }
-  input[type="text"] { width: 100%; }
+  input[type="text"], input[type="email"] { width: 100%; }
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
   padding: 3px 5px;
   border: 1px solid #ccc;
 }
