@@ -70,30 +70,6 @@ gulp.task('watch', function() {
   gulp.watch('./src/site/**/*', ['fileinclude']);
 });
 
-var svgConfig = {
-  log: 'verbose',
-  shape: {
-    id: {
-      generator: '%s'
-    }
-  },
-  mode: {
-    view: {
-      dest: '.',
-      bust: false,
-      sprite: 'form-sprite',
-      layout: 'horizontal',
-      transform: ['svgo']
-    }
-  }
-}
-
-gulp.task('svgsprites', function () {
-  return gulp.src('src/image-assets/form/*.svg')
-    .pipe(svgSprite(svgConfig))
-    .pipe(gulp.dest('./dist/images'))
-})
-
 gulp.task('publish', ['build'], function() {
   var s3 = require('gulp-s3-upload')();
   var s3bucket;
@@ -114,6 +90,6 @@ gulp.task('publish', ['build'], function() {
   }));
 });
 
-gulp.task('build', ['sass', 'js', 'fileinclude','svgsprites']);
+gulp.task('build', ['sass', 'js', 'fileinclude']);
 
 gulp.task('default', ['build', 'watch']);
