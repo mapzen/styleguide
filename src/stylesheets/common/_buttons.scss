@@ -26,6 +26,23 @@
   }
 }
 
+// Blue button
+.btn-mapzen-alt {
+  border-color: $mz-blue;
+  background-color: $mz-blue;
+  color: #fff;
+  text-shadow: none;
+  text-transform: uppercase;
+  font-weight:400;
+
+  &:hover,
+  &:focus {
+    border-color: $mz-darkblue;
+    background-color: $mz-darkblue;
+    color: #fff;
+  }
+}
+
 // Transparent button
 // Sometimes on white, sometimes on light gray
 .btn-transparent {
