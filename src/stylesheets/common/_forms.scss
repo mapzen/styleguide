@@ -21,16 +21,19 @@ label {
 input[type="text"], input[type="email"] {
   padding: 3px 5px;
   border: 1px solid #ccc;
+  border-radius: 0;
+  -webkit-appearance:none;
 }
-::-webkit-input-placeholder { font-size: 14px; }
-::-moz-placeholder { font-size: 14px; }
-:-ms-input-placeholder { font-size: 14px; }
+::-webkit-input-placeholder { font-size: 14px; line-height: 24px; }
+::-moz-placeholder { font-size: 14px; line-height: 24px; }
+:-ms-input-placeholder { font-size: 14px; line-height: 24px; }
 
 textarea {
   width: 100%;
   padding: 5px;
   height: 6em;
   border: 1px solid #ccc;
+  -webkit-appearance:none; 
 }
 
 input[type="search"] {
