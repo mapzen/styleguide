@@ -19,7 +19,8 @@ label {
 }
 
 input[type="text"], input[type="email"] {
-  padding: 3px 5px;
+  height: 41px;
+  padding: 8px 5px;
   border: 1px solid #ccc;
   border-radius: 0;
   -webkit-appearance:none;
@@ -38,24 +39,22 @@ textarea {
 }
 
 input[type="search"] {
+  height: 41px;
   background-image: url(data:image/svg+xml,%3Csvg%20version%3D%271.1%27%20id%3D%27Layer_1%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Ctitle%3Esearch%3C/title%3E%3Ccircle%20fill%3D%27none%27%20stroke%3D%27%23666666%27%20stroke-width%3D%272.2677%27%20stroke-miterlimit%3D%2710%27%20cx%3D%279.99%27%20cy%3D%276.512%27%20r%3D%275.5%27/%3E%3Cline%20fill%3D%27none%27%20stroke%3D%27%23666666%27%20stroke-width%3D%272.2677%27%20stroke-miterlimit%3D%2710%27%20x1%3D%2713.5%27%20y1%3D%2710.637%27%20x2%3D%2716.789%27%20y2%3D%2714.173%27/%3E%3C/svg%3E%0A);
   background-repeat: no-repeat;
   background-size: 19px 19px;
-  background-position: 2px 7px;
-  padding: 2px 2px 2px 25px;
+  background-position: 3px 14px;
+  padding: 8px 2px 8px 26px;
   border: 1px solid #ccc;
-  height: 30px;
   border-radius: 0;
 }
 
 .inline-submit {
-  height: 26px;
   input { float: left; }
   .btn {
+    height: 41px;
     margin-left: -1px;
-    padding: 5px 12px 4px;
     border-color: #ccc;
-    line-height: 19px;
   }
 }
 
@@ -68,7 +67,7 @@ select {
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 25px auto;
-  padding: 2px 38px 2px 10px;
+  padding: 8px 38px 8px 10px;
   border-radius: 0;
 }
 select::-ms-expand {
