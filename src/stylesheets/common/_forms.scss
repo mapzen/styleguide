@@ -25,6 +25,14 @@ input[type="text"], input[type="email"] {
   border-radius: 0;
   -webkit-appearance:none;
 }
+
+input[type="text"]:-moz-focusring, 
+input[type="email"]:-moz-focusring,
+textarea:-moz-focusring,
+input[type="search"]:-moz-focusring {
+  outline: 1px dotted #212121;
+}
+
 ::-webkit-input-placeholder { font-size: 14px; line-height: 24px; }
 ::-moz-placeholder { font-size: 14px; line-height: 24px; }
 :-ms-input-placeholder { font-size: 14px; line-height: 24px; }
@@ -113,7 +121,7 @@ input[type="radio"] + *:before {
 
 input[type="checkbox"]:focus + *:before,
 input[type="radio"]:focus + *:before {
-  border:1px solid rgb(112, 172, 233);
+  border: 1px solid rgb(112, 172, 233);
   box-shadow: 0px 0px 5px 0px rgb(112, 172, 233);
 }
 
