@@ -74,8 +74,14 @@
   }
 }
 
-// Buttong groups
-// Giving margin-left to the buttons except the first one
-.btn-group .btn + .btn {
-  margin-left: 10px;
+// Button groups
+// Giving margin-right to the buttons
+.btn-group .btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+// Undo the overall bottom margin
+.btn-group {
+  margin-bottom: -10px;
 }
