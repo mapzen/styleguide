@@ -5,6 +5,8 @@
 #admin-container {
   .table {
     width: auto;
+    display: inline-block;
+    overflow: auto;
     th {
       text-align: center;
     }
