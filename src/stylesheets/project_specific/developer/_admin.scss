@@ -4,7 +4,9 @@
 
 #admin-container {
   .table {
+    display: inline-block;
     width: auto;
+    overflow: auto;
     th {
       text-align: center;
     }
