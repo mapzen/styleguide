@@ -2,64 +2,6 @@
 // Documentation
 // --------------------------------------------------
 
-// Current documentation theme is large boxes per each documentation
-
-
-.doc-hitboxes {
-  margin-top: -15px;
-
-  @media (min-width: $screen-sm-min) {
-    // Overrides .headroom-med
-    margin-top: -30px;
-  }
-}
-
-.doc-hitbox {
-  min-height: 300px;
-  position: relative;
-  background-color: #eee;
-  text-align: center;
-
-  &.doc-hitbox-small {
-    min-height: 160px;
-  }
-
-  &:hover {
-    background-color: $mz-darkblue;
-    a {
-      color: white;
-    }
-    h5 {
-      color: white;
-    }
-    .btn {
-      color: white;
-      border-color: white;
-    }
-  }
-
-  .btn:hover {
-    background-color: transparent;
-  }
-
-  a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    color: #444;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  p {
-    margin-top: 1em;
-  }
-}
-
 .cta-paragraph {
   font-weight: 300;
 }
