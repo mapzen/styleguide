@@ -1,0 +1,63 @@
+//
+// Jobs page and Documentation index
+// --------------------------------------------------
+
+//overwriting h6 to use it as category title
+h6.category-title {
+  font-family: 'Playfair Display';
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 1.5;
+  color: $mz-mediumgray;
+  text-transform: capitalize;
+}
+
+.category-info-container {
+  width: 100%;
+  display: table;
+  border-top: 1px dotted #ccc;
+  padding: 25px 0px;
+  font-size: 16px;
+  color: #666;
+  @media (max-width: $screen-xs-max) {
+    padding: 20px 0px;
+  }
+  // using different border style for first element of each team
+  &.first { border-top: 2px solid #ccc; }
+
+  .category-info {
+    display: table-cell;
+    @media (max-width: $screen-xs-max) { display: table-row; }
+
+    .sub-info {
+      font-size: 14px;
+      //adding interpunct only on large screen
+      &:before { content: '·';}
+      @media (max-width: $screen-xs-max) {
+        display: block;
+        line-height: 1.8;
+        &:before {
+          content: none;
+        }
+      }
+    }
+
+    .excerpt {
+      @media (max-width: $screen-xs-max) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .read-more {
+    display: table-cell;
+    vertical-align: middle;
+    width: 150px;
+    text-align: center;
+    text-transform: capitalize;
+    @media (max-width: $screen-xs-max) {
+      display: table-row;
+      padding: 10px 0;
+    }
+  }
+}
