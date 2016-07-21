@@ -11,6 +11,9 @@
     th {
       text-align: center;
     }
+    td.date {
+      text-align: right;
+    }
   }
 }
 
@@ -45,8 +48,12 @@
     margin-bottom: 14px;
   }
 }
-// Makes font size items under Stats Highlight bigger without changing the font size of the nav
-ul.highlight {
+
+.highlight {
   font-size: 18px;
-  line-height: 28px;
+  line-height: 20px;
+}
+
+.Chart.c3{
+  margin-bottom: 20px;
 }
