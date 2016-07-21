@@ -72,19 +72,12 @@
       background-color: $mz-blue;
       color: #fff;
       font-weight: 400;
-      border: 0;
+      border: 10;
       margin-top: 1px;
       padding: 7px 10px;
       text-transform: uppercase;
     }
   }
-
-    #chart {
-      width: 100%;
-      height: 400px;
-      margin-top: 30px;
-      background-color: $mz-lightgray;
-    }
 
     table {
       margin-top: 30px;
@@ -98,54 +91,12 @@
       }
     }
 
-
   padding-top: 50px;
 
-  //stat navigation
-  ul.adminnav {
-    width: 100%;
-    padding-left: 0px;
-    a {
-      li {
-        display: inline-block;
-        width: 120px;
-        height: 70px;
-        margin: 0 calc( ( 25% - 120px) / 2);
-        padding-top: 40px;
-        list-style-type: none;
-        position: relative;
-        text-align: center;
-        &.active {
-          font-weight: 600;
-          &::before {
-            background-image: url('../images/marker.png');
-          }
-        }
-        &::before {
-          content: ' ';
-          width: 120px;
-          height: 40px;
-          position: absolute;
-          left: 0;
-          top: 0;
-          background-image: url('../images/marker1.png');
-          background-size: 25px 36px;
-          background-repeat: no-repeat;
-          background-position: center;
-        }
-      }
-    }
-  }
-
-  ul.highlight {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
-  h3 {
+ h3 {
     margin: 0px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 10px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 24px;
