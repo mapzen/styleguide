@@ -22,6 +22,7 @@ This list is a living document that will be added to or changed as terminology i
 - Do not add an apostrophe if you make acronym plural (for example, DVDs not DVD's).
 - Abbreviate MB and GB
 - Avoid using Latin words, such as e.g., i.e., et al., and etc. Instead, use for example, that is, and others, and so on.
+- Do not use the ampersand symbol & in text to mean "and". It is okay to use it in appropriate contexts, such as in code samples.
 
 ##Titles and headings
 - Use sentence-style capitalization (First word capitalized), rather than title case (All Words Capitalized). Sentence-style is easier to read.
