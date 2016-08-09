@@ -11,6 +11,14 @@ A good baseline guide is [Stamen's Checklist for Maps](http://content.stamen.com
 - Style or variable switcher (e.g. dat-gui on Tangram demos)
 - Attribution
 
+## Map state
+
+Map URLs should remember state. (Stamen's Checklist for Maps, #1: "URLs should contain and maintain state, by default.")
+
+### leaflet-hash.js
+
+Michael Evan's excellent [leaflet-hash](https://github.com/mlevans/leaflet-hash) library is a core part of map UI for every Mapzen demo. [There is now a public CDN for this library](https://cdnjs.com/libraries/leaflet-hash), and you can also [install as an npm module](https://www.npmjs.com/package/leaflet-hash).
+
 ## Attribution
 
 ```
@@ -23,4 +31,4 @@ A good baseline guide is [Stamen's Checklist for Maps](http://content.stamen.com
 - Styles should match the Leaflet default placement, size, text color, link color, link hover behavior, and other applicable styles, even for map rendering libraries (MapboxGL, D3, etc) that don't include attribution controls by default. These styles should never be modified without good reason.
 - Attribution must never be hidden (this keeps us on good terms with the other contributors in the open source community we depend on)
 - Attribution links must always open on top of a demo's parent tab or window (`target='_top'`) if it originated in an iframe. [Here is a script to add targets to links](https://github.com/mapzen/ui/blob/master/components/utils/iframe.anchors.js), which is useful for links that are added programatically, like Leaflet's default attribution link. Do not use `target='_blank'`, unless circumstances demand it. When in doubt, refer to [this article on when to use target="_blank"](https://css-tricks.com/use-target_blank/).
-- Other links in an iframed demp may open on top of the parent tab or inside the iframe, depending on the circumstances. Again, avoid opening in a new window if you can help it.
+- Other links in an iframed demo may open on top of the parent tab or inside the iframe, depending on the circumstances. Again, avoid opening in a new window if you can help it.
