@@ -3,12 +3,10 @@ FROM mhart/alpine-node
 ADD . /app
 WORKDIR /app
 
-RUN npm install -g gulp-cli
-RUN npm shrinkwrap
+RUN apk add --update alpine-sdk python
+RUN npm install -g gulp-cli http-server
+RUN npm install
+RUN apk del --purge alpine-sdk python
 
-RUN apk add --update python
-
-RUN mkdir -p /app/common/styleguide
-RUN ln -s /app/dist/* /app/common/styleguide/
-
-CMD ["gulp"]
+RUN gulp build
+CMD http-server /app/dist
