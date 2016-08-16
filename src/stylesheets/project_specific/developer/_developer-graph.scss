@@ -2,7 +2,7 @@
   .stats{
     position:relative;
     font-size:12px;
-    margin-top: 55px;
+    margin-top: 70px;
     .custom-dropdown-div {
       width: 100px;
       background-repeat: no-repeat;
@@ -16,7 +16,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     background-color: transparent;
-    width: 100%;
+    width: 80px;
     padding: 0 3px;
     border: 0;
     border-bottom: 1px solid #666;
@@ -28,21 +28,33 @@
     stroke:#ccc;
     stroke-width:2;
   }
+  line {
+    stroke: #808080;
+  }
+  circle {
+    fill: rgba(51,51,51,0.6);
+  }
+  .callout {
+    position: absolute;
+    background: rgba(0,0,0,.2);
+    padding: 3px 10px;
+    text-align: center;
+    top: 0;
+  }
 
   .axis{shape-rendering:crispEdges;}
   .x.axis line{
     stroke:#000;
   }
-  .x.axis path{
-    display:none;
+  .x.axis .domain,
+  .y.axis .domain{
+    fill: none;
+    stroke: #444;
   }
   .y.axis line{
     fill:none;
     stroke:#000;
     stroke-width:1;
-  }
-  .y.axis path{
-     display:none;
   }
 
   .d3-tip {
