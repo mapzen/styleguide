@@ -2,7 +2,15 @@
   .stats{
     position:relative;
     font-size:12px;
-    margin-top: 70px;
+    margin-top: 0;
+    .controls { display: none; }
+    &.visible {
+      margin-top: 70px;
+      .controls { 
+        display: block; 
+        margin-bottom: 10px;
+      }
+    }
     .custom-dropdown-div {
       width: 100px;
       background-repeat: no-repeat;
@@ -11,15 +19,15 @@
       position: absolute;
     }
     select.custom-dropdown {
-    font-weight: 700;
-    margin: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: transparent;
-    width: 80px;
-    padding: 0 3px;
-    border: 0;
-    border-bottom: 1px solid #666;
+      font-weight: 700;
+      margin: 0 20px 0 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: transparent;
+      width: 100px;
+      padding: 0 3px;
+      border: 0;
+      border-bottom: 1px solid #666;
     }
   }
 
@@ -34,12 +42,17 @@
   circle {
     fill: rgba(51,51,51,0.6);
   }
+  rect {
+    fill: transparent;
+  }
   .callout {
     position: absolute;
-    background: rgba(0,0,0,.2);
-    padding: 3px 10px;
+    background: rgba(0, 0, 0, 0.75);
     text-align: center;
-    top: 0;
+    top: 20px;
+    width: 70px;
+    line-height: 1.5em;
+    color: white;
   }
 
   .axis{shape-rendering:crispEdges;}
