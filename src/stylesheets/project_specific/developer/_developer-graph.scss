@@ -3,6 +3,7 @@
     position:relative;
     font-size:12px;
     margin-top: 0;
+    line { display: none; }
     .controls { display: none; }
     &.visible {
       margin-top: 70px;
