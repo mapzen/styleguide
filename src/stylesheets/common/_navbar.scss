@@ -142,6 +142,21 @@ li.active:hover .animated-key {
   transform: rotate(-90deg);
 }
 
+// drop down menu for logged in user
+.nav-bar > li.dropdown {
+
+}
+
+#login-profile {
+  width: 30px;
+  height: 30px;
+  float: left;
+  border-radius: 50%;
+  border: 1px solid $mz-red;
+  margin-right: 5px;
+}
+
+
 .animated-key {
   padding-right: 15px;
   display: inline;

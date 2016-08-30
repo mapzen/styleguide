@@ -28,7 +28,7 @@
   if (!document.querySelector('nav.navbar')) return;
 
   // Get all of the navbar items
-  var navItems = document.querySelectorAll('.navbar-nav li');
+  var navItems = document.querySelectorAll('.navbar-nav>li');
 
   // If the current window location matches the path
   // on this section, add the "active" class to highlight it
@@ -37,14 +37,15 @@
 
     // Clear if present
     el.classList.remove('active');
-
     // Get current path
     var url = el.querySelector('a').href; // This always returns a fully-qualified URL, e.g. https://mapzen.com/path/
-    var path = url.split(window.location.hostname)[1].replace(/\//g, ''); // --> 'path'
-    var re = new RegExp('^/' + path + '/?');
+    if (url) {
+      var path = url.split(window.location.hostname)[1].replace(/\//g, ''); // --> 'path'
+      var re = new RegExp('^/' + path + '/?');
 
-    if (re.test(window.location.pathname)) {
-      el.classList.add('active');
+      if (re.test(window.location.pathname)) {
+        el.classList.add('active');
+      }
     }
   }
 
