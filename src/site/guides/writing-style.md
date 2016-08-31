@@ -20,7 +20,3 @@ Blog articles, however, usually display more personality than technical document
 - Avoid trite or overused phrases, including "Never fear!", "X is dead, long live X", "The future is...", and "Making a better world...". This also includes titles that are vague or "clickbait."
 
 Even though Mapzen may not formally translate documentation, there are many users who are outside the United States or speak languages other than English. The technical documentation should be easy to understand, and following these suggestions makes content easier to understand for all readers.
-
-## Code samples
-
-In command line code blocks, do not include the $ or other prompt text before what the reader needs to type. If you copy the code, you end up pasting extra text. The exception to this is if you are showing a series of commands and responses when including the $ is useful to show which lines are input.

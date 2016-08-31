@@ -17,7 +17,7 @@ Follow these guidelines when writing about activities involving a computer or co
 - Do not use a hyphen with adverbs, such as "a beautifully created map".
 - Follow the same guidelines when writing with other adjectives, compound adjectives, and adverbs. For example: _real-time communication_ versus _the communication is in real time_.
 
-## Computing terms
+## General computing terms
 
 - You _sign in_ or _sign off_ when accessing an account. You _log on_ or _log out_ of a operating system session.
 - Hosting within your organization is _on-premises_. It always has a hyphen and an -s.
@@ -28,3 +28,7 @@ Follow these guidelines when writing about activities involving a computer or co
 - administrator should not be shortened to "admin".
 - plug-in (n., related to extending functionality, such as for a browser) always has a hyphen. Plug in (v.) without a hyphen describes the action of plugging in a cable.
 - The words, internet and web, are lowercase. These have historically been capitalized because they were proper nouns, but the [AP changed this in June 2016](https://twitter.com/apstylebook/status/716279065888563200).
+
+## Best practices for code samples
+
+In command line code blocks, do not include the $ or other prompt text before what the reader needs to type. If you copy the code, you end up pasting extra text. The exception to this is if you are showing a series of commands and responses when including the $ is useful to show which lines are input.
