@@ -12,14 +12,14 @@ Blog articles, however, usually display more personality than technical document
 
 - Write in a conversational and friendly tone that is also professional.
 - Use phrases and terms that are clear and easy to understand.
-- Avoid idioms or phrasing that is unfamiliar to the audience or would not translate to other languages directly.
+- Avoid idioms, jargon, or phrasing that is unfamiliar to the audience or would not translate to other languages directly.
 - Use active voice and avoid passive voice.
 - Address the audience as _you_ (second person. Avoid first person (I, we) and third person (the user, them). First person is acceptable in blogs or informal texts, but avoid it in technical documentation. Using _you_ also avoids the potential for gender-based terms, such as he or she.
-- It's okay to use contractions to create a more informal voice. Only use common contractions, though, such as _it's_ for _it is_ or _they're_ for _they are_. Don't make contractions with proper names or create unusual ones, such as _Mapzen'll_ for _Mapzen will..._ or _it'd_ for _it would_.
-- Use positive terms.
-- Avoid trite or overused phrases, including "Never fear!", "X is dead, long live X", "The future is...", and "Making a better world...". This also includes titles that are "clickbait" or vague. 
+- Avoid contractions in technical documentation. It is okay to use them in less formal writing, such as a blog post. Only use common contractions, though, such as _it's_ for _it is_ or _they're_ for _they are_. Do not make contractions with proper names or create unusual ones, such as _Mapzen'll_ for _Mapzen will..._ or _it'd_ for _it would_.
+- Use positive terms rather than negative language.
+- Avoid trite or overused phrases, including "Never fear!", "X is dead, long live X", "The future is...", and "Making a better world...". This also includes titles that are vague or "clickbait."
 
-Even though Mapzen may not formally translate documentation right now, there are many users who are outside the United States or speak languages other than English. The technical documentation should be easy to understand, and following these suggestions makes content easier to understand for all readers.
+Even though Mapzen may not formally translate documentation, there are many users who are outside the United States or speak languages other than English. The technical documentation should be easy to understand, and following these suggestions makes content easier to understand for all readers.
 
 ## Code samples
 
