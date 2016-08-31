@@ -157,6 +157,45 @@ li.active:hover .animated-key {
 }
 
 
+@keyframes rotate-compass {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(720deg);}
+}
+
+
+.compass {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    content: ' ';
+    border-bottom: 10px solid $mz-red;
+    position: absolute;
+    left: 9px;
+    top: 4px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    transform-origin: bottom center;
+    animation-name: rotate-compass;
+     animation-duration: 4s;
+
+  }
+  &:after {
+    content: ' ';
+    border-top: 10px solid $mz-red;
+    position: absolute;
+    left: 9px;
+    top: 14px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    animation-name: rotate-compass;
+     animation-duration: 4s;
+  }
+}
+
+
 .animated-key {
   padding-right: 15px;
   display: inline;
