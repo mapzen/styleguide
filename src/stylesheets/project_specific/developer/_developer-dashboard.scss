@@ -161,8 +161,12 @@
 
     }
 
+    .meta {
+      margin: 0;
+    }
+
     .keys-row {
-      // width: 100%;
+      //width: 100%;
       // float: left;
       // margin-top: 20px;
     }
@@ -185,7 +189,8 @@
       background-color:#f3f3f3;
       opacity:1;
       height:auto;
-//      padding:15px;
+      padding-top: 10px;
+      padding-bottom:10px;
       margin-top: 10px;
       margin-bottom: 5px;
     }
@@ -217,7 +222,8 @@
       width:100%;
       height:auto;
     }
-    .key-btns-wrapper{
+    .key-btns-wrapper {
+      text-align: right;
       // width:205px;
       // position:absolute;
       // top:10px;
@@ -232,7 +238,7 @@
       margin: 5px 10px 5px 5px;
       padding-top:5px;
       color:#fff;
-      float: left;
+      display: inline-block;
       text-align: center;
       //because white letter looks bigger
       font-size:14px;
@@ -248,25 +254,28 @@
     .error{background-color:$errorColor;}
     .created{background-color:$okColor;}
 
-    .right-square{
-      background: transparent;
-      width:30px;
-      height:30px;
+    .square {
+      background-color: transparent;
+      width: auto;
+      height: 30px;
       margin: 5px;
-      padding: 0;
+      padding: 0 5px;
       border:1px solid #000;
       &.selected {
         background: $mz-gray;
       }
-      &.usage {
-        width: auto;
-        padding: 0 5px;
+      &:hover {
+        background-color: $mz-gray;
       }
     }
     .created-at{
-      padding-top:5px;
-      font-size:14px;
-      color:#666;
+      padding-top: 5px;
+      padding-right: 10px;
+      font-size: 14px;
+      /* not to make it change height when content is fetched slowly */
+      min-height: 30px;
+      text-align: right;
+      color: #666;
     }
   }
 
