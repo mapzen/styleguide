@@ -157,9 +157,14 @@ li.active:hover .animated-key {
 }
 
 
+@keyframes rotate-back-compass {
+  from {transform: rotate(390deg);}
+  to {transform: rotate(30deg);}
+}
+
 @keyframes rotate-compass {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(720deg);}
+  from {transform: rotate(30deg);}
+  to {transform: rotate(390deg);}
 }
 
 
@@ -168,30 +173,55 @@ li.active:hover .animated-key {
   height: 30px;
   position: relative;
   display: inline-block;
-
+  transform-origin: center center;
+  transform: rotate(30deg);
+  animation-name: rotate-back-compass;
+  animation-duration: 4s;
   &:before {
     content: ' ';
-    border-bottom: 10px solid $mz-red;
+    border-bottom: 12px solid $mz-red;
     position: absolute;
     left: 9px;
-    top: 4px;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    transform-origin: bottom center;
-    animation-name: rotate-compass;
-     animation-duration: 4s;
-
+    top: 3px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    // transform-origin: bottom center;
+    // transform: rotate(30deg);
+    // animation-name: rotate-back-compass;
+    // animation-duration: 2s;
   }
   &:after {
     content: ' ';
-    border-top: 10px solid $mz-red;
+    border-top: 13px solid $mz-red;
     position: absolute;
     left: 9px;
+    top: 15px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    // transform-origin: top center;
+    // transform: rotate(30deg);
+    // animation-name: rotate-back-compass;
+    // animation-duration: 2s;
+  }
+  .center-dot {
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    position: absolute;
     top: 14px;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    animation-name: rotate-compass;
-     animation-duration: 4s;
+    left: 14px;
+  }
+  &:hover {
+    //&:before {
+      animation-name: rotate-compass;
+      animation-duration: 4s;
+    // }
+    // &:after {
+    //   animation-name: rotate-compass;
+    //   animation-duration: 4s;
+    // }
   }
 }
 
