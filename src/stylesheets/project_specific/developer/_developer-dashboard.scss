@@ -48,7 +48,7 @@
       margin-bottom: 30px;
     }
 
-    .project-row{
+    .project-row {
       width:100%;
       margin-left:0px;
       margin-right:0px;
@@ -88,15 +88,21 @@
     }
 
     .add-key{
-      width: 210px;
-      float: left;
-      position: absolute;
-      bottom: 20px;
-      right: 0;
-      @media(max-width:767px){
-        position:relative;
-        width: 100%;
-      }
+      width: 100%;
+      // float: left;
+      // position: absolute;
+      // bottom: 20px;
+      // right: 0;
+      // @media(max-width:767px){
+      //   position:relative;
+      //   width: 100%;
+      // }
+    }
+
+    // temporary to warn users that keys got merged
+    .alert {
+      margin-top: 10px;
+      margin-bottom: 0;
     }
 
     .btn-add-key{
@@ -117,7 +123,7 @@
       border: 1px solid $mz-darkblue;
     }
 
-   .no-key{
+   .no-key {
      color: $mz-darkgray;
      font-family: $mz-serif;
      font-size: 18px;
