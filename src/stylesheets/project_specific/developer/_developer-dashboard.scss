@@ -87,22 +87,8 @@
       }
     }
 
-    .add-key{
+    .add-key {
       width: 100%;
-      // float: left;
-      // position: absolute;
-      // bottom: 20px;
-      // right: 0;
-      // @media(max-width:767px){
-      //   position:relative;
-      //   width: 100%;
-      // }
-    }
-
-    // temporary to warn users that keys got merged
-    .alert {
-      margin-top: 10px;
-      margin-bottom: 0;
     }
 
     .btn-add-key{
@@ -201,10 +187,59 @@
       margin-bottom: 5px;
     }
 
-    .key-value{
+    .key-value {
       color:#666;
       font-weight:700;
       font-size:14px;
+    }
+    // temporary to warn users that keys got merged
+    .alert {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .copy-key {
+      cursor: pointer;
+      border-left: 3px solid transparent;
+    }
+    .fa-pencil {
+      margin-left: 3px;
+      color: #6ea0a4;
+    }
+    .copied {
+      width: 0;
+      border-bottom: 3px solid $mz-darkgray;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      z-index: 10;
+      // tool tip to show snippet was succdssfully copied
+      &::after {
+        font-family: $mz-sans-serif;
+        content: 'copied';
+        background-color:$mz-darkgray;
+        color: #fff;
+        position: absolute;
+        left: -20px;
+        top: 15px;
+        padding: 5px;
+      }
+    }
+
+    .not-copied {
+      width: 0;
+      border-bottom: 5px solid $mz-darkgray;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      &::after {
+        font-family: $mz-sans-serif;
+        content: 'copy Failed';
+        background-color: $mz-darkgray;
+        color: #fff;
+        position: absolute;
+        top: 18px;
+        left: -25px;
+        padding: 5px;
+      }
     }
 
     .category{
@@ -217,7 +252,7 @@
     .key-name-row{
       margin-bottom: 10px;
     }
-    .key_name{
+    .key-name{
       font-size:18px;
       font-family: $mz-serif;
       font-weight: 400;
@@ -230,13 +265,6 @@
     }
     .key-btns-wrapper {
       text-align: right;
-      // width:205px;
-      // position:absolute;
-      // top:10px;
-      // right:10px;
-      // @media(max-width:767px){
-      //   width:85px;
-      // }
     }
     .key-badge{
       width:105px;
