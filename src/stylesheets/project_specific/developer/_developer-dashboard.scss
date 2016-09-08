@@ -1,6 +1,3 @@
-/* mapzen color code : #D4645C , #385D5C */
-
-
 #dev_dashboard{
 
   &.container{
@@ -200,28 +197,24 @@
 
     .copy-key {
       cursor: pointer;
-      border-left: 3px solid transparent;
-    }
-    .fa-pencil {
-      margin-left: 3px;
-      color: #6ea0a4;
+      position: relative;
+      background-color: transparent;
+      border: 0;
+      padding: 2px;
+      color: $mz-blue;
     }
     .copied {
-      width: 0;
-      border-bottom: 3px solid $mz-darkgray;
-      border-left: 3px solid transparent;
-      border-right: 3px solid transparent;
-      z-index: 10;
       // tool tip to show snippet was succdssfully copied
       &::after {
         font-family: $mz-sans-serif;
-        content: 'copied';
-        background-color:$mz-darkgray;
+        font-weight: 300;
+        content: 'Copied';
+        background-color:$mz-blue;
         color: #fff;
         position: absolute;
-        left: -20px;
-        top: 15px;
-        padding: 5px;
+        left: 0px;
+        top: 25px;
+        padding: 3px;
       }
     }
 
@@ -232,7 +225,7 @@
       border-right: 5px solid transparent;
       &::after {
         font-family: $mz-sans-serif;
-        content: 'copy Failed';
+        content: 'Copy Failed';
         background-color: $mz-darkgray;
         color: #fff;
         position: absolute;
@@ -253,13 +246,19 @@
       margin-bottom: 10px;
     }
     .key-name{
-      font-size:18px;
+      //font-size:18px;
+      cursor: pointer;
       font-family: $mz-serif;
       font-weight: 400;
-      color:$mz-blue;
+      color: $mz-blue;
+      // using button for tab event
+      background-color: transparent;
+      border: 0;
+      padding: 1px;
+      border-bottom: dashed 1px $mz-blue;
     }
 
-    .stats{
+    .stats {
       width:100%;
       height:auto;
     }
@@ -300,6 +299,9 @@
       }
       &:hover {
         background-color: $mz-gray;
+      }
+      .fa {
+        color: $mz-blue;
       }
     }
     .created-at{
