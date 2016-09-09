@@ -1,4 +1,4 @@
-#dev_dashboard{
+#dev-dashboard{
 
   &.container{
     @media(max-width:767px){width:100%;}
@@ -12,76 +12,46 @@
     padding-right: 15px;
   }
 
-  .login-info{
+  .login-info {
     text-align: right;
     float: right;
     padding-top: 20px;
     margin: 20px 0;
   }
 
-  .info{
-    float:left;
-    p {
-      font-size:14px;
-      font-weight:400;
-      margin-bottom:0px;
-      padding-right:20px;
-      line-height: 1.3em;
-    }
-    a {
-      font-weight:400;
-    }
+  .info {
+    float: left;
+    font-size:14px;
+    font-weight:400;
+    padding-right: 20px;
+    font-weight:400;
   }
 
   /*inside of dashboard*/
-  #projects{
-    width:100%;
-    padding-top: 20px;
+  #projects {
 
-    .project-wrapper{
-      display:inline-block;
-      width:100%;
-      padding:10px;
+    .project-wrapper {
+      width: 100%;
+      padding: 10px;
       margin-bottom: 30px;
     }
 
-    .project-row {
-      width:100%;
-      margin-left:0px;
-      margin-right:0px;
-    }
-
-    .title-row {
-      display: flex;
-      padding: 0;
-      margin-bottom: 10px;
-      @media(max-width:767px){
-        display: block;
+    .desc {
+      @media(max-width:767px) {
+        margin-bottom: 10px
       }
     }
+
     .project-name {
-      margin-bottom: -5px;
-      float: left;
-      align-self: flex-end;
-      padding-right: 15px;
       font-family: $mz-serif;
       font-weight: 400;
       font-size: 34px;
-      text-transform: capitalize;
-      @media(max-width:767px){
-        width: 100%;
-      }
     }
 
-    .project-link {
-      align-self: flex-end;
-      margin-right: 20px;
-
-      @media(max-width:767px){
-        margin-top: 5px;
-        margin-bottom: 5px;
-        margin-right: 10px;
-      }
+    // temporary to warn users that keys got merged
+    .alert {
+      margin-top: 10px;
+      margin-bottom: 0;
     }
 
     .add-key {
@@ -95,9 +65,9 @@
       color: #fff;
 
       width: 100%;
-      height: 60px;
+      height: 65px;
 
-      letter-spacing:1.1px;
+      letter-spacing: 1.1px;
       text-transform: uppercase;
     }
 
@@ -106,28 +76,19 @@
       border: 1px solid $mz-darkblue;
     }
 
-   .no-key {
-     color: $mz-darkgray;
-     font-family: $mz-serif;
-     font-size: 18px;
-     font-style: italic;
-   }
-   .maximum-key{
-     color: $mz-mediumgray;
-     font-family: $mz-serif;
-     font-size: 14px;
-     font-style: italic;
-   }
-
-   .block-add-key{
-      width:100%;
-      height:60px;
-      position: absolute;
-      top: 0;
-      background-color: #fff;
-      z-index: 1000;
-      opacity: 0.7;
-      cursor: default;
+    .btn-add-key:disabled {
+      background-color: #c2d7d9;
+      border-color: #c2d7d9;
+    }
+    //show no-key or maximum key status
+    .key-alert-message {
+      float: left;
+      width: 100%;
+      color: $mz-mediumgray;
+      font-family: $mz-serif;
+      font-size: 18px;
+      font-style: italic;
+      padding-top: 20px;
     }
 
     .project-desc-row{
@@ -135,43 +96,18 @@
       font-weight:300;
       color:#666;
       border-bottom:3px solid #eee;
-      padding-bottom:20px;
-      p {
-        width: calc(100% - 230px);
-        margin-bottom:0px;
-        font-weight: 300;
-        font-size: 16px;
-        color: #444;
-        @media(max-width:767px){
-          width: 100%;
-          margin-bottom:10px;
-        }
-      }
-
+      padding-bottom: 10px;
     }
 
     .meta {
       margin: 0;
     }
 
-    .keys-row {
-      //width: 100%;
-      // float: left;
-      // margin-top: 20px;
-    }
-
     .key-row {
-      // width:100%;
-      // font-size:16px;
-      // font-weight:400;
-      // position:relative;
-      // margin-top: 10px;
-      // float: left;
       //for animation
       transition: all 1s ease-out;
-      opacity:0;
-      height:0;
-      // padding:0 15px 0 15px;
+      opacity: 0;
+      height: 0;
     }
 
     .key-row.show{
@@ -189,11 +125,6 @@
       font-weight:700;
       font-size:14px;
     }
-    // temporary to warn users that keys got merged
-    .alert {
-      margin-top: 10px;
-      margin-bottom: 0;
-    }
 
     .copy-key {
       cursor: pointer;
@@ -209,7 +140,7 @@
         font-family: $mz-sans-serif;
         font-weight: 300;
         content: 'Copied';
-        background-color:$mz-blue;
+        background-color: $mz-blue;
         color: #fff;
         position: absolute;
         left: 0px;
@@ -219,19 +150,15 @@
     }
 
     .not-copied {
-      width: 0;
-      border-bottom: 5px solid $mz-darkgray;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
       &::after {
         font-family: $mz-sans-serif;
         content: 'Copy Failed';
-        background-color: $mz-darkgray;
+        background-color: $mz-blue;
         color: #fff;
         position: absolute;
-        top: 18px;
-        left: -25px;
-        padding: 5px;
+        left: 0px;
+        top: 25px;
+        padding: 3px;
       }
     }
 
@@ -262,13 +189,15 @@
       width:100%;
       height:auto;
     }
+
     .key-btns-wrapper {
       text-align: right;
       vertical-align: middle;
     }
+
     .key-badge{
-      width:105px;
-      height:31px;
+      width: 105px;
+      height: 31px;
       margin: 5px 10px 5px 5px;
       padding-top:5px;
       color:#fff;
@@ -284,6 +213,7 @@
         letter-spacing:0.6px;
       }
     }
+
     .pending {
       width: 0px;
       height: 0px;
@@ -321,7 +251,7 @@
       100% { -moz-transform: rotate(360deg); }
     }
 
-    .errored{background-color:$errorColor;}
+    .errored { background-color:$errorColor; }
 
     .square {
       background-color: transparent;
@@ -348,20 +278,6 @@
       min-height: 30px;
       text-align: right;
       color: #666;
-    }
-  }
-
-  .divider-row{
-    width:100%;
-    height:100px;
-    background-image:url('../images/divider/compass-red.png');
-    background-repeat:no-repeat;
-    background-position:center center;
-    &:last-child{
-      display:none;
-    }
-    @media(max-width:767px){
-      height:60px;
     }
   }
 
