@@ -1,7 +1,11 @@
-#dev_dashboard{
-  .stats{
-    position:relative;
-    font-size:12px;
+#dev-dashboard {
+
+  .stats {
+
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+
     .custom-dropdown-div {
       width: 100px;
       background-repeat: no-repeat;
@@ -9,6 +13,7 @@
       margin-right: 5px;
       position: absolute;
     }
+
     select.custom-dropdown {
     font-weight: 700;
     margin: 0;
@@ -20,12 +25,25 @@
     border: 0;
     border-bottom: 1px solid #666;
     }
+
   }
 
-  .line{
-    fill:none;
-    stroke:#ccc;
-    stroke-width:2;
+  .loading-bar {
+    position: absolute;
+    left: calc(50% - 150px);
+    top: calc(50% - 50px);
+  }
+
+  .project-stat-0 path {
+    fill: none;
+    stroke: #f00;
+    stroke-width: 2;
+  }
+
+  .project-stat-1 path {
+    fill: none;
+    stroke: #ff0;
+    stroke-width: 2;
   }
 
   .axis{shape-rendering:crispEdges;}
@@ -67,11 +85,6 @@
     stroke-width: 0;
   }
 
-  .loading-bar {
-    position: absolute;
-    left: calc(50% - 150px);
-    top: calc(50% - 50px);
-  }
 }
 
 .d3-tip {
