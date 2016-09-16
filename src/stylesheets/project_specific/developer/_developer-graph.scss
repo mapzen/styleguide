@@ -1,32 +1,61 @@
-#dev_dashboard{
-  .stats{
-    position:relative;
-    font-size:12px;
-    margin-top: 55px;
-    .custom-dropdown-div {
-      width: 100px;
-      background-repeat: no-repeat;
-      background-position: right center;
-      margin-right: 5px;
-      position: absolute;
-    }
-    select.custom-dropdown {
-    font-weight: 700;
-    margin: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: transparent;
+#dev-dashboard {
+
+  .stats {
     width: 100%;
-    padding: 0 3px;
-    border: 0;
-    border-bottom: 1px solid #666;
-    }
+    height: auto;
+    position: relative;
+    font-size: 12px;
+
+    // .custom-dropdown-div {
+    //   width: 100px;
+    //   background-repeat: no-repeat;
+    //   background-position: right center;
+    //   margin-right: 5px;
+    //   position: absolute;
+    // }
+
+    // select.custom-dropdown {
+    // font-weight: 700;
+    // margin: 0;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // background-color: transparent;
+    // width: 100%;
+    // padding: 0 3px;
+    // border: 0;
+    // border-bottom: 1px solid #666;
+    // }
+
+  }
+  .dropdown-div {
+    width: 100px;
+    position: absolute;
   }
 
-  .line{
-    fill:none;
-    stroke:#ccc;
-    stroke-width:2;
+  .graph {
+    margin-top: 35px;
+  }
+
+  // overriding background color
+  select {
+    background-color: $mz-lightgray;
+  }
+
+  .loading-bar {
+    position: absolute;
+    left: calc(50% - 150px);
+    top: calc(50% - 50px);
+  }
+
+  .legend-box {
+    float: left;
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+  .legend-wrapper {
+    display: inline-block;
   }
 
   .axis{shape-rendering:crispEdges;}
@@ -45,14 +74,6 @@
      display:none;
   }
 
-  .d3-tip {
-    line-height: 1;
-    text-align:center;
-    padding: 8px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    border-radius: 0px;
-  }
 
   .grid .tick {
     stroke: lightgrey;
@@ -68,38 +89,4 @@
     stroke-width: 0;
   }
 
-  .loading-bar {
-    position: absolute;
-    left: calc(50% - 150px);
-    top: calc(50% - 50px);
-  }
-}
-
-.d3-tip {
-  line-height: 1;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  pointer-events: none;
-  text-align:center;
-}
-
-
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
-  position: absolute;
-  text-align: center;
-}
-
-.d3-tip.n:after {
-  margin: -1px 0 0 0;
-  top: 100%;
-  left:0;
 }
