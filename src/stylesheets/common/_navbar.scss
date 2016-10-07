@@ -78,7 +78,7 @@ body {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   border-bottom: 4px solid $mz-red;
-  padding-bottom: 11px;
+  padding-bottom: 12px;
 }
 
 // Navbar and branding size differs on mobile and tablet/desktop+, so
@@ -142,99 +142,84 @@ li.active:hover .animated-key {
   transform: rotate(-90deg);
 }
 
-// drop down menu for logged in user
-.nav-bar > li.dropdown {
 
+#sign-in {
+  display: inline-block;
+  min-width: 120px;
+}
+#sign-up {
+  min-width: 100px;
 }
 
 #login-profile {
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
   float: left;
+  margin-top: 4px;
   border-radius: 50%;
-  border: 1px solid $mz-red;
-  margin-right: 5px;
+  border: 1px solid #d4645c;
+  box-sizing: border-box;
+  margin-right: 10px; }
+
+.login-txt {
+  float: left;
 }
-
-
-@keyframes rotate-back-compass {
-  from {transform: rotate(390deg);}
-  to {transform: rotate(30deg);}
+.sign-up-txt {
+  padding: 5px 10px;
+  background-color: #d4645c;
+  color: #ffffff;
 }
-
-@keyframes rotate-compass {
-  from {transform: rotate(30deg);}
-  to {transform: rotate(390deg);}
+li:hover #login-profile {
+  border-color: #333;
 }
-
+li a:focus #login-profile {
+  border-color: #333;
+}
 
 .compass {
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
   position: relative;
-  display: inline-block;
+  margin-left: -1px; /* arm of compass looks off, this is lame solutionf or it */
   transform-origin: center center;
   transform: rotate(30deg);
-  animation-name: rotate-back-compass;
-  animation-duration: 4s;
-  &:before {
+  transition: all 2s ease; }
+  .compass:before {
     content: ' ';
-    border-bottom: 12px solid $mz-red;
     position: absolute;
-    left: 9px;
+    left: 7px;
     top: 3px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    // transform-origin: bottom center;
-    // transform: rotate(30deg);
-    // animation-name: rotate-back-compass;
-    // animation-duration: 2s;
-  }
-  &:after {
+    border-bottom: 8px solid #d4645c;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; }
+  .compass:after {
     content: ' ';
-    border-top: 13px solid $mz-red;
     position: absolute;
-    left: 9px;
-    top: 15px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    // transform-origin: top center;
-    // transform: rotate(30deg);
-    // animation-name: rotate-back-compass;
-    // animation-duration: 2s;
-  }
-  .center-dot {
+    left: 7px;
+    top: 11px;
+    border-top: 8px solid #d4645c;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; }
+  .compass .center-dot {
     width: 2px;
     height: 2px;
-    background-color: #fff;
-    border-radius: 50%;
+    background-color: #ccc;
     z-index: 10;
     position: absolute;
-    top: 14px;
-    left: 14px;
-  }
-  &:hover {
-    //&:before {
-      animation-name: rotate-compass;
-      animation-duration: 4s;
-    // }
-    // &:after {
-    //   animation-name: rotate-compass;
-    //   animation-duration: 4s;
-    // }
-  }
+    top: 10px;
+    left: 10px; }
+.compass:hover {
+  transform: rotate(390deg);
 }
-
-
-.animated-key {
-  padding-right: 15px;
-  display: inline;
-  float: left;
-  width: 23px;
-  height: 28px;
-  background-image: url('https://mapzen.com/common/styleguide/images/key.png');
-  background-repeat: no-repeat;
-  background-position: 0px 0px;
-  background-size: 80% 80%;
-  transition: transform 0.5s ease-out;
+li:hover .compass:before {
+  border-bottom-color: #333;
+}
+li a:focus .compass:before {
+  border-bottom-color: #333;
+}
+li:hover .compass:after {
+  border-top-color: #333;
+}
+li a:focus .compass:after {
+  border-top-color: #333;
 }
