@@ -1,4 +1,6 @@
 machine:
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
   node:
     version: 4.2.6
   services:
@@ -9,21 +11,3 @@ dependencies:
     - "~/docker"
   pre:
     - ./docker-build.sh mapzen/styleguide
-  post:
-    - npm install -g gulp-cli && gulp build
-
-deployment:
-  production:
-    branch: master
-    commands:
-      - gulp publish --target dev
-      - gulp publish --target prod
-      - ./docker-publish.sh mapzen/styleguide latest
-  other:
-    branch: /.*/
-    commands:
-      - ./docker-publish.sh mapzen/styleguide $CIRCLE_BRANCH
-
-general:
-  artifacts:
-    - "dist"
