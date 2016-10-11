@@ -142,13 +142,12 @@ li.active:hover .animated-key {
   transform: rotate(-90deg);
 }
 
-
 #sign-in {
   display: inline-block;
-  min-width: 120px;
+  min-width: 115px;
 }
 #sign-up {
-  min-width: 100px;
+  min-width: 118 gpx;
 }
 
 #login-profile {
@@ -164,11 +163,48 @@ li.active:hover .animated-key {
 .login-txt {
   float: left;
 }
-.sign-up-txt {
-  padding: 5px 10px;
-  background-color: #d4645c;
-  color: #ffffff;
+
+.compass {
+  width: 22px;
+  height: 22px;
+  position: relative;
+  margin-left: -1px; /* arm of compass looks off, this is lame solutionf or it */
+  margin-top: -1px; /* arm of compass looks off, this is lame solutionf or it */
+  transform-origin: center center;
+  transform: rotate(30deg);
+  transition: all 2s ease;
+  &:before {
+    content: ' ';
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    border-bottom: 8px solid #d4645c;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
+  &:after {
+    content: ' ';
+    position: absolute;
+    left: 7px;
+    top: 11px;
+    border-top: 8px solid #d4645c;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
+  &:hover {
+    transform: rotate(390deg);
+  }
 }
+.compass .center-dot {
+  width: 2px;
+  height: 2px;
+  background-color: #ccc;
+  z-index: 10;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
 li:hover #login-profile {
   border-color: #333;
 }
@@ -176,41 +212,6 @@ li a:focus #login-profile {
   border-color: #333;
 }
 
-.compass {
-  width: 22px;
-  height: 22px;
-  position: relative;
-  margin-left: -1px; /* arm of compass looks off, this is lame solutionf or it */
-  transform-origin: center center;
-  transform: rotate(30deg);
-  transition: all 2s ease; }
-  .compass:before {
-    content: ' ';
-    position: absolute;
-    left: 7px;
-    top: 3px;
-    border-bottom: 8px solid #d4645c;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent; }
-  .compass:after {
-    content: ' ';
-    position: absolute;
-    left: 7px;
-    top: 11px;
-    border-top: 8px solid #d4645c;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent; }
-  .compass .center-dot {
-    width: 2px;
-    height: 2px;
-    background-color: #ccc;
-    z-index: 10;
-    position: absolute;
-    top: 10px;
-    left: 10px; }
-.compass:hover {
-  transform: rotate(390deg);
-}
 li:hover .compass:before {
   border-bottom-color: #333;
 }
