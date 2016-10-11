@@ -205,6 +205,13 @@ li.active:hover .animated-key {
   left: 10px;
 }
 
+li:hover .login-txt {
+  color: #333;
+}
+li a:focus .login-txt {
+  color: #333;
+}
+
 li:hover #login-profile {
   border-color: #333;
 }
