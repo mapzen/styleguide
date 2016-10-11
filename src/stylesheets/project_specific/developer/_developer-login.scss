@@ -23,7 +23,7 @@ $signupbtnh:45px;
         height:$signupbtnh;
       }
 
-      #sign-up {
+      #sign-up-btn {
         height:$signupbtnh;
         font-size: 16px;
         font-weight:400;
@@ -32,12 +32,11 @@ $signupbtnh:45px;
         margin-top: 20px;
       }
 
-      button#sign-up[disabled] {
+      button#sign-up-btn[disabled] {
         background: $mz-gray;
         border: 1px solid $mz-gray;
         cursor: default;
       }
-
 
       .btn-github {
         border-radius: 0px;
