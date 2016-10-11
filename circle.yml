@@ -1,17 +1,20 @@
 machine:
   node:
-    version: 5.4.0
+    version: 4.2.6
+  services:
+    - docker
 
 dependencies:
   post:
     - npm install -g gulp-cli && gulp build
 
 deployment:
-  staging:
+  production:
     branch: master
     commands:
       - gulp publish --target dev
       - gulp publish --target prod
+      - ./docker-publish.sh mapzen/styleguide latest
 
 general:
   artifacts:
