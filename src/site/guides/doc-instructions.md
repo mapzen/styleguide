@@ -21,7 +21,7 @@ Docs live in either individual repositories in a team's organization, or as a fo
 | [Search](https://mapzen.com/documentation/search/)  | https://github.com/pelias/pelias-doc  | Push to Master  |
 | [Mobility](https://mapzen.com/documentation/mobility/)  | https://github.com/valhalla/valhalla-docs  | Push to Master |
 | [Metro Extracts](https://mapzen.com/documentation/metro-extracts/)  | https://github.com/mapzen/metro-extracts/tree/master/docs  | Push to Master |
-| [Terrain Tiles](https://mapzen.com/documentation/terrain-tiles/)  | https://github.com/tilezen/joerd  | Push to Master  |
+| [Terrain Tiles](https://mapzen.com/documentation/terrain-tiles/)  | https://github.com/tilezen/joerd  | Needs to be in a release  |
 | [Elevation Service](https://mapzen.com/documentation/elevation/) | https://github.com/valhalla/valhalla-docs  | Push to Master |
 | [Android SDK](https://mapzen.com/documentation/android/) | https://github.com/mapzen/android/tree/master/docs | Push to Master |
 
