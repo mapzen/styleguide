@@ -147,7 +147,7 @@ li.active:hover .animated-key {
   min-width: 115px;
 }
 #sign-up {
-  min-width: 118 gpx;
+  min-width: 118px;
 }
 
 #login-profile {
@@ -205,29 +205,29 @@ li.active:hover .animated-key {
   left: 10px;
 }
 
-li:hover .login-txt {
-  color: #333;
-}
-li a:focus .login-txt {
-  color: #333;
+li:hover .login-txt {color: #333;}
+li a:focus .login-txt {color: #333;}
+
+li:hover #login-profile {border-color: #333;}
+li a:focus #login-profile {border-color: #333;}
+
+li:hover .compass:before {border-bottom-color: #333;}
+li a:focus .compass:before {border-bottom-color: #333;}
+li:hover .compass:after {border-top-color: #333;}
+li a:focus .compass:after {border-top-color: #333;}
+
+/// Drop down menu
+
+.dropdown > ul > li {
+  text-transform: capitalize;
+  a {
+    color: $mz-red;
+  }
 }
 
-li:hover #login-profile {
-  border-color: #333;
-}
-li a:focus #login-profile {
-  border-color: #333;
-}
-
-li:hover .compass:before {
-  border-bottom-color: #333;
-}
-li a:focus .compass:before {
-  border-bottom-color: #333;
-}
-li:hover .compass:after {
-  border-top-color: #333;
-}
-li a:focus .compass:after {
-  border-top-color: #333;
+// Different styles for mobile dropdown menu
+@media (min-width: $screen-xs-max) {
+  .dropdown > ul > li {
+    text-align: left;
+  }
 }
