@@ -16,69 +16,61 @@
   // Bail if there is no navbar present on this page
   if (!document.querySelector('nav.navbar')) return;
 
-  var loginButton = document.getElementById('sign-in');
-  var signupButton = document.getElementById('sign-up');
-
+  var loginButton = document.querySelector('nav.navbar #sign-in');
+  var signupButton = document.querySelector('nav.navbar #sign-up');
   var subPaths = getSubPaths();
+  if (!loginButton) {
+    putActiveTab();
+    return;
+  }
 
-  var signupButtonStyles = {};
+  checkUserState();
 
-  // Send request to check the user is logged in or not
-  var developerRequest = new XMLHttpRequest();
-  developerRequest.open('GET', '/api/developer.json', true);
+  function checkUserState () {
 
-  developerRequest.onload = function() {
-    if (developerRequest.status >= 200 && developerRequest.status < 400) {
-      // Success!
-      var data = JSON.parse(developerRequest.responseText);
-      if (data.id) {
+    // Send request to check the user is logged in or not
+    var developerRequest = new XMLHttpRequest();
+    developerRequest.open('GET', '/api/developer.json', true);
 
-        loginButton.parentNode.innerHTML = getLoginElem(data.avatar);
-        // After 'sign out element' in the dropdown was injected
-        var signOutElem = document.getElementById('sign-out');
-        signOutElem.addEventListener('click', makeLogoutCall);
-        hideSignUpButton();
-        putActiveTab();
+    developerRequest.onload = function() {
+      if (developerRequest.status >= 200 && developerRequest.status < 400) {
+        // Success!
+        var data = JSON.parse(developerRequest.responseText);
+
+        if (data.id) {
+          loginButton.parentNode.innerHTML = getLoginElem(data.nickname, data.avatar);
+          // After 'sign out element' in the dropdown was injected
+          var signOutElem = document.getElementById('sign-out');
+          signOutElem.addEventListener('click', makeLogoutCall);
+          hideSignUpButton();
+          putActiveTab();
+        } else {
+          // When user is not logged in
+          loginButton.innerHTML = getNotLoginElem();
+          signupButton.innerHTML = getSignUpElem();
+          putActiveTab();
+        }
       } else {
-        // When user is not logged in
+        // We re1ched our target server, but it returned an error
         loginButton.innerHTML = getNotLoginElem();
         signupButton.innerHTML = getSignUpElem();
-        putActiveTab();
       }
-    } else {
-      // We re1ched our target server, but it returned an error
+    };
+
+
+    developerRequest.onerror = function() {
+      //
       loginButton.innerHTML = getNotLoginElem();
       signupButton.innerHTML = getSignUpElem();
-    }
-  };
-
-
-  developerRequest.onerror = function() {
-    //
-    loginButton.innerHTML = getNotLoginElem();
-    signupButton.innerHTML = getSignUpElem();
-  };
-
-  developerRequest.send();
-
+    };
+    developerRequest.send();
+  }
 
   function hideSignUpButton () {
-    signupButtonStyles.minWidth = signupButton.style.minWidth;
-    signupButtonStyles.padding = signupButton.style.padding;
-    signupButtonStyles.minHeight = signupButton.style.minHeight;
-    signupButtonStyles.parentFontsize = signupButton.parentNode.style.fontSize;
-
     signupButton.style.minWidth = '63px'; // to keep width of nav
     signupButton.style.padding = '0';
     signupButton.style.minHeight = '0';
     signupButton.parentNode.style.fontSize = '0';
-  }
-
-  function putSignUpButtonStyleBack () {
-    signupButton.style.minWidth = signupButtonStyles.minWidth;
-    signupButton.style.padding = signupButtonStyles.padding;
-    signupButton.style.minHeight = signupButtonStyles.minHeight;
-    signupButton.parentNode.style.fontSize = signupButtonStyles.parentFontsize;
   }
 
   function makeLogoutCall (e) {
@@ -108,13 +100,13 @@
     }
   }
 
-  function getLoginElem (avatarImageURL) {
+  function getLoginElem (nickname, avatarImageURL) {
     var strVar = '';
     strVar += '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button">';
     strVar += ' <div id=\"login-profile\">';
     strVar += '   <img width=\"18\" height=\"18\" src=\"'+avatarImageURL+'\" style=\"border-radius: 50%; margin-top: -9px;\">';
     strVar += ' <\/div>';
-    strVar += ' <div class="login-txt"> your account <\/div>';
+    strVar += ' <div class="login-txt"> ' + nickname + ' <\/div>';
     strVar += '</a>';
     strVar += ' <ul class="dropdown-menu">';
     strVar += '   <li><a href="/developers/">Dashboard</a></li>';
@@ -163,12 +155,21 @@
       // Subpath changes based on user's login status.
       // Subpath values are hard coded here
       if(subPaths.length > 1) {
-        if (subPaths[1] === 'sign_in') addClass(loginButton.parentNode, 'active');
+        if (subPaths[1] === 'sign_in') {
+          removeClass(loginButton.parentNode, 'inactive');
+          addClass(loginButton.parentNode, 'active');
+        }
         else if (subPaths[1] === 'sign_up') ; // addClass(signupButton.parentNode, 'active');
         else if (subPaths[1] === 'api') ; // accept term page
-        else addClass(loginButton.parentNode, 'active');
+        else {
+          removeClass(loginButton.parentNode, 'inactive');
+          addClass(loginButton.parentNode, 'active');
+        }
       }
-      else addClass(loginButton.parentNode, 'active');
+      else {
+        removeClass(loginButton.parentNode, 'inactive');
+        addClass(loginButton.parentNode, 'active');
+      }
     } else {
       // Get all of the navbar items
       var navItems = document.querySelectorAll('.navbar-nav>li');

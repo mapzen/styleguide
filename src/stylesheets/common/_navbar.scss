@@ -145,6 +145,8 @@ li.active:hover .animated-key {
 #sign-in {
   display: inline-block;
   min-width: 115px;
+  max-width: 235px;
+  text-overflow: ellipsis;
 }
 #sign-up {
   min-width: 118px;
@@ -162,6 +164,10 @@ li.active:hover .animated-key {
 
 .login-txt {
   float: left;
+  overflow: hidden;
+  max-width: 170px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .compass {
@@ -216,9 +222,7 @@ li a:focus .compass:before {border-bottom-color: #333;}
 li:hover .compass:after {border-top-color: #333;}
 li a:focus .compass:after {border-top-color: #333;}
 
-/// Drop down menu
-
-.dropdown > ul > li {
+.dropdown-menu > li {
   text-transform: capitalize;
   a {
     color: $mz-red;
@@ -227,7 +231,7 @@ li a:focus .compass:after {border-top-color: #333;}
 
 // Different styles for mobile dropdown menu
 @media (min-width: $screen-xs-max) {
-  .dropdown > ul > li {
+  .dropdown-menu > li {
     text-align: left;
   }
 }
