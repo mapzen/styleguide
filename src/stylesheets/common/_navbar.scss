@@ -158,17 +158,19 @@ li.active:hover .animated-key {
 
 ///new header with login state
 
-#sign-in {
-  display: inline-block;
+
+.navbar-nav > li > a#sign-in {
+  float: left;
   min-width: 115px;
   max-width: 235px;
   text-overflow: ellipsis;
 }
-#sign-up {
+
+.navbar-nav > li > a#sign-up {
   min-width: 118px;
 }
 
-#login-profile {
+.navbar-nav > li > a > #login-profile {
   width: 22px;
   height: 22px;
   float: left;
@@ -178,12 +180,25 @@ li.active:hover .animated-key {
   box-sizing: border-box;
   margin-right: 10px; }
 
-.login-txt {
+.navbar-nav > li > a > .login-txt {
   float: left;
   overflow: hidden;
   max-width: 170px;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.navbar-nav {
+  li:hover .login-txt {color: #333;}
+  li a:focus .login-txt {color: #333;}
+
+  li:hover #login-profile {border-color: #333;}
+  li a:focus #login-profile {border-color: #333;}
+
+  li:hover .compass:before {border-bottom-color: #333;}
+  li a:focus .compass:before {border-bottom-color: #333;}
+  li:hover .compass:after {border-top-color: #333;}
+  li a:focus .compass:after {border-top-color: #333;}
 }
 
 .compass {
@@ -227,18 +242,7 @@ li.active:hover .animated-key {
   left: 10px;
 }
 
-li:hover .login-txt {color: #333;}
-li a:focus .login-txt {color: #333;}
-
-li:hover #login-profile {border-color: #333;}
-li a:focus #login-profile {border-color: #333;}
-
-li:hover .compass:before {border-bottom-color: #333;}
-li a:focus .compass:before {border-bottom-color: #333;}
-li:hover .compass:after {border-top-color: #333;}
-li a:focus .compass:after {border-top-color: #333;}
-
-.dropdown-menu > li {
+.navbar-nav > .dropdown-menu > li {
   text-transform: capitalize;
   a {
     color: $mz-red;
@@ -247,7 +251,7 @@ li a:focus .compass:after {border-top-color: #333;}
 
 // Different styles for mobile dropdown menu
 @media (min-width: $screen-xs-max) {
-  .dropdown-menu > li {
+  .navbar-nav > .dropdown-menu > li {
     text-align: left;
   }
 }
