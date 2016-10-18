@@ -24,7 +24,7 @@ require('bootstrap/js/modal');
 var trackEvent = require('./event-tracking.js');
 var social = require('./social.js');
 var stickynav = require('./sticky-nav.js');
-var activelink = require('./active-nav-link.js');
+var activelink = require('./main-nav.js');
 var sidenav = require('./side-nav.js');
 var tablewrap = require('./table-wrap.js');
 
