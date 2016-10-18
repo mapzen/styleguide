@@ -6,10 +6,6 @@
   margin-bottom: 10px;
 }
 
-label {
-  margin-right: 10px;
-  font-weight: normal;
-}
 .wide {
   label { margin: 5px 0; }
 }
@@ -26,7 +22,7 @@ input[type="text"], input[type="email"] {
   -webkit-appearance:none;
 }
 
-input[type="text"]:-moz-focusring, 
+input[type="text"]:-moz-focusring,
 input[type="email"]:-moz-focusring,
 textarea:-moz-focusring,
 input[type="search"]:-moz-focusring {

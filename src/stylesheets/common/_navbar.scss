@@ -229,6 +229,13 @@ li a:focus .compass:after {border-top-color: #333;}
   }
 }
 
+////// Modal styles for login
+
+.login-panel .container{
+  width: 350px;
+  padding-top: 20px;
+}
+
 // Different styles for mobile dropdown menu
 @media (min-width: $screen-xs-max) {
   .dropdown-menu > li {

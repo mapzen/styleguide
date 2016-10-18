@@ -46,7 +46,7 @@
           putActiveTab();
         } else {
           // When user is not logged in
-          loginButton.innerHTML = getNotLoginElem();
+          loginButton.parentNode.innerHTML = getNotLoginElem();
           signupButton.innerHTML = getSignUpElem();
           putActiveTab();
         }
@@ -116,16 +116,63 @@
     return strVar;
   }
 
+  // function getNotLoginElem () {
+  //   var strVar='';
+  //   // strVar += '<a id=\"login\" href=\"\/developers\/sign_in\">';
+  //   strVar += '  <div id=\"login-profile\">';
+  //   strVar += '    <div class=\"compass\">';
+  //   strVar += '      <div class=\"center-dot\"><\/div>';
+  //   strVar += '    <\/div>';
+  //   strVar += '  <\/div>';
+  //   strVar += '  <div class=\"login-txt\">sign in<\/div>';
+  //   // strVar += '<\/a>';
+  //   return strVar;
+  // }
+
   function getNotLoginElem () {
-    var strVar='';
-    // strVar += '<a id=\"login\" href=\"\/developers\/sign_in\">';
+    var strVar = '';
+    strVar += '<a id=\"login\" class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button">';
     strVar += '  <div id=\"login-profile\">';
     strVar += '    <div class=\"compass\">';
     strVar += '      <div class=\"center-dot\"><\/div>';
     strVar += '    <\/div>';
     strVar += '  <\/div>';
     strVar += '  <div class=\"login-txt\">sign in<\/div>';
-    // strVar += '<\/a>';
+    strVar += '<\/a>';
+    strVar += '<ul class="dropdown-menu login-panel">';
+    strVar += ' <div class="container">';
+    strVar += '  <form>';
+    strVar += '    <div class="form-group row">';
+    strVar += '      <label class="col-sm-3 col-form-label" for=\"e-mail-id\">ID<\/label>';
+    strVar += '      <div class="col-sm-9">';
+    strVar += '         <input id="e-mail-id" class="form-control" type="e-mail" placeholder="e-mail">';
+    strVar += '       <\/div>';
+    strVar += '    <\/div>';
+    strVar += '    <div class="form-group row">';
+    strVar += '      <label class="col-sm-3 col-form-label" for=\"login-password\">Password<\/label>';
+    strVar += '      <div class="col-sm-9">';
+    strVar += '         <input id=\"login-password\" class="form-control" type=\"password\" placeholder=\"password\">';
+    strVar += "       <\/div>";
+    strVar += "     <\/div>";
+    strVar += '    <div class="form-group row">';
+    strVar += '      <div class="col-sm-12">';
+    strVar += '        <input type="submit" value="login" style="width:100%;" class="btn btn-mapzen">';
+    strVar += '      </div>';
+    strVar += '    </div>';
+    strVar += '    <div class="form-group row">';
+    strVar += '      <div class="col-sm-12 text-center">';
+    strVar += '        or';
+    strVar += '      </div>';
+    strVar += '    </div>';
+    strVar += '    <div class="form-group row">';
+    strVar += '      <div class="col-sm-12">';
+    strVar += '        <input type="submit" value="continue with github" style="background-color:#444;width:100%;color:#fff;" class="btn btn-github">';
+    strVar += '      </div>';
+    strVar += '    </div>';
+    strVar += "   <\/form>";
+    strVar += ' </div>';
+    strVar += '</ul>';
+
     return strVar;
   }
 
