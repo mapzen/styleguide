@@ -147,10 +147,10 @@
   function putActiveTab () {
     var navItems = document.querySelectorAll('.navbar-nav>li');
     // After dom manipulation
-    var loginButton = document.getElementById('sign-in');
-    var signupButton = document.getElementById('sign-up');
+    var loginButton = document.querySelector('nav.navbar #sign-in');
+    var signupButton = document.querySelector('nav.navbar #sign-up');
 
-    if (isThisDevPortalPage()) {
+    if (isThisDevPortalPage() && loginButton) {
       // If this is developer portal related page
       // Subpath changes based on user's login status.
       // Subpath values are hard coded here
