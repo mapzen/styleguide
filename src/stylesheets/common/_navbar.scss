@@ -169,6 +169,9 @@ li.active:hover .animated-key {
 .navbar-nav > li > a#sign-up {
   min-width: 118px;
 }
+.navbar-nav > li > a#sign-up > span {
+  line-height: 26px; //cheap way to fix render problem
+}
 
 .navbar-nav > li > a > #login-profile {
   width: 22px;
