@@ -7,8 +7,12 @@
     display: inline-block;
     width: auto;
     overflow: auto;
+    margin-top: 10px;
     th {
       text-align: center;
+    }
+    td.date {
+      text-align: right;
     }
   }
 }
@@ -43,4 +47,13 @@
     display: inline-block;
     margin-bottom: 14px;
   }
+}
+
+.highlight {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.Chart.c3{
+  margin-bottom: 20px;
 }

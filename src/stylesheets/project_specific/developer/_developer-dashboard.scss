@@ -1,7 +1,4 @@
-/* mapzen color code : #D4645C , #385D5C */
-
-
-#dev_dashboard{
+#dev-dashboard{
 
   &.container{
     @media(max-width:767px){width:100%;}
@@ -15,94 +12,50 @@
     padding-right: 15px;
   }
 
-  .row{
-    margin-left:0px;
-    margin-right:0px;
-  }
-
-  .login-info{
+  .login-info {
     text-align: right;
     float: right;
     padding-top: 20px;
     margin: 20px 0;
   }
 
-  .info{
-
-    float:left;
-    p {
-      font-size:14px;
-      font-weight:400;
-      margin-bottom:0px;
-      padding-right:20px;
-      line-height: 1.3em;
-    }
-    a {
-      font-weight:400;
-    }
+  .info {
+    float: left;
+    font-size:14px;
+    font-weight:400;
+    padding-right: 20px;
+    font-weight:400;
   }
 
   /*inside of dashboard*/
-  #projects{
-    width:100%;
-    padding-top: 20px;
+  #projects {
 
-    .project-wrapper{
-      display:inline-block;
-      width:100%;
-      padding:10px;
+    .project-wrapper {
+      width: 100%;
+      padding: 10px;
       margin-bottom: 30px;
     }
 
-    .project-row{
-      width:100%;
-      margin-left:0px;
-      margin-right:0px;
-    }
-
-    .title-row {
-      display: flex;
-      padding: 0;
-      margin-bottom: 10px;
-      @media(max-width:767px){
-        display: block;
+    .desc {
+      @media(max-width:767px) {
+        margin-bottom: 10px
       }
     }
+
     .project-name {
-      margin-bottom: -5px;
-      float: left;
-      align-self: flex-end;
-      padding-right: 15px;
       font-family: $mz-serif;
       font-weight: 400;
       font-size: 34px;
-      text-transform: capitalize;
-      @media(max-width:767px){
-        width: 100%;
-      }
     }
 
-    .project-link {
-      align-self: flex-end;
-      margin-right: 20px;
-
-      @media(max-width:767px){
-        margin-top: 5px;
-        margin-bottom: 5px;
-        margin-right: 10px;
-      }
+    // temporary to warn users that keys got merged
+    .alert {
+      margin-top: 10px;
+      margin-bottom: 0;
     }
 
-    .add-key{
-      width: 210px;
-      float: left;
-      position: absolute;
-      bottom: 20px;
-      right: 0;
-      @media(max-width:767px){
-        position:relative;
-        width: 100%;
-      }
+    .add-key {
+      width: 100%;
     }
 
     .btn-add-key{
@@ -112,9 +65,9 @@
       color: #fff;
 
       width: 100%;
-      height: 60px;
+      height: 65px;
 
-      letter-spacing:1.1px;
+      letter-spacing: 1.1px;
       text-transform: uppercase;
     }
 
@@ -123,28 +76,19 @@
       border: 1px solid $mz-darkblue;
     }
 
-   .no-key{
-     color: $mz-darkgray;
-     font-family: $mz-serif;
-     font-size: 18px;
-     font-style: italic;
-   }
-   .maximum-key{
-     color: $mz-mediumgray;
-     font-family: $mz-serif;
-     font-size: 14px;
-     font-style: italic;
-   }
-
-   .block-add-key{
-      width:100%;
-      height:60px;
-      position: absolute;
-      top: 0;
-      background-color: #fff;
-      z-index: 1000;
-      opacity: 0.7;
-      cursor: default;
+    .btn-add-key:disabled {
+      background-color: #c2d7d9;
+      border-color: #c2d7d9;
+    }
+    //show no-key or maximum key status
+    .key-alert-message {
+      float: left;
+      width: 100%;
+      color: $mz-mediumgray;
+      font-family: $mz-serif;
+      font-size: 18px;
+      font-style: italic;
+      padding-top: 20px;
     }
 
     .project-desc-row{
@@ -152,54 +96,70 @@
       font-weight:300;
       color:#666;
       border-bottom:3px solid #eee;
-      padding-bottom:20px;
-      p {
-        width: calc(100% - 230px);
-        margin-bottom:0px;
-        font-weight: 300;
-        font-size: 16px;
-        color: #444;
-        @media(max-width:767px){
-          width: 100%;
-          margin-bottom:10px;
-        }
-      }
-
+      padding-bottom: 10px;
     }
 
-    .keys-row{
-      width: 100%;
-      float: left;
-      margin-top: 20px;
+    .meta {
+      margin: 0;
     }
 
-    .key-row{
-      width:100%;
-      font-size:16px;
-      font-weight:400;
-      position:relative;
-      margin-top: 10px;
-      float: left;
+    .key-row {
       //for animation
       transition: all 1s ease-out;
-      opacity:0;
-      height:0;
-      padding:0 15px 0 15px;
+      opacity: 0;
+      height: 0;
     }
 
     .key-row.show{
       background-color:#f3f3f3;
       opacity:1;
       height:auto;
-      padding:15px;
+      padding-top: 10px;
+      padding-bottom:10px;
       margin-top: 10px;
       margin-bottom: 5px;
     }
 
-    .key-value{
+    .key-value {
       color:#666;
       font-weight:700;
       font-size:14px;
+    }
+
+    .copy-key {
+      cursor: pointer;
+      position: relative;
+      background-color: transparent;
+      border: 0;
+      padding: 2px;
+      color: $mz-blue;
+    }
+    .copied {
+      // tool tip to show snippet was succdssfully copied
+      &::after {
+        font-family: $mz-sans-serif;
+        font-weight: 300;
+        content: 'Copied';
+        background-color: $mz-blue;
+        color: #fff;
+        position: absolute;
+        left: 0px;
+        top: 25px;
+        padding: 3px;
+      }
+    }
+
+    .not-copied {
+      &::after {
+        font-family: $mz-sans-serif;
+        content: 'Copy Failed';
+        background-color: $mz-blue;
+        color: #fff;
+        position: absolute;
+        left: 0px;
+        top: 25px;
+        padding: 3px;
+      }
     }
 
     .category{
@@ -210,36 +170,33 @@
     }
 
     .key-name-row{
-      width:100%;
       margin-bottom: 10px;
     }
-    .key_name{
-      font-size:18px;
+    .key-name{
+      //font-size:18px;
+      cursor: pointer;
       font-family: $mz-serif;
       font-weight: 400;
-      color:$mz-blue;
+      color: $mz-blue;
+      // using button for tab event
+      background-color: transparent;
+      border: 0;
+      padding: 1px;
+      border-bottom: dashed 1px $mz-blue;
     }
 
-    .stats{
-      width:100%;
-      height:auto;
+    .key-btns-wrapper {
+      text-align: right;
+      vertical-align: middle;
     }
-    .key-btns-wrapper{
-      width:205px;
-      position:absolute;
-      top:10px;
-      right:10px;
-      @media(max-width:767px){
-        width:85px;
-      }
-    }
+
     .key-badge{
-      width:105px;
-      height:31px;
+      width: 105px;
+      height: 31px;
       margin: 5px 10px 5px 5px;
       padding-top:5px;
       color:#fff;
-      float: left;
+      display: inline-block;
       text-align: center;
       //because white letter looks bigger
       font-size:14px;
@@ -251,39 +208,71 @@
         letter-spacing:0.6px;
       }
     }
-    .pending{background-color:$pendingColor;}
-    .error{background-color:$errorColor;}
-    .created{background-color:$okColor;}
 
-    .right-square{
-      background: transparent;
-      width:30px;
-      height:30px;
+    .pending {
+      width: 0px;
+      height: 0px;
+      position: relative;
+      &:before {
+        content: ' ';
+        position: absolute;
+        top: -5px;
+        right: 0;
+        border: 4px solid $mz-gray;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        width: 20px;
+        margin: 0;
+        margin-right: 5px;
+        height: 20px;
+        animation: spinning 1s infinite linear;
+        -webkit-animation: spinning 1s infinite linear;
+        -moz-animation: spinning 1s infinite linear;
+      }
+    }
+
+    //loading spinner animation
+    @keyframes spinning {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @-webkit-keyframes spinning {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    @-moz-keyframes spinning {
+      0% { -moz-transform: rotate(0deg); }
+      100% { -moz-transform: rotate(360deg); }
+    }
+
+    .errored { background-color:$errorColor; }
+
+    .square {
+      background-color: transparent;
+      width: auto;
+      height: 30px;
       margin: 5px;
-      padding: 0;
+      padding: 0 5px;
       border:1px solid #000;
       &.selected {
         background: $mz-gray;
       }
+      &:hover {
+        background-color: $mz-gray;
+      }
+      .fa {
+        color: $mz-blue;
+      }
     }
     .created-at{
-      padding-top:5px;
-      font-size:14px;
-      color:#666;
-    }
-  }
-
-  .divider-row{
-    width:100%;
-    height:100px;
-    background-image:url('../images/divider/compass-red.png');
-    background-repeat:no-repeat;
-    background-position:center center;
-    &:last-child{
-      display:none;
-    }
-    @media(max-width:767px){
-      height:60px;
+      padding-top: 5px;
+      padding-right: 10px;
+      font-size: 14px;
+      /* not to make it change height when content is fetched slowly */
+      min-height: 30px;
+      text-align: right;
+      color: #666;
     }
   }
 
