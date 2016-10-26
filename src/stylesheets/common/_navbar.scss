@@ -78,7 +78,7 @@ body {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   border-bottom: 4px solid $mz-red;
-  padding-bottom: 11px;
+  padding-bottom: 12px;
 }
 
 // Navbar and branding size differs on mobile and tablet/desktop+, so
@@ -128,6 +128,7 @@ body {
   }
 }
 
+
 li:hover .animated-key {
   background-image: url('https://mapzen.com/common/styleguide/images/key_h.png');
   -webkit-transform: rotate(-90deg);
@@ -153,4 +154,107 @@ li.active:hover .animated-key {
   background-position: 0px 0px;
   background-size: 80% 80%;
   transition: transform 0.5s ease-out;
+}
+
+///new header with login state
+
+
+.navbar-nav > li > a#sign-in {
+  float: left;
+  min-width: 115px;
+  max-width: 235px;
+  text-overflow: ellipsis;
+}
+
+.navbar-nav > li > a#sign-up {
+  min-width: 118px;
+}
+.navbar-nav > li > a#sign-up > span {
+  line-height: 26px; //cheap way to fix render problem
+}
+
+.navbar-nav > li > a > #login-profile {
+  width: 22px;
+  height: 22px;
+  float: left;
+  margin-top: 2px;
+  border-radius: 50%;
+  border: 1px solid #d4645c;
+  box-sizing: border-box;
+  margin-right: 10px; }
+
+.navbar-nav > li > a > .login-txt {
+  float: left;
+  overflow: hidden;
+  max-width: 170px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.navbar-nav {
+  li:hover .login-txt {color: #333;}
+  li a:focus .login-txt {color: #333;}
+
+  li:hover #login-profile {border-color: #333;}
+  li a:focus #login-profile {border-color: #333;}
+
+  li:hover .compass:before {border-bottom-color: #333;}
+  li a:focus .compass:before {border-bottom-color: #333;}
+  li:hover .compass:after {border-top-color: #333;}
+  li a:focus .compass:after {border-top-color: #333;}
+}
+
+.compass {
+  width: 22px;
+  height: 22px;
+  position: relative;
+  margin-left: -1px; /* arm of compass looks off, this is lame solutionf or it */
+  margin-top: -1px; /* arm of compass looks off, this is lame solutionf or it */
+  transform-origin: center center;
+  transform: rotate(30deg);
+  transition: all 2s ease;
+  &:before {
+    content: ' ';
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    border-bottom: 8px solid #d4645c;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
+  &:after {
+    content: ' ';
+    position: absolute;
+    left: 7px;
+    top: 11px;
+    border-top: 8px solid #d4645c;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
+  &:hover {
+    transform: rotate(390deg);
+  }
+}
+.compass .center-dot {
+  width: 2px;
+  height: 2px;
+  background-color: #ccc;
+  z-index: 10;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.navbar-nav > .dropdown-menu > li {
+  text-transform: capitalize;
+  a {
+    color: $mz-red;
+  }
+}
+
+// Different styles for mobile dropdown menu
+@media (min-width: $screen-xs-max) {
+  .navbar-nav > .dropdown-menu > li {
+    text-align: left;
+  }
 }
