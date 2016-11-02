@@ -173,8 +173,8 @@ li.active:hover .animated-key {
   text-overflow: ellipsis;
 }
 
+// Make button to float center on mobile menu, not on bigger screen
 @media (min-width: $screen-xs-max) {
-  // Make button to float center on mobile menu
   .navbar-nav > li > a#sign-in {
     float: left;
   }
@@ -234,8 +234,8 @@ li.active:hover .animated-key {
   width: 22px;
   height: 22px;
   position: relative;
-  margin-left: -1px; /* arm of compass looks off, this is lame solutionf or it */
-  margin-top: -1px; /* arm of compass looks off, this is lame solutionf or it */
+  margin-left: -1px; /* arm of compass looks off, this is lame solution for the problem */
+  margin-top: -1px; /* same with the line above */
   transform-origin: center center;
   transform: rotate(30deg);
   transition: all 2s ease;
