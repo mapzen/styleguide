@@ -74,6 +74,14 @@ body {
   font-weight: 400;
 }
 
+
+// overriding mobile navbar max-height so we don't have to show scroll bar on smaller screen
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+  max-height: 360px;
+}
+
+
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -271,6 +279,7 @@ li.active:hover .animated-key {
   left: 10px;
 }
 
+// overriding login button dropdown  menu
 #sign-in + .dropdown-menu > li {
   text-transform: capitalize;
   a {
