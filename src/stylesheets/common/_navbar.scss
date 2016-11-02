@@ -180,14 +180,6 @@ li.active:hover .animated-key {
   }
 }
 
-// Compass is using float:left, but CSS has a know problem about child element's float
-// Cancling them by putting cleafix element as a pseudo element
-.navbar-nav > li:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
 .navbar-nav > li > a#sign-up {
   min-width: 118px;
 }
