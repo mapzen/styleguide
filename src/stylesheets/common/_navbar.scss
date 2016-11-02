@@ -160,10 +160,24 @@ li.active:hover .animated-key {
 
 
 .navbar-nav > li > a#sign-in {
-  float: left;
   min-width: 115px;
   max-width: 235px;
   text-overflow: ellipsis;
+}
+
+@media (min-width: $screen-xs-max) {
+  // Make button to float center on mobile menu
+  .navbar-nav > li > a#sign-in {
+    float: left;
+  }
+}
+
+// Compass is using float:left, but CSS has a know problem about child element's float
+// Cancling them by putting cleafix element as a pseudo element
+.navbar-nav > li:after {
+  content: " ";
+  display: block;
+  clear: both;
 }
 
 .navbar-nav > li > a#sign-up {
@@ -192,11 +206,23 @@ li.active:hover .animated-key {
 }
 
 .navbar-nav {
+  li.active:hover .login-txt {color: $mz-red;}
+  li.active:focus .login-txt {color: $mz-red;}
   li:hover .login-txt {color: #333;}
   li a:focus .login-txt {color: #333;}
 
+
+  li.active:hover #login-profile {border-color: $mz-red;}
+  li.active a:focus #login-profile {border-color: $mz-red;}
+
   li:hover #login-profile {border-color: #333;}
   li a:focus #login-profile {border-color: #333;}
+
+  li.active:hover .compass:before {border-bottom-color: $mz-red;}
+  li.active a:focus .compass:before {border-bottom-color: $mz-red;}
+  li.active:hover .compass:after {border-top-color: $mz-red;}
+  li.active a:focus .compass:after {border-top-color: $mz-red;}
+
 
   li:hover .compass:before {border-bottom-color: #333;}
   li a:focus .compass:before {border-bottom-color: #333;}
@@ -235,7 +261,7 @@ li.active:hover .animated-key {
     transform: rotate(390deg);
   }
 }
-.compass .center-dot {
+.compass > .center-dot {
   width: 2px;
   height: 2px;
   background-color: #ccc;
@@ -245,7 +271,7 @@ li.active:hover .animated-key {
   left: 10px;
 }
 
-.navbar-nav > .dropdown-menu > li {
+#sign-in + .dropdown-menu > li {
   text-transform: capitalize;
   a {
     color: $mz-red;
@@ -254,7 +280,7 @@ li.active:hover .animated-key {
 
 // Different styles for mobile dropdown menu
 @media (min-width: $screen-xs-max) {
-  .navbar-nav > .dropdown-menu > li {
+  #sign-in + .dropdown-menu > li {
     text-align: left;
   }
 }
