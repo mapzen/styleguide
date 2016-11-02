@@ -279,7 +279,7 @@ li.active:hover .animated-key {
 
 // Different styles for mobile dropdown menu
 @media (min-width: $screen-xs-max) {
-  .navbar-nav > .dropdown-menu > li > a {
-    float: left;
+  #sign-in + .dropdown-menu > li {
+    text-align: left;
   }
 }
