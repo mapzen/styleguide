@@ -23,7 +23,7 @@ $signupbtnh:45px;
         height:$signupbtnh;
       }
 
-      #sign-up, #sign-up-btn {
+      #sign-up, #accept-sign-up {
         height:$signupbtnh;
         font-size: 16px;
         font-weight:400;
@@ -37,7 +37,7 @@ $signupbtnh:45px;
         border: 1px solid $mz-gray;
         cursor: default;
       }
-      button#sign-up-btn[disabled] {
+      button#accept-sign-up[disabled] {
         background: $mz-gray;
         border: 1px solid $mz-gray;
         cursor: default;
