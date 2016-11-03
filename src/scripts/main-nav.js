@@ -40,7 +40,7 @@
         if (data.id) {
           loginButton.parentNode.innerHTML = getLoginElem(data.nickname, data.avatar);
           // After 'sign out element' in the dropdown was injected
-          var signOutElem = document.getElementById('sign-out');
+          var signOutElem = document.querySelector('nav.navbar #sign-out');
           signOutElem.addEventListener('click', makeLogoutCall);
           hideSignUpButton();
           putActiveTab();
@@ -110,7 +110,7 @@
     strVar += '</a>';
     strVar += ' <ul class="dropdown-menu">';
     strVar += '   <li><a href="/developers/">Dashboard</a></li>';
-    strVar += '   <li><a href="/data/metro-extracts/your-extracts/">Custom Extracts</a></li>';
+    strVar += '   <li><a href="/data/metro-extracts/your-extracts/">Your Custom Extracts</a></li>';
     strVar += '   <li id="sign-out"><a href="#"> Logout</a></li>';
     strVar += ' </ul>';
     return strVar;

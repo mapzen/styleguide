@@ -74,6 +74,14 @@ body {
   font-weight: 400;
 }
 
+
+// overriding mobile navbar max-height so we don't have to show scroll bar on smaller screen
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+  max-height: 360px;
+}
+
+
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -160,10 +168,16 @@ li.active:hover .animated-key {
 
 
 .navbar-nav > li > a#sign-in {
-  float: left;
   min-width: 115px;
   max-width: 235px;
   text-overflow: ellipsis;
+}
+
+// Make button to float center on mobile menu, not on bigger screen
+@media (min-width: $screen-xs-max) {
+  .navbar-nav > li > a#sign-in {
+    float: left;
+  }
 }
 
 .navbar-nav > li > a#sign-up {
@@ -192,11 +206,23 @@ li.active:hover .animated-key {
 }
 
 .navbar-nav {
+  li.active:hover .login-txt {color: $mz-red;}
+  li.active:focus .login-txt {color: $mz-red;}
   li:hover .login-txt {color: #333;}
   li a:focus .login-txt {color: #333;}
 
+
+  li.active:hover #login-profile {border-color: $mz-red;}
+  li.active a:focus #login-profile {border-color: $mz-red;}
+
   li:hover #login-profile {border-color: #333;}
   li a:focus #login-profile {border-color: #333;}
+
+  li.active:hover .compass:before {border-bottom-color: $mz-red;}
+  li.active a:focus .compass:before {border-bottom-color: $mz-red;}
+  li.active:hover .compass:after {border-top-color: $mz-red;}
+  li.active a:focus .compass:after {border-top-color: $mz-red;}
+
 
   li:hover .compass:before {border-bottom-color: #333;}
   li a:focus .compass:before {border-bottom-color: #333;}
@@ -208,8 +234,8 @@ li.active:hover .animated-key {
   width: 22px;
   height: 22px;
   position: relative;
-  margin-left: -1px; /* arm of compass looks off, this is lame solutionf or it */
-  margin-top: -1px; /* arm of compass looks off, this is lame solutionf or it */
+  margin-left: -1px; /* arm of compass looks off, this is lame solution for the problem */
+  margin-top: -1px; /* same with the line above */
   transform-origin: center center;
   transform: rotate(30deg);
   transition: all 2s ease;
@@ -235,7 +261,7 @@ li.active:hover .animated-key {
     transform: rotate(390deg);
   }
 }
-.compass .center-dot {
+.compass > .center-dot {
   width: 2px;
   height: 2px;
   background-color: #ccc;
@@ -245,16 +271,15 @@ li.active:hover .animated-key {
   left: 10px;
 }
 
-.navbar-nav > .dropdown-menu > li {
+// overriding login button dropdown  menu
+#sign-in + .dropdown-menu > li > a {
   text-transform: capitalize;
-  a {
-    color: $mz-red;
-  }
+  color: #333;
 }
 
 // Different styles for mobile dropdown menu
 @media (min-width: $screen-xs-max) {
-  .navbar-nav > .dropdown-menu > li {
+  #sign-in + .dropdown-menu > li {
     text-align: left;
   }
 }
