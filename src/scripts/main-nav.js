@@ -110,7 +110,6 @@
     strVar += '</a>';
     strVar += ' <ul class="dropdown-menu">';
     strVar += '   <li><a href="/developers/">Dashboard</a></li>';
-    strVar += '   <li><a href="/data/metro-extracts/your-extracts/">Your Custom Extracts</a></li>';
     strVar += '   <li id="sign-out"><a href="#"> Logout</a></li>';
     strVar += ' </ul>';
     return strVar;
@@ -134,9 +133,6 @@
     strVar += '<span class="visible-xs-inline visible-sm-inline visible-md-inline visible-lg-inline btn btn-mapzen">';
     strVar += '  sign up';
     strVar += '<\/span>';
-    // strVar += '<div class="alert alert-success">';
-    // strVar += ' <strong>Success!</strong> Indicates a successful or positive action.';
-    // strVar += '</div>';
     return strVar;
   }
 
