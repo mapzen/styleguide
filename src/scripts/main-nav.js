@@ -19,6 +19,8 @@
   var loginButton = document.querySelector('nav.navbar #sign-in');
   var signupButton = document.querySelector('nav.navbar #sign-up');
   var subPaths = getSubPaths();
+  var isXHRRun = false;
+
   if (!loginButton) {
     putActiveTab();
     return;
@@ -38,8 +40,12 @@
       loginButton.innerHTML = getNotLoginElem();
       signupButton.innerHTML = getSignUpElem();
     };
-
+    isXHRRun = true;
     developerRequest.send();
+  }
+
+  function didXHRRun() {
+    return isXHRRun;
   }
 
   function checkUserState (responseText) {
@@ -230,6 +236,7 @@
 
   // Just return a value to define the module export.
   return {
+    didXHRRun: didXHRRun,
     fetchUserData: fetchUserData,
     checkUserState: checkUserState
   };
