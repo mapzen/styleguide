@@ -24,46 +24,48 @@
     return;
   }
 
-  checkUserState();
-
-  function checkUserState () {
-
+  function fetchUserData () {
     // Send request to check the user is logged in or not
     var developerRequest = new XMLHttpRequest();
     developerRequest.open('GET', '/api/developer.json', true);
-
     developerRequest.onload = function() {
       if (developerRequest.status >= 200 && developerRequest.status < 400) {
-        // Success!
-        var data = JSON.parse(developerRequest.responseText);
-
-        if (data.id) {
-          loginButton.parentNode.innerHTML = getLoginElem(data.nickname, data.avatar);
-          // After 'sign out element' in the dropdown was injected
-          var signOutElem = document.querySelector('nav.navbar #sign-out');
-          signOutElem.addEventListener('click', makeLogoutCall);
-          hideSignUpButton();
-          putActiveTab();
-        } else {
-          // When user is not logged in
-          loginButton.innerHTML = getNotLoginElem();
-          signupButton.innerHTML = getSignUpElem();
-          putActiveTab();
-        }
-      } else {
-        // We re1ched our target server, but it returned an error
-        loginButton.innerHTML = getNotLoginElem();
-        signupButton.innerHTML = getSignUpElem();
+        checkUserState(developerRequest.responseText);
       }
-    };
-
+    }
 
     developerRequest.onerror = function() {
-      //
       loginButton.innerHTML = getNotLoginElem();
       signupButton.innerHTML = getSignUpElem();
     };
+
     developerRequest.send();
+  }
+
+  function checkUserState (responseText) {
+
+    // // Send request to check the user is logged in or not
+    // var developerRequest = new XMLHttpRequest();
+    // developerRequest.open('GET', '/api/developer.json', true);
+
+    // developerRequest.onload = function() {
+      // if (developerRequest.status >= 200 && developerRequest.status < 400) {
+        // Success!
+    var data = JSON.parse(responseText);
+
+    if (data.id) {
+      loginButton.parentNode.innerHTML = getLoginElem(data.nickname, data.avatar);
+      // After 'sign out element' in the dropdown was injected
+      var signOutElem = document.querySelector('nav.navbar #sign-out');
+      signOutElem.addEventListener('click', makeLogoutCall);
+      hideSignUpButton();
+      putActiveTab();
+    } else {
+      // When user is not logged in
+      loginButton.innerHTML = getNotLoginElem();
+      signupButton.innerHTML = getSignUpElem();
+      putActiveTab();
+    }
   }
 
   function hideSignUpButton () {
@@ -227,5 +229,8 @@
   }
 
   // Just return a value to define the module export.
-  return {};
+  return {
+    fetchUserData: fetchUserData,
+    checkUserState: checkUserState
+  };
 }));
