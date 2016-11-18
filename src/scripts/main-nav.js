@@ -26,7 +26,7 @@
     return;
   }
 
-  if(loginButton.getAttribute('data-nav-run') !== 'yes') {
+  if(loginButton.getAttribute('data-navg-run') !== 'yes') {
     fetchUserData();
   }
 
@@ -74,7 +74,7 @@
 
   function showLogOutStatus() {
     // When user is not logged in
-    loginButton.innerHTML = getNotLoginElem();
+    loginButton.parentNode.innerHTML = getNotLoginElem();
     signupButton.innerHTML = getSignUpElem();
   }
 
@@ -129,7 +129,7 @@
 
   function getNotLoginElem () {
     var strVar='';
-    strVar += '<a id=\"login\" data-nav-run="yes" href=\"\/developers\/sign_in\">';
+    strVar += '<a id=\"sign-in\" data-nav-run="yes" href=\"\/developers\/sign_in\">';
     strVar += '  <div id=\"login-profile\">';
     strVar += '    <div class=\"compass\">';
     strVar += '      <div class=\"center-dot\"><\/div>';
