@@ -26,7 +26,7 @@
     return;
   }
 
-  if(loginButton.getAttribute('data-xhr-run') !== 'yes') {
+  if(loginButton.getAttribute('data-nav-run') !== 'yes') {
     fetchUserData();
   }
 
@@ -114,7 +114,7 @@
 
   function getLoginElem (nickname, avatarImageURL) {
     var strVar = '';
-    strVar += '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown" data-target="#" data-xhr-run="yes" role="button">';
+    strVar += '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown" data-target="#" data-nav-run="yes" role="button">';
     strVar += ' <div id=\"login-profile\">';
     strVar += '   <img width=\"18\" height=\"18\" src=\"'+avatarImageURL+'\" style=\"border-radius: 50%; margin-top: -9px;\">';
     strVar += ' <\/div>';
@@ -129,7 +129,7 @@
 
   function getNotLoginElem () {
     var strVar='';
-    strVar += '<a id=\"login\" data-xhr-run="yes" href=\"\/developers\/sign_in\">';
+    strVar += '<a id=\"login\" data-nav-run="yes" href=\"\/developers\/sign_in\">';
     strVar += '  <div id=\"login-profile\">';
     strVar += '    <div class=\"compass\">';
     strVar += '      <div class=\"center-dot\"><\/div>';
