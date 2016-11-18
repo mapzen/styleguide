@@ -26,6 +26,10 @@
     return;
   }
 
+  if(loginButton.getAttribute('data-xhr-run') !== 'yes') {
+    fetchUserData();
+  }
+
   function fetchUserData () {
     // Send request to check the user is logged in or not
     var developerRequest = new XMLHttpRequest();
@@ -37,15 +41,11 @@
     }
 
     developerRequest.onerror = function() {
-      loginButton.innerHTML = getNotLoginElem();
+      loginButton.parentNode.innerHTML = getNotLoginElem();
       signupButton.innerHTML = getSignUpElem();
     };
     isXHRRun = true;
     developerRequest.send();
-  }
-
-  function didXHRRun() {
-    return isXHRRun;
   }
 
   function checkUserState (responseText) {
@@ -67,11 +67,15 @@
       hideSignUpButton();
       putActiveTab();
     } else {
-      // When user is not logged in
-      loginButton.innerHTML = getNotLoginElem();
-      signupButton.innerHTML = getSignUpElem();
+      showLogOutStatus();
       putActiveTab();
     }
+  }
+
+  function showLogOutStatus() {
+    // When user is not logged in
+    loginButton.innerHTML = getNotLoginElem();
+    signupButton.innerHTML = getSignUpElem();
   }
 
   function hideSignUpButton () {
@@ -110,7 +114,7 @@
 
   function getLoginElem (nickname, avatarImageURL) {
     var strVar = '';
-    strVar += '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button">';
+    strVar += '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown" data-target="#" data-xhr-run="yes" role="button">';
     strVar += ' <div id=\"login-profile\">';
     strVar += '   <img width=\"18\" height=\"18\" src=\"'+avatarImageURL+'\" style=\"border-radius: 50%; margin-top: -9px;\">';
     strVar += ' <\/div>';
@@ -125,14 +129,14 @@
 
   function getNotLoginElem () {
     var strVar='';
-    // strVar += '<a id=\"login\" href=\"\/developers\/sign_in\">';
+    strVar += '<a id=\"login\" data-xhr-run="yes" href=\"\/developers\/sign_in\">';
     strVar += '  <div id=\"login-profile\">';
     strVar += '    <div class=\"compass\">';
     strVar += '      <div class=\"center-dot\"><\/div>';
     strVar += '    <\/div>';
     strVar += '  <\/div>';
     strVar += '  <div class=\"login-txt\">sign in<\/div>';
-    // strVar += '<\/a>';
+    strVar += '<\/a>';
     return strVar;
   }
 
@@ -142,10 +146,6 @@
     strVar += '  sign up';
     strVar += '<\/span>';
     return strVar;
-  }
-
-  function getSignOutElem () {
-    return 'sign out';
   }
 
   function putActiveTab () {
@@ -236,8 +236,8 @@
 
   // Just return a value to define the module export.
   return {
-    didXHRRun: didXHRRun,
     fetchUserData: fetchUserData,
-    checkUserState: checkUserState
+    checkUserState: checkUserState,
+    putActiveTab: putActiveTab
   };
 }));
