@@ -26,7 +26,7 @@
     return;
   }
 
-  if(loginButton.getAttribute('data-navg-run') !== 'yes') {
+  if(loginButton.getAttribute('data-nav-run') !== 'yes') {
     fetchUserData();
   }
 
