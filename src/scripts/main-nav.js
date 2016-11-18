@@ -19,7 +19,6 @@
   var loginButton = document.querySelector('nav.navbar #sign-in');
   var signupButton = document.querySelector('nav.navbar #sign-up');
   var subPaths = getSubPaths();
-  var isXHRRun = false;
 
   if (!loginButton) {
     putActiveTab();
@@ -36,7 +35,8 @@
     developerRequest.open('GET', '/api/developer.json', true);
     developerRequest.onload = function() {
       if (developerRequest.status >= 200 && developerRequest.status < 400) {
-        checkUserState(developerRequest.responseText);
+        var data = JSON.parse(developerRequest.responseText);
+        checkUserState(data.nickname, data.avatar);
       }
     }
 
@@ -44,11 +44,10 @@
       loginButton.parentNode.innerHTML = getNotLoginElem();
       signupButton.innerHTML = getSignUpElem();
     };
-    isXHRRun = true;
     developerRequest.send();
   }
 
-  function checkUserState (responseText) {
+  function checkUserState (nickname, imageurl) {
 
     // // Send request to check the user is logged in or not
     // var developerRequest = new XMLHttpRequest();
@@ -57,10 +56,9 @@
     // developerRequest.onload = function() {
       // if (developerRequest.status >= 200 && developerRequest.status < 400) {
         // Success!
-    var data = JSON.parse(responseText);
 
-    if (data.id) {
-      loginButton.parentNode.innerHTML = getLoginElem(data.nickname, data.avatar);
+    if (nickname && imageurl) {
+      loginButton.parentNode.innerHTML = getLoginElem(nickname, imageurl);
       // After 'sign out element' in the dropdown was injected
       var signOutElem = document.querySelector('nav.navbar #sign-out');
       signOutElem.addEventListener('click', makeLogoutCall);
