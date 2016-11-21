@@ -25,9 +25,14 @@
     return;
   }
 
-  if(loginButton.getAttribute('data-nav-run') !== 'yes') {
-    fetchUserData();
-  }
+  // Metro extract manipulates the page with its own user data
+  // So we chacek if there is anything already changed dom to fetch the data
+  $(document).ready(function () {
+    if(loginButton.getAttribute('data-nav-run') !== 'yes') {
+      fetchUserData();
+    }
+  });
+
 
   function fetchUserData () {
     // Send request to check the user is logged in or not
@@ -36,7 +41,7 @@
     developerRequest.onload = function() {
       if (developerRequest.status >= 200 && developerRequest.status < 400) {
         var data = JSON.parse(developerRequest.responseText);
-        checkUserState(data.nickname, data.avatar);
+        reflectUserState(data.nickname, data.avatar);
       }
     }
 
@@ -47,7 +52,7 @@
     developerRequest.send();
   }
 
-  function checkUserState (nickname, imageurl) {
+  function reflectUserState (nickname, imageurl) {
 
     // // Send request to check the user is logged in or not
     // var developerRequest = new XMLHttpRequest();
@@ -234,8 +239,6 @@
 
   // Just return a value to define the module export.
   return {
-    fetchUserData: fetchUserData,
-    checkUserState: checkUserState,
-    putActiveTab: putActiveTab
+    reflectUserState: reflectUserState
   };
 }));
