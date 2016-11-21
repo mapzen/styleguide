@@ -64,7 +64,6 @@
     // developerRequest.onload = function() {
       // if (developerRequest.status >= 200 && developerRequest.status < 400) {
         // Success!
-
     if (nickname && imageurl) {
       loginButton.parentNode.innerHTML = getLoginElem(nickname, imageurl);
       // After 'sign out element' in the dropdown was injected
@@ -122,7 +121,7 @@
     var strVar = '';
     strVar += '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown" data-target="#" data-nav-run="yes" role="button">';
     strVar += ' <div id=\"login-profile\">';
-    strVar += '   <img width=\"18\" height=\"18\" src=\"'+avatarImageURL+'\" style=\"border-radius: 50%; margin-top: -9px;\">';
+    strVar += '   <img width=\"18\" height=\"18\" src=\"'+avatarImageURL+'\" style=\"border-radius: 50%; position: absolute; top: 1px; left: 1px;\">';
     strVar += ' <\/div>';
     strVar += ' <div class="login-txt"> ' + nickname + ' <\/div>';
     strVar += '</a>';
