@@ -28,6 +28,9 @@
   // Metro extract manipulates the page with its own user data
   // So we chacek if there is anything already changed dom to fetch the data
   $(document).ready(function () {
+    // There is a possibility that login button was manipulated by metro extract page
+    // so assign loginButton value again
+    var loginButton = document.querySelector('nav.navbar #sign-in');
     if(loginButton.getAttribute('data-nav-run') !== 'yes') {
       fetchUserData();
     }
