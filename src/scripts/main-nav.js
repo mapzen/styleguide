@@ -55,7 +55,7 @@
     developerRequest.send();
   }
 
-  function reflectUserState (nickname, imageurl) {
+  function reflectUserState (nickname, imageurl, customLogoutCall) {
 
     // // Send request to check the user is logged in or not
     // var developerRequest = new XMLHttpRequest();
@@ -68,7 +68,7 @@
       loginButton.parentNode.innerHTML = getLoginElem(nickname, imageurl);
       // After 'sign out element' in the dropdown was injected
       var signOutElem = document.querySelector('nav.navbar #sign-out');
-      signOutElem.addEventListener('click', makeLogoutCall);
+      signOutElem.addEventListener('click', customLogoutCall||makeLogoutCall);
       hideSignUpButton();
       putActiveTab();
     } else {

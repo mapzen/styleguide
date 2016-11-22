@@ -43,7 +43,7 @@ Please look at [Google Analytics page](https://support.google.com/analytics/answ
 
 | Method     | Return            | Description           |
 |------------|-------------------|---------|-----------------------|
-| `reflectUserState(<String> userNickname, <String> userAvatarImage)`      |`null`  | Manipulate navigation bar state with passed user data. To show not-logged-in status, pass `null` or empty string as parameters.    |
+| `reflectUserState(<String> userNickname, <String> userAvatarImage, [<Function> customLogoutCall])` |`null` | Manipulate navigation bar state with passed user data. To show not-logged-in status, pass `null` or empty string as parameters. Optionally provide a custom logout handler to override the default. |
 
 
 Contribute
