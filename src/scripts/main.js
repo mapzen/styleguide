@@ -27,7 +27,6 @@ var stickynav = require('./sticky-nav.js');
 var mapzenNav = require('./main-nav.js');
 var sidenav = require('./side-nav.js');
 var tablewrap = require('./table-wrap.js');
-window.MapzenNav = mapzenNav;
 
 // Create a global MPZN object
 // Inherit it if already present from elsewhere
@@ -35,6 +34,7 @@ var MPZN = window.MPZN || {};
 
 // Export methods that should be accessible
 MPZN.trackEvent = trackEvent;
+MPZN.nav = mapzenNav;
 
 // We can namespace $ to MPZN to keep it accessible.
 MPZN.$ = $;
