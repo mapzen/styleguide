@@ -19,51 +19,68 @@
   var loginButton = document.querySelector('nav.navbar #sign-in');
   var signupButton = document.querySelector('nav.navbar #sign-up');
   var subPaths = getSubPaths();
+
   if (!loginButton) {
     putActiveTab();
     return;
   }
 
-  checkUserState();
+  // Metro extract manipulates the page with its own user data
+  // So we chacek if there is anything already changed dom to fetch the data
+  $(document).ready(function () {
+    // There is a possibility that login button was manipulated by metro extract page
+    // so assign loginButton value again
+    var loginButton = document.querySelector('nav.navbar #sign-in');
+    if(loginButton.getAttribute('data-nav-run') !== 'yes') {
+      fetchUserData();
+    }
+  });
 
-  function checkUserState () {
 
+  function fetchUserData () {
     // Send request to check the user is logged in or not
     var developerRequest = new XMLHttpRequest();
     developerRequest.open('GET', '/api/developer.json', true);
-
     developerRequest.onload = function() {
       if (developerRequest.status >= 200 && developerRequest.status < 400) {
-        // Success!
         var data = JSON.parse(developerRequest.responseText);
-
-        if (data.id) {
-          loginButton.parentNode.innerHTML = getLoginElem(data.nickname, data.avatar);
-          // After 'sign out element' in the dropdown was injected
-          var signOutElem = document.querySelector('nav.navbar #sign-out');
-          signOutElem.addEventListener('click', makeLogoutCall);
-          hideSignUpButton();
-          putActiveTab();
-        } else {
-          // When user is not logged in
-          loginButton.innerHTML = getNotLoginElem();
-          signupButton.innerHTML = getSignUpElem();
-          putActiveTab();
-        }
-      } else {
-        // We re1ched our target server, but it returned an error
-        loginButton.innerHTML = getNotLoginElem();
-        signupButton.innerHTML = getSignUpElem();
+        reflectUserState(data.nickname, data.avatar);
       }
-    };
-
+    }
 
     developerRequest.onerror = function() {
-      //
-      loginButton.innerHTML = getNotLoginElem();
+      loginButton.parentNode.innerHTML = getNotLoginElem();
       signupButton.innerHTML = getSignUpElem();
     };
     developerRequest.send();
+  }
+
+  function reflectUserState (nickname, imageurl) {
+
+    // // Send request to check the user is logged in or not
+    // var developerRequest = new XMLHttpRequest();
+    // developerRequest.open('GET', '/api/developer.json', true);
+
+    // developerRequest.onload = function() {
+      // if (developerRequest.status >= 200 && developerRequest.status < 400) {
+        // Success!
+    if (nickname && imageurl) {
+      loginButton.parentNode.innerHTML = getLoginElem(nickname, imageurl);
+      // After 'sign out element' in the dropdown was injected
+      var signOutElem = document.querySelector('nav.navbar #sign-out');
+      signOutElem.addEventListener('click', makeLogoutCall);
+      hideSignUpButton();
+      putActiveTab();
+    } else {
+      showLogOutStatus();
+      putActiveTab();
+    }
+  }
+
+  function showLogOutStatus() {
+    // When user is not logged in
+    loginButton.parentNode.innerHTML = getNotLoginElem();
+    signupButton.innerHTML = getSignUpElem();
   }
 
   function hideSignUpButton () {
@@ -102,9 +119,9 @@
 
   function getLoginElem (nickname, avatarImageURL) {
     var strVar = '';
-    strVar += '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown" data-target="#" role="button">';
+    strVar += '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown" data-target="#" data-nav-run="yes" role="button">';
     strVar += ' <div id=\"login-profile\">';
-    strVar += '   <img width=\"18\" height=\"18\" src=\"'+avatarImageURL+'\" style=\"border-radius: 50%; margin-top: -9px;\">';
+    strVar += '   <img width=\"18\" height=\"18\" src=\"'+avatarImageURL+'\" style=\"border-radius: 50%; position: absolute; top: 1px; left: 1px;\">';
     strVar += ' <\/div>';
     strVar += ' <div class="login-txt"> ' + nickname + ' <\/div>';
     strVar += '</a>';
@@ -117,14 +134,14 @@
 
   function getNotLoginElem () {
     var strVar='';
-    // strVar += '<a id=\"login\" href=\"\/developers\/sign_in\">';
+    strVar += '<a id=\"sign-in\" data-nav-run="yes" href=\"\/developers\/sign_in\">';
     strVar += '  <div id=\"login-profile\">';
     strVar += '    <div class=\"compass\">';
     strVar += '      <div class=\"center-dot\"><\/div>';
     strVar += '    <\/div>';
     strVar += '  <\/div>';
     strVar += '  <div class=\"login-txt\">sign in<\/div>';
-    // strVar += '<\/a>';
+    strVar += '<\/a>';
     return strVar;
   }
 
@@ -134,10 +151,6 @@
     strVar += '  sign up';
     strVar += '<\/span>';
     return strVar;
-  }
-
-  function getSignOutElem () {
-    return 'sign out';
   }
 
   function putActiveTab () {
@@ -227,5 +240,7 @@
   }
 
   // Just return a value to define the module export.
-  return {};
+  return {
+    reflectUserState: reflectUserState
+  };
 }));

@@ -24,9 +24,10 @@ require('bootstrap/js/modal');
 var trackEvent = require('./event-tracking.js');
 var social = require('./social.js');
 var stickynav = require('./sticky-nav.js');
-var activelink = require('./main-nav.js');
+var mapzenNav = require('./main-nav.js');
 var sidenav = require('./side-nav.js');
 var tablewrap = require('./table-wrap.js');
+window.MapzenNav = mapzenNav;
 
 // Create a global MPZN object
 // Inherit it if already present from elsewhere
