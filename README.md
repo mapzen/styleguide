@@ -26,11 +26,10 @@ resources.
 
 ### MPZN
 
-These are Javascript APIs without UI components under MPZN name space.
+These are Javascript APIs without UI components under MPZN name space. 
 
 #### MPZN.trackevent
-`MPZN.trackevent`is a wrapper for customized Google analytics event.
-##### Creation
+`MPZN.trackevent`is a wrapper for customized Google Analytics event. You can initialize `MPZN.trackevent` with your own Google Analytics value. Google Anlyatics value is going to be sent with the initialization of `MPZN.trackevent`.
 
 ```
 MPZN.trackevent(category, action, label, value)
@@ -40,15 +39,7 @@ Please look at [Google Analytics page](https://support.google.com/analytics/answ
 
 #### MPZN.nav
 
-`MPZN.nav`is a read-only component dealing with user's log-in status on the navbar.
-
-#### Creation
-
-```
-MPZN.nav
-```
-
-#### Method
+`MPZN.nav`is a read-only component dealing with user's log-in status on the navbar. 
 
 | Method     | Return            | Description           |
 |------------|-------------------|---------|-----------------------|
