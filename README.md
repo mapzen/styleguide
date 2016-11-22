@@ -24,6 +24,28 @@ To use the guide for Mapzen-looking web sites, visit
 and follow the instructions to structure HTML and linked style and script
 resources.
 
+### MPZN
+
+These are Javascript APIs without UI components under MPZN name space. 
+
+#### MPZN.trackevent
+`MPZN.trackevent`is a wrapper for customized Google Analytics event. You can initialize `MPZN.trackevent` with your own Google Analytics value. Google Anlyatics value is going to be sent with the initialization of `MPZN.trackevent`.
+
+```
+MPZN.trackevent(category, action, label, value)
+```
+
+Please look at [Google Analytics page](https://support.google.com/analytics/answer/1033068?hl=en#anatomy-of-events) to know more about options.
+
+#### MPZN.nav
+
+`MPZN.nav`is a read-only component dealing with user's log-in status on the navbar. 
+
+| Method     | Return            | Description           |
+|------------|-------------------|---------|-----------------------|
+| `reflectUserState(<String> userNickname, <String> userAvatarImage)`      |`null`  | Manipulate navigation bar state with passed user data. To show not-logged-in status, pass `null` or empty string as parameters.    |
+
+
 Contribute
 ----------
 
