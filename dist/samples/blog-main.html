@@ -1584,6 +1584,14 @@
 <script src='../scripts/mapzen-styleguide.min.js'></script>
 <script>
   // Mimicking logged in status
-  MPZN.nav.reflectUserState('hanbyul-here','https://avatars.githubusercontent.com/u/4583806?v=3');
+  MPZN.nav.reflectUserState(
+    'hanbyul-here',
+    'https://avatars.githubusercontent.com/u/4583806?v=3',
+    function(e)
+    {
+        e.preventDefault();
+        e.stopPropagation();
+        alert("You asked to log out.");
+    });
 </script>
 </body></html>
