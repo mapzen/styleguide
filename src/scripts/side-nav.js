@@ -72,11 +72,18 @@
   for (var i = 0, j = toggleEls.length; i < j; i++) {
     var toggle = toggleEls[i];
     toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
       // Expands the submenu if there is no link to another page
       // e.target.href expands to a fully qualified URL; don't use it
-      if (!e.target.href || e.target.getAttribute('href') === '#') {
-        var sublist = e.target.nextElementSibling;
+      // if (!e.target.href || e.target.getAttribute('href') === '#') {
+
+        var sublist = e.currentTarget.nextElementSibling;
         sublist.classList.toggle('toc-expand');
+
+        var carretEl = e.currentTarget.getElementsByTagName('i')[0];
+        console.log(carretEl);
+        carretEl.classList.toggle('fa-angle-right');
+        carretEl.classList.toggle('fa-angle-down');
 
         // Recalc affix position after expand transition finishes
         if (affixState === true) {
@@ -84,7 +91,7 @@
             $el.affix('checkPosition');
           });
         }
-      }
+      //}
     });
   }
 

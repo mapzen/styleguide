@@ -154,6 +154,7 @@ ul.nav > li:first-child:last-child {
   li.active > a {
     background-color: #eee;
     box-shadow: inset 4px 0 0 #385d5c;
+    color: $mz-blue;
   }
 
   // Sub menu indents
@@ -162,4 +163,30 @@ ul.nav > li:first-child:last-child {
       padding-left: 30px;
     }
   }
+}
+
+//////////////////////////////////////
+////////// new one ///////////////////
+//////////////////////////////////////
+/// main > sub > list-toggle > list //
+//////////////////////////////////////
+
+.toc-main {
+
+}
+
+.toc-sub-main {
+
+}
+
+.toc-sub-list-toggle {
+
+}
+
+.toc-sub-list {
+
+}
+
+.toc-sub-title {
+  margin-right: 10px;
 }
