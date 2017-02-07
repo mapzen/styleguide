@@ -31,3 +31,20 @@ This list is a living document that will be added to or changed as terminology i
 ## Common words and phrases
 
 - Because, since: use _because_ for causation (because you checked your email, you saw the meeting invitation) and _since_ for a period of time (it's been hours since you checked email).
+- Avoid _simple_ or _simply_, especially in instructions (for example, "Simply clone this repository to get it started.") Simplicity is in the eye of the beholder, and what is simple for you might be completely foreign to another person. Your goal is absolutely to make things as simple as possible, but let your readers and users judge for themselves.
+
+## Map words
+
+- _Basemaps_ is one word.
+- Capitalize the names of other mapping companies and products correctly: _Mapbox_, _Esri_, _ArcGIS_.
+
+## Technical writing
+
+- All of our code is hosted on _GitHub_, not on _Github_ or _github_. When referring to GitHub-specific features or products, like issues, use _GitHub issues_. When referring to a repository hosted on GitHub, use _GitHub repository_.
+- The command-line version control system GitHub is based on is a proper noun: _Git_. It is only lower-case `git` when written as shell code. When referring to a generic _Git repository_, use the proper noun form.
+- Spell out _repository_. Using "repo" is too colloquial for potentially non-technical readers.
+
+## Mapzen-related
+
+- We are moving away from Mapzen _house styles_ (for example, Cinnabar, Bubble Wrap, or Zinc). Use _Mapzen basemaps_ instead.
+- Files loaded by Tangram are _scene files_. Do not use _Tangram style_ (a single scene can contain multiple `style` blocks, so calling the entire thing a _style_ leads to confusion). _Tangram scene_ is accurate, but a _Tangram scene file_ is clearer.
