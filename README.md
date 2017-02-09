@@ -26,7 +26,7 @@ resources.
 
 ### MPZN
 
-These are Javascript APIs without UI components under MPZN name space. 
+These are Javascript APIs without UI components under MPZN name space.
 
 #### MPZN.trackevent
 `MPZN.trackevent`is a wrapper for customized Google Analytics event. You can initialize `MPZN.trackevent` with your own Google Analytics value. Google Anlyatics value is going to be sent with the initialization of `MPZN.trackevent`.
@@ -39,7 +39,7 @@ Please look at [Google Analytics page](https://support.google.com/analytics/answ
 
 #### MPZN.nav
 
-`MPZN.nav`is a read-only component dealing with user's log-in status on the navbar. 
+`MPZN.nav`is a read-only component dealing with user's log-in status on the navbar.
 
 | Method     | Return            | Description           |
 |------------|-------------------|---------|-----------------------|
@@ -57,6 +57,8 @@ To edit and test Styleguide, please work on a new branch in this repository and
 [use Precog](http://precog.mapzen.com/mapzen/styleguide) for preview and
 testing.
 
+To work with other Mapzen related-repo, please follow the steps in [contribution guide](https://github.com/mapzen/styleguide/blob/master/contribute.md#are-you-working-with-other-mapzen-related-repo). You can create an issue containing the check list with **[this link](https://github.com/mapzen/styleguide/issues/new?body=%23%23%23%20Are%20you%20working%20with%20other%20Mapzen-related%20repo%3F%20Please%20follow%20the%20steps%20below.%0A%0A%23%23%23%23%20pre-requirement%20%0A-%20%5B%20%5D%20Add%20temporary%20css%20or%20javascript%20on%20the%20branch%20of%20the%20repo%20which%20needs%20a%20change.%20%0A-%20%5B%20%5D%20Share%20changes%20with%20other%20people%20using%20Precog%0A%0A%23%23%23%23%20requirement%20%0A-%20%5B%20%5D%20Add%20new%20features%20on%20styleguide%20%0A-%20%5B%20%5D%20Reflect%20changes%20needed%20to%20the%20other%20repo%20you%20are%20working%20on%20%0A-%20%5B%20%5D%20Get%20rid%20of%20old%20features%20not%20used%20any%20more%20on%20Styleguide.%0A)**.
+
 🚧 `master` branch is live 🚧
 
 If you’d like to edit locally, Styleguide requires [Node](https://nodejs.org/)
@@ -67,6 +69,9 @@ sources in `src/site`. Build and test with these commands:
 2. `gulp build` (or `./node_modules/.bin/gulp build` if _gulp_ not found)
 3. `npm start`
 4. Open [http://localhost:3000](http://localhost:3000) in a browser.
+
+
+
 
 Organization
 ------------
