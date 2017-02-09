@@ -1,8 +1,6 @@
 machine:
   node:
     version: 4.2.6
-  services:
-    - docker
 
 dependencies:
   post:
@@ -14,7 +12,6 @@ deployment:
     commands:
       - gulp publish --target dev
       - gulp publish --target prod
-      - ./docker-publish.sh mapzen/styleguide latest
 
 general:
   artifacts:
