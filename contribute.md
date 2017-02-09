@@ -20,3 +20,5 @@ Contribution Guide
 - [Mapzen styleguide page](https://mapzen.com/common/styleguide/)
 - [Mapzen Mobility Explorer](https://mapzen.com/mobility/explorer)
 - [Mapzen Who's on First](https://whosonfirst.mapzen.com/)
+- [Mapzen Who's on First Boundary Issue](https://whosonfirst.mapzen.com/boundaryissues/)
+- [Mapzen Who's on First Places](https://whosonfirst.mapzen.com/places/)
