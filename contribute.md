@@ -16,10 +16,12 @@ Contribution Guide
 - Of course, [Mapzen Website](https://mapzen.com/)
   - [Product page](https://mapzen.com/products/), [Blog](https://mapzen.com/blog/), [Doucmentation](https://mapzen.com/documentation/)and [Developer dashboard](https://mapzen.com/developers/sign_in) have their own custom build of styleguide css powered by mapzen.com CDN.
 - [Mapzen styleguide page](https://mapzen.com/common/styleguide/)
+- [Mapzen Metro Extracts](https://mapzen.com/data/metro-extracts/)
 - [Mapzen Mobility Explorer](https://mapzen.com/mobility/explorer)
 - [Mapzen Who's on First](https://whosonfirst.mapzen.com/)
 - [Mapzen Who's on First Boundary Issue](https://whosonfirst.mapzen.com/boundaryissues/)
 - [Mapzen Who's on First Places](https://whosonfirst.mapzen.com/places/)
+- [Tangram Blocks](http://tangrams.github.io/blocks/)
 
 
 ### Are you working with other Mapzen-related repo?
