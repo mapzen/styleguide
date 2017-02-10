@@ -7,10 +7,13 @@ dependencies:
     - npm install -g gulp-cli && gulp build
 
 deployment:
+  staging:
+    branch: staging
+    commands:
+      - gulp publish --target dev
   production:
     branch: master
     commands:
-      - gulp publish --target dev
       - gulp publish --target prod
 
 general:
