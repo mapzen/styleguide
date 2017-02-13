@@ -2,7 +2,7 @@
 
 body {
   font-family: $mz-sans-serif;
-  font-weight: 400;
+  font-weight: $thin-font-weight;
   font-size: 16px;
   line-height: 1.5;
   color: $mz-darkgray;
@@ -11,7 +11,7 @@ body {
 // Headings
 
 h1 {
-  font-size: 48px;
+  font-size: 3em;
   font-weight: $bold-font-weight;
   // line-height: 1.2em;
   // margin: 0px;
@@ -24,7 +24,7 @@ h1 {
 
 h2 {
   font-weight: $bold-font-weight;
-  font-size: 36px;
+  font-size: 2.25em;
   // line-height: 1.2em;
 
   @media (min-width: $screen-sm) {
@@ -34,7 +34,7 @@ h2 {
 
 h3 {
   font-weight: $bold-font-weight;;
-  font-size: 24px;
+  font-size: 1.5em;
   // line-height: 1.2em;
   // margin: 0px;
   // padding: 0px;
@@ -47,7 +47,7 @@ h3 {
 // For use in blogs
 h4 {
   font-weight: $bold-font-weight;
-  font-size: 16px;
+  font-size: 1em;
   // line-height: 27px;
   // margin: 0px;
   // padding: 0px;
@@ -62,15 +62,14 @@ h4 {
 // footer get involved
 h5 {
   font-weight:  $bold-font-weight;
-  font-size: 14px;
+  font-size: 0.85em;
   // line-height: 1.4em;
   color: $mz-mediumgray;
 }
 
 a {
-  font-weight: $bold-font-weight;
+  // font-weight: $bold-font-weight;
   color: $mz-blue;
-
   &:hover {
     color: $mz-darkblue;
   }
