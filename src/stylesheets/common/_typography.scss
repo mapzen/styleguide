@@ -3,6 +3,7 @@
 body {
   font-family: $mz-sans-serif;
   font-weight: $thin-font-weight;
+  color: nth($mz-darkpurple, 1);
   font-size: 16px;
   line-height: 1.5;
   color: $mz-darkgray;
