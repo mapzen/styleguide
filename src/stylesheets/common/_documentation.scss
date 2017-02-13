@@ -1,7 +1,6 @@
 .documentation-hero {
   background-color: $mz-darkblue;
   text-align: center;
-  font-family: $docs-heading-font;
   color: white;
   display: flex;
   flex-direction: column;
@@ -80,7 +79,6 @@
   // Headings
   h1, h2, h3, h4, h5, h6 {
     position: relative;
-    font-family: $docs-heading-font;
     font-weight: 400;
     margin-bottom: 0.6em;
     line-height: 1.2em;
@@ -88,7 +86,6 @@
 
   @media (min-width: 767px) {
     h1 {
-      font-family: 'Open Sans', sans-serif;
       font-weight: 300;
       color: $mz-darkblue;
       font-size: 48px;
@@ -118,7 +115,6 @@
 
   @media (max-width: 767px) {
     h1 {
-      font-family: 'Open Sans', sans-serif;
       font-weight: 300;
       color: $mz-darkblue;
       font-size: 40px;
