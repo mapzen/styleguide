@@ -11,65 +11,64 @@ body {
 // Headings
 
 h1 {
-  font-weight: 300;
-  font-size: 44px;
-  line-height: 1.2em;
-  margin: 0px;
+  font-size: 48px;
+  font-weight: $bold-font-weight;
+  // line-height: 1.2em;
+  // margin: 0px;
   color: $mz-red;
-
   @media (min-width: $screen-sm) {
-    font-size: 60px;
+    // font-size: 60px;
   }
 }
 
 
 h2 {
-  font-weight: 300;
+  font-weight: $bold-font-weight;
   font-size: 36px;
-  line-height: 1.2em;
+  // line-height: 1.2em;
 
   @media (min-width: $screen-sm) {
-    font-size: 48px;
+    // font-size: 48px;
   }
 }
 
 h3 {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 1.2em;
-  margin: 0px;
-  padding: 0px;
+  font-weight: $bold-font-weight;;
+  font-size: 24px;
+  // line-height: 1.2em;
+  // margin: 0px;
+  // padding: 0px;
 
   @media (min-width: $screen-sm) {
-    font-size: 24px;
+    // font-size: 24px;
   }
 }
 
 // For use in blogs
 h4 {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 27px;
-  margin: 0px;
-  padding: 0px;
+  font-weight: $bold-font-weight;
+  font-size: 16px;
+  // line-height: 27px;
+  // margin: 0px;
+  // padding: 0px;
 
   @media (min-width: $screen-sm) {
-    font-size: 24px;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    // font-size: 24px;
+    // margin-top: 30px;
+    // margin-bottom: 10px;
   }
 }
 
 // footer get involved
 h5 {
-  font-weight: 600;
-  font-size: 2em;
-  line-height: 1.4em;
+  font-weight:  $bold-font-weight;
+  font-size: 14px;
+  // line-height: 1.4em;
   color: $mz-mediumgray;
 }
 
 a {
-  font-weight: 600;
+  font-weight: $bold-font-weight;
   color: $mz-blue;
 
   &:hover {
