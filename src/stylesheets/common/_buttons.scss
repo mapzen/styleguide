@@ -2,11 +2,11 @@
 /* button styles */
 
 .btn {
-  border-radius: 0;
-  border-width: 1px;
+  border-radius: 5px;
+  border: 0;
   text-transform: uppercase;
-  font-weight: 600;
-  padding: 10px 16px;
+  font-weight: $bold-font-weight;
+  padding: 12px 24px;
 }
 
 // Red button
@@ -42,6 +42,29 @@
     color: #fff;
   }
 }
+
+// mapzen V1
+
+.btn-darkpurple {
+  background-color: nth($mz-darkpurple, 1);
+  color: #ffffff;
+  &:hover,
+  &:focus {
+    background-color: nth($mz-darkpurple, 2);
+  }
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: nth($mz-darkpurple, 1);
+  &:hover,
+  &:focus {
+    background-color: $mz-gray;
+    color: #fff;
+  }
+}
+
+
 
 // Transparent button
 // Sometimes on white, sometimes on light gray
