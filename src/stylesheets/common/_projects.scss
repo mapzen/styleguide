@@ -4,7 +4,7 @@
 
 // Namespaced
 body.project {
-  color: #191919;
+  // color: #191919;
 
   .demo-container {
     position: relative;
@@ -49,7 +49,7 @@ body.project {
     @media (min-width: $screen-sm) {
       // font-size: 48px;
     }
-    color: $mz-red;
+    // color: $mz-red;
 
   }
 
@@ -63,7 +63,7 @@ body.project {
     @media (min-width: $screen-sm) {
       // font-size: 24px;
     }
-    color: $mz-mediumgray;
+    // color: $mz-mediumgray;
   }
 
   h3 {
@@ -78,7 +78,7 @@ body.project {
       // margin-top: 30px;
       // margin-bottom: 10px;
     }
-    color: $mz-mediumgray;
+    // color: $mz-mediumgray;
   }
 
   h4 {
