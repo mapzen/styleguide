@@ -3,7 +3,7 @@
 body {
   font-family: $mz-sans-serif;
   font-weight: $thin-font-weight;
-  color: nth($mz-darkpurple, 2);
+  color: nth($mz-darkpurples, 2);
   font-size: 16px;
   line-height: 1.5;
 }
@@ -71,9 +71,9 @@ h5 {
 // This is arbiturary one that Hanbyul put
 a {
   // font-weight: $bold-font-weight;
-  color: nth($mz-scarlet, 2);
+  color: nth($mz-pinks, 2);
   &:hover {
-    color: nth($mz-pink, 2);
+    color: nth($mz-pinks, 3);
   }
 }
 
