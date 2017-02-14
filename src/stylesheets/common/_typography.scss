@@ -67,11 +67,13 @@ h5 {
   // color: $mz-mediumgray;
 }
 
+// link color was missing from style guide
+// This is arbiturary one that Hanbyul put
 a {
   // font-weight: $bold-font-weight;
-  color: $mz-blue;
+  color: nth($mz-scarlet, 2);
   &:hover {
-    color: $mz-darkblue;
+    color: nth($mz-pink, 2);
   }
 }
 
