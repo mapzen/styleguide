@@ -46,21 +46,22 @@
 // mapzen V1
 
 .btn-darkpurple {
-  background-color: nth($mz-darkpurple, 1);
+  background-color: nth($mz-darkpurples, 1);
   color: #ffffff;
   &:hover,
   &:focus {
-    background-color: nth($mz-darkpurple, 2);
+    background-color: nth($mz-darkpurples, 2);
+    color: $mz-lightgray;
   }
 }
 
 .btn-white {
   background-color: #ffffff;
-  color: nth($mz-darkpurple, 1);
+  color: nth($mz-darkpurples, 1);
   &:hover,
   &:focus {
-    background-color: $mz-gray;
-    color: #fff;
+    background-color: $mz-lightgray;
+    color: nth($mz-darkpurples, 2);
   }
 }
 
