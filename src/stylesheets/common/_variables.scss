@@ -42,14 +42,15 @@ $container-desktop: 960px;
 $container-large-desktop: 960px;
 
 // Navbar
-$navbar-default-bg: rgba(255,255,255,0.95);
+$navbar-default-bg: rgba(nth($mz-darkpurples, 1), 0.9);
 $navbar-margin-bottom: 0;
 $navbar-border-radius: 0;
-$navbar-default-link-color: $mz-red;
-$navbar-default-link-hover-bg: rgba(255,255,255,0.50);
-$navbar-default-link-active-bg: rgba(255,255,255,0.50);
-$navbar-default-link-active-color: $mz-red;
-$navbar-default-toggle-hover-bg: #e5e5e5;
+$navbar-default-link-color: nth($mz-darkpurples, 5);
+$navbar-default-link-hover-color: white;
+$navbar-default-link-hover-bg: transparent;
+$navbar-default-link-active-bg: transparent;
+$navbar-default-link-active-color: white;
+$navbar-default-toggle-hover-bg: transparent;
 $navbar-default-toggle-border-color: transparent;
 
 // Breadcrumbs
