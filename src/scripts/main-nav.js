@@ -56,14 +56,6 @@
   }
 
 function reflectUserState (id, nickname, imageurl, customLogoutCall) {
-
-    // // Send request to check the user is logged in or not
-    // var developerRequest = new XMLHttpRequest();
-    // developerRequest.open('GET', '/api/developer.json', true);
-
-    // developerRequest.onload = function() {
-      // if (developerRequest.status >= 200 && developerRequest.status < 400) {
-        // Success!
     if (id || (nickname && imageurl)) {
       loginButton.parentNode.innerHTML = getLoginElem(id, nickname, imageurl);
       // After 'sign out element' in the dropdown was injected
@@ -118,14 +110,14 @@ function reflectUserState (id, nickname, imageurl, customLogoutCall) {
   }
 
   function getLoginElem (id, nickname, githubAvatar) {
+    // default to showing 'account' and default avatar
+    var avatarImageURL = 'common/styleguide/images/default-avatar.png';
+    var label = 'Account';
+
     if (nickname) {
-      // github user so show their nickname and avatar
-      var avatarImageURL = githubAvatar;
-      var label = nickname;
-    } else {
-      // email/password user so just show 'account' and default avatar
-      var avatarImageURL = 'common/styleguide/images/default-avatar.png';
-      var label = 'Account';
+      // github user so show github nickname and avatar instead of default
+      avatarImageURL = githubAvatar;
+      label = nickname;
     }
     var strVar = '';
     strVar += '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown" data-target="#" data-nav-run="yes" role="button">';
