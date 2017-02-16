@@ -50,7 +50,7 @@
   color: #ffffff;
   &:hover,
   &:focus {
-    background-color: nth($mz-darkpurples, 2);
+    background-color: nth($mz-darkpurples, 3);
     color: $mz-lightgray;
   }
 }
@@ -60,11 +60,27 @@
   color: nth($mz-darkpurples, 1);
   &:hover,
   &:focus {
-    background-color: $mz-lightgray;
-    color: nth($mz-darkpurples, 2);
+    background-color: nth($mz-darkpurples, 5);
   }
 }
 
+.btn-with-arrow {
+  background-color: transparent;
+  color: nth($mz-scarlets, 2);
+  padding: 12px;
+  /* Make only padding right bigger, so we can put arrow image */
+  padding-right: 32px;
+  font-size: 0.85em;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMS42IiBoZWlnaHQ9IjguNjQiIHZpZXdCb3g9IjAgMCAyMS42IDguNjQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkY3QjdCIiBkPSJNMjAuOCA0LjMybC03IDMuNXYtN3oiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGN0I3QiIgZD0iTS44IDIuODJoMTR2M0guOHoiLz48L3N2Zz4=');
+  background-repeat: no-repeat;
+  background-position: right center;
+
+  &:hover,
+  &:focus {
+    color: nth($mz-scarlets, 1);
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMS42IiBoZWlnaHQ9IjguNjQiIHZpZXdCb3g9IjAgMCAyMS42IDguNjQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkY0OTQ3IiBkPSJNMjAuOCA0LjMybC03IDMuNXYtN3oiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGNDk0NyIgZD0iTS44IDIuODJoMTR2M0guOHoiLz48L3N2Zz4=');
+  }
+}
 
 
 // Transparent button
