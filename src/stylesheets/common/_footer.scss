@@ -24,6 +24,11 @@ footer {
     @extend .btn-white;
   }
 
+  // TODO: remove the gray-text class from slogan
+  .slogan {
+    color: nth($mz-darkpurples, 4);
+  }
+
   a,
   a:active,
   a:visited {
@@ -42,6 +47,7 @@ footer {
   h6 {
     font-size: inherit;
     font-weight: $bold-font-weight;
+    text-transform: uppercase;
 
     &:not(:first-of-type) {
       margin-top: 20px;
