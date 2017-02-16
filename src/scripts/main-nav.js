@@ -44,7 +44,7 @@
     developerRequest.onload = function() {
       if (developerRequest.status >= 200 && developerRequest.status < 400) {
         var data = JSON.parse(developerRequest.responseText);
-        reflectUserState(data.nickname, data.avatar);
+        reflectUserState(data.id, data.nickname, data.avatar);
       }
     }
 
@@ -55,17 +55,9 @@
     developerRequest.send();
   }
 
-  function reflectUserState (nickname, imageurl, customLogoutCall) {
-
-    // // Send request to check the user is logged in or not
-    // var developerRequest = new XMLHttpRequest();
-    // developerRequest.open('GET', '/api/developer.json', true);
-
-    // developerRequest.onload = function() {
-      // if (developerRequest.status >= 200 && developerRequest.status < 400) {
-        // Success!
-    if (nickname && imageurl) {
-      loginButton.parentNode.innerHTML = getLoginElem(nickname, imageurl);
+function reflectUserState (id, nickname, imageurl, customLogoutCall) {
+    if (id || (nickname && imageurl)) {
+      loginButton.parentNode.innerHTML = getLoginElem(id, nickname, imageurl);
       // After 'sign out element' in the dropdown was injected
       var signOutElem = document.querySelector('nav.navbar #sign-out');
       signOutElem.addEventListener('click', customLogoutCall||makeLogoutCall);
@@ -117,18 +109,27 @@
     }
   }
 
-  function getLoginElem (nickname, avatarImageURL) {
+  function getLoginElem (id, nickname, githubAvatar) {
+    // default to showing 'account' and default avatar
+    var avatarImageURL = 'common/styleguide/images/default-avatar.png';
+    var label = 'Account';
+
+    if (nickname) {
+      // github user so show github nickname and avatar instead of default
+      avatarImageURL = githubAvatar;
+      label = nickname;
+    }
     var strVar = '';
     strVar += '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown" data-target="#" data-nav-run="yes" role="button">';
     strVar += ' <div id=\"login-profile\">';
-    strVar += '   <img width=\"18\" height=\"18\" src=\"'+avatarImageURL+'\" style=\"border-radius: 50%; position: absolute; top: 1px; left: 1px;\">';
+    strVar += '   <img width=\"18\" height=\"18\" src=\"' + avatarImageURL + '\" style=\"border-radius: 50%; position: absolute; top: 1px; left: 1px;\">';
     strVar += ' <\/div>';
-    strVar += ' <div class="login-txt"> ' + nickname + ' <\/div>';
+    strVar += ' <div class="login-txt"> ' + label + ' <\/div>';
     strVar += '</a>';
-    strVar += ' <ul class="dropdown-menu">';
-    strVar += '   <li><a href="/developers/">Dashboard</a></li>';
-    strVar += '   <li id="sign-out"><a href="#"> Logout</a></li>';
-    strVar += ' </ul>';
+    strVar += '<ul class="dropdown-menu">';
+    strVar += '  <li><a href="/developers/">Dashboard</a></li>';
+    strVar += '  <li id="sign-out"><a href="#"> Logout</a></li>';
+    strVar += '</ul>';
     return strVar;
   }
 
