@@ -7,6 +7,10 @@
   li::before {
     font: normal normal normal 14px/1 FontAwesome;
   }
+  li > a {
+    font-weight: $bold-font-weight;
+    font-size: 0.85em;
+  }
 }
 // Override for libsass bug
 // See https://github.com/twbs/bootstrap-sass/issues/919
