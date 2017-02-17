@@ -115,10 +115,6 @@ body.project {
     }
   }
 
-  a {
-    font-weight: 600;
-  }
-
   // Only affect images not given a specific width and height attribute
   img:not([width]):not([height]) {
     width: 100%;
