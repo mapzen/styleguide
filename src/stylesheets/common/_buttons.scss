@@ -11,18 +11,18 @@
 
 // Red button
 .btn-mapzen {
-  border-color: $mz-red;
-  background-color: $mz-red;
-  color: #fff;
-  text-shadow: none;
-  text-transform: uppercase;
-  font-weight:400;
-
+  // border-color: $mz-red;
+  // background-color: $mz-red;
+  // color: #fff;
+  // text-shadow: none;
+  // text-transform: uppercase;
+  // font-weight:400;
+  background-color: nth($mz-darkpurples, 1);
+  color: #ffffff;
   &:hover,
   &:focus {
-    border-color: $mz-darkred;
-    background-color: $mz-darkred;
-    color: #fff;
+    background-color: nth($mz-darkpurples, 3);
+    color: $mz-lightgray;
   }
 }
 
