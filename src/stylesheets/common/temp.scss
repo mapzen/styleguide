@@ -4,10 +4,11 @@
   /* h2 style */
   font-weight: $bold-font-weight;
   font-size: 36px;
+
+  .static-content h5 {
+    /* h3 style */
+    font-weight: $bold-font-weight;;
+    font-size: 24px;
+  }
 }
 
-.static-content h5 {
-  /* h3 style */
-  font-weight: $bold-font-weight;;
-  font-size: 24px;
-}
