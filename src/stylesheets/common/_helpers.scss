@@ -138,7 +138,8 @@
 }
 
 .red-text {
-  color: $mz-red;
+  /* This class should be deprecated after mapzen website v1.0 */
+  color: nth($mz-scarlet, 1);
 }
 
 .gray-text {
