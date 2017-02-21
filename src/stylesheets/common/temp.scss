@@ -1,11 +1,13 @@
 /* This stylefile is written to be temporary. This needs to be gone after dom change of homepage*/
 
 #content h5 {
+  /* h2 style */
   font-weight: $bold-font-weight;
-  font-size: 2.25em;
+  font-size: 36px;
 }
 
 .static-content h5 {
+  /* h3 style */
   font-weight: $bold-font-weight;;
-  font-size: 1.5em;
+  font-size: 24px;
 }
