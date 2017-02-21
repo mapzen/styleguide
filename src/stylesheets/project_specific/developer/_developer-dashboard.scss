@@ -59,8 +59,8 @@
 
     .btn-add-key{
       /*tweaked color to green*/
-      background-color: $mz-blue;
-      border: 1px solid $mz-blue;
+      background-color: nth($mz-darkpurples, );
+      border: 1px solid nth($mz-darkpurples, );
       color: #fff;
 
       width: 100%;
@@ -71,8 +71,8 @@
     }
 
     .btn-add-key:focus,.btn_mapzen.btn-add-key:hover{
-      background-color: $mz-darkblue;
-      border: 1px solid $mz-darkblue;
+      background-color: nth($mz-darkpurples, 3);
+      border: 1px solid nth($mz-darkpurples, 3);
     }
 
     .btn-add-key:disabled {
@@ -130,14 +130,14 @@
       background-color: transparent;
       border: 0;
       padding: 2px;
-      color: $mz-blue;
+      color: nth($mz-scarlets, 2);
     }
     .copied {
       // tool tip to show snippet was succdssfully copied
       &::after {
         font-weight: 300;
         content: 'Copied';
-        background-color: $mz-blue;
+        background-color: nth($mz-scarlets, 2);
         color: #fff;
         position: absolute;
         left: 0px;
@@ -149,7 +149,7 @@
     .not-copied {
       &::after {
         content: 'Copy Failed';
-        background-color: $mz-blue;
+        background-color: nth($mz-scarlets, 2);
         color: #fff;
         position: absolute;
         left: 0px;
@@ -177,7 +177,7 @@
       background-color: transparent;
       border: 0;
       padding: 1px;
-      border-bottom: dashed 1px $mz-blue;
+      border-bottom: dashed 1px nth($mz-scarlets, 2);
     }
 
     .key-btns-wrapper {
@@ -257,7 +257,7 @@
         background-color: $mz-gray;
       }
       .fa {
-        color: $mz-blue;
+        color: nth($mz-scarlets, 2);
       }
     }
     .created-at{
