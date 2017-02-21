@@ -78,7 +78,7 @@ $main-nav-height: $header-height;
     }
 
     .section-nav-items {
-      background-color: $mz-red;
+      background-color: nth($mz-scarlets, 2);
     }
 
     // Set animation transition for scrolling through
@@ -240,7 +240,7 @@ $main-nav-height: $header-height;
     body:not(.is-scrolling) &.active, // Prevents scrolling from visually turning on menu items
     &.active:hover,
     &.activated {
-      background-color: $mz-red;
+      background-color: nth($mz-scarlets, 2);
     }
 
     &.section-nav-item-egg {
