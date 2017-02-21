@@ -85,61 +85,62 @@
   }
 
   @media (min-width: 767px) {
-    h1 {
-      font-weight: 300;
-      color: $mz-darkblue;
-      font-size: 48px;
-    }
+    /* no more special header for documentation */
+    // h1 {
+    //   font-weight: 300;
+    //   color: $mz-darkblue;
+    //   font-size: 48px;
+    // }
 
-    h2 {
-      color: #666;
-      font-size: 32px;
-    }
+    // h2 {
+    //   color: #666;
+    //   font-size: 32px;
+    // }
 
-    h3 {
-      color: #d4645c;
-      font-size: 24px;
-    }
+    // h3 {
+    //   color: #d4645c;
+    //   font-size: 24px;
+    // }
 
-    h4 {
-      color: $mz-darkblue;
-      font-size: 18px;
-      font-weight: 700;
-    }
+    // h4 {
+    //   color: $mz-darkblue;
+    //   font-size: 18px;
+    //   font-weight: 700;
+    // }
 
-    h5, h6 {
-      color: #666;
-      font-size: 18px;
-    }
+    // h5, h6 {
+    //   color: #666;
+    //   font-size: 18px;
+    // }
   }
 
   @media (max-width: 767px) {
-    h1 {
-      font-weight: 300;
-      color: $mz-darkblue;
-      font-size: 40px;
-    }
+    // h1 {
+    //   font-weight: 300;
+    //   color: $mz-darkblue;
+    //   font-size: 40px;
+    // }
 
-    h2 {
-      color: #666;
-      font-size: 28px;
-    }
+    // h2 {
+    //   color: #666;
+    //   font-size: 28px;
+    // }
 
-    h3 {
-      color: #d4645c;
-      font-size: 20px;
-    }
+    // h3 {
+    //   color: #d4645c;
+    //   font-size: 20px;
+    // }
 
-    h4 {
-      color: $mz-darkblue;
-      font-size: 16px;
-      font-weight: 700;
-    }
+    // h4 {
+    //   color: $mz-darkblue;
+    //   font-size: 16px;
+    //   font-weight: 700;
+    // }
 
-    h5, h6 {
-      color: #666;
-      font-size: 16px;
-    }
+    // h5, h6 {
+    //   color: #666;
+    //   font-size: 16px;
+    // }
   }
 
   /*
