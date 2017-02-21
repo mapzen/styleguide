@@ -26,7 +26,7 @@ input[type="text"], input[type="email"] {
   -webkit-appearance:none;
 }
 
-input[type="text"]:-moz-focusring, 
+input[type="text"]:-moz-focusring,
 input[type="email"]:-moz-focusring,
 textarea:-moz-focusring,
 input[type="search"]:-moz-focusring {
@@ -76,6 +76,7 @@ input[type="search"] {
     height: 41px;
     margin-left: -1px;
     border-color: #ccc;
+    border-radius: 0;
   }
 }
 
