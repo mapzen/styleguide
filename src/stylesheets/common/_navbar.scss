@@ -33,6 +33,10 @@ nav {
   .btn-mapzen {
     @extend .btn-white;
     font-weight: $bold-font-weight;
+    &:hover,
+    &:focus {
+      background-color: nth($mz-darkpurples, 5);
+    }
   }
 }
 
