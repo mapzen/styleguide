@@ -278,7 +278,9 @@ li.active:hover .animated-key {
 #sign-in + .dropdown-menu > li > a {
   text-transform: capitalize;
 }
-
+.dropdown-menu > li > a {
+  font-weight: $thin-font-weight;
+}
 // Different styles for mobile dropdown menu
 @media (min-width: $screen-xs-max) {
   #sign-in + .dropdown-menu > li {
