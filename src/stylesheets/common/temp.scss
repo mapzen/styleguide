@@ -1,6 +1,7 @@
 /* This stylefile is written to be temporary. This needs to be gone after dom change of homepage*/
 
-#content {
+#content,
+footer {
   h5 {
     /* h2 style */
     font-weight: $bold-font-weight;
