@@ -74,6 +74,14 @@ footer {
   }
 }
 
+// TODO: give proper class name to 'get in touch' and replace this style to that class
+footer > div:first-child {
+  color: nth($mz-darkpurples, 1);
+  a {
+    color: nth($mz-scarlets, 2);
+  }
+}
+
 // Padding to re-balance the effect of left-aligned text
 // appearing to pull to the left
 .footer-section {
