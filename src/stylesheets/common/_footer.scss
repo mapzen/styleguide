@@ -24,6 +24,11 @@ body.no-footer {
   a:hover {
     color: white;
   }
+
+  // TODO: remove logo and slogan from footer after initial styleguide push
+  img, .slogan {
+    display: none;
+  }
 }
 
 footer {
@@ -32,11 +37,6 @@ footer {
   // TODO: change footer class to btn-white and drop this temporary overwrite:;
   .btn-transparent {
     @extend .btn-white;
-  }
-
-  // TODO: remove the gray-text class from slogan
-  .slogan {
-    color: nth($mz-darkpurples, 4);
   }
 }
 
