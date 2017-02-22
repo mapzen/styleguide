@@ -14,7 +14,7 @@
   }
 
   p {
-    margin-top: 1em;
+    margin-top: 24px;//1em;
   }
 }
 
@@ -38,7 +38,7 @@
   section > p,
   section > ol,
   section > ul, {
-    margin-bottom: 1em;
+    margin-bottom: 24px;//1em;
   }
 
   // Align last item to bottom of the container so navigation affixes to bottom cleanly
@@ -68,12 +68,12 @@
   }
 
   li > p + p {
-    margin-top: 1em;
+    margin-top: 24px;//1em;
   }
 
   li > p > img {
     margin-top: 0;
-    margin-bottom: 1em;
+    margin-bottom: 24px;//1em;
   }
 
   // Headings
