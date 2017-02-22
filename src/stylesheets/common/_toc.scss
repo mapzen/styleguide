@@ -8,6 +8,8 @@
  */
 
 /* First level of nav */
+$toc-color: nth($mz-darkpurples, 3);
+
 .toc {
   font-size: $body-small;
   font-weight: 300;
@@ -29,7 +31,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: transparentize($mz-blue, 0.25);
+    background-color: transparentize($toc-color, 0.25);
   }
 
   // Show and affix the TOC when space allows it
@@ -50,8 +52,8 @@
     display: block;
     padding: 6px 15px; // Right-left padding matches Bootstrap .nav
     z-index: 1;
-    color: $mz-darkblue;
-    font-weight: 700; // Bolder contrast with sub-navigation links
+    color: $toc-color;
+    // font-weight: 700; // Bolder contrast with sub-navigation links
     text-decoration: none;
 
     -webkit-transition: box-shadow 100ms ease-in-out;
@@ -67,7 +69,7 @@
   // State and interaction
   // If current, display box-shadow & background color
   li.toc-top-level.toc-current > a {
-    background-color: $mz-darkblue;
+    background-color: $toc-color;
     color: white;
   }
 }
@@ -109,7 +111,7 @@ ul.nav > li:first-child:last-child {
 .toc-subnav {
   list-style-type: none;
   padding: 0;
-  font-weight: 400;
+  // font-weight: 400;
 
   // Start in a collapsed-condition
   max-height: 0;
@@ -121,7 +123,7 @@ ul.nav > li:first-child:last-child {
   transition: max-height 200ms ease-in-out;
 
   a {
-    font-weight: 400;
+    // font-weight: 400;
   }
 
   // If expanded
@@ -137,7 +139,7 @@ ul.nav > li:first-child:last-child {
   a:hover,
   a:focus {
     background-color: #eee;
-    color: #6ea0a4;
+    color: #ef4c4b;
   }
 
   // Some overrides on active styling
@@ -153,7 +155,7 @@ ul.nav > li:first-child:last-child {
   li.toc-current:not(.active) > a,
   li.active > a {
     background-color: #eee;
-    box-shadow: inset 4px 0 0 #385d5c;
+    box-shadow: inset 4px 0 0 $toc-color;
   }
 
   // Sub menu indents
