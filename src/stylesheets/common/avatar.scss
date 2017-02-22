@@ -23,7 +23,7 @@ img.avatar-about {
   width: 42px;
   height: 42px;
   padding: 2px;
-  border: 1.5px solid $mz-blue;
+  border: 1.5px solid nth($mz-darkpurples, 1);
   border-radius: 50%;
   box-shadow: inset 0 0 0 3px white;
   z-index: 1;
@@ -37,7 +37,7 @@ img.avatar-about {
 /*inside of dashboard*/
 .profile-picture{
   border-radius: 50%;
-  border:1.5px solid $mz-darkblue;
+  border:1.5px solid nth($mz-darkpurples, 1);
   padding:2px;
 }
 

@@ -49,6 +49,7 @@ $main-nav-height: $header-height;
   }
 
   a:hover,
+  a:focus,
   a:visited,
   a:active {
     color: white;
@@ -234,7 +235,7 @@ $main-nav-height: $header-height;
     }
 
     &:hover {
-      background-color: desaturate(darken($mz-red, 10%), 20%);
+      background-color: nth($mz-scarlets, 1);
     }
 
     body:not(.is-scrolling) &.active, // Prevents scrolling from visually turning on menu items

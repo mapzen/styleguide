@@ -27,7 +27,7 @@ $signupbtnh:45px;
         height:$signupbtnh;
         font-size: 16px;
         font-weight:400;
-        border: 1px solid $mz-red;
+        border: 1px solid nth($mz-darkpurples, 1);
         text-transform: uppercase;
         margin-top: 20px;
       }
@@ -72,10 +72,9 @@ $signupbtnh:45px;
         padding-right:5px;
       }
 
-      .scrumb{
-        border-bottom:1px solid $mz-blue;
+      .scrumb {
+        border-bottom:1px solid nth($mz-darkpurples, 1);
       }
-
       .show-email {
         border:1px solid #666;
       }
@@ -85,7 +84,7 @@ $signupbtnh:45px;
         width:100px;
         height:100px;
         margin-top:5px;
-        border:1.5px solid $mz-darkblue;
+        border:1.5px solid nth($mz-darkpurples, 1);
         display:block;
       }
 
