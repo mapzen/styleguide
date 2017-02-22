@@ -45,7 +45,8 @@ body.project {
     font-weight: $bold-font-weight;
     font-size: 36px;
     // line-height: 1.2em;
-
+    margin-top: 48px;
+    margin-bottom: 24px;
     @media (min-width: $screen-sm) {
       // font-size: 48px;
     }
@@ -59,7 +60,8 @@ body.project {
     // line-height: 1.2em;
     // margin: 0px;
     // padding: 0px;
-
+    margin-top: 48px;
+    margin-bottom: 24px;
     @media (min-width: $screen-sm) {
       // font-size: 24px;
     }
@@ -69,6 +71,8 @@ body.project {
   h3 {
     font-weight: $bold-font-weight;
     font-size: 16px;
+    margin-top: 24px;
+    margin-bottom: 12px;
     // line-height: 27px;
     // margin: 0px;
     // padding: 0px;
@@ -82,13 +86,17 @@ body.project {
   }
 
   h4 {
-  font-weight:  $bold-font-weight;
-  font-size: 14px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-weight:  $bold-font-weight;
+    font-size: 14px;
   }
 
   h5, h6 {
-  font-weight:  $bold-font-weight;
-  font-size: 11px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-weight:  $bold-font-weight;
+    font-size: 11px;
   }
 
   // Add a invisible padding block before each navigable heading

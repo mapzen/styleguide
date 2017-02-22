@@ -16,6 +16,8 @@ h1 {
   // line-height: 1.2em;
   // margin: 0px;
   // color: $mz-red;
+  margin-top: 48px;
+  margin-bottom: 24px;
   @media (min-width: $screen-sm) {
     // font-size: 60px;
   }
@@ -26,7 +28,8 @@ h2 {
   font-weight: $bold-font-weight;
   font-size: 36px;
   // line-height: 1.2em;
-
+  margin-top: 48px;
+  margin-bottom: 24px;
   @media (min-width: $screen-sm) {
     // font-size: 48px;
   }
@@ -38,7 +41,8 @@ h3 {
   // line-height: 1.2em;
   // margin: 0px;
   // padding: 0px;
-
+  margin-top: 48px;
+  margin-bottom: 24px;
   @media (min-width: $screen-sm) {
     // font-size: 24px;
   }
@@ -51,7 +55,8 @@ h4 {
   // line-height: 27px;
   // margin: 0px;
   // padding: 0px;
-
+  margin-top: 24px;
+  margin-bottom: 12px;
   @media (min-width: $screen-sm) {
     // font-size: 24px;
     // margin-top: 30px;
@@ -63,6 +68,8 @@ h4 {
 h5 {
   font-weight:  $bold-font-weight;
   font-size: 14px;
+  margin-top: 24px;
+  margin-bottom: 12px;
   // line-height: 1.4em;
   // color: $mz-mediumgray;
 }
