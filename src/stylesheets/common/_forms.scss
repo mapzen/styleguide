@@ -69,13 +69,45 @@ input[type="search"] {
   border-radius: 0;
 }
 
+.form-group {
+  /* we have hidden type of search for google/duckduckgo search */
+  /* first child selector won't work with this */
+  input[type="hidden"]:first-child + input {
+    border-top-left-radius: $border-radius-value;
+    border-bottom-left-radius: $border-radius-value;
+  }
+
+  input[type="search"]:first-child:not(:last-child) {
+    border-top-left-radius: $border-radius-value;
+    border-bottom-left-radius: $border-radius-value;
+  }
+  input[type="search"]:last-child:not(:first-child) {
+    border-top-right-radius: $border-radius-value;
+    border-bottom-right-radius: $border-radius-value;
+  }
+}
+
+
 .inline-submit {
-  input { float: left; }
   .btn {
     height: 41px;
     margin-left: -1px;
     border-color: #ccc;
     border-radius: 0;
+  }
+
+  input[type="hidden"]:first-child + .btn {
+    border-top-left-radius: $border-radius-value;
+    border-bottom-left-radius: $border-radius-value;
+  }
+
+  .btn:first-child:not(:last-child) {
+    border-top-left-radius: $border-radius-value;
+    border-bottom-left-radius: $border-radius-value;
+  }
+  .btn:last-child:not(:first-child) {
+    border-top-right-radius: $border-radius-value;
+    border-bottom-right-radius: $border-radius-value;
   }
 }
 

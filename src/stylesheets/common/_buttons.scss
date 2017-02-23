@@ -2,7 +2,7 @@
 /* button styles */
 
 .btn {
-  border-radius: 5px;
+  border-radius: $border-radius-value;
   border: 0;
   text-transform: uppercase;
   font-weight: $bold-font-weight;
@@ -99,16 +99,15 @@
   }
 }
 
-// Disable buttons group's shartp border
-
+// Disable buttons group's sharp border
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
+  border-bottom-right-radius: $border-radius-value;
+  border-top-right-radius: $border-radius-value;
 }
 
 .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
+  border-bottom-left-radius: $border-radius-value;
+  border-top-left-radius: $border-radius-value;
 }
 
 
