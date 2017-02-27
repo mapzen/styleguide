@@ -111,7 +111,7 @@ function reflectUserState (id, nickname, imageurl, customLogoutCall) {
 
   function getLoginElem (id, nickname, githubAvatar) {
     // default to showing 'account' and default avatar
-    var avatarImageURL = 'common/styleguide/images/default-avatar.png';
+    var avatarImageURL = '/common/styleguide/images/default-avatar.png';
     var label = 'Account';
 
     if (nickname) {
