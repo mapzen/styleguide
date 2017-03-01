@@ -119,3 +119,23 @@ $signupbtnh:45px;
     }
   }
 }
+
+.btn-login {
+  width: 100%;
+  font-weight: 600;
+  padding: 16px 18px;
+  font-size: 18px;
+}
+
+.btn-github {
+  color: white;
+  background-color: #444444;
+}
+
+.form-control[readonly] {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border-bottom: 2px solid nth($mz-darkpurples, 2);
+}
+
