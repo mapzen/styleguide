@@ -76,7 +76,7 @@ function reflectUserState (id, nickname, imageurl, customLogoutCall) {
   }
 
   function hideSignUpButton () {
-    signupButton.style.minWidth = '63px'; // to keep width of nav
+    signupButton.style.minWidth = '20px'; // to keep width of nav
     signupButton.style.padding = '0';
     signupButton.style.minHeight = '0';
     signupButton.parentNode.style.fontSize = '0';

@@ -22,7 +22,13 @@ nav {
 
   @media (min-width: $screen-sm-min) {
     height: $header-height;
+
+    // override left and right padding on collapsed navbar
+    .container {
+      padding: 0px;
+    }
   }
+
 
   li {
     text-transform: uppercase;
@@ -173,7 +179,7 @@ li.active:hover .animated-key {
 
 .navbar-nav > li > a#sign-in {
   min-width: 80px;
-  max-width: 235px;
+  max-width: 225px;
   text-overflow: ellipsis;
 }
 
@@ -206,7 +212,7 @@ li.active:hover .animated-key {
 .navbar-nav > li > a > .login-txt {
   float: left;
   overflow: hidden;
-  max-width: 170px;
+  max-width: 160px;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
