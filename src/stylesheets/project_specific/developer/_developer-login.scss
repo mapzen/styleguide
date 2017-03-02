@@ -130,6 +130,10 @@ $signupbtnh:45px;
 .btn-github {
   color: white;
   background-color: #444444;
+  &:hover, &:focus {
+    color: white;
+    background-color: $mz-gray;
+  }
 }
 
 .form-control[readonly] {
