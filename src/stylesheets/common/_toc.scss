@@ -53,6 +53,7 @@ $toc-color: nth($mz-darkpurples, 3);
     padding: 6px 15px; // Right-left padding matches Bootstrap .nav
     z-index: 1;
     color: $toc-color;
+    font-weight: $thin-font-weight;
     // font-weight: 700; // Bolder contrast with sub-navigation links
     text-decoration: none;
 
@@ -63,7 +64,10 @@ $toc-color: nth($mz-darkpurples, 3);
 
   // Top-level "main" items
   li.toc-top-level {
-    font-weight: bold;
+    font-weight: $bold-font-weight;
+  }
+  li.toc-top-level > a {
+    font-weight: $bold-font-weight;
   }
 
   // State and interaction
@@ -162,7 +166,6 @@ ul.nav > li:first-child:last-child {
   .toc-subnav {
     > li > a {
       padding-left: 30px;
-      font-weight: $thin-font-weight;
     }
   }
 }
