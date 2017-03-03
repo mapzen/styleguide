@@ -110,6 +110,10 @@
   border-top-left-radius: $border-radius-value;
 }
 
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: $border-radius-value;
+}
+
 
 // tag links for blog posts
 .tag-list {
