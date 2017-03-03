@@ -68,11 +68,10 @@
 
       letter-spacing: 1.1px;
       text-transform: uppercase;
-    }
-
-    .btn-add-key:focus,.btn_mapzen.btn-add-key:hover{
-      background-color: nth($mz-darkpurples, 3);
-      border: 1px solid nth($mz-darkpurples, 3);
+      &:focus, &:hover{
+        background-color: nth($mz-darkpurples, 3);
+        border: 1px solid nth($mz-darkpurples, 3);
+      }
     }
 
     .btn-add-key:disabled {
