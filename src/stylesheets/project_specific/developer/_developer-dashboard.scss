@@ -43,8 +43,15 @@
     }
 
     .project-name {
-      font-weight: 400;
-      font-size: 34px;
+      // TO DO : get rid of this custom style and replace it to normal heading
+      // This is h3 style
+
+      font-weight: $bold-font-weight;;
+      font-size: 24px;
+      color:  nth($mz-darkpurples, 2);
+      @media (min-width: $screen-sm) {
+        // font-size: 24px;
+      }
     }
 
     // temporary to warn users that keys got merged
