@@ -9,6 +9,10 @@
   padding: 12px 24px;
 }
 
+input[type="search"] + .btn {
+  padding: 0;
+}
+
 // Red button
 .btn-mapzen {
   // border-color: $mz-red;
