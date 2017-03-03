@@ -162,6 +162,7 @@ ul.nav > li:first-child:last-child {
   .toc-subnav {
     > li > a {
       padding-left: 30px;
+      font-weight: $thin-font-weight;
     }
   }
 }
