@@ -10,41 +10,37 @@ body {
 
 // Headings
 
-h1 {
+h1, h2, h3 {
   font-weight: $bold-font-weight;
-  font-size: 48px;
-  // line-height: 1.2em;
-  // margin: 0px;
-  // color: $mz-red;
   margin-top: 48px;
   margin-bottom: 12px;
-  @media (min-width: $screen-sm) {
-    // font-size: 60px;
+  line-height: 1.2em;
+
+  // Scale back margins on mobile
+  @media (max-width: $screen-sm) {
+    margin-top: 24px;
+    margin-bottom: 6px;
   }
 }
 
+h1 {
+  font-size: 48px;
+  @media (max-width: $screen-sm) {
+    font-size: 42px;
+  }
+}
 
 h2 {
-  font-weight: $bold-font-weight;
   font-size: 36px;
-  // line-height: 1.2em;
-  margin-top: 48px;
-  margin-bottom: 12px;
-  @media (min-width: $screen-sm) {
-    // font-size: 48px;
+  @media (max-width: $screen-sm) {
+    font-size: 30px;
   }
 }
 
 h3 {
-  font-weight: $bold-font-weight;;
   font-size: 24px;
-  // line-height: 1.2em;
-  // margin: 0px;
-  // padding: 0px;
-  margin-top: 48px;
-  margin-bottom: 12px;
-  @media (min-width: $screen-sm) {
-    // font-size: 24px;
+  @media (max-width: $screen-sm) {
+    font-size: 18px;
   }
 }
 
