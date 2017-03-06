@@ -1,8 +1,12 @@
 $signupbtnh:45px;
-
+/* TO DO : Get rid of this #dev_login selector */
 #dev_login{
   &.container{
     max-width:600px;
+
+    .gray-text {
+      color: nth($mz-darkpurples, 2);
+    }
 
     .profile-picture{
       background-size:contain;
