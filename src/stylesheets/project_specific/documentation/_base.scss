@@ -1,3 +1,13 @@
+
+// Special case for h1 on small screens
+h1 {
+  @media (max-width: $screen-sm) {
+    font-size: 36px;
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+}
+
 code, kbd, pre, samp {
   font-family: 'Source Code Pro', monospace;
 }
