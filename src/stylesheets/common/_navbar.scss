@@ -100,7 +100,8 @@ body {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  padding-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 5px solid $navbar-default-toggle-border-color;
 }
 
 // Navbar and branding size differs on mobile and tablet/desktop+, so
@@ -146,33 +147,6 @@ body {
   //}
 }
 
-// TODO: remove or update animated key?
-li:hover .animated-key {
-  background-image: url('https://mapzen.com/common/styleguide/images/key_h.png');
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
-
-li.active:hover .animated-key {
-  background-image: url('https://mapzen.com/common/styleguide/images/key.png');
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
-
-.animated-key {
-  padding-right: 15px;
-  display: inline;
-  float: left;
-  width: 23px;
-  height: 28px;
-  background-image: url('https://mapzen.com/common/styleguide/images/key.png');
-  background-repeat: no-repeat;
-  background-position: 0px 0px;
-  background-size: 80% 80%;
-  transition: transform 0.5s ease-out;
-}
 
 ///new header with login state
 
@@ -223,15 +197,15 @@ li.active:hover .animated-key {
   li:hover .login-txt {color: $navbar-default-link-active-color;}
   li a:focus .login-txt {color: $navbar-default-link-active-color;}
 
-  li.active:hover #login-profile {border-color: $navbar-default-link-hover-color;}
-  li.active a:focus #login-profile {border-color: $navbar-default-link-hover-color;}
-  li:hover #login-profile {border-color: $navbar-default-link-hover-color;}
-  li a:focus #login-profile {border-color: $navbar-default-link-hover-color;}
+  li.active:hover #login-profile {border-color:  $navbar-default-link-hover-color;}
+  li.active a:focus #login-profile {border-color:  $navbar-default-link-hover-color;}
+  li:hover #login-profile {border-color:  $navbar-default-link-hover-color;}
+  li a:focus #login-profile {border-color:  $navbar-default-link-hover-color;}
 
-  li.active:hover .compass:before {border-bottom-color: $navbar-default-link-active-color;}
-  li.active a:focus .compass:before {border-bottom-color: $navbar-default-link-active-color;}
-  li.active:hover .compass:after {border-top-color: $navbar-default-link-active-color;}
-  li.active a:focus .compass:after {border-top-color: $navbar-default-link-active-color;}
+  li.active:hover .compass:before {border-bottom-color: $navbar-default-link-hover-color;}
+  li.active a:focus .compass:before {border-bottom-color: $navbar-default-link-hover-color;}
+  li.active:hover .compass:after {border-top-color: $navbar-default-link-hover-color;}
+  li.active a:focus .compass:after {border-top-color: $navbar-default-link-hover-color;}
 
   li:hover .compass:before {border-bottom-color: $navbar-default-link-hover-color;}
   li a:focus .compass:before {border-bottom-color: $navbar-default-link-hover-color;}
