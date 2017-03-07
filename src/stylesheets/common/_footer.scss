@@ -92,3 +92,12 @@ footer > div:first-child {
     padding-left: 80px;
   }
 }
+
+.compass-logo {
+  width: 36px;
+  height: 36px;
+  background-image: url('https://mapzen.com/common/styleguide/images/logos/mapzen-logo-compass-white.png');
+  background-repeat: no-repeat;
+  background-size: 36px;
+  margin: 6px auto;
+}
