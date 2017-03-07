@@ -4,20 +4,20 @@
 
 .logos {
   .bright-logo-wrapper {
-    background-color: nth($mz-darkpurples, 4);
+    background-color: nth($mz-darkpurples, 3);
+    width: 180px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .dark-logo-wrapper {
+    margin-bottom: 20px;
   }
 
   img.logo-sample {
     width: 100%;
     height: auto;
     max-width: 180px;
-    margin-bottom: 10px;
-    padding-top: 20px;
-  }
+    padding: 20px;
 
-  img.logo-sample-square {
-    max-width: 120px;
-    padding-top: 20px;
   }
-
 }
