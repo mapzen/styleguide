@@ -15,13 +15,19 @@
 
 
 // Typography Variables
-$mz-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
-$mz-serif: 'Playfair Display', serif;
+$mz-sans-serif: 'Poppins', 'Open Sans', Helvetica, Arial, sans-serif;
+$mz-serif:'Playfair Display', serif;
 $mz-body-font: $mz-sans-serif;
 $mz-sans-serif-alt: 'Montserrat', 'Open Sans', sans-serif;
 
 $docs-heading-font: 'Montserrat', 'Open Sans', sans-serif;
 $docs-accent-font: 'Montserrat', 'Open Sans', sans-serif;
+
+$bold-font-weight: 600;
+$regular-font-weight: 400;
+$thin-font-weight: 300;
+
+$border-radius-value: 5px;
 
 $body-small: 14px;
 $body-normal: 16px;
@@ -38,15 +44,20 @@ $container-desktop: 960px;
 $container-large-desktop: 960px;
 
 // Navbar
-$navbar-default-bg: rgba(255,255,255,0.95);
+$navbar-default-bg: rgba(nth($mz-darkpurples, 1), 0.9);
 $navbar-margin-bottom: 0;
 $navbar-border-radius: 0;
-$navbar-default-link-color: $mz-red;
-$navbar-default-link-hover-bg: rgba(255,255,255,0.50);
-$navbar-default-link-active-bg: rgba(255,255,255,0.50);
-$navbar-default-link-active-color: $mz-red;
-$navbar-default-toggle-hover-bg: #e5e5e5;
+$navbar-default-link-color: nth($mz-darkpurples, 5);
+$navbar-default-link-hover-color: white;
+$navbar-default-link-hover-bg: transparent;
+$navbar-default-link-active-bg: transparent;
+$navbar-default-link-active-color: white;
+$navbar-default-toggle-hover-bg: transparent;
 $navbar-default-toggle-border-color: transparent;
+$navbar-active-link-color: nth($mz-scarlets, 2);
+$nav-link-padding: 10px 12px;
+$navbar-default-toggle-icon-bar-bg: white;
+
 
 // Breadcrumbs
 $breadcrumb-padding-vertical: 1em;

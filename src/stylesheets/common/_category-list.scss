@@ -3,13 +3,11 @@
 // --------------------------------------------------
 
 //overwriting h6 to use it as category title
+// TODO: drop this style once h6 are updated to h3
 h6.category-title {
-  font-family: 'Playfair Display';
   font-weight: 600;
   font-size: 1.5em;
   line-height: 1.5;
-  color: $mz-mediumgray;
-  text-transform: capitalize;
 }
 
 .category-info-container {

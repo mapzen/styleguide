@@ -2,27 +2,31 @@
 /* button styles */
 
 .btn {
-  border-radius: 0;
-  border-width: 1px;
+  border-radius: $border-radius-value;
+  border: 0;
   text-transform: uppercase;
-  font-weight: 600;
-  padding: 10px 16px;
+  font-weight: $bold-font-weight;
+  padding: 12px 24px;
+}
+
+input[type="search"] + .btn {
+  padding: 0;
 }
 
 // Red button
 .btn-mapzen {
-  border-color: $mz-red;
-  background-color: $mz-red;
-  color: #fff;
-  text-shadow: none;
-  text-transform: uppercase;
-  font-weight:400;
-
+  // border-color: $mz-red;
+  // background-color: $mz-red;
+  // color: #fff;
+  // text-shadow: none;
+  // text-transform: uppercase;
+  // font-weight:400;
+  background-color: nth($mz-darkpurples, 1);
+  color: #ffffff;
   &:hover,
   &:focus {
-    border-color: $mz-darkred;
-    background-color: $mz-darkred;
-    color: #fff;
+    background-color: nth($mz-darkpurples, 3);
+    color: $mz-lightgray;
   }
 }
 
@@ -43,6 +47,47 @@
   }
 }
 
+// mapzen V1
+
+.btn-darkpurple {
+  background-color: nth($mz-darkpurples, 1);
+  color: #ffffff;
+  &:hover,
+  &:focus {
+    background-color: nth($mz-darkpurples, 3);
+    color: $mz-lightgray;
+  }
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: nth($mz-darkpurples, 1);
+  &:hover,
+  &:focus {
+    background-color: nth($mz-darkpurples, 5);
+  }
+}
+
+.btn-with-arrow {
+  background-color: transparent;
+  color: nth($mz-scarlets, 2);
+  padding: 12px;
+  /* Make only padding right bigger, so we can put arrow image */
+  padding-left: 0;
+  padding-right: 32px;
+  font-size: 0.85em;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMS42IiBoZWlnaHQ9IjguNjQiIHZpZXdCb3g9IjAgMCAyMS42IDguNjQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkY3QjdCIiBkPSJNMjAuOCA0LjMybC03IDMuNXYtN3oiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGN0I3QiIgZD0iTS44IDIuODJoMTR2M0guOHoiLz48L3N2Zz4=');
+  background-repeat: no-repeat;
+  background-position: right center;
+
+  &:hover,
+  &:focus {
+    color: nth($mz-scarlets, 1);
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMS42IiBoZWlnaHQ9IjguNjQiIHZpZXdCb3g9IjAgMCAyMS42IDguNjQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkY0OTQ3IiBkPSJNMjAuOCA0LjMybC03IDMuNXYtN3oiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGNDk0NyIgZD0iTS44IDIuODJoMTR2M0guOHoiLz48L3N2Zz4=');
+  }
+}
+
+
 // Transparent button
 // Sometimes on white, sometimes on light gray
 .btn-transparent {
@@ -58,6 +103,21 @@
   }
 }
 
+// Disable buttons group's sharp border
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: $border-radius-value;
+  border-top-right-radius: $border-radius-value;
+}
+
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: $border-radius-value;
+  border-top-left-radius: $border-radius-value;
+}
+
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: $border-radius-value;
+}
+
 
 // tag links for blog posts
 .tag-list {
@@ -69,7 +129,7 @@
       color: $mz-mediumgray;
       background-color: $mz-lightgray;
       padding: .35em .8em;
-      margin: 0 .4em;
+      margin: .4em .4em;
     }
   }
 }

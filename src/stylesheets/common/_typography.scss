@@ -2,80 +2,82 @@
 
 body {
   font-family: $mz-sans-serif;
-  font-weight: 400;
+  font-weight: $thin-font-weight;
+  color: nth($mz-darkpurples, 2);
   font-size: 16px;
   line-height: 1.5;
-  color: $mz-darkgray;
 }
 
 // Headings
 
-h1 {
-  font-family: $mz-serif;
-  font-weight: 300;
-  font-size: 44px;
+h1, h2, h3 {
+  font-weight: $bold-font-weight;
+  margin-top: 48px;
+  margin-bottom: 12px;
   line-height: 1.2em;
-  margin: 0px;
-  color: $mz-red;
 
-  @media (min-width: $screen-sm) {
-    font-size: 60px;
+  // Scale back margins on mobile
+  @media (max-width: $screen-sm) {
+    margin-top: 24px;
+    margin-bottom: 6px;
   }
 }
 
+h1 {
+  font-size: 48px;
+  @media (max-width: $screen-sm) {
+    font-size: 42px;
+  }
+}
 
 h2 {
-  font-weight: 300;
   font-size: 36px;
-  line-height: 1.2em;
-
-  @media (min-width: $screen-sm) {
-    font-size: 48px;
+  @media (max-width: $screen-sm) {
+    font-size: 30px;
   }
 }
 
 h3 {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 1.2em;
-  margin: 0px;
-  padding: 0px;
-
-  @media (min-width: $screen-sm) {
-    font-size: 24px;
+  font-size: 24px;
+  @media (max-width: $screen-sm) {
+    font-size: 18px;
   }
 }
 
 // For use in blogs
 h4 {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 27px;
-  margin: 0px;
-  padding: 0px;
-
+  font-weight: $bold-font-weight;
+  font-size: 16px;
+  // line-height: 27px;
+  // margin: 0px;
+  // padding: 0px;
+  margin-top: 24px;
+  margin-bottom: 12px;
   @media (min-width: $screen-sm) {
-    font-size: 24px;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    // font-size: 24px;
+    // margin-top: 30px;
+    // margin-bottom: 10px;
   }
 }
 
 // footer get involved
 h5 {
-  font-family: $mz-serif;
-  font-weight: 600;
-  font-size: 2em;
-  line-height: 1.4em;
-  color: $mz-mediumgray;
+  font-weight:  $bold-font-weight;
+  font-size: 14px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  // line-height: 1.4em;
+  // color: $mz-mediumgray;
 }
 
+// link color was missing from style guide
+// This is arbiturary one that Hanbyul put
 a {
-  font-weight: 600;
-  color: $mz-blue;
-
-  &:hover {
-    color: $mz-darkblue;
+  // font-weight: $bold-font-weight;
+  color: nth($mz-scarlets, 2);
+  &:hover,
+  &:focus {
+    color: nth($mz-scarlets, 1);
   }
 }
 
@@ -138,7 +140,6 @@ pre {
 
 quote {
   font-size: 18px;
-  font-family: $mz-serif;
   color: $mz-darkgray;
 
   @media (min-width: $screen-md-min) {
@@ -152,7 +153,6 @@ pullquote {
   margin-bottom: 1.5em;
   display: block;
   font-size: 24px;
-  font-family: $mz-serif;
   font-style: italic;
   text-align: center;
   color: $mz-darkgray;
@@ -168,8 +168,8 @@ pullquote {
 /* about page styles */
 
 .team .name {
-  font-size: 16px;
-  font-family: "Playfair Display", serif;
+  // TO DO : figure out scalable design (which can accomodate long name) for about page
+  font-size: 15px;
 }
 
 

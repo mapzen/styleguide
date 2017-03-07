@@ -3,11 +3,10 @@
   margin-bottom: 15px;
 }
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 24px;
 }
 
 label {
-  margin-right: 10px;
   font-weight: normal;
 }
 .wide {
@@ -18,7 +17,7 @@ label {
   input[type="text"], input[type="email"] { width: 100%; }
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], input[type="password"] {
   height: 41px;
   padding: 8px 5px;
   border: 1px solid #ccc;
@@ -26,7 +25,7 @@ input[type="text"], input[type="email"] {
   -webkit-appearance:none;
 }
 
-input[type="text"]:-moz-focusring, 
+input[type="text"]:-moz-focusring,
 input[type="email"]:-moz-focusring,
 textarea:-moz-focusring,
 input[type="search"]:-moz-focusring {
@@ -70,12 +69,45 @@ input[type="search"] {
   border-radius: 0;
 }
 
+.form-group {
+  /* we have hidden type of search for google/duckduckgo search */
+  /* first child selector won't work with this */
+  input[type="hidden"]:first-child + input {
+    border-top-left-radius: $border-radius-value;
+    border-bottom-left-radius: $border-radius-value;
+  }
+
+  input[type="search"]:first-child:not(:last-child) {
+    border-top-left-radius: $border-radius-value;
+    border-bottom-left-radius: $border-radius-value;
+  }
+  input[type="search"]:last-child:not(:first-child) {
+    border-top-right-radius: $border-radius-value;
+    border-bottom-right-radius: $border-radius-value;
+  }
+}
+
+
 .inline-submit {
-  input { float: left; }
   .btn {
     height: 41px;
     margin-left: -1px;
     border-color: #ccc;
+    border-radius: 0;
+  }
+
+  input[type="hidden"]:first-child + .btn {
+    border-top-left-radius: $border-radius-value;
+    border-bottom-left-radius: $border-radius-value;
+  }
+
+  .btn:first-child:not(:last-child) {
+    border-top-left-radius: $border-radius-value;
+    border-bottom-left-radius: $border-radius-value;
+  }
+  .btn:last-child:not(:first-child) {
+    border-top-right-radius: $border-radius-value;
+    border-bottom-right-radius: $border-radius-value;
   }
 }
 

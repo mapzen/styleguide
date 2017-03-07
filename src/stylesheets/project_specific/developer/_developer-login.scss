@@ -1,8 +1,12 @@
 $signupbtnh:45px;
-
+/* TO DO : Get rid of this #dev_login selector */
 #dev_login{
   &.container{
     max-width:600px;
+
+    .gray-text {
+      color: nth($mz-darkpurples, 2);
+    }
 
     .profile-picture{
       background-size:contain;
@@ -27,7 +31,7 @@ $signupbtnh:45px;
         height:$signupbtnh;
         font-size: 16px;
         font-weight:400;
-        border: 1px solid $mz-red;
+        border: 1px solid nth($mz-darkpurples, 1);
         text-transform: uppercase;
         margin-top: 20px;
       }
@@ -72,10 +76,9 @@ $signupbtnh:45px;
         padding-right:5px;
       }
 
-      .scrumb{
-        border-bottom:1px solid $mz-blue;
+      .scrumb {
+        border-bottom:1px solid nth($mz-darkpurples, 1);
       }
-
       .show-email {
         border:1px solid #666;
       }
@@ -85,7 +88,7 @@ $signupbtnh:45px;
         width:100px;
         height:100px;
         margin-top:5px;
-        border:1.5px solid $mz-darkblue;
+        border:1.5px solid nth($mz-darkpurples, 1);
         display:block;
       }
 
@@ -120,3 +123,27 @@ $signupbtnh:45px;
     }
   }
 }
+
+.btn-login {
+  width: 100%;
+  font-weight: 600;
+  padding: 16px 18px;
+  font-size: 18px;
+}
+
+.btn-github {
+  color: white;
+  background-color: #444444;
+  &:hover, &:focus {
+    color: white;
+    background-color: $mz-gray;
+  }
+}
+
+.form-control[readonly] {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border-bottom: 2px solid nth($mz-darkpurples, 2);
+}
+

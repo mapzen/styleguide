@@ -1,7 +1,6 @@
 .documentation-hero {
-  background-color: $mz-darkblue;
+  background-color: nth($mz-pinks, 2);
   text-align: center;
-  font-family: $docs-heading-font;
   color: white;
   display: flex;
   flex-direction: column;
@@ -15,7 +14,7 @@
   }
 
   p {
-    margin-top: 1em;
+    margin-top: 24px;//1em;
   }
 }
 
@@ -39,7 +38,7 @@
   section > p,
   section > ol,
   section > ul, {
-    margin-bottom: 1em;
+    margin-bottom: 24px;//1em;
   }
 
   // Align last item to bottom of the container so navigation affixes to bottom cleanly
@@ -69,81 +68,79 @@
   }
 
   li > p + p {
-    margin-top: 1em;
+    margin-top: 24px;//1em;
   }
 
   li > p > img {
     margin-top: 0;
-    margin-bottom: 1em;
+    margin-bottom: 24px;//1em;
   }
 
   // Headings
   h1, h2, h3, h4, h5, h6 {
     position: relative;
-    font-family: $docs-heading-font;
-    font-weight: 400;
-    margin-bottom: 0.6em;
-    line-height: 1.2em;
+    // font-weight: 400;
+    // margin-bottom: 0.6em;
+    // line-height: 1.2em;
   }
 
   @media (min-width: 767px) {
-    h1 {
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 300;
-      color: $mz-darkblue;
-      font-size: 48px;
-    }
+    /* no more special header for documentation */
+    // h1 {
+    //   font-weight: 300;
+    //   color: $mz-darkblue;
+    //   font-size: 48px;
+    // }
 
-    h2 {
-      color: #666;
-      font-size: 32px;
-    }
+    // h2 {
+    //   color: #666;
+    //   font-size: 32px;
+    // }
 
-    h3 {
-      color: #d4645c;
-      font-size: 24px;
-    }
+    // h3 {
+    //   color: #d4645c;
+    //   font-size: 24px;
+    // }
 
-    h4 {
-      color: $mz-darkblue;
-      font-size: 18px;
-      font-weight: 700;
-    }
+    // h4 {
+    //   color: $mz-darkblue;
+    //   font-size: 18px;
+    //   font-weight: 700;
+    // }
 
-    h5, h6 {
-      color: #666;
-      font-size: 18px;
-    }
+    // h5, h6 {
+    //   color: #666;
+    //   font-size: 18px;
+    // }
   }
 
   @media (max-width: 767px) {
-    h1 {
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 300;
-      color: $mz-darkblue;
-      font-size: 40px;
-    }
+    // h1 {
+    //   font-weight: 300;
+    //   color: $mz-darkblue;
+    //   font-size: 40px;
+    // }
 
-    h2 {
-      color: #666;
-      font-size: 28px;
-    }
+    // h2 {
+    //   color: #666;
+    //   font-size: 28px;
+    // }
 
-    h3 {
-      color: #d4645c;
-      font-size: 20px;
-    }
+    // h3 {
+    //   color: #d4645c;
+    //   font-size: 20px;
+    // }
 
-    h4 {
-      color: $mz-darkblue;
-      font-size: 16px;
-      font-weight: 700;
-    }
+    // h4 {
+    //   color: $mz-darkblue;
+    //   font-size: 16px;
+    //   font-weight: 700;
+    // }
 
-    h5, h6 {
-      color: #666;
-      font-size: 16px;
-    }
+    // h5, h6 {
+    //   color: #666;
+    //   font-size: 16px;
+    // }
   }
 
   /*
