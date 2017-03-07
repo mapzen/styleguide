@@ -33,11 +33,6 @@ body.no-footer {
 
 footer {
   color: nth($mz-darkpurples, 4);
-
-  // TODO: change footer class to btn-white and drop this temporary overwrite:;
-  .btn-transparent {
-    @extend .btn-white;
-  }
 }
 
 .footer-menu {
