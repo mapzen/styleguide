@@ -10,7 +10,15 @@ body.no-footer {
   }
 }
 
+.footer-no-background {
+  color: nth($mz-darkpurples, 1);
+  a {
+    color: nth($mz-scarlets, 2);
+  }
+}
+
 .footer-background {
+  color: nth($mz-darkpurples, 4);
   padding-top: 50px;
   background-color: nth($mz-darkpurples, 1);
   border-top: 10px solid nth($mz-scarlets, 2);
@@ -23,20 +31,6 @@ body.no-footer {
 
   a:hover {
     color: white;
-  }
-
-  // TODO: remove logo and slogan from footer after initial styleguide push
-  img, .slogan {
-    display: none;
-  }
-}
-
-footer {
-  color: nth($mz-darkpurples, 4);
-
-  // TODO: change footer class to btn-white and drop this temporary overwrite:;
-  .btn-transparent {
-    @extend .btn-white;
   }
 }
 
@@ -71,14 +65,6 @@ footer {
   }
 }
 
-// TODO: give proper class name to 'get in touch' and replace this style to that class
-footer > div:first-child {
-  color: nth($mz-darkpurples, 1);
-  a {
-    color: nth($mz-scarlets, 2);
-  }
-}
-
 // Padding to re-balance the effect of left-aligned text
 // appearing to pull to the left
 .footer-section {
@@ -91,4 +77,13 @@ footer > div:first-child {
   @media (min-width: $screen-md-min) {
     padding-left: 80px;
   }
+}
+
+.compass-logo {
+  width: 36px;
+  height: 36px;
+  background-image: url('https://mapzen.com/common/styleguide/images/logos/mapzen-logo-compass-white.png');
+  background-repeat: no-repeat;
+  background-size: 36px;
+  margin: 6px auto;
 }
