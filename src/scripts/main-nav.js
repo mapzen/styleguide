@@ -139,11 +139,6 @@ function reflectUserState (id, nickname, imageurl, customLogoutCall) {
   function getNotLoginElem () {
     var strVar='';
     strVar += '<a id=\"sign-in\" data-nav-run="yes" href=\"\/developers\/sign_in\">';
-    strVar += '  <div id=\"login-profile\">';
-    strVar += '    <div class=\"compass\">';
-    strVar += '      <div class=\"center-dot\"><\/div>';
-    strVar += '    <\/div>';
-    strVar += '  <\/div>';
     strVar += '  <div class=\"login-txt\">sign in<\/div>';
     strVar += '<\/a>';
     return strVar;
@@ -151,7 +146,7 @@ function reflectUserState (id, nickname, imageurl, customLogoutCall) {
 
   function getSignUpElem () {
     var strVar = '';
-    strVar += '<span class="visible-xs-inline visible-sm-inline visible-md-inline visible-lg-inline btn btn-mapzen">';
+    strVar += '<span class="visible-xs-inline visible-sm-inline visible-md-inline visible-lg-inline btn btn-white">';
     strVar += '  sign up';
     strVar += '<\/span>';
     return strVar;
