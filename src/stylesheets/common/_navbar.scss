@@ -29,21 +29,9 @@ nav {
     }
   }
 
-
   li {
     text-transform: uppercase;
     text-align: center;
-  }
-
-  // TODO: change btn class to btn-white and drop this temporary overwrite:
-  .btn-mapzen {
-    @extend .btn-white;
-    font-weight: $bold-font-weight;
-    padding: 8px 16px;
-    &:hover,
-    &:focus {
-      color: #444;
-    }
   }
 }
 
