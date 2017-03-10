@@ -130,9 +130,14 @@ body {
 .mapzen-logo {
   width: 130px;
   height: 40px;
-  background-image: url('https://mapzen.com/common/styleguide/images/logos/mapzen-logo-white.png');
+  background-image: url('https://mapzen.com/common/styleguide/images/mapzen-logo-stacked.png');
   background-repeat: no-repeat;
+  background-position: 0 -40px;
   background-size: 130px;
+
+  &:hover {    
+    background-position: 0 0;   
+  }
 
   // Set the size and position of the logo at mobile screen
   @media (max-width: $screen-xs-max) {
@@ -141,10 +146,9 @@ body {
     background-size: 110px;
   }
 
-  // TODO: Need @2x image for new mapzen-logo-white.png
-  //@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  //  background-image: url('https://mapzen.com/common/styleguide/images/mapzen-logo-stacked@2x.png');
-  //}
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url('https://mapzen.com/common/styleguide/images/mapzen-logo-stacked@2x.png');
+  }
 }
 
 
