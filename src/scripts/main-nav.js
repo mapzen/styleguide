@@ -45,6 +45,9 @@
       if (developerRequest.status >= 200 && developerRequest.status < 400) {
         var data = JSON.parse(developerRequest.responseText);
         reflectUserState(data.id, data.nickname, data.avatar);
+      } else {
+        loginButton.parentNode.innerHTML = getNotLoginElem();
+        signupButton.innerHTML = getSignUpElem();
       }
     }
 
