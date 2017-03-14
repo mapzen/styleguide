@@ -48,3 +48,4 @@ This list is a living document that will be added to or changed as terminology i
 
 - We are moving away from Mapzen _house styles_ (for example, Cinnabar, Bubble Wrap, or Zinc). Use _Mapzen basemaps_ instead.
 - Files loaded by Tangram are _scene files_. Do not use _Tangram style_ (a single scene can contain multiple `style` blocks, so calling the entire thing a _style_ leads to confusion). _Tangram scene_ is accurate, but a _Tangram scene file_ is clearer.
+- Mapzen products (such as Mapzen Vector Tiles) should be in title case. Don't confuse their names with generic forms like "vector tile service", and when writing, use the two forms consistently.
