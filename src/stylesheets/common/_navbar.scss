@@ -3,6 +3,8 @@
 // --------------------------------------------------
 
 nav {
+  font-family: $mz-sans-serif;
+  
   width: 100%;
   height: $header-height-mobile;
 
@@ -29,21 +31,13 @@ nav {
     }
   }
 
-
   li {
     text-transform: uppercase;
     text-align: center;
   }
 
-  // TODO: change btn class to btn-white and drop this temporary overwrite:
-  .btn-mapzen {
-    @extend .btn-white;
-    font-weight: $bold-font-weight;
+  .btn-white {
     padding: 8px 16px;
-    &:hover,
-    &:focus {
-      color: #444;
-    }
   }
 }
 
@@ -72,6 +66,7 @@ body {
   .navbar-nav {
     background: $navbar-default-bg;
     margin-top: 0;
+    margin-bottom: 0;
 
     li > a {
       display: inline-block;
@@ -108,7 +103,7 @@ body {
 // there is some more involved CSS overriding here
 .navbar-brand {
   // Match container edge
-  padding: 8px 15px;
+  padding: 5px 30px 11px 15px;
 
   // Branding size at tablet/desktop screen
   @media (min-width: $screen-sm) {
@@ -130,9 +125,14 @@ body {
 .mapzen-logo {
   width: 130px;
   height: 40px;
-  background-image: url('https://mapzen.com/common/styleguide/images/logos/mapzen-logo-white.png');
+  background-image: url('https://mapzen.com/common/styleguide/images/mapzen-logo-stacked.png');
   background-repeat: no-repeat;
+  background-position: 0 -40px;
   background-size: 130px;
+
+  &:hover {    
+    background-position: 0 0;   
+  }
 
   // Set the size and position of the logo at mobile screen
   @media (max-width: $screen-xs-max) {
@@ -141,10 +141,9 @@ body {
     background-size: 110px;
   }
 
-  // TODO: Need @2x image for new mapzen-logo-white.png
-  //@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  //  background-image: url('https://mapzen.com/common/styleguide/images/mapzen-logo-stacked@2x.png');
-  //}
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url('https://mapzen.com/common/styleguide/images/mapzen-logo-stacked@2x.png');
+  }
 }
 
 
@@ -201,58 +200,6 @@ body {
   li.active a:focus #login-profile {border-color:  $navbar-default-link-hover-color;}
   li:hover #login-profile {border-color:  $navbar-default-link-hover-color;}
   li a:focus #login-profile {border-color:  $navbar-default-link-hover-color;}
-
-  li.active:hover .compass:before {border-bottom-color: $navbar-default-link-hover-color;}
-  li.active a:focus .compass:before {border-bottom-color: $navbar-default-link-hover-color;}
-  li.active:hover .compass:after {border-top-color: $navbar-default-link-hover-color;}
-  li.active a:focus .compass:after {border-top-color: $navbar-default-link-hover-color;}
-
-  li:hover .compass:before {border-bottom-color: $navbar-default-link-hover-color;}
-  li a:focus .compass:before {border-bottom-color: $navbar-default-link-hover-color;}
-  li:hover .compass:after {border-top-color: $navbar-default-link-hover-color;}
-  li a:focus .compass:after {border-top-color: $navbar-default-link-hover-color;}
-}
-
-// TODO: remove compass element from html and remove compass refs above - ?
-.compass {
-  width: 22px;
-  height: 22px;
-  position: relative;
-  margin-left: -1px; /* arm of compass looks off, this is lame solution for the problem */
-  margin-top: -1px; /* same with the line above */
-  transform-origin: center center;
-  transform: rotate(30deg);
-  transition: all 2s ease;
-  &:before {
-    content: ' ';
-    position: absolute;
-    left: 7px;
-    top: 3px;
-    border-bottom: 8px solid  nth($mz-darkpurples, 5);
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-  }
-  &:after {
-    content: ' ';
-    position: absolute;
-    left: 7px;
-    top: 11px;
-    border-top: 8px solid nth($mz-darkpurples, 5);
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-  }
-  &:hover {
-    transform: rotate(390deg);
-  }
-}
-.compass > .center-dot {
-  width: 2px;
-  height: 2px;
-  background-color: nth($mz-darkpurples, 1);
-  z-index: 10;
-  position: absolute;
-  top: 10px;
-  left: 10px;
 }
 
 // overriding login button dropdown  menu
