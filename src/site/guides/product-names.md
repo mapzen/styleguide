@@ -9,6 +9,8 @@
 - Eraser Map: two words, both capitalized, with a space in between.
 - Transitland: Uppercase only the T. Note that the URL is https://transit.land, but use the dot notation only when referring to the website address.
 
+Note: Mapzen products are built on top of several open source projects that we also are active maintainers on. The correct way to discuss this differentiation is to say 'Mapzen Search, powered by Pelias'. 
+
 ## Names from other organizations
 
 When using another organization's products or trademarks, always defer to their guidelines with spelling and capitalization. Do not make it sound like a product that is not from Mapzen is ours.
