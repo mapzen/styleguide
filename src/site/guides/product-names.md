@@ -3,7 +3,7 @@
 ## Common Mapzen names
 
 - Mapzen: Uppercase only the M. Do not write it as MapZen.
-- mapzen.js: Lowercased and stylized with a dot and lowercase m.
+- mapzen.js: Lowercased and stylized with a dot.
 - Turn-by-Turn: the Ts are capitalized, by is not, and there are hyphens in between.
 - Time-Distance Matrix: each word is capitalized and there is a hyphen between Time and Distance. Under some style guides, you might use an en dash here, but use a hyphen for simplicity.
 - Eraser Map: two words, both capitalized, with a space in between.
