@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/mapzen/styleguide#readme",
   "devDependencies": {
-    "browserify-shim": "^3.8.12",
+    "browserify-shim": "^3.8.13",
     "del": "^2.1.0",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
@@ -30,17 +30,17 @@
     "gulp-if": "^2.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-s3-upload": "^1.5.0",
-    "gulp-sass": "^2.0.4",
+    "gulp-sass": "^3.1.0",
     "gulp-snippet-highlight": "^1.0.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.1",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-uglify": "^2.1.0",
     "gulp-util": "^3.0.7",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "bootstrap": "^3.3.6",
-    "browserify": "^13.0.0",
+    "bootstrap": "^3.3.7",
+    "browserify": "^14.1.0",
     "jquery": "^2.2.0"
   },
   "browserify": {
