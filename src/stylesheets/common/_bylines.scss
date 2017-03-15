@@ -28,7 +28,7 @@
   margin-bottom: 0.4em;
 
   > a {
-    font-weight: 700;
+    font-weight: $bold-font-weight;
     color: $mz-mediumgray;
     text-decoration: none;
   }
