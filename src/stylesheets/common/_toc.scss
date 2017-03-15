@@ -12,7 +12,7 @@ $toc-color: nth($mz-darkpurples, 3);
 
 .toc {
   font-size: $body-small;
-  font-weight: 300;
+  font-weight: $regular-font-weight;
   line-height: 1.4;
   background-color: $mz-lightgray;
 
@@ -53,8 +53,7 @@ $toc-color: nth($mz-darkpurples, 3);
     padding: 6px 15px; // Right-left padding matches Bootstrap .nav
     z-index: 1;
     color: $toc-color;
-    font-weight: $thin-font-weight;
-    // font-weight: 700; // Bolder contrast with sub-navigation links
+    font-weight: $regular-font-weight;
     text-decoration: none;
 
     -webkit-transition: box-shadow 100ms ease-in-out;
