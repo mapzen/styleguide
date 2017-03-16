@@ -1,8 +1,8 @@
 //Body text
 
 body {
-  font-family: $mz-body-font;
-  font-weight: $regular-font-weight;
+  font-family: $text-font-family;
+  font-weight: $text-font-weight-regular;
   color: nth($mz-darkpurples, 2);
   font-size: 16px;
   line-height: 1.5;
