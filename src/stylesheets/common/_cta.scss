@@ -16,7 +16,7 @@
 
 .cta-text {
   padding: 10px 16px;
-  font-weight: 700;
+  font-weight: $bold-font-weight;
 
   p {
     margin: 0;
@@ -30,7 +30,7 @@
 }
 
 .cta-paragraph {
-  font-weight: 300;
+  font-weight: $thin-font-weight;
 }
 
 .cta-btn {

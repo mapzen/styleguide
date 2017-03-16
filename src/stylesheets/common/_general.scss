@@ -4,8 +4,8 @@ html {
 }
 
 body {
-  font-family: $mz-sans-serif;
-  font-weight: 400;
+  font-family: $text-font-family;
+  font-weight: $text-font-weight-regular;
   background: transparent;
   overflow-x: hidden;
   width: 100%;

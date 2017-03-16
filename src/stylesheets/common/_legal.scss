@@ -23,10 +23,9 @@ ol.legal-terms{
     // so there is a bit of repetition here.
     content: counter(legal-counter) '.';
     counter-increment: legal-counter;
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: $bold-font-weight;
     font-size: 1.2em;
-    font-weight: 600;
-    color: #666666;
+    line-height: 1em;
     position: absolute;
     left: -40px;
   }

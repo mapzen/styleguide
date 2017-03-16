@@ -79,68 +79,6 @@
   // Headings
   h1, h2, h3, h4, h5, h6 {
     position: relative;
-    // font-weight: 400;
-    // margin-bottom: 0.6em;
-    // line-height: 1.2em;
-  }
-
-  @media (min-width: 767px) {
-    /* no more special header for documentation */
-    // h1 {
-    //   font-weight: 300;
-    //   color: $mz-darkblue;
-    //   font-size: 48px;
-    // }
-
-    // h2 {
-    //   color: #666;
-    //   font-size: 32px;
-    // }
-
-    // h3 {
-    //   color: #d4645c;
-    //   font-size: 24px;
-    // }
-
-    // h4 {
-    //   color: $mz-darkblue;
-    //   font-size: 18px;
-    //   font-weight: 700;
-    // }
-
-    // h5, h6 {
-    //   color: #666;
-    //   font-size: 18px;
-    // }
-  }
-
-  @media (max-width: 767px) {
-    // h1 {
-    //   font-weight: 300;
-    //   color: $mz-darkblue;
-    //   font-size: 40px;
-    // }
-
-    // h2 {
-    //   color: #666;
-    //   font-size: 28px;
-    // }
-
-    // h3 {
-    //   color: #d4645c;
-    //   font-size: 20px;
-    // }
-
-    // h4 {
-    //   color: $mz-darkblue;
-    //   font-size: 16px;
-    //   font-weight: 700;
-    // }
-
-    // h5, h6 {
-    //   color: #666;
-    //   font-size: 16px;
-    // }
   }
 
   /*
@@ -195,7 +133,7 @@
   .caption {
     margin-top: -0.8em;
     font-size: 0.9em;
-    font-weight: 300;
+    font-weight: $thin-font-weight;
     font-style: italic;
     color: #666;
   }

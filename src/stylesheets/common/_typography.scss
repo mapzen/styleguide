@@ -1,8 +1,8 @@
 //Body text
 
 body {
-  font-family: $mz-sans-serif;
-  font-weight: $thin-font-weight;
+  font-family: $text-font-family;
+  font-weight: $text-font-weight-regular;
   color: nth($mz-darkpurples, 2);
   font-size: 16px;
   line-height: 1.5;
@@ -11,7 +11,6 @@ body {
 // Headings
 
 h1, h2, h3 {
-  font-weight: $bold-font-weight;
   margin-top: 48px;
   margin-bottom: 12px;
   line-height: 1.2em;
@@ -46,7 +45,6 @@ h3 {
 
 // For use in blogs
 h4 {
-  font-weight: $bold-font-weight;
   font-size: 16px;
   // line-height: 27px;
   // margin: 0px;
@@ -62,7 +60,6 @@ h4 {
 
 // footer get involved
 h5 {
-  font-weight:  $bold-font-weight;
   font-size: 14px;
   margin-top: 24px;
   margin-bottom: 12px;
@@ -73,7 +70,6 @@ h5 {
 // link color was missing from style guide
 // This is arbiturary one that Hanbyul put
 a {
-  // font-weight: $bold-font-weight;
   color: nth($mz-scarlets, 2);
   &:hover,
   &:focus {
@@ -83,7 +79,7 @@ a {
 
 .caption {
     font-size: 16px;
-    font-weight: 300;
+    font-weight: $thin-font-weight;
     font-style: italic;
     color: $mz-mediumgray;
 }
