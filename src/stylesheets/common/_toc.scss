@@ -114,7 +114,6 @@ ul.nav > li:first-child:last-child {
 .toc-subnav {
   list-style-type: none;
   padding: 0;
-  // font-weight: 400;
 
   // Start in a collapsed-condition
   max-height: 0;
@@ -124,10 +123,6 @@ ul.nav > li:first-child:last-child {
   -webkit-transition: max-height 200ms ease-in-out;
   -moz-transition: max-height 200ms ease-in-out;
   transition: max-height 200ms ease-in-out;
-
-  a {
-    // font-weight: 400;
-  }
 
   // If expanded
   // We are animating to a super high max-height
