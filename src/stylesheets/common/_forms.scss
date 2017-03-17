@@ -21,7 +21,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   height: 41px;
   padding: 8px 5px;
   border: 1px solid #ccc;
-  border-radius: 0;
+  border-radius: $border-radius-value;
   -webkit-appearance:none;
 }
 
@@ -41,7 +41,7 @@ textarea {
   padding: 5px;
   height: 6em;
   border: 1px solid #ccc;
-  border-radius: 0;
+  border-radius: $border-radius-value;
   -webkit-appearance:none;
 }
 
@@ -66,7 +66,7 @@ input[type="search"] {
   background-position: 3px 14px;
   padding: 8px 2px 8px 26px;
   border: 1px solid #ccc;
-  border-radius: 0;
+  border-radius: $border-radius-value;
 }
 
 .form-group {
@@ -75,6 +75,10 @@ input[type="search"] {
   input[type="hidden"]:first-child + input {
     border-top-left-radius: $border-radius-value;
     border-bottom-left-radius: $border-radius-value;
+  }
+
+  input[type="search"] {
+    border-radius: 0;
   }
 
   input[type="search"]:first-child:not(:last-child) {
@@ -122,7 +126,7 @@ select {
   background-size: 25px auto;
   background-color: white;
   padding: 8px 38px 8px 10px;
-  border-radius: 0;
+  border-radius: $border-radius-value;
 }
 select::-ms-expand {
   display: none;
@@ -149,6 +153,7 @@ input[type="radio"] + *:before {
   display: inline-block;
   box-sizing: content-box;
   border: 1px solid white;
+  border-radius: $border-radius-value;
 }
 
 input[type="checkbox"]:focus + *:before,
