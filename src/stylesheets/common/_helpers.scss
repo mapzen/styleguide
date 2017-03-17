@@ -130,6 +130,28 @@
   }
 }
 
+// Padding for grid columns
+// --------------------------------------------------
+// Removes padding at specified screen size and above (similar to col-xx-offset-xx)
+
+.col-sm-no-padding {
+  @media (min-width: $screen-sm-min) {
+    padding: 0px;
+  }
+}
+
+.col-md-no-padding {
+  @media (min-width: $screen-md-min) {
+    padding: 0px;
+  }
+}
+
+.col-lg-no-padding {
+  @media (min-width: $screen-lg-min) {
+    padding: 0px;
+  }
+}
+
 // Text styles
 // --------------------------------------------------
 
