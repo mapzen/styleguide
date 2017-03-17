@@ -81,7 +81,7 @@ a {
     font-size: 16px;
     font-weight: $thin-font-weight;
     font-style: italic;
-    color: $mz-mediumgray;
+    color: nth($mz-darkpurples, 1);
 }
 
 // Inline code
@@ -90,7 +90,7 @@ code {
   margin: 0 2px;
   font-size: 14px;
   line-height: 1.6em;
-  color: $mz-mediumgray;
+  color: nth($mz-darkpurples, 1);
   // Ensure inline code elements have sufficient
   // contrast to differentiate between pure white
   background-color: $mz-lightgray;
@@ -136,7 +136,7 @@ pre {
 
 quote {
   font-size: 18px;
-  color: $mz-darkgray;
+  color: nth($mz-darkpurples, 1);
 
   @media (min-width: $screen-md-min) {
     font-size: 24px;
@@ -151,7 +151,7 @@ pullquote {
   font-size: 24px;
   font-style: italic;
   text-align: center;
-  color: $mz-darkgray;
+  color: nth($mz-darkpurples, 1);
 
   @media (min-width: $screen-md-min) {
     font-size: 28px;
