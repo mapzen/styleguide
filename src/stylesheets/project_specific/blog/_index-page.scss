@@ -1,0 +1,71 @@
+$index-section-height: 900px;
+$index-section-padding: 128px;
+$index-section-xs-padding: 72px;
+
+// index page of mapzen.com
+
+.index-section {
+  padding-top: $index-section-xs-padding;
+  padding-bottom: $index-section-xs-padding;
+  text-align: center;
+  @media (min-width: $screen-sm) {
+    padding-top: $index-section-padding;
+    padding-bottom: $index-section-padding;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+  }
+}
+
+.index-section.expanded {
+  @media (min-width: $screen-sm) {
+    height: $index-section-height;
+  }
+}
+
+.index-section.colored-bg {
+  background-color: nth($mz-scarlets, 2);
+  h1, h2, h3, h4, h5, h6, p, span {
+    color: #ffffff;
+  }
+}
+
+.index-section {
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+
+  .text-box-wrapper {
+  position: relative;
+  height: auto;
+    @media (min-width: $screen-sm) {
+      height: $index-section-height - $index-section-padding*2;
+    }
+  }
+
+
+  .text-box-wrapper > .text-box {
+    @media (min-width: $screen-sm) {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .editor-snippet {
+    // Do not show on mobile
+    width: 0;
+    height: 0;
+    @media (min-width: $screen-sm) {
+      width: $index-section-height;
+      height: $index-section-height - $index-section-padding*2;
+      padding: 0;
+      overflow: hidden;
+    }
+  }
+
+}
+
+.btn-fluid {
+  min-width: 100%;
+}
