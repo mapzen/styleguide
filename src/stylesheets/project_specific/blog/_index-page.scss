@@ -35,6 +35,11 @@ $index-section-xs-padding: 72px;
     margin-top: 0;
   }
 
+  .overflowing-image img {
+    margin-left: -250px;
+    max-width: calc(100% + 250px);
+  }
+
   .text-box-wrapper {
   position: relative;
   height: auto;
