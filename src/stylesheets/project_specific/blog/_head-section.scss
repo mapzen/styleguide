@@ -1,37 +1,42 @@
+$head-section-height: 800px;
+$index-section-padding: 128px;
+$index-section-xs-padding: 72px;
+
 .head-section {
   position: relative;
   /* This number must be edited after real image is kicked in */
   height: 480px;
   @media (min-width: $screen-sm) {
-    height: 900px;
+    height: $head-section-height;
   }
 }
 
 .head-section > .index-section {
   height: 100%;
+  overflow: hidden;
   @media (min-width: $screen-sm) {
     padding-top: 72px;
     padding-bottom: 0;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
   }
 }
 
-.head-section > .gradient-overlay {
+.head-section:after {
   display: none;
   @media (min-width: $screen-sm) {
+    content: ' ';
     display: block;
     background: -webkit-linear-gradient(transparent 95%, #FFFFFF); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(transparent 95%, #FFFFFF); /* For Opera 11.1 to 12.0 */
     // background: -moz-linear-gradient(transparent 95%, #FFFFFF); /* For Firefox 3.6 to 15 */
     background: linear-gradient(transparent 95%, #FFFFFF); /* Standard syntax */
-    height: 900px;
+    width: 100%;
+    height: $head-section-height;
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 3;
   }
 }
 
@@ -42,6 +47,6 @@
   @media (min-width: $screen-sm) {
     width: 120%;
     margin-left: -10%;
-    height: calc(920px - (72px + 162px));
+    height: calc($head-section-height - ($index-section-padding + $index-section-xs-padding));
   }
 }
