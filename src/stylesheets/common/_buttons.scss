@@ -8,6 +8,12 @@
   font-family: $display-font-family;
   font-weight: $display-font-weight-bold;
   padding: 12px 24px;
+
+  &.disabled,
+  &[disabled] {
+    background-color: $mz-gray;
+    @include opacity(1);
+  }
 }
 
 input[type="search"] + .btn {
@@ -20,8 +26,8 @@ input[type="search"] + .btn {
   color: #ffffff;
   &:hover,
   &:focus {
-    background-color: nth($mz-darkpurples, 3);
-    color: $mz-lightgray;
+    background-color: nth($mz-darkpurples, 2);
+    color: #ffffff;
   }
 }
 
@@ -31,31 +37,31 @@ input[type="search"] + .btn {
   &:hover,
   &:focus {
     background-color: nth($mz-darkpurples, 5);
+    color: nth($mz-darkpurples, 1);
   }
 }
 
 
 // To be deprecated in favor of btn-inverse
 .btn-white {
-  background-color: #ffffff;
-  color: nth($mz-darkpurples, 1);
-  &:hover,
-  &:focus {
-    background-color: nth($mz-darkpurples, 5);
-  }
+  @extend .btn-inverse;
 }
 
 // Transparent button to be deprecated
 .btn-transparent {
-  background: transparent;
-  border: 1px solid $mz-darkgray;
-  color: $mz-darkgray;
+  background: #ffffff;
+  border: 1px solid nth($mz-darkpurples, 1);
+  color: nth($mz-darkpurples, 1);
 
   &:hover,
   &:focus {
-    background-color: #e5e5e5;
-    border-color: $mz-darkgray;
-    color: $mz-darkgray;
+    background-color: nth($mz-darkpurples, 5);
+    color: nth($mz-darkpurples, 1);
+  }
+
+  &.disabled,
+  &[disabled] {
+    border-color: $mz-gray;
   }
 }
 

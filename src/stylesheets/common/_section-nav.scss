@@ -40,6 +40,7 @@ $main-nav-height: $header-height;
     height: 100%;
     padding: 0 20px;
     outline: 0;
+    font-weight: $bold-font-weight;
 
     // Middle state
     // Slightly smaller text in case there is a lot of nav items
@@ -48,11 +49,14 @@ $main-nav-height: $header-height;
     }
   }
 
-  a:hover,
-  a:focus,
   a:visited,
-  a:active {
+  a:active,
+  a:focus {
     color: white;
+  }
+
+  a:hover {
+    color: nth($mz-scarlets, 2);
   }
 
   // When section nav is floating
@@ -233,15 +237,17 @@ $main-nav-height: $header-height;
       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     }
 
-    &:hover {
-      background-color: nth($mz-scarlets, 1);
-    }
-
     body:not(.is-scrolling) &.active, // Prevents scrolling from visually turning on menu items
     &.active:hover,
     &.activated {
       background-color: nth($mz-scarlets, 2);
     }
+
+    &.active:hover a,
+    &.activated a {
+      color: #ffffff;
+    }
+
 
     &.section-nav-item-egg {
       display: none;
