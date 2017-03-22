@@ -1,7 +1,7 @@
 @import "../../bootstrap/variables";
 @import "../../bootstrap/mixins";
-
 @import "../../bootstrap/dropdowns";
+@import "../../common/colors";
 
 body {
   margin-top: 0;
@@ -90,67 +90,92 @@ pre[class*="language-"] {
   background-color: #f8f8f8;
 }
 
-
-
-
 .opensans {
   font-family: 'Open Sans', sans-serif;
   font-size: 32px;
 }
 
-.playfair {
-  font-family: 'Playfair display', serif;
+.poppins {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   font-size: 32px;
-}
-
-.montserrat {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 32px;
-}
-
-.simple-shadow {
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
-}
-
-
-
-.documentation-hero {
-  background-color: #563630;
-}
-
-.styleguide-side-nav {
-  .toc {
-    a {
-      color: #563630;
-    }
-
-    a:hover,
-    a:focus {
-      background-color: rgba(86,54,48, 0.2);
-      color: #563630;
-    }
-
-    .toc-top-level {
-      a:hover,
-      a:focus {
-        background-color: rgba(86,54,48, 0.2);
-        color: #563630;
-      }
-    }
-
-    li.toc-top-level.toc-current > a {
-      background-color: #563630;
-      color: white;
-    }
-
-    li.active > a {
-      background-color: #eee;
-      box-shadow: inset 4px 0 0 #563630;
-    }
-  }
 }
 
 // Override because there is no top nav bar
 .toc.affix {
   top: 30px;
+}
+
+//Classes for styleguide
+.mz-darkpurples1 {
+    background-color: nth($mz-darkpurples, 1);
+    color: #fff;
+}
+.mz-darkpurples2 {
+    background-color: nth($mz-darkpurples, 2);
+    color: #fff;
+}
+.mz-darkpurples3 {
+    background-color: nth($mz-darkpurples, 3);
+    color: #fff;
+}
+.mz-darkpurples4 {
+    background-color: nth($mz-darkpurples, 4);
+    color: #fff;
+}
+
+.mz-scarlets1 {
+    background-color: nth($mz-scarlets, 1);
+    color: #fff;
+}
+.mz-scarlets2 {
+    background-color: nth($mz-scarlets, 2);
+    color: #fff;
+}
+.mz-scarlets3 {
+    background-color: nth($mz-scarlets, 3);
+}
+
+.mz-pinks1 {
+    background-color: nth($mz-pinks, 1);
+    color: #fff;
+}
+.mz-pinks2 {
+    background-color: nth($mz-pinks, 2);
+    color: #fff;
+}
+.mz-pinks3 {
+    background-color: nth($mz-pinks, 3);
+}
+
+.mz-purples1 {
+    background-color: nth($mz-purples, 1);
+    color: #fff;
+}
+.mz-purples2 {
+    background-color: nth($mz-purples, 2);
+    color: #fff;
+}
+.mz-purples3 {
+    background-color: nth($mz-purples, 3);
+    color: #fff;
+}
+
+.mz-black {
+    background-color: $mz-black;
+    color: #fff;
+}
+
+.mz-darkgray {
+    background-color: $mz-darkgray;
+    color: #fff;
+}
+
+.mz-mediumgray {
+    background-color: $mz-mediumgray;
+    color: #fff;
+}
+
+.mz-lightgray {
+    background-color: $mz-lightgray;
 }

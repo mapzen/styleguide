@@ -81,7 +81,7 @@ a {
     font-size: 16px;
     font-weight: $thin-font-weight;
     font-style: italic;
-    color: $mz-mediumgray;
+    color: nth($mz-darkpurples, 1);
 }
 
 // Inline code
@@ -90,7 +90,7 @@ code {
   margin: 0 2px;
   font-size: 14px;
   line-height: 1.6em;
-  color: $mz-mediumgray;
+  color: nth($mz-darkpurples, 1);
   // Ensure inline code elements have sufficient
   // contrast to differentiate between pure white
   background-color: $mz-lightgray;
@@ -135,11 +135,11 @@ pre {
 }
 
 quote {
-  font-size: 18px;
-  color: $mz-darkgray;
-
-  @media (min-width: $screen-md-min) {
-    font-size: 24px;
+  font-family: $display-font-family;
+  font-size: 24px;
+  color: nth($mz-darkpurples, 1);
+  @media (max-width: $screen-sm) {
+    font-size: 18px;
   }
 }
 
@@ -148,16 +148,14 @@ pullquote {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
   display: block;
+  font-family: $display-font-family;
   font-size: 24px;
   font-style: italic;
   text-align: center;
-  color: $mz-darkgray;
+  color: nth($mz-darkpurples, 1);
 
-  @media (min-width: $screen-md-min) {
-    font-size: 28px;
-    width: 120%;
-    margin-left: -10%;
-    margin-right: -10%;
+  @media (max-width: $screen-sm) {
+    font-size: 18px;
   }
 }
 
@@ -167,17 +165,3 @@ pullquote {
   // TO DO : figure out scalable design (which can accomodate long name) for about page
   font-size: 15px;
 }
-
-
-// Seems unnecessary. All pullquote stuff has been combined above
-// .static-content pullquote {
-//   width: 100%;
-//   margin-top: 1.5em;
-//   margin-bottom: 1.5em;
-
-//   @media (min-width: $screen-md-min) {
-//     width: 120%;
-//     margin-left: -10%;
-//     margin-right: -10%;
-//   }
-// }

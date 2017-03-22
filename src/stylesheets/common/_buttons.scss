@@ -14,14 +14,8 @@ input[type="search"] + .btn {
   padding: 0;
 }
 
-// Red button
+// Dark purple button
 .btn-mapzen {
-  // border-color: $mz-red;
-  // background-color: $mz-red;
-  // color: #fff;
-  // text-shadow: none;
-  // text-transform: uppercase;
-  // font-weight:400;
   background-color: nth($mz-darkpurples, 1);
   color: #ffffff;
   &:hover,
@@ -31,41 +25,37 @@ input[type="search"] + .btn {
   }
 }
 
-// Blue button
-.btn-mapzen-alt {
-  border-color: $mz-blue;
-  background-color: $mz-blue;
-  color: #fff;
-  text-shadow: none;
-  text-transform: uppercase;
-  font-weight:400;
-
+.btn-inverse {
+  background-color: #ffffff;
+  color: nth($mz-darkpurples, 1);
   &:hover,
   &:focus {
-    border-color: $mz-darkblue;
-    background-color: $mz-darkblue;
-    color: #fff;
+    background-color: nth($mz-darkpurples, 5);
   }
 }
 
-// mapzen V1
 
-.btn-darkpurple {
-  background-color: nth($mz-darkpurples, 1);
-  color: #ffffff;
-  &:hover,
-  &:focus {
-    background-color: nth($mz-darkpurples, 3);
-    color: $mz-lightgray;
-  }
-}
-
+// To be deprecated in favor of btn-inverse
 .btn-white {
   background-color: #ffffff;
   color: nth($mz-darkpurples, 1);
   &:hover,
   &:focus {
     background-color: nth($mz-darkpurples, 5);
+  }
+}
+
+// Transparent button to be deprecated
+.btn-transparent {
+  background: transparent;
+  border: 1px solid $mz-darkgray;
+  color: $mz-darkgray;
+
+  &:hover,
+  &:focus {
+    background-color: #e5e5e5;
+    border-color: $mz-darkgray;
+    color: $mz-darkgray;
   }
 }
 
@@ -85,22 +75,6 @@ input[type="search"] + .btn {
   &:focus {
     color: nth($mz-scarlets, 1);
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMS42IiBoZWlnaHQ9IjguNjQiIHZpZXdCb3g9IjAgMCAyMS42IDguNjQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkY0OTQ3IiBkPSJNMjAuOCA0LjMybC03IDMuNXYtN3oiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGNDk0NyIgZD0iTS44IDIuODJoMTR2M0guOHoiLz48L3N2Zz4=');
-  }
-}
-
-
-// Transparent button
-// Sometimes on white, sometimes on light gray
-.btn-transparent {
-  background: transparent;
-  border: 1px solid $mz-darkgray;
-  color: $mz-darkgray;
-
-  &:hover,
-  &:focus {
-    background-color: #e5e5e5;
-    border-color: $mz-darkgray;
-    color: $mz-darkgray;
   }
 }
 
