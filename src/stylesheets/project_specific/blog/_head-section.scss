@@ -28,10 +28,10 @@ $index-section-xs-padding: 72px;
   @media (min-width: $screen-sm) {
     content: ' ';
     display: block;
-    background: -webkit-linear-gradient(transparent 95%, #FFFFFF); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(transparent 95%, #FFFFFF); /* For Opera 11.1 to 12.0 */
-    // background: -moz-linear-gradient(transparent 95%, #FFFFFF); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(transparent 95%, #FFFFFF); /* Standard syntax */
+    background: -webkit-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Opera 11.1 to 12.0 */
+    // background: -moz-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* Standard syntax */
     width: 100%;
     height: $head-section-height;
     position: absolute;
@@ -47,6 +47,6 @@ $index-section-xs-padding: 72px;
   @media (min-width: $screen-sm) {
     width: 120%;
     margin-left: -10%;
-    height: calc($head-section-height - ($index-section-padding + $index-section-xs-padding));
+    height: $head-section-height - ($index-section-padding + $index-section-xs-padding);
   }
 }
