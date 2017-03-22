@@ -25,7 +25,11 @@ $index-section-xs-padding: 72px;
 
 .index-section.colored-bg {
   background-color: nth($mz-scarlets, 2);
-  background-image: url('/images/background-images/1.png');
+  background: url(/images/placeholders/background-images/test.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   h1, h2, h3, h4, h5, h6, p, span {
     color: #ffffff;
   }
@@ -37,8 +41,8 @@ $index-section-xs-padding: 72px;
   }
 
   .overflowing {
-    margin-left: -250px;
-    max-width: calc(100% + 250px);
+    margin-left: -350px;
+    max-width: calc(100% + 350px);
     position: relative;
     overflow: hidden;
     height: $index-section-height - $index-section-padding*3;
@@ -58,14 +62,49 @@ $index-section-xs-padding: 72px;
       linear-gradient(
         to right,
         white,
-        transparent 15%
-      );
-  }
-
-  .overflowing .image-wrapper {
+        rgba(255,255,255,0) 15%
+    );
     overflow: hidden;
-
   }
+
+  .overflowing {
+
+    .image-box {
+      border-radius: 5px;
+      position: relative;
+      width: 100%;
+      .name {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #ffffff;
+        padding: 0 12px;
+        border-radius: 0 0 5px 5px;
+      }
+    }
+
+    .full-height {
+      height: $index-section-height - $index-section-padding*3;
+      @media (min-width: $screen-sm) {
+        height: $index-section-height - $index-section-padding*2;
+      }
+    }
+    .half-height {
+      height: (($index-section-height - $index-section-padding*3)/2) - 6px;
+      margin-bottom: 12px;
+      @media (min-width: $screen-sm) {
+        height: ($index-section-height - $index-section-padding*2)/2 - 12px;;
+        margin-bottom: 24px;
+      }
+    }
+
+    .refill { background-image: url('/images/placeholders/refill.png');}
+    .tron { background-image: url('/images/placeholders/tron.png');}
+    .zinc { background-image: url('/images/placeholders/zinc.png');}
+    .bubble { background-image: url('/images/placeholders/bubble.png');}
+  }
+
 
   .text-box-wrapper {
   position: relative;
