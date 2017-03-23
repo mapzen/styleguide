@@ -1,3 +1,4 @@
+$head-section-xs-height: 480px;
 $head-section-height: 800px;
 $index-section-padding: 128px;
 $index-section-xs-padding: 72px;
@@ -5,7 +6,7 @@ $index-section-xs-padding: 72px;
 .head-section {
   position: relative;
   /* This number must be edited after real image is kicked in */
-  height: 480px;
+  height: $head-section-xs-height;
   @media (min-width: $screen-sm) {
     height: $head-section-height;
   }
@@ -24,19 +25,19 @@ $index-section-xs-padding: 72px;
 }
 
 .head-section:after {
-  display: none;
+  content: ' ';
+  display: block;
+  background: -webkit-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Opera 11.1 to 12.0 */
+  // background: -moz-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* Standard syntax */
+  width: 100%;
+  height: $head-section-xs-height;
+  position: absolute;
+  left: 0;
+  top: 0;
   @media (min-width: $screen-sm) {
-    content: ' ';
-    display: block;
-    background: -webkit-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Opera 11.1 to 12.0 */
-    // background: -moz-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* Standard syntax */
-    width: 100%;
     height: $head-section-height;
-    position: absolute;
-    left: 0;
-    top: 0;
   }
 }
 
@@ -47,6 +48,6 @@ $index-section-xs-padding: 72px;
   @media (min-width: $screen-sm) {
     width: 120%;
     margin-left: -10%;
-    height: $head-section-height - ($index-section-padding + $index-section-xs-padding);
+    height: auto;
   }
 }
