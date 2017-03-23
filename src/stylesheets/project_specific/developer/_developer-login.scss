@@ -92,17 +92,7 @@ $signupbtnh:45px;
         display:block;
       }
 
-      .octocat{
-        width:150px;
-        height:150px;
-        background-size:90% 90%;
-        background-image:url('../images/octocat.png');
-        margin:0 auto;
-        border: 1px solid $mz-darkgray;
-        &:hover{
-          background-image:url('//octodex.github.com/images/spidertocat.png');
-        }
-      }
+
       .info-box{
         width:100%;
         border:1px solid #666;
@@ -123,6 +113,19 @@ $signupbtnh:45px;
   }
 }
 
+.octocat{
+  width:150px;
+  height:150px;
+  background-size:90% 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image:url('../images/octocat.png');
+  margin: 72px auto;
+  &:hover{
+    background-image:url('//octodex.github.com/images/spidertocat.png');
+  }
+}
+
 .btn-login {
   width: 100%;
   font-weight: 600;
@@ -137,6 +140,24 @@ $signupbtnh:45px;
     color: white;
     background-color: $mz-gray;
   }
+}
+
+#password-label + a {
+  float: right;
+}
+
+.separator {
+  position: relative;
+  height: 500px;
+  border-right: 1px solid #ccc;
+}
+.separator > .tag {
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 26px);
+  font-size: 36px;
+  background-color: #fff;
+  text-transform: uppercase;
 }
 
 .form-control[readonly] {
