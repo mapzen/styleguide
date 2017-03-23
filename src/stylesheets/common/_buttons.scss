@@ -47,7 +47,7 @@ input[type="search"] + .btn {
   @extend .btn-inverse;
 }
 
-// Transparent button to be deprecated
+// Transparent button
 .btn-transparent {
   background: #ffffff;
   border: 1px solid nth($mz-darkpurples, 1);
