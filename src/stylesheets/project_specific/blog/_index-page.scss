@@ -25,7 +25,7 @@ $index-section-xs-padding: 72px;
 
 .index-section.colored-bg {
   background-color: nth($mz-scarlets, 2);
-  background: url(/images/placeholders/background-images/test.png) no-repeat center center fixed;
+  background: url(/common/styleguide/images/placeholders/background-images/test.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -99,10 +99,10 @@ $index-section-xs-padding: 72px;
       }
     }
 
-    .refill { background-image: url('/images/placeholders/refill.png');}
-    .tron { background-image: url('/images/placeholders/tron.png');}
-    .zinc { background-image: url('/images/placeholders/zinc.png');}
-    .bubble { background-image: url('/images/placeholders/bubble.png');}
+    .refill { background-image: url(/common/styleguide/images/placeholders/refill.png);}
+    .tron { background-image: url(/common/styleguide/images/placeholders/tron.png);}
+    .zinc { background-image: url(/common/styleguide/images/placeholders/zinc.png);}
+    .bubble { background-image: url(/common/styleguide/images/placeholders/bubble.png);}
   }
 
 
