@@ -5,6 +5,7 @@
 $demo-control-height: 60px;
 $demo-control-border-color: #e0e0e0;
 $demo-control-color: nth($mz-scarlets, 2);
+$demo-control-color-hover: nth($mz-scarlets, 3);
 
 .project-demo {
   width: 100%;
@@ -65,6 +66,7 @@ $demo-control-color: nth($mz-scarlets, 2);
   text-overflow: ellipsis;
   overflow: hidden;
   cursor: pointer;
+  font-weight: $bold-font-weight;
 
   // Mobile positioning
   width: 100%;
@@ -94,7 +96,8 @@ $demo-control-color: nth($mz-scarlets, 2);
 .demo-control.hover,
 .demo-control-previous.hover,
 .demo-control-next.hover {
-  color: #141414;
+  background: $demo-control-color-hover;
+  color: $demo-control-color;
 }
 
 .demo-control-previous,

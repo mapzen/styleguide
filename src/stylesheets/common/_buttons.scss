@@ -8,6 +8,12 @@
   font-family: $display-font-family;
   font-weight: $display-font-weight-bold;
   padding: 12px 24px;
+
+  &.disabled,
+  &[disabled] {
+    background-color: $mz-gray;
+    @include opacity(1);
+  }
 }
 
 input[type="search"] + .btn {
@@ -20,8 +26,8 @@ input[type="search"] + .btn {
   color: #ffffff;
   &:hover,
   &:focus {
-    background-color: nth($mz-darkpurples, 3);
-    color: $mz-lightgray;
+    background-color: nth($mz-darkpurples, 2);
+    color: #ffffff;
   }
 }
 
@@ -31,33 +37,39 @@ input[type="search"] + .btn {
   &:hover,
   &:focus {
     background-color: nth($mz-darkpurples, 5);
+    color: nth($mz-darkpurples, 1);
   }
 }
 
 
 // To be deprecated in favor of btn-inverse
 .btn-white {
-  background-color: #ffffff;
+  @extend .btn-inverse;
+}
+
+// White button with outline
+.btn-secondary {
+  background: #ffffff;
+  border: 1px solid nth($mz-darkpurples, 1);
   color: nth($mz-darkpurples, 1);
+
   &:hover,
   &:focus {
     background-color: nth($mz-darkpurples, 5);
+    color: nth($mz-darkpurples, 1);
+  }
+
+  &.disabled,
+  &[disabled] {
+    border-color: $mz-gray;
   }
 }
 
-// Transparent button to be deprecated
+// Transparent button (which is no longer transparent and is used in too many places to remove)
 .btn-transparent {
-  background: transparent;
-  border: 1px solid $mz-darkgray;
-  color: $mz-darkgray;
-
-  &:hover,
-  &:focus {
-    background-color: #e5e5e5;
-    border-color: $mz-darkgray;
-    color: $mz-darkgray;
-  }
+  @extend .btn-secondary;
 }
+
 
 .btn-with-arrow {
   background-color: transparent;
@@ -67,6 +79,7 @@ input[type="search"] + .btn {
   padding-left: 0;
   padding-right: 32px;
   font-size: 0.85em;
+  font-weight: $bold-font-weight;
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMS42IiBoZWlnaHQ9IjguNjQiIHZpZXdCb3g9IjAgMCAyMS42IDguNjQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkY3QjdCIiBkPSJNMjAuOCA0LjMybC03IDMuNXYtN3oiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGN0I3QiIgZD0iTS44IDIuODJoMTR2M0guOHoiLz48L3N2Zz4=');
   background-repeat: no-repeat;
   background-position: right center;

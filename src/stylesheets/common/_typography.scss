@@ -71,6 +71,7 @@ h5 {
 // This is arbiturary one that Hanbyul put
 a {
   color: nth($mz-scarlets, 2);
+  font-weight: $bold-font-weight;
   &:hover,
   &:focus {
     color: nth($mz-scarlets, 1);
