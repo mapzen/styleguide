@@ -47,8 +47,8 @@ input[type="search"] + .btn {
   @extend .btn-inverse;
 }
 
-// Transparent button
-.btn-transparent {
+// White button with outline
+.btn-secondary {
   background: #ffffff;
   border: 1px solid nth($mz-darkpurples, 1);
   color: nth($mz-darkpurples, 1);
@@ -64,6 +64,12 @@ input[type="search"] + .btn {
     border-color: $mz-gray;
   }
 }
+
+// Transparent button (which is no longer transparent and is used in too many places to remove)
+.btn-transparent {
+  @extend .btn-secondary;
+}
+
 
 .btn-with-arrow {
   background-color: transparent;
