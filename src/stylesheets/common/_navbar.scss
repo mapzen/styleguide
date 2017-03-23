@@ -39,6 +39,10 @@ nav {
   .btn-white {
     padding: 8px 16px;
   }
+
+  a {
+    font-weight: $display-font-weight-regular;
+  }
 }
 
 // Positioning for sticky navbar
