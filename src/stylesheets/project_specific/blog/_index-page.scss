@@ -138,7 +138,14 @@ $index-section-xs-padding: 72px;
       overflow-y: scroll;
       padding: 0;
     }
+    &:before {
+      @extend .editor-snippet;
+      content: ' ';
+      background: linear-gradient(rgba(255, 255, 255, 0) 25%, #1e0f33 97%);
+      position: absolute;
+    }    
   }
+
 
 }
 
