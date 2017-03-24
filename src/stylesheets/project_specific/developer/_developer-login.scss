@@ -13,7 +13,7 @@ $signupbtnh:45px;
       background-repeat:no-repeat;
       background-position:center center;
       border-radius: 50%;
-      padding:3px;
+
       margin: 0 auto;
     }
 
@@ -114,13 +114,15 @@ $signupbtnh:45px;
 }
 
 .octocat{
-  width:150px;
-  height:150px;
-  background-size:90% 90%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image:url('../images/octocat.png');
-  margin: 72px auto;
+  width: 200px;
+  height: 200px;
+  background-repeat:no-repeat;
+  background-position:center center;
+  border-radius: 50%;
+  background-size: 90% 90%;
+  border: 1px solid #ccc;
+  background-image: url(../images/octocat.png);
+  margin: 42px auto 42px auto;
   &:hover{
     background-image:url('//octodex.github.com/images/spidertocat.png');
   }
@@ -148,15 +150,19 @@ $signupbtnh:45px;
 
 .separator {
   position: relative;
-  height: 500px;
-  border-right: 1px solid #ccc;
+  height: 576px;
+  border-right: 1px solid nth($mz-darkpurples, 5);
 }
+
 .separator > .tag {
   position: absolute;
   top: 50%;
-  left: calc(100% - 26px);
-  font-size: 36px;
-  background-color: #fff;
+  left: calc(100% - 33px);
+  font-size: 18px;
+  padding: 20px;
+  font-weight: $text-font-weight-bold;
+  border-radius: 50%;
+  background-color: nth($mz-darkpurples, 5);
   text-transform: uppercase;
 }
 
