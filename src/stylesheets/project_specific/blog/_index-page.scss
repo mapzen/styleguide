@@ -30,7 +30,7 @@ $index-section-xs-padding: 72px;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  h1, h2, h3, h4, h5, h6, p, span {
+  h1, h2, h3, h4, h5, h6, p {
     color: #ffffff;
   }
 }
@@ -143,10 +143,19 @@ $index-section-xs-padding: 72px;
       content: ' ';
       background: linear-gradient(rgba(255, 255, 255, 0) 25%, #1e0f33 97%);
       position: absolute;
-    }    
+    }
+
+    // Syntax highlighting
+    .cp, .nt {
+      color: #FF112F;
+    }
+    .na {
+      color: nth($mz-pinks, 2);
+    }
+    .s {
+      color: nth($mz-purples, 2);
+    }
   }
-
-
 }
 
 .btn-fluid {
