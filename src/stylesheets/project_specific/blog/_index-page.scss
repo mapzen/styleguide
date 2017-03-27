@@ -139,7 +139,9 @@ $index-section-xs-padding: 72px;
       padding: 0;
     }
     &:before {
-      @extend .editor-snippet;
+      width: $index-section-height;
+      height: $index-section-height - $index-section-padding*2;
+      border-radius: 5px;
       content: ' ';
       background: linear-gradient(rgba(255, 255, 255, 0) 25%, #1e0f33 97%);
       position: absolute;
