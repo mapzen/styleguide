@@ -6,6 +6,11 @@
   margin-bottom: 24px;
 }
 
+/* It is less likely that bold text is wanted for checkbox label */
+input[type="checkbox"] + label {
+  font-weight: $text-font-weight-regular;
+}
+
 label {
   font-weight: $text-font-weight-bold;
 }
