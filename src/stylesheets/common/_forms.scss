@@ -2,10 +2,17 @@
   font-weight: bold;
   margin-bottom: 15px;
 }
+
 .form-group {
+  position: relative;
   margin-bottom: 24px;
 }
-
+/* we want to place recover password link on top of password field, but with higher tabindex */
+.form-group > .recover-password-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 /* It is less likely that bold text is wanted for checkbox label */
 input[type="checkbox"] + label {
   font-weight: $text-font-weight-regular;
