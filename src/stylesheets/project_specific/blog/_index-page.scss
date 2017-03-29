@@ -4,6 +4,11 @@ $index-section-xs-padding: 72px;
 
 // index page of mapzen.com
 
+// Margin removed to support transparent navbar
+body.index_page {
+  margin-top: 0;
+}
+
 .index-section {
   padding-top: $index-section-xs-padding;
   padding-bottom: $index-section-xs-padding;
