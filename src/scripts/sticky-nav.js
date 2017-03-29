@@ -118,7 +118,7 @@
       return showFixedMainNav()
     }
 
-    // Show anchored style when nav is near the top
+    // Show transparent style when nav is near the top of index page
     if (windowYPosition < TRANSITION_BELOW_Y_POSITION && IS_INDEX_PAGE) {
       showTransparentMainNav()
     } else {

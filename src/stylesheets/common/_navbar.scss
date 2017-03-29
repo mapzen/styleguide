@@ -92,10 +92,8 @@ body {
 
 
 // Show transparent navbar when anchored to top (used on home page only atm)
-body.anchored-main-nav nav.navbar {
+body.transparent-main-nav nav.navbar {
   background: transparent;
-  //transition: 0.8s;
-  //-webkit-transition:  0.8s;
 }
 
 
