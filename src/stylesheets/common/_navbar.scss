@@ -82,10 +82,18 @@ body {
 // Overwrite Bootstrap styles by matching selectors
 .navbar {
   border: 0; // Overwrite 1px border width
+  transition: 0.8s;
+  -webkit-transition:  0.8s;
 }
 .navbar-nav > li > a {
   line-height: 26px; // Make link fit the height of the navbar
   font-size: $body-small;
+}
+
+
+// Show transparent navbar when anchored to top (used on home page only atm)
+body.transparent-main-nav nav.navbar {
+  background: transparent;
 }
 
 
