@@ -1,22 +1,16 @@
 .editable-email {
-  height: 30px;
+  height: 41px;
 }
 
 .editable-input {
-  line-height: 30px;
-}
-
-.editable-input input {
-  padding-top: 0;
-  padding-bottom: 0;
-  height: 30px;
+  vertical-align: middle;
 }
 
 .editable-submit, .editable-cancel {
-  height: 30px;
+  height: 41px;
+  padding: 5px;
   font-size: 14px;
   border-radius: $border-radius-value;
   border: 1px solid #000;
   @extend .btn-inverse;
-
 }

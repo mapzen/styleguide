@@ -319,12 +319,12 @@
   .no-padding {
     padding: 0px;
   }
+  .editable-input input {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
-.editable-input input {
-  padding-top: 0;
-  padding-bottom: 0;
-}
 
 .block-body{
   width:100%;
