@@ -14,3 +14,19 @@
   border: 1px solid #000;
   @extend .btn-inverse;
 }
+
+/* Developer dashboard's layout not flexible enough to contain the normal style of input */
+#dev-dashboard {
+  .editable-input input {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 30px;
+  }
+  .editable-submit, .editable-cancel {
+    height: 30px;
+    font-size: 14px;
+    border-radius: $border-radius-value;
+    border: 1px solid #000;
+    @extend .btn-inverse;
+  }
+}
