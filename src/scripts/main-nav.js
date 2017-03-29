@@ -114,25 +114,32 @@ function reflectUserState (id, nickname, imageurl, customLogoutCall) {
 
   function getLoginElem (id, nickname, githubAvatar) {
     // default to showing 'account' and default avatar
-    var avatarImageURL = '/common/styleguide/images/default-avatar.png';
+    var avatarImageURL = '/common/styleguide/images/default-avatar.svg';
     var label = 'Account';
+    var profileClass = 'login-profile-default';
+    var profileSize = '24';
 
     if (nickname) {
       // github user so show github nickname and avatar instead of default
       avatarImageURL = githubAvatar;
       label = nickname;
+      profileClass = 'login-profile-github';
+      profileSize = '18';
     }
-    var strVar = '';
-    strVar += '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown" data-target="#" data-nav-run="yes" role="button">';
-    strVar += ' <div id=\"login-profile\">';
-    strVar += '   <img width=\"18\" height=\"18\" src=\"' + avatarImageURL + '\" style=\"border-radius: 50%; position: absolute; top: 1px; left: 1px;\">';
-    strVar += ' <\/div>';
-    strVar += ' <div class="login-txt"> ' + label + ' <\/div>';
-    strVar += '</a>';
-    strVar += '<ul class="dropdown-menu">';
-    strVar += '  <li><a href="/dashboard">Dashboard</a></li>';
-    strVar += '  <li id="sign-out"><a href="#"> Logout</a></li>';
-    strVar += '</ul>';
+
+    var strVar = '<a id="sign-in" class="dropdown-toggle" data-toggle="dropdown"'
+               + '   data-target="#" data-nav-run="yes" role="button">'
+               + ' <div class="' + profileClass + '" id="login-profile">'
+               + ' <img width="' + profileSize + '" height="' + profileSize + '"'
+               + '      src="' + avatarImageURL + '"'
+               + '      style="border-radius: 50%; position: absolute; top: 1px; left: 1px;">'
+               + ' </div>'
+               + ' <div class="login-txt"> ' + label + ' <\/div>'
+               + '</a>'
+               + '<ul class="dropdown-menu">'
+               + '  <li><a href="/dashboard">Dashboard</a></li>'
+               + '  <li id="sign-out"><a href="#"> Logout</a></li>'
+               + '</ul>';
     return strVar;
   }
 

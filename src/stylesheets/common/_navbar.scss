@@ -142,8 +142,8 @@ body.transparent-main-nav nav.navbar {
   background-position: 0 -40px;
   background-size: 130px;
 
-  &:hover {    
-    background-position: 0 0;   
+  &:hover {
+    background-position: 0 0;
   }
 
   // Set the size and position of the logo at mobile screen
@@ -182,12 +182,24 @@ body.transparent-main-nav nav.navbar {
   line-height: 26px; //cheap way to fix render problem
 }
 
-.navbar-nav > li > a > #login-profile {
+.navbar-nav > li > a > .login-profile-github {
   width: 22px;
   height: 22px;
   float: left;
   position: relative;
   margin-top: 2px;
+  border-radius: 50%;
+  border: 1px solid nth($mz-darkpurples, 5);
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.navbar-nav > li > a > .login-profile-default {
+  width: 28px;
+  height: 28px;
+  float: left;
+  position: relative;
+  margin-top: -2px;
   border-radius: 50%;
   border: 1px solid nth($mz-darkpurples, 5);
   box-sizing: border-box;
