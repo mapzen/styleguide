@@ -32,7 +32,7 @@
   var ALWAYS_SHOW_BELOW_Y_POSITION = 60
   var SHOW_AFTER_SCROLL_UP_DISTANCE = 10
   var HIDE_AFTER_SCROLL_DOWN_DISTANCE = 4
-  var TRANSITION_BELOW_Y_POSITION = 100
+  var TRANSITION_BELOW_Y_POSITION = 120
 
   // Internal variables
   var windowPreviousYPosition
@@ -118,7 +118,7 @@
       return showFixedMainNav()
     }
 
-    // Show transparent style when nav is near the top of index page
+    // Always show transparent style when nav is near the top of index page
     if (windowYPosition < TRANSITION_BELOW_Y_POSITION && IS_INDEX_PAGE) {
       showTransparentMainNav()
     } else {
@@ -137,6 +137,14 @@
       showFixedMainNav()
     } else if (scrollDirection === 'down' && scrollDistance >= HIDE_AFTER_SCROLL_DOWN_DISTANCE && !IS_INDEX_PAGE) {
       hideFixedMainNav()
+    }
+
+    // Show transparent style when nav is near the top of index page
+    // Add second check to handle expired scroll counter
+    if (windowYPosition < TRANSITION_BELOW_Y_POSITION && IS_INDEX_PAGE) {
+      showTransparentMainNav()
+    } else {
+      hideTransparentMainNav()
     }
   });
 
