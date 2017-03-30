@@ -46,34 +46,26 @@ body.index_page {
   }
 
   .overflowing {
-    margin-left: -350px;
-    max-width: calc(100% + 350px);
+    margin-left: -130px;
+    margin-right: -170px;
+    max-width: calc(100% + 300px);
     position: relative;
     overflow: hidden;
     height: $index-section-height - $index-section-padding*3;
     @media (min-width: $screen-sm) {
+      margin-left: -300px;
+      margin-right: 0;
       height: $index-section-height - $index-section-padding*2;
     }
   }
 
-  .overflowing:after {
-    content: ' ';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-image:
-      linear-gradient(
-        to right,
-        white,
-        rgba(255,255,255,0) 15%
-    );
-    overflow: hidden;
-  }
-
   .overflowing {
-
+    div[class*='row']{
+      margin: 0 -5px;
+    }
+    div[class*='col-']{
+      padding: 0 5px;
+    }
     .image-box {
       border-radius: 5px;
       position: relative;
@@ -91,6 +83,7 @@ body.index_page {
 
     .full-height {
       height: $index-section-height - $index-section-padding*3;
+      background-size: cover;
       @media (min-width: $screen-sm) {
         height: $index-section-height - $index-section-padding*2;
       }
@@ -104,10 +97,31 @@ body.index_page {
       }
     }
 
-    .refill { background-image: url(/common/styleguide/images/placeholders/refill.png);}
-    .tron { background-image: url(/common/styleguide/images/placeholders/tron.png);}
-    .zinc { background-image: url(/common/styleguide/images/placeholders/zinc.png);}
-    .bubble { background-image: url(/common/styleguide/images/placeholders/bubble.png);}
+    .refill {
+      background-image: url(/common/styleguide/images/maps/refill.png);
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(/common/styleguide/images/maps/refill@2x.png);
+      }
+    }
+    .tron {
+      background-image: url(/common/styleguide/images/maps/tron.png);
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(/common/styleguide/images/maps/tron@2x.png);
+      }
+    }
+    .walkabout {
+      background-image: url(/common/styleguide/images/maps/walkabout.png);
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(/common/styleguide/images/maps/walkabout@2x.png);
+      }
+    }
+    .bubble {
+      background-image: url(/common/styleguide/images/maps/bubble-wrap.png);
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url(/common/styleguide/images/maps/bubble-wrap@2x.png);
+      }
+    }
+
   }
 
 
