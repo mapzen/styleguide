@@ -137,7 +137,7 @@ function reflectUserState (id, nickname, imageurl, customLogoutCall) {
                + ' <div class="login-txt"> ' + label + ' <\/div>'
                + '</a>'
                + '<ul class="dropdown-menu">'
-               + '  <li><a href="developers">Dashboard</a></li>'
+               + '  <li><a href="/dashboard">Dashboard</a></li>'
                + '  <li id="sign-out"><a href="#"> Logout</a></li>'
                + '</ul>';
     return strVar;
