@@ -72,10 +72,28 @@ body {
     margin-top: 0;
     margin-bottom: 0;
 
+    li {
+      text-align: left;
+      border-top: 1px solid nth($mz-darkpurples, 5);
+    }
+
     li > a {
       display: inline-block;
       background: transparent !important;
+      width: 100%;
     }
+  }
+
+  .navbar-right {
+    border-top: 1px solid nth($mz-darkpurples, 5);
+
+    li {
+      border-top: none;
+     }
+
+     #sign-up {
+      padding-top: 0;
+     }
   }
 }
 
@@ -103,12 +121,16 @@ body.transparent-main-nav nav.navbar {
 }
 
 
-
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   padding-bottom: 10px;
   border-bottom: 5px solid $navbar-active-link-color;
+
+  @media (max-width: $screen-xs-max) {
+    border-bottom: 0;
+    border-left: 5px solid $navbar-active-link-color;
+  }
 }
 
 // Navbar and branding size differs on mobile and tablet/desktop+, so
