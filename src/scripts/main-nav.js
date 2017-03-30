@@ -160,7 +160,7 @@
 
   function getSignUpElem () {
     var strVar = '';
-    strVar += '<span class="visible-xs-inline visible-sm-inline visible-md-inline visible-lg-inline btn btn-white">';
+    strVar += '<span class="visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline btn btn-white">';
     strVar += '  sign up';
     strVar += '<\/span>';
     return strVar;
