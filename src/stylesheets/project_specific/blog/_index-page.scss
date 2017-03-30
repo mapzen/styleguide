@@ -13,10 +13,10 @@ body.index_page {
   padding-top: $index-section-xs-padding;
   padding-bottom: $index-section-xs-padding;
   text-align: center;
+  overflow: hidden;
   @media (min-width: $screen-sm) {
     padding-top: $index-section-padding;
     padding-bottom: $index-section-padding;
-    overflow: hidden;
     position: relative;
     text-align: left;
   }
