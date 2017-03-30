@@ -139,11 +139,11 @@ body.transparent-main-nav nav.navbar {
   height: 40px;
   background-image: url('https://mapzen.com/common/styleguide/images/mapzen-logo-stacked.png');
   background-repeat: no-repeat;
-  background-position: 0 -40px;
   background-size: 130px;
+  background-position: 0 0;
 
   &:hover {
-    background-position: 0 0;
+    background-position: 0 -40px;
   }
 
   // Set the size and position of the logo at mobile screen
