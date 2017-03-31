@@ -1,6 +1,6 @@
 $index-section-height: 700px;
-$index-section-padding: 128px;
-$index-section-xs-padding: 72px;
+$index-section-padding: 144px;
+$index-section-xs-padding: 108px;
 $gradient-color: nth($mz-darkpurples, 1);
 
 // index page of mapzen.com
@@ -52,7 +52,7 @@ body.index_page {
     max-width: calc(100% + 300px);
     position: relative;
     overflow: hidden;
-    height: $index-section-height - $index-section-padding*3;
+    height: $index-section-height - $index-section-xs-padding*3.5;
     @media (min-width: $screen-sm) {
       margin-left: -300px;
       margin-right: 0;
@@ -62,10 +62,10 @@ body.index_page {
 
   .overflowing {
     div[class*='row']{
-      margin: 0 -5px;
+      margin: 0 -6px;
     }
     div[class*='col-']{
-      padding: 0 5px;
+      padding: 0 6px;
     }
     .image-box {
       border-radius: 5px;
@@ -83,7 +83,7 @@ body.index_page {
     }
 
     .full-height {
-      height: $index-section-height - $index-section-padding*3;
+      height: $index-section-height - $index-section-xs-padding*3.5;
       background-size: cover;
       @media (min-width: $screen-sm) {
         height: $index-section-height - $index-section-padding*2;
