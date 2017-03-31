@@ -1,6 +1,7 @@
 $index-section-height: 700px;
 $index-section-padding: 128px;
 $index-section-xs-padding: 72px;
+$gradient-color: nth($mz-darkpurples, 1);
 
 // index page of mapzen.com
 
@@ -162,7 +163,8 @@ body.index_page {
       height: $index-section-height - $index-section-padding*2;
       border-radius: 5px;
       content: ' ';
-      background: linear-gradient(rgba(255, 255, 255, 0) 25%, #1e0f33 97%);
+      background: -webkit-linear-gradient(rgba($gradient-color, 0) 25%, $gradient-color 97%);
+      background: linear-gradient(rgba($gradient-color, 0) 25%, $gradient-color 97%);
       position: absolute;
     }
 
