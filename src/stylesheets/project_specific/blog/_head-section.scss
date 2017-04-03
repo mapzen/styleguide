@@ -44,11 +44,5 @@ $index-section-xs-padding: 108px;
 
 .head-section > .index-section img {
   width: 100%;
-  margin-left: 0;
   height: auto;
-  @media (min-width: $screen-sm) {
-    width: 120%;
-    margin-left: -10%;
-    height: auto;
-  }
 }
