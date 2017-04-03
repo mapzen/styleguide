@@ -92,6 +92,7 @@ body.index_page {
     .half-height {
       height: (($index-section-height - $index-section-padding*3)/2) - 6px;
       margin-bottom: 12px;
+      background-size: cover;
       @media (min-width: $screen-sm) {
         height: ($index-section-height - $index-section-padding*2)/2 - 12px;;
         margin-bottom: 24px;
