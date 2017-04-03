@@ -31,7 +31,7 @@ body.index_page {
 
 .index-section.colored-bg {
   background-color: nth($mz-scarlets, 2);
-  background: url(/common/styleguide/images/placeholders/background-images/test.png) no-repeat center center fixed;
+  background: url(/common/styleguide/images/placeholders/background-images/5.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -41,26 +41,40 @@ body.index_page {
   }
 }
 
+.overflowing {
+  margin-left: -130px;
+  margin-right: -170px;
+  max-width: calc(100% + 300px);
+  position: relative;
+  height: $index-section-height - $index-section-xs-padding*3.5;
+  @media (min-width: $screen-sm) {
+    // margin-left: -300px;
+    // margin-right: 0;
+    height: $index-section-height - $index-section-padding*2;
+  }
+}
+
 .index-section {
   h1, h2, h3 {
     margin-top: 0;
   }
 
-  .overflowing {
-    margin-left: -130px;
-    margin-right: -170px;
-    max-width: calc(100% + 300px);
-    position: relative;
-    overflow: hidden;
-    height: $index-section-height - $index-section-xs-padding*3.5;
+  .overflowing-left {
+    @extend .overflowing;
     @media (min-width: $screen-sm) {
-      margin-left: -300px;
       margin-right: 0;
-      height: $index-section-height - $index-section-padding*2;
+      margin-left: -300px;
     }
   }
 
-  .overflowing {
+  .overflowing-right {
+    @extend .overflowing;
+    @media (min-width: $screen-sm) {
+      margin-left: 0;
+      margin-right: -300px;
+    }
+  }
+  .overflowing-left {
     div[class*='row']{
       margin: 0 -6px;
     }
