@@ -2,6 +2,7 @@ $index-section-height: 700px;
 $index-section-padding: 144px;
 $index-section-xs-padding: 108px;
 $gradient-color: nth($mz-darkpurples, 1);
+$overflow-extra-width: 300px;
 
 // index page of mapzen.com
 
@@ -42,15 +43,69 @@ body.index_page {
 }
 
 .overflowing {
-  margin-left: -130px;
-  margin-right: -170px;
-  max-width: calc(100% + 300px);
+  margin-left: -$overflow-extra-width*0.6;
+  margin-right: -$overflow-extra-width*0.4;
+  max-width: calc(100% + $overflow-extra-width);
   position: relative;
-  height: $index-section-height - $index-section-xs-padding*3.5;
+  height: $index-section-height - $index-section-xs-padding*2;
+  @media (max-width: $screen-sm) {
+    &:after {
+      content: ''
+    }
+  }
   @media (min-width: $screen-sm) {
-    // margin-left: -300px;
-    // margin-right: 0;
     height: $index-section-height - $index-section-padding*2;
+  }
+}
+
+.overflowing-left {
+  @extend .overflowing;
+  @media (max-width: $screen-md + $overflow-extra-width*2) and (min-width: $screen-sm) {
+    &:after {
+      content: ' ';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image:
+        linear-gradient(
+          to left,
+          rgba(255,255,255,0) 70%,
+          rgba(255,255,255,255) 90%
+      );
+      overflow: hidden;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    margin-right: 0;
+    margin-left: -$overflow-extra-width;
+  }
+}
+
+.overflowing-right {
+  @extend .overflowing;
+  @media (max-width: $screen-md + $overflow-extra-width*2) and (min-width: $screen-sm) {
+    &:after {
+      content: ' ';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image:
+        linear-gradient(
+        to right,
+        rgba(255,255,255, 0) 70%,
+        rgba(255,255,255, 150) 90%
+      );
+      overflow: hidden;
+    }
+  }
+  @media (min-width: $screen-sm) {
+    margin-left: 0;
+    margin-right: -$overflow-extra-width;
   }
 }
 
@@ -59,21 +114,6 @@ body.index_page {
     margin-top: 0;
   }
 
-  .overflowing-left {
-    @extend .overflowing;
-    @media (min-width: $screen-sm) {
-      margin-right: 0;
-      margin-left: -300px;
-    }
-  }
-
-  .overflowing-right {
-    @extend .overflowing;
-    @media (min-width: $screen-sm) {
-      margin-left: 0;
-      margin-right: -300px;
-    }
-  }
   .overflowing-left {
     div[class*='row']{
       margin: 0 -6px;
@@ -162,6 +202,7 @@ body.index_page {
     // Do not show on mobile
     width: 0;
     height: 0;
+    margin: 0 auto;
     @media (min-width: $screen-sm) {
       width: $index-section-height;
       height: $index-section-height - $index-section-padding*2;
