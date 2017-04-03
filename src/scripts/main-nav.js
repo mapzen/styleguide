@@ -166,24 +166,14 @@ function reflectUserState (id, nickname, imageurl, customLogoutCall) {
     var signupButton = document.querySelector('nav.navbar #sign-up');
 
     if (isThisDevPortalPage() && loginButton) {
-      // If this is developer portal related page
-      // Subpath changes based on user's login status.
-      // Subpath values are hard coded here
-      if(subPaths.length > 1) {
-        if (subPaths[1] === 'sign_in') {
-          removeClass(loginButton.parentNode, 'inactive');
-          addClass(loginButton.parentNode, 'active');
-        }
-        else if (subPaths[1] === 'sign_up') ; // addClass(signupButton.parentNode, 'active');
-        else if (subPaths[1] === 'api') ; // accept term page
-        else {
-          removeClass(loginButton.parentNode, 'inactive');
-          addClass(loginButton.parentNode, 'active');
-        }
-      }
-      else {
+      if (subPaths[1] === 'sign_in') {
+        // we're on the sign_in page so highlight sign_in button
         removeClass(loginButton.parentNode, 'inactive');
         addClass(loginButton.parentNode, 'active');
+      } else {
+        // not on sign_in, so make sure sign_in is not highlighted
+        removeClass(loginButton.parentNode, 'active');
+        addClass(loginButton.parentNode, 'inactive');
       }
     } else {
       // Get all of the navbar items
@@ -220,14 +210,17 @@ function reflectUserState (id, nickname, imageurl, customLogoutCall) {
   }
 
   function isThisDevPortalPage () {
-    if (subPaths[0] === 'developers') return true;
-    else return false;
+    if (subPaths[0] === 'developers'
+        || subPaths[0] === 'dashboard'
+        || subPaths[0] === 'settings') {
+      return true;
+    }
+    return false;
   }
 
   function isThisCustomExtractPage () {
     if (subPaths[1] === 'your-extracts') return true;
     else return false;
-
   }
 
   function addClass(el, className) {
