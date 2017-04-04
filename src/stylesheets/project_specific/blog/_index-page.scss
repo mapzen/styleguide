@@ -10,3 +10,32 @@ body.index_page {
     font-size: 48px;
   }
 }
+
+.index-section.expanded {
+  @media (min-width: $screen-sm) {
+    height: $index-section-height;
+  }
+}
+
+.index-section.colored-bg {
+  background-color: nth($mz-scarlets, 2);
+  background: url(/common/styleguide/images/background/index_sm.png) no-repeat center center fixed;
+  background-size: cover;
+  @media (min-width: $screen-sm) {
+    background: url(/common/styleguide/images/background/index_compressed.png) no-repeat center center fixed;
+    background-size: cover;
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    color: #ffffff;
+  }
+}
+
+.index-section {
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+}
+
+.btn-fluid {
+  min-width: 100%;
+}
