@@ -4,6 +4,7 @@ Contribution Guide
 ### Image assets
 
 - SVG is preferred over JPG, PNG, SVG is recommended to be optimized through [SVGO](https://github.com/svg/svgo).
+- When PNG is used, it is recommended to use a PNG compresser such as [TinyPNG](https://tinypng.com/). (There is [cli version of it](https://github.com/tinify/tinify-nodejs) too!)
 - Image assets that were replaced by datauri are going into `src/image-assets/`
 
 ### Accessiblity
