@@ -1,5 +1,15 @@
+$index-section-height: 700px;
+$index-section-padding: 144px;
+$index-section-xs-padding: 108px;
+
 @charset 'utf-8';
 
 // Mapzen common styles
 
 @import '../../styleguide.scss';
+@import './index-page';
+@import './index-overflowing-section';
+@import './index-head-section';
+@import './index-editor-snippet';
+@import './index-map-gallery';
+@import './index-project-list';

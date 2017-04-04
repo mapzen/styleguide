@@ -44,17 +44,10 @@ $sansSerif: 'Open Sans', sans-serif;
     white-space: normal; /* reset white-space decalred in parent*/
    /* display-inline emulation for IE7*/
    zoom: 1;
-   *display: inline;
+   display: inline;
 }
 
-.editable-input input{
-  height:30px;
-}
-.editable-input input:focus{
-  box-shadow: 0px;
-  border:1px solid #000;
-  outline:0px;
-}
+
 .editable-buttons .editable-cancel {
    margin-left: 7px;
 }
@@ -133,19 +126,6 @@ $sansSerif: 'Open Sans', sans-serif;
 }
 
 
-.editable-cancel{
-  height:30px;
-  font-family: $sansSerif;
-  font-size:14px;
-  border-radius: 0px;
-}
-
-.editable-submit{
-  height:30px;
-  font-family: $sansSerif;
-  font-size:14px;
-  border-radius: 0px;
-}
 /* IOS-style clear button for text inputs */
 .editable-clear-x {
    background: url('../images/vendor/clear.png') center center no-repeat;

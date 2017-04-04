@@ -68,6 +68,8 @@
       /*tweaked color to green*/
       background-color: nth($mz-darkpurples, 1);
       border: 1px solid nth($mz-darkpurples, 1);
+
+      border-radius: $border-radius-value;
       color: #fff;
 
       width: 100%;
@@ -256,6 +258,7 @@
       margin: 5px;
       padding: 0 5px;
       border:1px solid #000;
+      border-radius: $border-radius-value;
       &.selected {
         background: $mz-gray;
       }
@@ -305,8 +308,8 @@
     font-weight:400;
   }
   .modal-content{
-    border-radius: 0px;
-    padding:20px;
+    border-radius: $border-radius-value;
+    padding: 20px;
     display:inline-block;
    // width:100%;
   }
@@ -316,12 +319,20 @@
   .no-padding {
     padding: 0px;
   }
+  .editable-input input {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 30px;
+  }
+  .editable-submit, .editable-cancel {
+    height: 30px;
+    font-size: 14px;
+    border-radius: $border-radius-value;
+    border: 1px solid #000;
+    @extend .btn-inverse;
+  }
 }
 
-.editable-input input {
-  padding-top: 0;
-  padding-bottom: 0;
-}
 
 .block-body{
   width:100%;

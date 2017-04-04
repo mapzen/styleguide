@@ -1,0 +1,63 @@
+$overflow-extra-width: 300px;
+
+.overflowing {
+  margin-left: -$overflow-extra-width*0.6;
+  margin-right: -$overflow-extra-width*0.4;
+  max-width: calc(100% + $overflow-extra-width);
+  position: relative;
+  @media (min-width: $screen-sm) {
+    height: $index-section-height - $index-section-padding*2;
+  }
+}
+
+.overflowing-left {
+  @extend .overflowing;
+  @media (max-width: $screen-md + $overflow-extra-width*2) and (min-width: $screen-sm) {
+    &:after {
+      content: ' ';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image:
+        linear-gradient(
+          to left,
+          rgba(255,255,255,0) 60%,
+          rgba(255,255,255,255) 90%
+      );
+      overflow: hidden;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    margin-right: 0;
+    margin-left: -$overflow-extra-width;
+  }
+}
+
+.overflowing-right {
+  @extend .overflowing;
+  margin: 0 0;
+  @media (max-width: $screen-md + $overflow-extra-width*2) and (min-width: $screen-sm) {
+    &:after {
+      content: ' ';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image:
+        linear-gradient(
+        to right,
+        rgba(255,255,255, 0) 60%,
+        rgba(255,255,255, 150) 90%
+      );
+      overflow: hidden;
+    }
+  }
+  @media (min-width: $screen-sm) {
+    margin-left: 0;
+    margin-right: -$overflow-extra-width;
+  }
+}

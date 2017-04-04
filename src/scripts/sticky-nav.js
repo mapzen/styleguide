@@ -32,6 +32,7 @@
   var ALWAYS_SHOW_BELOW_Y_POSITION = 60
   var SHOW_AFTER_SCROLL_UP_DISTANCE = 10
   var HIDE_AFTER_SCROLL_DOWN_DISTANCE = 4
+  var TRANSITION_BELOW_Y_POSITION = 120
 
   // Internal variables
   var windowPreviousYPosition
@@ -40,6 +41,9 @@
   var scrollDirection = null
   var previousScrollDirection = null
   var scrollCounterLifespanTimer
+
+  // Navbar is slightly different on index page
+  var IS_INDEX_PAGE = document.querySelector('body.index_page') ? true : false
 
   // Bootstrap: cache element for dropdown menu
   var bootstrapMenu = document.getElementsByClassName('navbar-collapse')[0]
@@ -64,7 +68,17 @@
     bootstrapMenuButton.blur()
   }
 
+  function showTransparentMainNav () {
+    document.body.classList.add('transparent-main-nav')
+  }
+  function hideTransparentMainNav () {
+    document.body.classList.remove('transparent-main-nav')
+  }
+
+
   // Initialize
+
+  if (IS_INDEX_PAGE) showTransparentMainNav()
 
   // Explicitly declare that the main nav should be
   // fixed in place when the page is loaded
@@ -99,9 +113,11 @@
       scrollDistance += Math.abs(windowYPosition - windowPreviousYPosition)
     }
 
-    // Always show main nav when windowY is at a set position
-    if (windowYPosition < ALWAYS_SHOW_BELOW_Y_POSITION) {
-      return showFixedMainNav()
+    // Always show transparent style when nav is near the top of index page
+    if (windowYPosition < TRANSITION_BELOW_Y_POSITION && IS_INDEX_PAGE) {
+      showTransparentMainNav()
+    } else {
+      hideTransparentMainNav()
     }
 
     // Set a timer to expire scroll counter after a set time
@@ -110,11 +126,16 @@
       resetScrollCounters()
     }, SCROLL_COUNTER_LIFESPAN)
 
-    // As user scrolls up, reveal main navigation
-    // or hide it, as user scrolls back down
-    if ((scrollDirection === 'up' && scrollDistance >= SHOW_AFTER_SCROLL_UP_DISTANCE) && windowYPosition > ALWAYS_SHOW_BELOW_Y_POSITION) {
+    if (windowYPosition < ALWAYS_SHOW_BELOW_Y_POSITION
+        || (scrollDirection === 'up'
+            && scrollDistance >= SHOW_AFTER_SCROLL_UP_DISTANCE
+            && windowYPosition > ALWAYS_SHOW_BELOW_Y_POSITION)) {
+      // Show nav if at top of page or scrolling up
       showFixedMainNav()
-    } else if (scrollDirection === 'down' && scrollDistance >= HIDE_AFTER_SCROLL_DOWN_DISTANCE) {
+    } else if (scrollDirection === 'down'
+               && scrollDistance >= HIDE_AFTER_SCROLL_DOWN_DISTANCE
+               && !IS_INDEX_PAGE) {
+      // Hide nav if scrolling down
       hideFixedMainNav()
     }
   });

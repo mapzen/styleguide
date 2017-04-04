@@ -52,16 +52,16 @@ $container-large-desktop: 960px;
 $navbar-default-bg: rgba(nth($mz-darkpurples, 1), 0.9);
 $navbar-margin-bottom: 0;
 $navbar-border-radius: 0;
-$navbar-default-link-color: nth($mz-darkpurples, 5);
-$navbar-default-link-hover-color: white;
+$navbar-default-link-color: white;
+$navbar-default-link-hover-color: nth($mz-darkpurples, 5);
 $navbar-default-link-hover-bg: transparent;
 $navbar-default-link-active-bg: transparent;
-$navbar-default-link-active-color: white;
+$navbar-default-link-active-color: nth($mz-darkpurples, 5);
 $navbar-default-toggle-hover-bg: transparent;
 $navbar-default-toggle-border-color: transparent;
 $navbar-active-link-color: nth($mz-scarlets, 2);
 $nav-link-padding: 10px 12px;
-$navbar-default-toggle-icon-bar-bg: white;
+$navbar-default-toggle-icon-bar-bg: nth($mz-darkpurples, 5);
 
 
 // Breadcrumbs

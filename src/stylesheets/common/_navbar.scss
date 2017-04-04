@@ -82,10 +82,18 @@ body {
 // Overwrite Bootstrap styles by matching selectors
 .navbar {
   border: 0; // Overwrite 1px border width
+  transition: 0.8s;
+  -webkit-transition:  0.8s;
 }
 .navbar-nav > li > a {
   line-height: 26px; // Make link fit the height of the navbar
   font-size: $body-small;
+}
+
+
+// Show transparent navbar when anchored to top (used on home page only atm)
+body.transparent-main-nav nav.navbar {
+  background: transparent;
 }
 
 
@@ -131,11 +139,11 @@ body {
   height: 40px;
   background-image: url('https://mapzen.com/common/styleguide/images/mapzen-logo-stacked.png');
   background-repeat: no-repeat;
-  background-position: 0 -40px;
   background-size: 130px;
+  background-position: 0 0;
 
-  &:hover {    
-    background-position: 0 0;   
+  &:hover {
+    background-position: 0 -40px;
   }
 
   // Set the size and position of the logo at mobile screen
@@ -174,12 +182,24 @@ body {
   line-height: 26px; //cheap way to fix render problem
 }
 
-.navbar-nav > li > a > #login-profile {
+.navbar-nav > li > a > .login-profile-github {
   width: 22px;
   height: 22px;
   float: left;
   position: relative;
   margin-top: 2px;
+  border-radius: 50%;
+  border: 1px solid nth($mz-darkpurples, 5);
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.navbar-nav > li > a > .login-profile-default {
+  width: 28px;
+  height: 28px;
+  float: left;
+  position: relative;
+  margin-top: -2px;
   border-radius: 50%;
   border: 1px solid nth($mz-darkpurples, 5);
   box-sizing: border-box;

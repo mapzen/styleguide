@@ -6,12 +6,14 @@
 // Developer specific styles
 @import 'helper';
 
-// Page-specific styles
+@import 'vendor/jquery-editable';
+@import 'vendor/bootstrap_sortable';
 
+// Page-specific styles
 @import 'admin';
 @import 'developer-dashboard';
 @import 'developer-graph';
 @import 'developer-login';
+@import 'custom-editable';
+@import 'password-manager';
 
-@import 'vendor/jquery-editable';
-@import 'vendor/bootstrap_sortable';
