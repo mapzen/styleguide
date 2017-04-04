@@ -27,11 +27,12 @@ body.index_page {
 
 .index-section.colored-bg {
   background-color: nth($mz-scarlets, 2);
-  background: url(/common/styleguide/images/placeholders/background-images/5.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background: url(/common/styleguide/images/background/index_sm.png) no-repeat center center fixed;
   background-size: cover;
+  @media (min-width: $screen-sm) {
+    background: url(/common/styleguide/images/background/index_compressed.png) no-repeat center center fixed;
+    background-size: cover;
+  }
   h1, h2, h3, h4, h5, h6, p {
     color: #ffffff;
   }
