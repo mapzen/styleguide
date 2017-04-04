@@ -1,4 +1,4 @@
-.octocat{
+.octocat {
   width: 200px;
   height: 200px;
   background-repeat:no-repeat;
@@ -51,11 +51,3 @@
   background-color: nth($mz-darkpurples, 5);
   text-transform: uppercase;
 }
-
-.form-control[readonly] {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  border-bottom: 2px solid nth($mz-darkpurples, 2);
-}
-
