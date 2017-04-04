@@ -44,7 +44,7 @@
     developerRequest.onload = function() {
       if (developerRequest.status >= 200 && developerRequest.status < 400) {
         var data = JSON.parse(developerRequest.responseText);
-        reflectUserState(data.id, data.nickname, data.avatar);
+        reflectUserState(data.id, data.nickname, data.avatar, data.admin);
       } else {
         loginButton.parentNode.innerHTML = getNotLoginElem();
         signupButton.innerHTML = getSignUpElem();
@@ -58,9 +58,9 @@
     developerRequest.send();
   }
 
-function reflectUserState (id, nickname, imageurl, customLogoutCall) {
+function reflectUserState (id, nickname, imageurl, admin, customLogoutCall) {
     if (id || (nickname && imageurl)) {
-      loginButton.parentNode.innerHTML = getLoginElem(id, nickname, imageurl);
+      loginButton.parentNode.innerHTML = getLoginElem(id, nickname, imageurl, admin);
       // After 'sign out element' in the dropdown was injected
       var signOutElem = document.querySelector('nav.navbar #sign-out');
       signOutElem.addEventListener('click', customLogoutCall||makeLogoutCall);
@@ -112,7 +112,7 @@ function reflectUserState (id, nickname, imageurl, customLogoutCall) {
     }
   }
 
-  function getLoginElem (id, nickname, githubAvatar) {
+  function getLoginElem (id, nickname, githubAvatar, admin) {
     // default to showing 'account' and default avatar
     var avatarImageURL = '/common/styleguide/images/default-avatar.svg';
     var label = 'Account';
@@ -136,10 +136,17 @@ function reflectUserState (id, nickname, imageurl, customLogoutCall) {
                + ' </div>'
                + ' <div class="login-txt"> ' + label + ' <\/div>'
                + '</a>'
-               + '<ul class="dropdown-menu">'
-               + '  <li><a href="/dashboard">Dashboard</a></li>'
+               + '<ul class="dropdown-menu">';
+
+      if (admin) {
+        strVar += '  <li><a href="/admin/">Admin</a></li>';
+      }
+
+        strVar +='  <li><a href="/dashboard">Dashboard</a></li>'
+               + '  <li><a href="/settings">Settings</a></li>'
                + '  <li id="sign-out"><a href="#"> Logout</a></li>'
                + '</ul>';
+
     return strVar;
   }
 
