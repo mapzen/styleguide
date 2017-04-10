@@ -20,6 +20,7 @@ $overflow-extra-width: 300px;
       position: absolute;
       left: 0;
       top: 0;
+      pointer-events: none;
       background-image:
         linear-gradient(
           to left,
@@ -47,6 +48,7 @@ $overflow-extra-width: 300px;
       position: absolute;
       left: 0;
       top: 0;
+      pointer-events: none;
       background-image:
         linear-gradient(
         to right,
