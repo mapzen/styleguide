@@ -1,7 +1,7 @@
 $head-section-xs-height: 480px;
 $head-section-height: 800px;
 
-.head-section {
+.hero-section {
   position: relative;
   /* This number must be edited after real image is kicked in */
   height: $head-section-xs-height;
@@ -10,11 +10,11 @@ $head-section-height: 800px;
   }
 }
 
-.head-section > .index-section {
+.hero-section > .full-section {
   height: 100%;
   overflow: hidden;
   @media (min-width: $screen-sm) {
-    padding-top: $index-section-padding;
+    padding-top: $section-padding;
     padding-bottom: 0;
     position: absolute;
     top: 0;
@@ -22,7 +22,7 @@ $head-section-height: 800px;
   }
 }
 
-.head-section:after {
+.hero-section:after {
   content: ' ';
   display: block;
   background: -webkit-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Safari 5.1 to 6.0 */
@@ -39,7 +39,7 @@ $head-section-height: 800px;
   }
 }
 
-.head-section > .index-section img {
+.hero-section > .full-section img {
   width: 100%;
   height: auto;
 }

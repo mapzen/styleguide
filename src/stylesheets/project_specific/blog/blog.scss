@@ -1,6 +1,6 @@
-$index-section-height: 700px;
-$index-section-padding: 144px;
-$index-section-xs-padding: 108px;
+$section-height: 700px;
+$section-padding: 144px;
+$section-xs-padding: 108px;
 
 @charset 'utf-8';
 
@@ -9,7 +9,8 @@ $index-section-xs-padding: 108px;
 @import '../../styleguide.scss';
 @import './index-page';
 @import './index-overflowing-section';
-@import './index-head-section';
+@import './index-hero-section';
 @import './index-editor-snippet';
 @import './index-map-gallery';
 @import './index-project-list';
+@import './section';
