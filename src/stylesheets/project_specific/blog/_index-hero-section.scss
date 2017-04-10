@@ -1,0 +1,45 @@
+$head-section-xs-height: 480px;
+$head-section-height: 800px;
+
+.hero-section {
+  position: relative;
+  /* This number must be edited after real image is kicked in */
+  height: $head-section-xs-height;
+  @media (min-width: $screen-sm) {
+    height: $head-section-height;
+  }
+}
+
+.hero-section > .full-section {
+  height: 100%;
+  overflow: hidden;
+  @media (min-width: $screen-sm) {
+    padding-top: $section-padding;
+    padding-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.hero-section:after {
+  content: ' ';
+  display: block;
+  background: -webkit-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Opera 11.1 to 12.0 */
+  // background: -moz-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* Standard syntax */
+  width: 100%;
+  height: $head-section-xs-height;
+  position: absolute;
+  left: 0;
+  top: 0;
+  @media (min-width: $screen-sm) {
+    height: $head-section-height;
+  }
+}
+
+.hero-section > .full-section img {
+  width: 100%;
+  height: auto;
+}
