@@ -82,6 +82,31 @@ body {
       background: transparent !important;
       width: 100%;
     }
+
+    // Open dropdown menu by default on mobile
+    .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: transparent;
+      border: 0;
+      box-shadow: none;
+      display: block;
+      > li > a,
+      .dropdown-header {
+        padding: 5px 15px 5px 25px;
+      }
+      > li > a {
+        line-height: $line-height-computed;
+        color: white;
+        &:hover,
+        &:focus {
+          background-image: none;
+        }
+      }
+    }
+
   }
 
   .navbar-right {
