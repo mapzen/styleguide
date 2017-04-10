@@ -6,7 +6,7 @@ $overflow-extra-width: 300px;
   max-width: calc(100% + $overflow-extra-width);
   position: relative;
   @media (min-width: $screen-sm) {
-    height: $index-section-height - $index-section-padding*2;
+    height: $section-height - $section-padding*2;
   }
 }
 
