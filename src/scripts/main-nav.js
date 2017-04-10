@@ -21,7 +21,7 @@
   var subPaths = getSubPaths();
 
   if (!loginButton) {
-    putActiveTab();
+    putActiveTab(false);
     return;
   }
 
@@ -58,17 +58,17 @@
     developerRequest.send();
   }
 
-function reflectUserState (id, nickname, imageurl, admin, customLogoutCall) {
+  function reflectUserState (id, nickname, imageurl, admin, customLogoutCall) {
     if (id || (nickname && imageurl)) {
       loginButton.parentNode.innerHTML = getLoginElem(id, nickname, imageurl, admin);
       // After 'sign out element' in the dropdown was injected
       var signOutElem = document.querySelector('nav.navbar #sign-out');
       signOutElem.addEventListener('click', customLogoutCall||makeLogoutCall);
       hideSignUpButton();
-      putActiveTab();
+      putActiveTab(true);
     } else {
       showLogOutStatus();
-      putActiveTab();
+      putActiveTab(false);
     }
   }
 
@@ -138,11 +138,11 @@ function reflectUserState (id, nickname, imageurl, admin, customLogoutCall) {
                + '</a>'
                + '<ul class="dropdown-menu">';
 
-      if (admin) {
-        strVar += '  <li><a href="/admin/">Admin</a></li>';
-      }
+    if (admin) {
+      strVar   +='  <li><a href="/admin/">Admin</a></li>';
+    }
 
-        strVar +='  <li><a href="/dashboard">Dashboard</a></li>'
+    strVar     +='  <li><a href="/dashboard">Dashboard</a></li>'
                + '  <li><a href="/settings">Settings</a></li>'
                + '  <li id="sign-out"><a href="#"> Logout</a></li>'
                + '</ul>';
@@ -166,15 +166,15 @@ function reflectUserState (id, nickname, imageurl, admin, customLogoutCall) {
     return strVar;
   }
 
-  function putActiveTab () {
+  function putActiveTab (signedIn) {
     var navItems = document.querySelectorAll('.navbar-nav>li');
     // After dom manipulation
     var loginButton = document.querySelector('nav.navbar #sign-in');
     var signupButton = document.querySelector('nav.navbar #sign-up');
 
     if (isThisDevPortalPage() && loginButton) {
-      if (subPaths[1] === 'sign_in') {
-        // we're on the sign_in page so highlight sign_in button
+      if (subPaths[1] === 'sign_in' || signedIn) {
+        // we're on the sign_in page or signed in so highlight sign_in/account button
         removeClass(loginButton.parentNode, 'inactive');
         addClass(loginButton.parentNode, 'active');
       } else {
