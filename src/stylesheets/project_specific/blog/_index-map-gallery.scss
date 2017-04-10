@@ -22,17 +22,17 @@
   }
 
   .full-height {
-    height: $index-section-height - $index-section-xs-padding*3.5;
+    height: $section-height - $section-xs-padding*3.5;
     @media (min-width: $screen-sm) {
-      height: $index-section-height - $index-section-padding*2;
+      height: $section-height - $section-padding*2;
     }
   }
   .half-height {
-    height: (($index-section-height - $index-section-padding*3)/2) - 6px;
+    height: (($section-height - $section-padding*3)/2) - 6px;
     margin-bottom: 12px;
 
     @media (min-width: $screen-sm) {
-      height: ($index-section-height - $index-section-padding*2)/2 - 12px;;
+      height: ($section-height - $section-padding*2)/2 - 12px;;
       margin-bottom: 24px;
     }
   }
@@ -70,14 +70,13 @@
       background-image: url(/common/styleguide/images/maps/bubble-wrap@2x.png);
     }
   }
-
 }
 
 .text-box-wrapper {
   position: relative;
   height: auto;
   @media (min-width: $screen-sm) {
-    height: $index-section-height - $index-section-padding*2;
+    height: $section-height - $section-padding*2;
   }
 }
 

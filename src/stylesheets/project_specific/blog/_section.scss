@@ -1,0 +1,37 @@
+.full-section {
+  padding-top: $section-xs-padding;
+  padding-bottom: $section-xs-padding;
+  text-align: center;
+  overflow: hidden;
+  @media (min-width: $screen-sm) {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    position: relative;
+    text-align: left;
+  }
+}
+
+.full-section.expanded {
+  @media (min-width: $screen-sm) {
+    height: $section-height;
+  }
+}
+
+.full-section.colored-bg {
+  background-color: nth($mz-scarlets, 2);
+  background: url(/common/styleguide/images/background/index_sm.png) no-repeat center center fixed;
+  background-size: cover;
+  @media (min-width: $screen-sm) {
+    background: url(/common/styleguide/images/background/index_compressed.png) no-repeat center center fixed;
+    background-size: cover;
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    color: #ffffff;
+  }
+}
+
+.full-section {
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+}
