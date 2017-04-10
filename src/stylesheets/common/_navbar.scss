@@ -261,3 +261,42 @@ body.transparent-main-nav nav.navbar {
     text-align: left;
   }
 }
+
+// Hamburger to X animation
+.navbar-toggle {
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform: 10% 10%;
+    -moz-transform: 10% 10%;
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform: 10% 90%;
+    -moz-transform: 10% 90%;
+    transform-origin: 10% 90%;
+  }
+
+  &.collapsed {
+    .top-bar,
+    .bottom-bar {
+     -webkit-transform: rotate(0);
+     -moz-transform: rotate(0);
+      transform: rotate(0);
+    }
+    .middle-bar {
+      opacity: 1;
+    }
+  }
+}
