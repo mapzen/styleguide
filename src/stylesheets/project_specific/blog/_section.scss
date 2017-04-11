@@ -28,6 +28,12 @@
   }
 }
 
+.full-section.with-background {
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+}
+
 .purple-contour {
   background: url(/common/styleguide/images/background/index_sm.png);
   @media (min-width: $screen-sm) {
@@ -39,11 +45,5 @@
   background: url(/common/styleguide/images/placeholders/background-images/10.png);
   @media (min-width: $screen-sm) {
     background: url(/common/styleguide/images/placeholders/background-images/10.png);
-  }
-}
-
-.full-section {
-  h1, h2, h3 {
-    margin-top: 0;
   }
 }
