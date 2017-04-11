@@ -1,20 +1,37 @@
 $hero-section-xs-height: 480px;
 $hero-section-height: 800px;
 
-.hero-section {
+.hero-section-wrapper {
   position: relative;
 }
 
-.hero-section.fixed-height {
+/* Hero section wrapper needs height property for its pseudo class (gradient) */
+.hero-section-wrapper.fixed-height {
   height: $hero-section-xs-height;
   @media (min-width: $screen-sm) {
     height: $hero-section-height;
   }
 }
 
-.hero-section > .full-section {
+.hero-section-wrapper:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+  linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 95%,
+    rgba(255, 255, 255, 255) 100%
+  );
+}
+
+.hero-section-wrapper > .hero-section {
   height: 100%;
   overflow: hidden;
+  padding-top: $section-xs-padding;
   @media (min-width: $screen-sm) {
     padding-top: $section-padding;
     padding-bottom: 0;
@@ -24,26 +41,7 @@ $hero-section-height: 800px;
   }
 }
 
-.hero-section:after {
-  content: ' ';
-  display: block;
-  background-image:
-  linear-gradient(
-    to bottom,
-    rgba(255,255,255,0) 95%,
-    rgba(255, 255, 255, 255) 100%
-  );
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  @media (min-width: $screen-sm) {
-    height: 100%;
-  }
-}
-
-.hero-section > .full-section img {
+.hero-section-wrapper > .hero-section img {
   width: 100%;
   height: auto;
 }
