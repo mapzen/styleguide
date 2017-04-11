@@ -3,7 +3,9 @@ $head-section-height: 800px;
 
 .hero-section {
   position: relative;
-  /* This number must be edited after real image is kicked in */
+}
+
+.hero-section.fixed-height {
   height: $head-section-xs-height;
   @media (min-width: $screen-sm) {
     height: $head-section-height;
@@ -30,12 +32,12 @@ $head-section-height: 800px;
   // background: -moz-linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* For Firefox 3.6 to 15 */
   background: linear-gradient(rgba(255,255,255,0) 95%, #FFFFFF); /* Standard syntax */
   width: 100%;
-  height: $head-section-xs-height;
+  height: 100%;
   position: absolute;
   left: 0;
   top: 0;
   @media (min-width: $screen-sm) {
-    height: $head-section-height;
+    height: 100%;
   }
 }
 
