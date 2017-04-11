@@ -162,11 +162,12 @@ body.transparent-main-nav nav.navbar {
 // there is some more involved CSS overriding here
 .navbar-brand {
   // Match container edge
-  padding: 5px 30px 11px 15px;
+  padding: 9px 10px;
 
   // Branding size at tablet/desktop screen
   @media (min-width: $screen-sm) {
     height: 100%;
+    padding: 5px 30px 11px 15px;
 
     // When the navbar is forced to be full-width
     // of window, apply a padding on the left
