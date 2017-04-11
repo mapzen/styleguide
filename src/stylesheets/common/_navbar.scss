@@ -74,7 +74,7 @@ body {
 
     li {
       text-align: left;
-      border-top: 1px solid nth($mz-darkpurples, 5);
+      border-top: 1px solid nth($mz-darkpurples, 3);
     }
 
     li > a {
@@ -110,7 +110,7 @@ body {
   }
 
   .navbar-right {
-    border-top: 1px solid nth($mz-darkpurples, 5);
+    border-top: 1px solid nth($mz-darkpurples, 3);
 
     li {
       border-top: none;
