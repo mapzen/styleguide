@@ -122,6 +122,13 @@ input[type="search"] + .btn {
   }
 }
 
+.btn-flexible {
+  width: 100%;
+  @media (min-width: $screen-sm) {
+    width: auto;
+  }
+}
+
 // Button groups
 // Giving margin-right to the buttons
 .btn-group .btn {
