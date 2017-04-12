@@ -206,38 +206,35 @@ input[type="range"] {
   -webkit-appearance: none;
   cursor: pointer;
   padding: 2px;
-  height: 5px;
-  background-color: nth($mz-darkpurples, 1);
+  background-color: red;
   border: none;
-  border-radius: 3px;
+  border-radius: 50%;
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 15px;
-  width: 25px;
-  border-radius: 10px;
+  width: 15px;
+  border-radius: 50%;
   background: nth($mz-darkpurples, 1);
 }
 input[type="range"]::-moz-range-thumb {
   height: 15px;
-  width: 25px;
-  border-radius: 10px;
+  width: 15px;
+  border-radius: 50%;
   background: nth($mz-darkpurples, 1);
 }
 input[type="range"]::-ms-thumb {
   height: 15px;
-  width: 25px;
-  border-radius: 10px;
+  width: 15px;
+  border-radius: 50%;
   background: nth($mz-darkpurples, 1);
 }
 input[type=range]::-moz-range-track {
   opacity: 0;
 }
-input[type="range"]::-ms-fill-lower{
-  
-}
+input[type="range"]::-ms-fill-lower,
 input[type="range"]::-ms-fill-upper {
-
+  display: none;
 }
 input[type="range"]::-ms-track,
 input[type="range"]::-ms-ticks-after,
