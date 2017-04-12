@@ -1,83 +1,90 @@
-.index-section {
-  .map-gallery {
-    div[class*='row']{
-      margin: 0 -6px;
-    }
-    div[class*='col-']{
-      padding: 0 6px;
-    }
-    .image-box {
-      border-radius: 5px;
-      position: relative;
-      width: 100%;
-      .name {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.3);
-        color: #ffffff;
-        padding: 0 12px;
-        border-radius: 0 0 5px 5px;
-      }
-    }
-
-    .full-height {
-      height: $index-section-height - $index-section-xs-padding*3.5;
-      background-size: cover;
-      @media (min-width: $screen-sm) {
-        height: $index-section-height - $index-section-padding*2;
-      }
-    }
-    .half-height {
-      height: (($index-section-height - $index-section-padding*3)/2) - 6px;
-      margin-bottom: 12px;
-      background-size: cover;
-      @media (min-width: $screen-sm) {
-        height: ($index-section-height - $index-section-padding*2)/2 - 12px;;
-        margin-bottom: 24px;
-      }
-    }
-
-    .refill {
-      background-image: url(/common/styleguide/images/maps/refill.png);
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(/common/styleguide/images/maps/refill@2x.png);
-      }
-    }
-    .tron {
-      background-image: url(/common/styleguide/images/maps/tron.png);
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(/common/styleguide/images/maps/tron@2x.png);
-      }
-    }
-    .walkabout {
-      background-image: url(/common/styleguide/images/maps/walkabout.png);
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(/common/styleguide/images/maps/walkabout@2x.png);
-      }
-    }
-    .bubble {
-      background-image: url(/common/styleguide/images/maps/bubble-wrap.png);
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url(/common/styleguide/images/maps/bubble-wrap@2x.png);
-      }
-    }
-
+.map-gallery {
+  div[class*='row']{
+    margin: 0 -6px;
   }
-
-  .text-box-wrapper {
+  div[class*='col-']{
+    padding: 0 6px;
+  }
+  .image-box {
+    border-radius: 5px;
     position: relative;
-    height: auto;
-    @media (min-width: $screen-sm) {
-      height: $index-section-height - $index-section-padding*2;
+    width: 100%;
+    overflow: hidden;
+    .name {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+      padding: 0 12px;
+      border-radius: 0 0 5px 5px;
     }
   }
 
-  .text-box-wrapper > .text-box {
+  .full-height {
+    height: $section-height - $section-xs-padding*3.5;
     @media (min-width: $screen-sm) {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      height: $section-height - $section-padding*2;
+    }
+  }
+  .half-height {
+    height: (($section-height - $section-padding*3)/2) - 6px;
+    margin-bottom: 12px;
+
+    @media (min-width: $screen-sm) {
+      height: ($section-height - $section-padding*2)/2 - 12px;;
+      margin-bottom: 24px;
+    }
+  }
+
+  .map-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  .refill {
+    background-image: url(/common/styleguide/images/maps/refill.png);
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url(/common/styleguide/images/maps/refill@2x.png);
+    }
+  }
+  .tron {
+    background-image: url(/common/styleguide/images/maps/tron.png);
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url(/common/styleguide/images/maps/tron@2x.png);
+    }
+  }
+  .walkabout {
+    background-image: url(/common/styleguide/images/maps/walkabout.png);
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url(/common/styleguide/images/maps/walkabout@2x.png);
+    }
+  }
+  .bubble {
+    background-image: url(/common/styleguide/images/maps/bubble-wrap.png);
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url(/common/styleguide/images/maps/bubble-wrap@2x.png);
     }
   }
 }
+
+.text-box-wrapper {
+  position: relative;
+  height: auto;
+  @media (min-width: $screen-sm) {
+    height: $section-height - $section-padding*2;
+  }
+}
+
+.text-box-wrapper > .text-box {
+  @media (min-width: $screen-sm) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+

@@ -1,0 +1,58 @@
+.full-section {
+  padding-top: $section-xs-padding;
+  padding-bottom: $section-xs-padding;
+  text-align: center;
+  overflow: hidden;
+  @media (min-width: $screen-sm) {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    position: relative;
+    text-align: left;
+  }
+}
+
+.full-section.fixed-height {
+  @media (min-width: $screen-sm) {
+    height: $section-height;
+  }
+}
+
+
+/* For sections with contour image background */
+/* This section doesn't have default background-image */
+/* background-image can be added through additional image below */
+
+.with-background {
+  background-color: nth($mz-scarlets, 2);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  @media (min-width: $screen-sm) {
+    background-attachment: fixed;
+  }
+}
+
+.with-background {
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: #ffffff;
+  }
+}
+
+
+.purple-contour {
+  background-image: url(/common/styleguide/images/background/index_sm.png);
+  @media (min-width: $screen-sm) {
+    background-image: url(/common/styleguide/images/background/index_compressed.png);
+  }
+}
+
+.scarlet-contour {
+  background-image: url(/common/styleguide/images/placeholders/background-images/10.png); /* TO DO: This needs to be replaced with real image */
+  @media (min-width: $screen-sm) {
+    background-image: url(/common/styleguide/images/placeholders/background-images/10.png);
+  }
+}

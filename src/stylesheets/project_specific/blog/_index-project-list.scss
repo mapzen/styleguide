@@ -6,9 +6,9 @@ $list-row-height: 200px;
   }
 
   .project > [class*='col-'] {
-    height: 200px;
-    @media (max-width: $screen-sm) {
-      height: auto;
+    height: auto;
+    @media (min-width: $screen-sm) {
+      height: 200px;
     }
   }
 

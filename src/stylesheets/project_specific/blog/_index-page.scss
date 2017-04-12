@@ -1,46 +1,6 @@
-$gradient-color: nth($mz-darkpurples, 1);
-// index page of mapzen.com
-
 // Margin removed to support transparent navbar
 body.index_page {
   margin-top: 0;
-}
-
-.index-section {
-  padding-top: $index-section-xs-padding;
-  padding-bottom: $index-section-xs-padding;
-  text-align: center;
-  overflow: hidden;
-  @media (min-width: $screen-sm) {
-    padding-top: $index-section-padding;
-    padding-bottom: $index-section-padding;
-    position: relative;
-    text-align: left;
-  }
-}
-
-.index-section.expanded {
-  @media (min-width: $screen-sm) {
-    height: $index-section-height;
-  }
-}
-
-.index-section.colored-bg {
-  background-color: nth($mz-scarlets, 2);
-  background: url(/common/styleguide/images/placeholders/background-images/5.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  h1, h2, h3, h4, h5, h6, p {
-    color: #ffffff;
-  }
-}
-
-.index-section {
-  h1, h2, h3 {
-    margin-top: 0;
-  }
 }
 
 .btn-fluid {
