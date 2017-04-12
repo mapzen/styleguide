@@ -206,9 +206,10 @@ input[type="range"] {
   -webkit-appearance: none;
   cursor: pointer;
   padding: 2px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 15px;
+  height: 5px;
+  background-color: nth($mz-darkpurples, 1);
+  border: none;
+  border-radius: 3px;
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -232,9 +233,11 @@ input[type="range"]::-ms-thumb {
 input[type=range]::-moz-range-track {
   opacity: 0;
 }
-input[type="range"]::-ms-fill-lower,
+input[type="range"]::-ms-fill-lower{
+  
+}
 input[type="range"]::-ms-fill-upper {
-  display: none;
+
 }
 input[type="range"]::-ms-track,
 input[type="range"]::-ms-ticks-after,
