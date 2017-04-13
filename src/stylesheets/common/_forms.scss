@@ -204,7 +204,6 @@ input[type="radio"]:checked:hover + *:before {
 input[type="range"] {
   -webkit-appearance: none;
   cursor: pointer;
-  padding: 2px;
   background-color: nth($mz-darkpurples, 5);
   border-radius: 25px;
   height: 5px;
