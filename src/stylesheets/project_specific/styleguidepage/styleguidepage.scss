@@ -107,75 +107,100 @@ pre[class*="language-"] {
 }
 
 //Classes for styleguide
+.color-swatch {
+  position: relative;
+  height: 130px;
+  color: #fff;
+
+  h4 {
+    display: none;
+  }
+}
+
+.color-swatch-inverse {
+  color: black;
+
+  .color-swatch-value,
+  .color-swatch-name {
+    color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.color-swatch-value,
+.color-swatch-name {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.70em;
+
+  p {
+    margin: 0;
+  }
+}
+
+.color-swatch-value {
+  margin-top: 10px;
+}
+
+.color-swatch-name {
+  position: absolute;
+  bottom: 10px;
+}
+
+
 .mz-darkpurples1 {
-    background-color: nth($mz-darkpurples, 1);
-    color: #fff;
+  background-color: nth($mz-darkpurples, 1);
 }
 .mz-darkpurples2 {
-    background-color: nth($mz-darkpurples, 2);
-    color: #fff;
+  background-color: nth($mz-darkpurples, 2);
 }
 .mz-darkpurples3 {
-    background-color: nth($mz-darkpurples, 3);
-    color: #fff;
+  background-color: nth($mz-darkpurples, 3);
 }
 .mz-darkpurples4 {
-    background-color: nth($mz-darkpurples, 4);
-    color: #fff;
+  background-color: nth($mz-darkpurples, 4);
 }
 
 .mz-scarlets1 {
-    background-color: nth($mz-scarlets, 1);
-    color: #fff;
+  background-color: nth($mz-scarlets, 1);
 }
 .mz-scarlets2 {
-    background-color: nth($mz-scarlets, 2);
-    color: #fff;
+  background-color: nth($mz-scarlets, 2);
 }
 .mz-scarlets3 {
-    background-color: nth($mz-scarlets, 3);
+  background-color: nth($mz-scarlets, 3);
 }
 
 .mz-pinks1 {
-    background-color: nth($mz-pinks, 1);
-    color: #fff;
+  background-color: nth($mz-pinks, 1);
 }
 .mz-pinks2 {
-    background-color: nth($mz-pinks, 2);
-    color: #fff;
+  background-color: nth($mz-pinks, 2);
 }
 .mz-pinks3 {
-    background-color: nth($mz-pinks, 3);
+  background-color: nth($mz-pinks, 3);
 }
 
 .mz-purples1 {
-    background-color: nth($mz-purples, 1);
-    color: #fff;
+  background-color: nth($mz-purples, 1);
 }
 .mz-purples2 {
-    background-color: nth($mz-purples, 2);
-    color: #fff;
+  background-color: nth($mz-purples, 2);
 }
 .mz-purples3 {
-    background-color: nth($mz-purples, 3);
-    color: #fff;
+  background-color: nth($mz-purples, 3);
 }
 
 .mz-black {
-    background-color: $mz-black;
-    color: #fff;
+  background-color: $mz-black;
 }
 
 .mz-darkgray {
-    background-color: $mz-darkgray;
-    color: #fff;
+  background-color: $mz-darkgray;
 }
 
 .mz-mediumgray {
-    background-color: $mz-mediumgray;
-    color: #fff;
+  background-color: $mz-mediumgray;
 }
 
 .mz-lightgray {
-    background-color: $mz-lightgray;
+  background-color: $mz-lightgray;
 }
