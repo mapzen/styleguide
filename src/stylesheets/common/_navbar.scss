@@ -148,9 +148,13 @@ body.transparent-main-nav nav.navbar {
 
   // Set the size and position of the logo at mobile screen
   @media (max-width: $screen-xs-max) {
-    height: 31px;
+    height: 36px;
     background-position: 0 0;
-    background-size: 110px;
+    background-size: 117px;
+
+    &:hover {
+      background-position: 0 -36px;
+    }
   }
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
