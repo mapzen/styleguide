@@ -22,15 +22,12 @@
   }
 
   .full-height {
-    height: $section-height - $section-xs-padding*3.5;
+    height: 256px;
     @media (min-width: $screen-sm) {
       height: $section-height - $section-padding*2;
     }
   }
   .half-height {
-    height: (($section-height - $section-padding*3)/2) - 6px;
-    margin-bottom: 12px;
-
     @media (min-width: $screen-sm) {
       height: ($section-height - $section-padding*2)/2 - 12px;;
       margin-bottom: 24px;
