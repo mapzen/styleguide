@@ -213,18 +213,21 @@ input[type="range"]::-webkit-slider-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50%;
+  border-width: 0;
   background: nth($mz-darkpurples, 1);
 }
 input[type="range"]::-moz-range-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50%;
+  border-width: 0;
   background: nth($mz-darkpurples, 1);
 }
 input[type="range"]::-ms-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50%;
+  border-width: 0;
   background: nth($mz-darkpurples, 1);
 }
 input[type=range]::-moz-range-track {
