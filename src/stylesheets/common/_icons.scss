@@ -1,3 +1,59 @@
 .table.icons > tbody > tr > td {
   vertical-align: middle;
 }
+
+//
+// Icons
+// --------------------------------------------------
+.icon {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  vertical-align: text-top;
+}
+
+// When used specifically as an inline element within a parent container, apply
+// margins based on its position
+span.icon {
+  display: inline-block;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+
+  // At the start of the container, there is no left margin
+  &:first-child {
+    margin-left: 0;
+  }
+
+  // At the end of the container, there is no right margin
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.icon-sm {
+  @extend .icon;
+
+  width: 24px;
+  height: 24px;
+}
+
+.icon-lg {
+  @extend .icon;
+
+  width: 60px;
+  height: 60px;
+}
+
+.icon-award-ribbon-circle {
+  background-image: url('https://mapzen.com/common/styleguide/images/icons/award-ribbon-circle.svg');
+}
+
+.icon-dollar-sign-circle {
+  background-image: url('https://mapzen.com/common/styleguide/images/icons/dollar-sign-circle.svg');
+}
+
+.icon-folding-map-circle {
+  background-image: url('https://mapzen.com/common/styleguide/images/icons/folding-map-circle.svg');
+}
