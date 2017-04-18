@@ -1,3 +1,34 @@
 .table.icons > tbody > tr > td {
   vertical-align: middle;
 }
+
+//
+// Icons
+// --------------------------------------------------
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  vertical-align: text-top;
+}
+
+.icon-circle-sm {
+  @extend .icon;
+
+  width: 24px;
+  height: 24px;
+  margin-right: 0.25em;
+}
+
+.icon-award-ribbon-circle {
+  background-image: url('https://mapzen.com/common/styleguide/images/icons/award-ribbon-circle.svg');
+}
+
+.icon-dollar-sign-circle {
+  background-image: url('https://mapzen.com/common/styleguide/images/icons/dollar-sign-circle.svg');
+}
+
+.icon-folding-map-circle {
+  background-image: url('https://mapzen.com/common/styleguide/images/icons/folding-map-circle.svg');
+}
