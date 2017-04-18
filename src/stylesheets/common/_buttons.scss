@@ -26,13 +26,10 @@ input[type="search"] + .btn {
 }
 
 .btn-primary {
-  background-color: $mz-darkpurple-1;
-  color: white;
-
+  // Inherits from Bootstrap
   &:hover,
   &:focus {
     background-color: $mz-darkpurple-2;
-    color: white;
   }
 }
 
