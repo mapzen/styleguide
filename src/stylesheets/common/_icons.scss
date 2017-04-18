@@ -6,19 +6,44 @@
 // Icons
 // --------------------------------------------------
 .icon {
-  display: inline-block;
+  width: 16px;
+  height: 16px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
   vertical-align: text-top;
 }
 
-.icon-circle-sm {
+// When used specifically as an inline element within a parent container, apply
+// margins based on its position
+span.icon {
+  display: inline-block;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+
+  // At the start of the container, there is no left margin
+  &:first-child {
+    margin-left: 0;
+  }
+
+  // At the end of the container, there is no right margin
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.icon-sm {
   @extend .icon;
 
   width: 24px;
   height: 24px;
-  margin-right: 0.25em;
+}
+
+.icon-lg {
+  @extend .icon;
+
+  width: 60px;
+  height: 60px;
 }
 
 .icon-award-ribbon-circle {
