@@ -22,12 +22,14 @@ input[type="search"] + .btn {
 
 // Dark purple button
 .btn-mapzen {
-  background-color: nth($mz-darkpurples, 1);
-  color: #ffffff;
+  @extend .btn-primary;
+}
+
+.btn-primary {
+  // Inherits from Bootstrap
   &:hover,
   &:focus {
-    background-color: nth($mz-darkpurples, 2);
-    color: #ffffff;
+    background-color: $mz-darkpurple-2;
   }
 }
 
@@ -40,7 +42,6 @@ input[type="search"] + .btn {
     color: nth($mz-darkpurples, 1);
   }
 }
-
 
 // To be deprecated in favor of btn-inverse
 .btn-white {
@@ -123,7 +124,8 @@ input[type="search"] + .btn {
 }
 
 // Button groups
-// Giving margin-right to the buttons
+// Giving margin-right to the buttons. This overrides Bootstrap's default look
+// for button groups, which creates buttons that are visually connected to each other.
 .btn-group .btn {
   margin-right: 10px;
   margin-bottom: 10px;
@@ -132,4 +134,28 @@ input[type="search"] + .btn {
 // Undo the overall bottom margin
 .btn-group {
   margin-bottom: -10px;
+}
+
+// NOTE: This should be the preferred way to ensure buttons are spaced correctly.
+.btn + .btn {
+  margin-left: 10px;
+}
+
+.btn-flexible {
+  width: 100%;
+
+  // Ensure adequate vertical spacing between consecutive block buttons.
+  & + .btn-flexible {
+    margin-top: 12px;
+    margin-left: 0;
+  }
+
+  @media (min-width: $screen-sm) {
+    width: auto;
+
+    & + .btn-flexible {
+      margin-top: auto;
+      margin-left: 10px;
+    }
+  }
 }

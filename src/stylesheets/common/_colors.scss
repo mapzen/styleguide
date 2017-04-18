@@ -27,6 +27,23 @@ $mz-scarlets: #FF4947, #FF7B7B, #FCDBDB;
 $mz-pinks: #F9A293, #F7BEB4, #FBE6E3;
 $mz-purples: #7F2DE3, #985FDD, #BDA2DD;
 
+$mz-darkpurple-1: nth($mz-darkpurples, 1);
+$mz-darkpurple-2: nth($mz-darkpurples, 2);
+$mz-darkpurple-3: nth($mz-darkpurples, 3);
+$mz-darkpurple-4: nth($mz-darkpurples, 4);
+$mz-darkpurple-5: nth($mz-darkpurples, 5);
+
+$mz-scarlet-1: nth($mz-scarlets, 1);
+$mz-scarlet-2: nth($mz-scarlets, 2);
+$mz-scarlet-3: nth($mz-scarlets, 3);
+
+$mz-pink-1: nth($mz-pinks, 1);
+$mz-pink-2: nth($mz-pinks, 2);
+$mz-pink-3: nth($mz-pinks, 3);
+
+$mz-purple-1: nth($mz-purples, 1);
+$mz-purple-2: nth($mz-purples, 2);
+$mz-purple-3: nth($mz-purples, 3);
 
 // Text colors
 $link-color: $mz-blue;
