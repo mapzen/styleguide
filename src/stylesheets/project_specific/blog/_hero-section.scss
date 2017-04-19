@@ -5,7 +5,6 @@ $hero-section-top-xs-padding: 72px;
   position: relative;
 }
 
-<<<<<<< HEAD
 .hero-section-wrapper:after {
   content: ' ';
   position: absolute;
@@ -20,17 +19,11 @@ $hero-section-top-xs-padding: 72px;
     rgba(255, 255, 255, 150) 100%
   );
   pointer-events: none; // Gradient overlay should not obscure mouse clicks.
-=======
-/* Hero section wrapper needs height property for its pseudo class (gradient) */
-.hero-section-wrapper.fixed-height {
-  height: $hero-section-xs-height;
->>>>>>> added top padding to hero section, parallex scroll only on not-sm-screen
   @media (min-width: $screen-sm) {
     height: 256px
   }
 }
 
-<<<<<<< HEAD
 .hero-section-wrapper > .hero-section {
   overflow: hidden;
   padding-top: $hero-section-top-xs-padding;
@@ -63,39 +56,6 @@ $hero-section-top-xs-padding: 72px;
 
 .hero-section-secondary .hero-section {
   padding-bottom: $section-xs-padding;
-=======
-.hero-section-wrapper:after {
-  content: ' ';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-  linear-gradient(
-    to bottom,
-    rgba(255,255,255,0) 95%,
-    rgba(255, 255, 255, 255) 100%
-  );
-}
-
-.hero-section-wrapper > .hero-section {
-  height: 100%;
-  overflow: hidden;
-  padding-top: $section-xs-padding;
-  @media (min-width: $screen-sm) {
-    padding-top: $section-padding;
-    padding-bottom: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
-
-.hero-section-wrapper > .hero-section img {
-  width: 100%;
-  height: auto;
->>>>>>> added top padding to hero section, parallex scroll only on not-sm-screen
 }
 
 @media (min-width: 768px) {
