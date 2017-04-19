@@ -3,10 +3,10 @@
 // -----------------------------------------------------
 
 // Note that other classes are combined with this to achieve stuff
-// e.g. "full-section with-background scarlet-contour" 
+// e.g. "full-section with-background scarlet-contour"
 .cta-primary  {
-  padding-top: 72px;
-  padding-bottom: 72px;
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
 }
 
 //
