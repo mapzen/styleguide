@@ -1,3 +1,5 @@
+$map-gallery-xs-height: 256px;
+
 .map-gallery {
   div[class*='row']{
     margin: 0 -6px;
@@ -22,7 +24,7 @@
   }
 
   .full-height {
-    height: $section-height - $section-xs-padding*3.5;
+    height: $map-gallery-xs-height;
     @media (min-width: $screen-sm) {
       height: $section-height - $section-padding*2;
     }
