@@ -11,12 +11,6 @@
   }
 }
 
-.full-section.fixed-height {
-  @media (min-width: $screen-sm) {
-    height: $section-height;
-  }
-}
-
 
 /* For sections with contour image background */
 /* This section doesn't have default background-image */
@@ -31,6 +25,7 @@
     background-attachment: fixed;
   }
 }
+
 .full-section {
   h1, h2, h3 {
     margin-top: 0;
@@ -41,7 +36,6 @@
     color: #ffffff;
   }
 }
-
 
 .purple-contour {
   background-image: url(/common/styleguide/images/background/index_sm.png);

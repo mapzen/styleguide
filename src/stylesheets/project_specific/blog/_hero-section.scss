@@ -14,7 +14,7 @@ $hero-section-top-xs-padding: 72px;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 100px;
+  height: 128px;
   background-image:
   linear-gradient(
     to bottom,
@@ -26,10 +26,10 @@ $hero-section-top-xs-padding: 72px;
 .hero-section-wrapper > .hero-section {
   overflow: hidden;
   padding-top: $hero-section-top-xs-padding;
-  padding-bottom: $section-xs-padding;
+  margin-bottom: $section-xs-padding;
   @media (min-width: $screen-sm) {
     padding-top: $hero-section-top-padding;
-    padding-bottom: $section-padding;
+    margin-bottom: $section-padding;
   }
 }
 
