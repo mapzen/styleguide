@@ -45,20 +45,19 @@ $hero-section-top-xs-padding: 72px;
 
 // Secondary “hero” banners, aka Robins
 // --------------------------------------------------
-// Secondary heroes are slightly smaller than the one on the homepage (Batman).
-
-.hero-section-secondary {
-  margin-left: -15px;
-  margin-right: -15px;
+// Secondary heroes are slightly different than the one on the homepage (Batman).
+// To create one, apply the `.hero-section-secondary` class alongside
+// `.hero-section-wrapper`.
+.hero-section-wrapper.hero-section-secondary:after {
+  display: none; /* Hides gradient */
 }
 
 .hero-section-secondary .hero-section {
-  padding-bottom: 48px;
-  padding-top: 72px;
+  padding-bottom: $section-xs-padding;
+}
 
-  @media (min-width: $screen-sm) {
-    position: relative;
-    padding-top: 144px;
-    padding-bottom: 72px;
+@media (min-width: 768px) {
+  .hero-section-secondary .hero-section {
+    padding-bottom: $section-padding;
   }
 }
