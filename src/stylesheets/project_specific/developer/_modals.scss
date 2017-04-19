@@ -1,0 +1,14 @@
+
+/**
+ * Modal
+ * Move into common/_modals.scss if we start using modals elsewhere
+ */
+
+.modal-dialog{
+  margin: 20% auto;
+}
+.modal-content{
+  border-radius: $border-radius-value;
+  padding: 20px;
+  display: inline-block;
+}
