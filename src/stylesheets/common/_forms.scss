@@ -235,7 +235,10 @@ input[type="range"]::-ms-thumb {
   background: nth($mz-darkpurples, 1);
 }
 input[type=range]::-moz-range-track {
-  opacity: 0;
+  height: 5px;
+  background-color: nth($mz-darkpurples, 5);
+  border: none;
+  border-radius: 25px;
 }
 input[type="range"]::-ms-fill-lower {
   background-color: nth($mz-purples, 2);
