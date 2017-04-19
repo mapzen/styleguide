@@ -15,3 +15,26 @@ article {
     display: inline;
   }
 }
+
+//
+// Checkmark bulleted lists
+// --------------------------------------------------
+
+.list-checkmarks {
+  list-style: none;
+  margin-top: 36px;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 0.375em;
+    margin-left: 1.75em; // Left-align all lines in this bullet item
+  }
+
+  li:before {
+    font-family: 'FontAwesome';
+    content: '\f058';
+    color: $mz-purple-3;
+    padding-right: 0.875em;
+    margin-left: -1.75em; // Assists with left-aligning of all lines
+  }
+}
