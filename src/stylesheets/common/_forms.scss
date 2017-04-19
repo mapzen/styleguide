@@ -204,9 +204,11 @@ input[type="radio"]:checked:hover + *:before {
 input[type="range"] {
   -webkit-appearance: none;
   cursor: pointer;
-  background-color: nth($mz-darkpurples, 5);
   border-radius: 25px;
+}
+input[type=range]::-webkit-slider-runnable-track {
   height: 5px;
+  background-color: nth($mz-darkpurples, 5);
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -233,11 +235,21 @@ input[type="range"]::-ms-thumb {
 input[type=range]::-moz-range-track {
   opacity: 0;
 }
-input[type="range"]::-ms-fill-lower,
-input[type="range"]::-ms-fill-upper {
-  display: none;
+input[type="range"]::-ms-fill-lower {
+  background-color: nth($mz-purples, 2);
+  border-radius: 25px;
 }
-input[type="range"]::-ms-track,
+input[type="range"]::-ms-fill-upper {
+  background-color: nth($mz-darkpurples, 5);
+  border-radius: 25px;
+}
+input[type="range"]::-ms-track{
+  height: 5px;
+  background: transparent;
+  border-color: transparent;
+  border-width: 6px 0;
+  color: transparent;
+}
 input[type="range"]::-ms-ticks-after,
 input[type="range"]::-ms-ticks-before {
   color: transparent;
