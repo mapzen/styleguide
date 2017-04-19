@@ -1,4 +1,15 @@
-.center-text{text-align:center}
-.float-left{float:left;}
 
-.no-show{display:none;}
+/* Deprecate 'center-text' in favor of Bootstrap's default 'text-center' */
+.center-text{
+  @extend .text-center;
+}
+
+/* Deprecate 'float-left' in favor of Bootstrap's default 'pull-left' */
+.float-left{
+  @extend .pull-left;
+}
+
+/* Deprecate 'no-show' in favor of Bootstrap's default 'hidden' */
+.no-show{
+  @extend .hidden;
+}
