@@ -31,12 +31,12 @@
     background-attachment: fixed;
   }
 }
-
-.with-background {
+.full-section {
   h1, h2, h3 {
     margin-top: 0;
   }
-
+}
+.with-background {
   h1, h2, h3, h4, h5, h6, p {
     color: #ffffff;
   }
