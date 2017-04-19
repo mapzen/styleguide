@@ -5,6 +5,8 @@
 
 // Developer specific styles
 @import 'helper';
+@import 'forms';
+@import 'modals';
 
 @import 'vendor/jquery-editable';
 @import 'vendor/bootstrap_sortable';
@@ -12,6 +14,7 @@
 // Page-specific styles
 @import 'admin';
 @import 'developer-dashboard';
+@import 'developer-settings';
 @import 'developer-graph';
 @import 'developer-login';
 @import 'custom-editable';
