@@ -71,11 +71,11 @@
   .estimated-price-box {
     padding: 6px;
     /* On "top" */
-    background: #efefef;
-    background: repeating-linear-gradient(
+    background-color: #efefef;
+    background-image: repeating-linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0) 3px,
+      rgba(255, 255, 255, 255),
+      rgba(255, 255, 255, 255) 3px,
       #efefef 6px,
       #efefef 6px
     );
