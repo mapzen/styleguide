@@ -1,12 +1,9 @@
 $gradient-color: nth($mz-darkpurples, 1);
+$editor-snippet-width: 700px;
 
 .editor-snippet {
-  // Do not show on mobile
-  width: 0;
-  height: 0;
-  margin: 0 auto;
   @media (min-width: $screen-sm) {
-    width: $section-height;
+    width: $editor-snippet-width;
     height: $section-height - $section-padding*2;
     border: 0;
     color: #fff;
@@ -17,7 +14,7 @@ $gradient-color: nth($mz-darkpurples, 1);
     padding: 0;
   }
   &:before {
-    width: $section-height;
+    width: $editor-snippet-width;
     height: $section-height - $section-padding*2;
     border-radius: 5px;
     content: ' ';
