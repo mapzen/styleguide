@@ -24,10 +24,6 @@
 
   $('input[type="range"]').rangeslider({
 
-      // Feature detection the default is `true`.
-      // Set this to `false` if you want to use
-      // the polyfill also in Browsers which support
-      // the native <input type="range"> element.
       polyfill: false,
 
       // Default CSS classes
