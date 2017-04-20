@@ -58,6 +58,10 @@
 .billing-estimator-wrapper {
   border: 1px solid $mz-purple-3;
 
+  input[type="range"] {
+    margin-top: 10px;
+  }
+
   h4 {
     color: $mz-darkpurple-1;
   }
