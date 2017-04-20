@@ -19,6 +19,7 @@ $hero-section-top-xs-padding: 72px;
     rgba(255,255,255,0) 0%,
     rgba(255, 255, 255, 255) 100%
   );
+  pointer-events: none; // Gradient overlay should not obscure mouse clicks.
 }
 
 .hero-section-wrapper > .hero-section {
@@ -36,9 +37,27 @@ $hero-section-top-xs-padding: 72px;
   height: auto;
 }
 
-
 .hero-section-wrapper {
   h1, h2, h3 {
     margin-top: 0;
+  }
+}
+
+// Secondary “hero” banners, aka Robins
+// --------------------------------------------------
+// Secondary heroes are slightly different than the one on the homepage (Batman).
+// To create one, apply the `.hero-section-secondary` class alongside
+// `.hero-section-wrapper`.
+.hero-section-wrapper.hero-section-secondary:after {
+  display: none; /* Hides gradient */
+}
+
+.hero-section-secondary .hero-section {
+  padding-bottom: $section-xs-padding;
+}
+
+@media (min-width: 768px) {
+  .hero-section-secondary .hero-section {
+    padding-bottom: $section-padding;
   }
 }

@@ -8,11 +8,11 @@ $list-row-height: 200px;
   .project > [class*='col-'] {
     height: auto;
     @media (min-width: $screen-sm) {
-      height: 200px;
+      height: $list-row-height;
     }
   }
 
-  .icon, .link {
+  .project-icon, .project-link {
     padding-top: 24px;
     padding-bottom: 12px;
     @media (min-width: $screen-sm) {
