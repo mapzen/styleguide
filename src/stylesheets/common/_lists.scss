@@ -1,0 +1,39 @@
+article {
+  ul li {
+      list-style: none;
+      text-indent: -0.8em;
+    }
+
+  ul li::before {
+    content: ' • ';
+    font-size: 15px;
+    vertical-align: middle;
+    padding-right: 5px;
+  }
+
+  ul li.static p {
+    display: inline;
+  }
+}
+
+//
+// Checkmark bulleted lists
+// --------------------------------------------------
+
+.list-checkmarks {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 0.375em;
+    margin-left: 1.75em; // Left-align all lines in this bullet item
+  }
+
+  li:before {
+    font-family: 'FontAwesome';
+    content: '\f058';
+    color: $mz-purple-3;
+    padding-right: 0.875em;
+    margin-left: -1.75em; // Assists with left-aligning of all lines
+  }
+}
