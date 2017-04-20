@@ -65,17 +65,17 @@
   .request-based-text {
     font-family: $display-font-family;
     font-weight: $display-font-weight-bold;
-    font-size: $body-normal;
     color: $mz-darkpurple-1;
   }
 
   .estimated-price-box {
     padding: 6px;
     /* On "top" */
+    background: #efefef;
     background: repeating-linear-gradient(
       135deg,
-      transparent,
-      transparent 3px,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 3px,
       #efefef 6px,
       #efefef 6px
     );
