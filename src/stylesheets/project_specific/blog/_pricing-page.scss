@@ -28,3 +28,60 @@
     margin-top: 36px;
   }
 }
+
+// Billing estimator
+.billing-info-wrapper {
+  border: 1px solid $mz-purple-3;
+  line-height: 1.2;
+
+  .base-pricing-info {
+    padding: 12px;
+  }
+
+  .additional-pricing-info {
+    background-color: $mz-purple-2;
+    color: #fff;
+    padding: 12px;
+  }
+
+  .price-text {
+    font-size: 48px;
+    font-family: $display-font-family;
+    font-weight: $display-font-weight-bold;
+  }
+
+  .base-price.price-text {
+    color: $mz-purple-2;
+  }
+}
+
+.billing-estimator-wrapper {
+  border: 1px solid $mz-purple-3;
+
+  h4 {
+    color: $mz-darkpurple-1;
+  }
+
+  .request-based-text {
+    font-family: $display-font-family;
+    font-weight: $display-font-weight-bold;
+    font-size: $body-normal;
+    color: $mz-darkpurple-1;
+  }
+
+  .estimated-price-box {
+    padding: 6px;
+    /* On "top" */
+    background: repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 3px,
+      #efefef 6px,
+      #efefef 6px
+    );
+  }
+
+  & + .scale-message-box {
+    height: 24px;
+  }
+}
