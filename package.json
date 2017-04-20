@@ -41,7 +41,8 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "browserify": "^14.1.0",
-    "jquery": "^2.2.0"
+    "jquery": "^2.2.0",
+    "rangeslider.js": "^2.3.0"
   },
   "browserify": {
     "transform": [
