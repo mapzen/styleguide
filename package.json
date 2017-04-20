@@ -53,7 +53,8 @@
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "bootstrap/js/affix": "./node_modules/bootstrap/js/affix.js",
     "bootstrap/js/dropdown": "./node_modules/bootstrap/js/dropdown.js",
-    "bootstrap/js/scrollspy": "./node_modules/bootstrap/js/scrollspy.js"
+    "bootstrap/js/scrollspy": "./node_modules/bootstrap/js/scrollspy.js",
+    "rangeslider": "./node_modules/rangeslider.js/dist/rangeslider.js"
   },
   "browserify-shim": {
     "jquery": "jQuery",
