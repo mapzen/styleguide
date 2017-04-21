@@ -135,6 +135,7 @@
                + '      style="border-radius: 50%; position: absolute; top: 1px; left: 1px;">'
                + ' </div>'
                + ' <div class="login-txt"> ' + label + ' <\/div>'
+               + ' <div class="login-arrow"><i class="fa fa-angle-down"></i></div>'
                + '</a>'
                + '<ul class="dropdown-menu">';
 
