@@ -39,7 +39,11 @@
 
 .purple-contour {
   background-color: $mz-purple-2;
-  background-image: url('/common/styleguide/images/background/contour_purple_sm.png');
+  background-image: url('/common/styleguide/images/background/contour_purple_xs.png');
+
+  @media (min-width: $screen-xs) {
+    background-image: url('/common/styleguide/images/background/contour_purple_sm.png');
+  }
 
   @media (min-width: $screen-sm) {
     background-image: url('/common/styleguide/images/background/contour_purple_lg.png');
