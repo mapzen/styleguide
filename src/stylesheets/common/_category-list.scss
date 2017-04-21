@@ -2,6 +2,10 @@
 // Jobs page and Documentation index
 // --------------------------------------------------
 
+h3.category-title {
+  text-transform: capitalize;
+}
+
 .category-info-container {
   width: 100%;
   display: table;
