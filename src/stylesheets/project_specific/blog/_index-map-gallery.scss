@@ -1,4 +1,5 @@
 $map-gallery-xs-height: 256px;
+$map-gallery-height: 450px;
 
 .map-gallery {
   div[class*='row']{
@@ -26,15 +27,12 @@ $map-gallery-xs-height: 256px;
   .full-height {
     height: $map-gallery-xs-height;
     @media (min-width: $screen-sm) {
-      height: $section-height - $section-padding*2;
+      height: $map-gallery-height;
     }
   }
   .half-height {
-    height: (($section-height - $section-padding*3)/2) - 6px;
-    margin-bottom: 12px;
-
     @media (min-width: $screen-sm) {
-      height: ($section-height - $section-padding*2)/2 - 12px;;
+      height: ($map-gallery-height/2) - 12px;
       margin-bottom: 24px;
     }
   }
@@ -78,7 +76,7 @@ $map-gallery-xs-height: 256px;
   position: relative;
   height: auto;
   @media (min-width: $screen-sm) {
-    height: $section-height - $section-padding*2;
+    height: $map-gallery-height;
   }
 }
 
