@@ -21,7 +21,7 @@ body.no-footer {
   color: nth($mz-darkpurples, 4);
   padding-top: 50px;
   background-color: nth($mz-darkpurples, 1);
-  background: url(/common/styleguide/images/background/contours_darkpurple_compressed.png);
+  background: url('/common/styleguide/images/background/contour_darkpurple_lg.png');
   background-size: cover;
   border-top: 5px solid nth($mz-scarlets, 2);
 
@@ -34,8 +34,9 @@ body.no-footer {
   a:hover {
     color: white;
   }
+
   @media (max-width: $screen-sm) {
-    background: url(/common/styleguide/images/background/contour_darkpurple_sm.png);
+    background: url('/common/styleguide/images/background/contour_darkpurple_sm.png');
     background-size: cover;
   }
 }
