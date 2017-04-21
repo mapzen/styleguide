@@ -136,7 +136,7 @@ body {
 
 // overriding mobile navbar max-height so we don't have to show scroll bar on smaller screen
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
-  max-height: 360px;
+  max-height: 420px;
 }
 
 
@@ -158,8 +158,11 @@ body {
 
 body.transparent-main-nav nav.navbar {
   background: transparent;
-  padding-top: 12px;
-  height: 68px;
+
+  @media (min-width: $screen-sm) {
+    padding-top: 12px;
+    height: 68px;
+  }
 }
 
 .transparent-main-nav .navbar-default .navbar-nav > .active > a,
@@ -281,7 +284,7 @@ body.transparent-main-nav nav.navbar {
 
   @media (min-width: $screen-sm) {
     display: inline-block;
-    margin: 5px 0 0 6px;
+    margin-left: 6px;
     font-weight: $bold-font-weight;
   }
 }
