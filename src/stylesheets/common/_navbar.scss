@@ -261,9 +261,19 @@ body.transparent-main-nav nav.navbar {
 .navbar-nav > li > a > .login-txt {
   float: left;
   overflow: hidden;
-  max-width: 150px;
+  max-width: 135px;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.navbar-nav > li > a > .login-arrow {
+  display: none;
+
+  @media (min-width: $screen-sm) {
+    display: inline-block;
+    margin: 5px 0 0 6px;
+    font-weight: $bold-font-weight;
+  }
 }
 
 .navbar-nav {
