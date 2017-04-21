@@ -134,12 +134,6 @@ body {
 }
 
 
-// Show transparent navbar when anchored to top (used on home page only atm)
-body.transparent-main-nav nav.navbar {
-  background: transparent;
-}
-
-
 // overriding mobile navbar max-height so we don't have to show scroll bar on smaller screen
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
   max-height: 360px;
@@ -156,6 +150,22 @@ body.transparent-main-nav nav.navbar {
     border-bottom: 0;
     border-left: 5px solid $navbar-active-link-color;
   }
+}
+
+
+// Transparent nav bar
+// Only used on home page ATM
+
+body.transparent-main-nav nav.navbar {
+  background: transparent;
+  padding-top: 12px;
+  height: 68px;
+}
+
+.transparent-main-nav .navbar-default .navbar-nav > .active > a,
+.transparent-main-nav .navbar-default .navbar-nav > .active > a:hover,
+.transparent-main-nav .navbar-default .navbar-nav > .active > a:focus {
+  border-color: white;
 }
 
 // Navbar and branding size differs on mobile and tablet/desktop+, so
