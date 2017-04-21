@@ -157,19 +157,19 @@ body {
 // Only used on home page ATM
 
 body.transparent-main-nav nav.navbar {
-  background: transparent;
-
   @media (min-width: $screen-sm) {
+    background: transparent;
     padding-top: 12px;
     height: 68px;
+
+    .navbar-nav > .active > a,
+    .navbar-nav > .active > a:hover,
+    .navbar-nav > .active > a:focus {
+      border-color: white;
+    }
   }
 }
 
-.transparent-main-nav .navbar-default .navbar-nav > .active > a,
-.transparent-main-nav .navbar-default .navbar-nav > .active > a:hover,
-.transparent-main-nav .navbar-default .navbar-nav > .active > a:focus {
-  border-color: white;
-}
 
 // Navbar and branding size differs on mobile and tablet/desktop+, so
 // there is some more involved CSS overriding here
