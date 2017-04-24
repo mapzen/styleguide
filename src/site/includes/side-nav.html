@@ -55,11 +55,11 @@
     var activeEl = document.getElementById(activeNavItemId);
     if (activeEl) {
       // Highlight the current page
-      activeEl.classList.add('toc-current');
+      if (activeEl.classList) activeEl.classList.add('toc-current');
       // Expand the 2nd-level menu
       var subMenuEl = activeEl.querySelector('.toc-subnav');
       if (subMenuEl) {
-        subMenuEl.classList.add('toc-expand');
+        if (subMenuEl.classList) subMenuEl.classList.add('toc-expand');
         // Modify the links to point to internal ids; this
         // helps scrollspy function correctly
         var subMenuLinks = subMenuEl.querySelectorAll('a');

@@ -89,8 +89,10 @@
     // Return early if some other script is doing the scrolling, as
     // indicated by the presence of the `is-scrolling` class that is
     // momentarily applied to the body element
-    if (document.body.classList.contains('is-scrolling')) {
-      return resetScrollCounters()
+    if (document.body.classList) {
+      if (document.body.classList.contains('is-scrolling')) {
+        return resetScrollCounters()
+      }
     }
 
     // Determine window Y positioning
