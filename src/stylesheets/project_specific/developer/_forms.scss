@@ -1,5 +1,85 @@
 
-  /* Braintree-specific class */
-  .field_with_errors {
-    @extend .has-error;
-  }
+/* Braintree-specific class */
+.field_with_errors {
+  @extend .has-error;
+}
+
+.dollah-sign {
+  display: inline-block;
+  float: left;
+  margin-right: 6px;
+  font-size: 24px;
+  line-height: 40px; // to match input field height
+}
+
+input[disabled],
+input[disabled] + .dollah-sign {
+  color: #ccc;
+}
+
+// Toggle Switch
+// Should we move to common/_forms partial?
+$toggle-height: 16px;
+$toggle-width: 40px;
+$toggle-transition-time: 400ms;
+$toggle-disabled-color: #777777;
+$toggle-active-color: #00A37A;
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: $toggle-width;
+  height: $toggle-height;
+}
+
+// Hide default HTML checkbox
+.toggle-switch input {display:none;}
+
+.toggle-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #E8E8E8;
+  -webkit-transition: $toggle-transition-time;
+  transition: $toggle-transition-time;
+  border-radius: calc(#{$toggle-height} / 2);
+}
+
+.toggle-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: $toggle-height;
+  width: 20px;
+  top: -1px;
+  background-color: $toggle-disabled-color;
+  -webkit-transition: $toggle-transition-time;
+  transition: $toggle-transition-time;
+  border-radius: calc(#{$toggle-height} / 2);
+}
+
+// Change toggle color on toggle
+.toggle-switch input:checked + .slider:before {
+  background-color: $toggle-active-color;
+}
+
+.toggle-switch input:checked + .slider:before {
+  -webkit-transform: translateX(calc(#{$toggle-width} / 2));
+  -ms-transform: translateX(calc(#{$toggle-width} / 2));
+  transform: translateX(calc(#{$toggle-width} / 2));
+}
+.toggle-switch input[type="checkbox"] + *:before,
+.toggle-switch input[type="checkbox"]:hover + *:before {
+  background-image: none;
+}
+
+.toggle-switch-text-disabled {
+  color: $toggle-disabled-color;
+}
+.toggle-switch-text-enabled {
+  color: $toggle-active-color;
+}
+// end Toggle Switch
+
