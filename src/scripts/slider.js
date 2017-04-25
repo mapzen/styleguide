@@ -24,7 +24,7 @@
 
   $('input[type="range"]').rangeslider({
 
-      polyfill: false,
+      polyfill: true,
 
       // Default CSS classes
       rangeClass: 'rangeslider',

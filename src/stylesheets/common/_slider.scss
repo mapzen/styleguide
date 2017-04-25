@@ -3,13 +3,6 @@
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  width: 142px;
-  @media (min-width: $screen-sm) {
-  	width: 157px;
-  }
-	@media (min-width: $screen-md) {
-  	width: 215px;
-	}
 }
 .rangeslider {
   background: nth($mz-darkpurples, 5);
