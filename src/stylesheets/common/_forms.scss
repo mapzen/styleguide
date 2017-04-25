@@ -204,6 +204,7 @@ input[type="radio"]:checked:hover + *:before {
 input[type="range"] {
   -webkit-appearance: none;
   cursor: pointer;
+  padding: 5px 0;
 }
 input[type=range]::-webkit-slider-runnable-track {
   height: 5px;
@@ -215,7 +216,7 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 15px;
   width: 15px;
-  margin-top: -4px;
+  margin-top: -5px;
   border-radius: 50%;
   border-width: 0;
   background: nth($mz-darkpurples, 1);
