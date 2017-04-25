@@ -40,7 +40,9 @@ body.no-footer {
   }
 
   @media (min-width: $screen-sm) {
-    background-image: url('/common/styleguide/images/background/contour_darkpurple_lg.png');
+    background-image: url('/common/styleguide/images/background/contour_darkpurple2_lg.png');
+    background-attachment: fixed;
+    background-position: center center;
   }
 }
 
