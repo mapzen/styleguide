@@ -81,6 +81,17 @@ $btn-primary-bg: $mz-darkpurple-1;
 // MAPZEN-SPECIFIC SITE VARIABLES
 // --------------------------------------------------
 
+// Hi-dpi media query.
+// Not all screens have round numbers for pixel ratio (Apple will round to integers)
+// so this accounts for many high-resolution devices and not specifically Retina @2x.
+// See: https://www.quirksmode.org/blog/archives/2012/07/more_about_devi.html
+// Using `min-resolution` is more standard-friendly than `-webkit-min-device-pixel-ratio`
+// Using `dppx` units is more user friendly than `dpi`, but only very new browsers
+// support it so far.
+$hidpi-screens: "only screen and (-webkit-min-device-pixel-ratio: 1.25),
+  only screen and (min-resolution: 120dpi),
+  only screen and (min-resolution: 1.25dppx)";
+
 // Header
 $header-height: 56px;
 $header-height-mobile: 50px;
