@@ -33,8 +33,11 @@ $toggle-active-color: #00A37A;
 }
 
 // Hide default HTML checkbox
-.toggle-switch input {display:none;}
+.toggle-switch input {
+  display:none;
+}
 
+.toggle-switch .toggle-switch-slider,
 .toggle-switch .slider {
   position: absolute;
   cursor: pointer;
@@ -48,6 +51,7 @@ $toggle-active-color: #00A37A;
   border-radius: calc(#{$toggle-height} / 2);
 }
 
+.toggle-switch .toggle-switch-slider:before,
 .toggle-switch .slider:before {
   position: absolute;
   content: "";
@@ -61,10 +65,12 @@ $toggle-active-color: #00A37A;
 }
 
 // Change toggle color on toggle
+.toggle-switch input:checked + .toggle-switch-slider:before,
 .toggle-switch input:checked + .slider:before {
   background-color: $toggle-active-color;
 }
 
+.toggle-switch input:checked + .toggle-switch-slider:before,
 .toggle-switch input:checked + .slider:before {
   -webkit-transform: translateX(calc(#{$toggle-width} / 2));
   -ms-transform: translateX(calc(#{$toggle-width} / 2));
