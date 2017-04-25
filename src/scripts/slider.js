@@ -34,13 +34,6 @@
       fillClass: 'rangeslider__fill',
       handleClass: 'rangeslider__handle',
 
-      // rangeClass: 'mz-rangeslider',
-      // disabledClass: 'mz-rangeslider--disabled',
-      // horizontalClass: 'mz-rangeslider--horizontal',
-      // verticalClass: 'mz-rangeslider--vertical',
-      // fillClass: 'mz-rangeslider-fill',
-      // handleClass: 'mz-rangeslider-handle',
-
   });
   // Just return a value to define the module export.
   // This example returns an object, but the module
