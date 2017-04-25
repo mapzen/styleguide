@@ -52,25 +52,25 @@ $map-gallery-xs-height: 256px;
   }
   .refill {
     background-image: url(/common/styleguide/images/maps/refill.png);
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @media #{$hidpi-screens} {
       background-image: url(/common/styleguide/images/maps/refill@2x.png);
     }
   }
   .tron {
     background-image: url(/common/styleguide/images/maps/tron.png);
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @media #{$hidpi-screens} {
       background-image: url(/common/styleguide/images/maps/tron@2x.png);
     }
   }
   .walkabout {
     background-image: url(/common/styleguide/images/maps/walkabout.png);
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @media #{$hidpi-screens} {
       background-image: url(/common/styleguide/images/maps/walkabout@2x.png);
     }
   }
   .bubble {
     background-image: url(/common/styleguide/images/maps/bubble-wrap.png);
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @media #{$hidpi-screens} {
       background-image: url(/common/styleguide/images/maps/bubble-wrap@2x.png);
     }
   }
@@ -91,4 +91,3 @@ $map-gallery-xs-height: 256px;
     transform: translateY(-50%);
   }
 }
-

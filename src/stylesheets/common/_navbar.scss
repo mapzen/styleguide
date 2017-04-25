@@ -157,7 +157,7 @@ body.transparent-main-nav nav.navbar {
     }
   }
 
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  @media #{$hidpi-screens} {
     background-image: url('https://mapzen.com/common/styleguide/images/mapzen-logo-stacked@2x.png');
   }
 }
