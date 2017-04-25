@@ -7,20 +7,12 @@
   /*-moz-border-radius: 10px;*/
   /*-webkit-border-radius: 10px;*/
   /*border-radius: 10px;*/
-  @media (max-width: 479px) {
-  	width: 100px;
+  width: 142px;
+  @media (min-width: $screen-sm) {
+  	width: 157px;
   }
-  @media (min-width: 480px) {
-  	width: 300px;
-  }
-	@media (min-width: 768px) {
-  	width: 400px;
-	}
-	@media (min-width: 992px) {
-  	width: 500px;
-	}
-	@media (min-width: 1200px) {
-  	width: 500px;
+	@media (min-width: $screen-md) {
+  	width: 215px;
 	}
 }
 
