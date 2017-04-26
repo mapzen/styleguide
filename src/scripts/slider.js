@@ -1,12 +1,9 @@
-// (c) 2016 Mapzen
-// LICENSE: MIT
-//
-// HIDE / SHOW MAIN NAVIGATION
-//
-// Allows user scrolling to toggle navigation stickyness.
-//
-// Dependencies: Bootstrap-compatible navbar in HTML/CSS.
-// --------------------------------------------------------
+// Polyfill for input[type="range"] for browsers that do not support the range input.
+// 
+// Using rangeslider.js library: https://github.com/andreruffert/rangeslider.js
+// 
+// Dependencies: jquery >= 1.9.0
+
 (function (root, factory) {
   // Universal Module Definition (UMD)
   // via https://github.com/umdjs/umd/blob/master/templates/returnExports.js
