@@ -24,15 +24,17 @@
 
   $('input[type="range"]').rangeslider({
 
-      polyfill: true,
+    // set polyfill to true to only use polyfill where the range input is not supported (e.g. IE9 and below)
+    // set polyfill to false to use the polyfill in any instance of a range input 
+    polyfill: true,
 
-      // Default CSS classes
-      rangeClass: 'rangeslider',
-      disabledClass: 'rangeslider--disabled',
-      horizontalClass: 'rangeslider--horizontal',
-      verticalClass: 'rangeslider--vertical',
-      fillClass: 'rangeslider__fill',
-      handleClass: 'rangeslider__handle',
+    // Default CSS classes
+    rangeClass: 'rangeslider',
+    disabledClass: 'rangeslider--disabled',
+    horizontalClass: 'rangeslider--horizontal',
+    verticalClass: 'rangeslider--vertical',
+    fillClass: 'rangeslider__fill',
+    handleClass: 'rangeslider__handle',
 
   });
   // Just return a value to define the module export.
