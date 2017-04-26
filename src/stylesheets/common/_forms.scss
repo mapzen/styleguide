@@ -241,6 +241,11 @@ input[type=range]::-moz-range-track {
   border: none;
   border-radius: 25px;
 }
+input[type=range]::-moz-range-progress {
+  background-color: nth($mz-purples, 2);
+  height: 5px;
+  border-radius: 25px;
+}
 input[type="range"]::-ms-fill-lower {
   background-color: nth($mz-purples, 2);
   border-radius: 25px;

@@ -5,6 +5,7 @@
 @import 'common/variables';
 
 @import 'bootstrap-custom';
+@import '../../node_modules/rangeslider.js/dist/rangeslider';
 
 // Mapzen site specific
 @import 'common/admonition';
@@ -45,3 +46,4 @@
 @import 'common/tables';
 @import 'common/toc';
 @import 'common/typography';
+@import 'common/slider';

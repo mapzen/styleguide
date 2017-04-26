@@ -36,11 +36,13 @@
   for (var i = 0, j = tableEls.length; i < j; i++) {
     var el = tableEls[i];
     // Only do this if not already wrapped.
-    if (el.parentNode.classList.contains('table-wrapper') === false) {
-      var wrapper = document.createElement('div');        // Create wrapper
-      wrapper.className = 'table-wrapper';                // It's called .table-wrapper
-      el.parentNode.insertBefore(wrapper, el);            // Insert it into document where table is
-      wrapper.appendChild(el.parentNode.removeChild(el)); // Move the table into the wrapper
+    if(el.parentNode.classList) {
+      if (el.parentNode.classList.contains('table-wrapper') === false) {
+        var wrapper = document.createElement('div');        // Create wrapper
+        wrapper.className = 'table-wrapper';                // It's called .table-wrapper
+        el.parentNode.insertBefore(wrapper, el);            // Insert it into document where table is
+        wrapper.appendChild(el.parentNode.removeChild(el)); // Move the table into the wrapper
+      }
     }
   }
 

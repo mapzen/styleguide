@@ -98,8 +98,10 @@
 
   // Utility functions
   function getParentByClassName (el, parentClass) {
-    while (el !== document.documentElement && !el.classList.contains(parentClass)) {
-      el = el.parentNode;
+    if (el.classList) {
+      while (el !== document.documentElement && !el.classList.contains(parentClass)) {
+        el = el.parentNode;
+      }
     }
     return el;
   }

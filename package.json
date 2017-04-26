@@ -41,7 +41,8 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "browserify": "^14.1.0",
-    "jquery": "^2.2.0"
+    "jquery": "^2.2.0",
+    "rangeslider.js": "^2.3.0"
   },
   "browserify": {
     "transform": [
@@ -52,7 +53,8 @@
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "bootstrap/js/affix": "./node_modules/bootstrap/js/affix.js",
     "bootstrap/js/dropdown": "./node_modules/bootstrap/js/dropdown.js",
-    "bootstrap/js/scrollspy": "./node_modules/bootstrap/js/scrollspy.js"
+    "bootstrap/js/scrollspy": "./node_modules/bootstrap/js/scrollspy.js",
+    "rangeslider": "./node_modules/rangeslider.js/dist/rangeslider.js"
   },
   "browserify-shim": {
     "jquery": "jQuery",

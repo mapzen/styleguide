@@ -20,6 +20,8 @@ require('bootstrap/js/affix');
 require('bootstrap/js/collapse');
 require('bootstrap/js/modal');
 
+require('rangeslider');
+
 // Mapzen-styleguide specific bundled JavaScripts
 var trackEvent = require('./event-tracking.js');
 var social = require('./social.js');
@@ -27,6 +29,7 @@ var stickynav = require('./sticky-nav.js');
 var mapzenNav = require('./main-nav.js');
 var sidenav = require('./side-nav.js');
 var tablewrap = require('./table-wrap.js');
+var slider = require('./slider.js');
 
 // Create a global MPZN object
 // Inherit it if already present from elsewhere
