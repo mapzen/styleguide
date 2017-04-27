@@ -7,18 +7,17 @@
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-
-  documentation-header {
-    padding-top: 20px;
-    color: #fff;
-    
-    /*mimics h1 style*/
+  .documentation-header{
+    /* from styleguide _documentation.scss h1*/
+    position: relative;
+    font-weight: 700;
+    font-family: "Poppins", "Open Sans", Helvetica, Arial, sans-serif;
+    /* from styleguide _typography.scss */
+    font-size: 48px;
     margin-top: 48px;
     margin-bottom: 12px;
     line-height: 1.2em;
-    font-size: 48px;
-    
-    /*Scale back margins on mobile*/
+    /* scale back margins on mobile */
     @media (max-width: $screen-sm) {
       font-size: 42px;
       margin-top: 24px;
