@@ -2,6 +2,7 @@ var browserify = require('browserify');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass');
+var cssnano = require('gulp-cssnano');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
@@ -24,10 +25,18 @@ gulp.task('sass', ['clean'], function() {
     './src/stylesheets/styleguide.scss'
   ].forEach(function(file_path) {
     gulp.src(file_path)
-      .pipe(gulpif((gutil.env.target !== "prod"), sourcemaps.init()))
-      .pipe(sass())
-      .pipe(gulpif((gutil.env.target !== "prod"), sourcemaps.write()))
-      .on('error', sass.logError)
+      .pipe(sourcemaps.init())
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest('./dist/styles')) // Write unminified CSS first
+      .pipe(cssnano({
+        safe: true, // Primarily to prevent z-index rebasing, which is a terrible idea
+        discardComments: { removeAll: true } // Force removal of noisy /*! "special" comments */
+      }))
+      .pipe(rename({
+        dirname: '',
+        extname: '.min.css'
+      }))
+      .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest('./dist/styles'));
   });
 });
