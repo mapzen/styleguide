@@ -36,12 +36,6 @@
     }
   }
 
-  // TODO:
-  // REMOVE THIS AFTER JEKYLL GENERATED TABLES PICK UP THE .table CLASS
-  table {
-    @extend .table;
-  }
-
   // These DOM elements are generated from (the non-standard) Markdown footnotes syntax
   // via the Redcarpet extension. If the Markdown parser changes, please check to make
   // sure these selectors will still be valid.
