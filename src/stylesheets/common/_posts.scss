@@ -26,22 +26,6 @@
     padding: 0px;
   }
 
-  // Wider table area on wider screens.
-  .table-wrapper {
-    @media (min-width: $screen-md-min) {
-      margin-left: -10%;
-      margin-right: 10%;
-      max-width: 120%;
-      width: 120%;
-    }
-  }
-
-  // TODO:
-  // REMOVE THIS AFTER JEKYLL GENERATED TABLES PICK UP THE .table CLASS
-  table {
-    @extend .table;
-  }
-
   // These DOM elements are generated from (the non-standard) Markdown footnotes syntax
   // via the Redcarpet extension. If the Markdown parser changes, please check to make
   // sure these selectors will still be valid.
@@ -67,6 +51,21 @@
     display: inline-block;
     pointer-events: none;
   }
+}
+
+// Blog only content
+.blog-content {
+
+  // Wider table area on wider screens.
+  .table-wrapper {
+    @media (min-width: $screen-md-min) {
+      margin-left: -10%;
+      margin-right: 10%;
+      max-width: 120%;
+      width: 120%;
+    }
+  }
+
 }
 
 .demo-wrapper {
