@@ -3,7 +3,7 @@ $overflow-extra-width: 300px;
 .overflowing {
   margin-left: -$overflow-extra-width*0.6;
   margin-right: -$overflow-extra-width*0.4;
-  max-width: calc(100% + $overflow-extra-width);
+  max-width: calc(100% + #{$overflow-extra-width});
   position: relative;
   @media (min-width: $screen-sm) {
     height: $section-height - $section-padding*2;
@@ -15,7 +15,8 @@ $overflow-extra-width: 300px;
   @media (max-width: $screen-md + $overflow-extra-width*2) and (min-width: $screen-sm) {
     &:after {
       content: ' ';
-      width: 100%;
+      max-width: 100%;
+      width: 500px;
       height: 100%;
       position: absolute;
       left: 0;
@@ -24,8 +25,8 @@ $overflow-extra-width: 300px;
       background-image:
         linear-gradient(
           to left,
-          rgba(255,255,255,0) 60%,
-          rgba(255,255,255,255) 90%
+          rgba(255,255,255,0) 0%,
+          rgba(255,255,255,150) 100%
       );
       overflow: hidden;
     }
@@ -43,17 +44,18 @@ $overflow-extra-width: 300px;
   @media (max-width: $screen-md + $overflow-extra-width*2) and (min-width: $screen-sm) {
     &:after {
       content: ' ';
-      width: 100%;
+      max-width: 100%;
+      width: 500px;
       height: 100%;
       position: absolute;
-      left: 0;
+      right: 0;
       top: 0;
       pointer-events: none;
       background-image:
         linear-gradient(
         to right,
-        rgba(255,255,255, 0) 60%,
-        rgba(255,255,255, 150) 90%
+        rgba(255,255,255, 0) 0%,
+        rgba(255,255,255, 150) 100%
       );
       overflow: hidden;
     }

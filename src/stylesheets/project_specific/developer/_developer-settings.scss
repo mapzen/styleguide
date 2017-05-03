@@ -12,11 +12,4 @@
     @extend .toggle-switch-text-enabled;
   }
 
-  // Pattern follows Bootstrap v4's new spacing utility classes
-  //  margin: m{sides}-{size}
-  //  padding: p{sides}-{size}
-  // TODO: add all spacing utility classes
-  .mt-1 {
-    margin-top: 6px;
-  }
 }
