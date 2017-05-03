@@ -2,6 +2,17 @@
 // Pricing page specific components
 // --------------------------------------------------
 
+// THIS PAGE ONLY: Footer position hack
+body.pricing-page {
+  footer {
+    margin-top: -24px;
+
+    @media (min-width: 768px) {
+      margin-top: -48px;
+    }
+  }
+}
+
 // Product display
 .pricing-page-product {
   border-bottom: 1px solid $table-border-color;
