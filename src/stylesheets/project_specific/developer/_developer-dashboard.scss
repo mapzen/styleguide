@@ -1,17 +1,4 @@
 #dev-dashboard{
-
-  &.container{
-    @media(max-width:767px){width:100%;}
-    @media (min-width: 768px) {width:100%;}
-    @media (min-width: 992px) { width:970px;}
-    @media (min-width: 1200px) {width:1030px;}
-
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
   .login-info {
     text-align: right;
     float: right;
@@ -30,27 +17,9 @@
   /*inside of dashboard*/
   #projects {
 
-    .project-wrapper {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 30px;
-    }
-
     .desc {
       @media(max-width:767px) {
         margin-bottom: 10px
-      }
-    }
-
-    .project-name {
-      // TO DO : get rid of this custom style and replace it to normal heading
-      // This is h3 style
-
-      font-weight: $bold-font-weight;;
-      font-size: 24px;
-      color:  nth($mz-darkpurples, 2);
-      @media (min-width: $screen-sm) {
-        // font-size: 24px;
       }
     }
 
@@ -58,51 +27,6 @@
     .alert {
       margin-top: 10px;
       margin-bottom: 0;
-    }
-
-    .add-key {
-      width: 100%;
-    }
-
-    .btn-add-key{
-      /*tweaked color to green*/
-      background-color: nth($mz-darkpurples, 1);
-      border: 1px solid nth($mz-darkpurples, 1);
-
-      border-radius: $border-radius-value;
-      color: #fff;
-
-      width: 100%;
-      height: 65px;
-
-      letter-spacing: 1.1px;
-      text-transform: uppercase;
-      &:focus, &:hover{
-        background-color: nth($mz-darkpurples, 3);
-        border: 1px solid nth($mz-darkpurples, 3);
-      }
-    }
-
-    .btn-add-key:disabled {
-      background-color: nth($mz-darkpurples, 5);
-      border-color: nth($mz-darkpurples, 5);
-    }
-    //show no-key or maximum key status
-    .key-alert-message {
-      float: left;
-      width: 100%;
-      color: $mz-mediumgray;
-      font-size: 18px;
-      font-style: italic;
-      padding-top: 20px;
-    }
-
-    .project-desc-row{
-      font-size:16px;
-      font-weight:300;
-      color:#666;
-      border-bottom:3px solid #eee;
-      padding-bottom: 10px;
     }
 
     .meta {
@@ -124,12 +48,6 @@
       padding-bottom:10px;
       margin-top: 10px;
       margin-bottom: 5px;
-    }
-
-    .key-value {
-      color:#666;
-      font-weight:700;
-      font-size:14px;
     }
 
     .copy-key {
@@ -166,17 +84,7 @@
       }
     }
 
-    .category{
-      display:inline;
-      font-size:14px;
-      font-weight: 300;
-      color:#666;
-    }
-
-    .key-name-row{
-      margin-bottom: 10px;
-    }
-    .key-name{
+    .key-name {
       //font-size:18px;
       cursor: pointer;
       font-weight: 400;
@@ -186,11 +94,6 @@
       border: 0;
       padding: 1px;
       border-bottom: dashed 1px nth($mz-scarlets, 2);
-    }
-
-    .key-btns-wrapper {
-      text-align: right;
-      vertical-align: middle;
     }
 
     .key-badge{
@@ -308,9 +211,6 @@
     font-weight:400;
   }
 
-  .no-padding {
-    padding: 0px;
-  }
   .editable-input input {
     padding-top: 0;
     padding-bottom: 0;
