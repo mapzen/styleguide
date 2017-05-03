@@ -7,8 +7,14 @@
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
+  h1 {
+    
+  }
   .documentation-header{
-    /* copying _documentation.scss style for h1*/
+    /*former .documentation-hero h1 style*/
+    padding-top: 20px;
+    color: #fff;
+    /* _documentation.scss style for h1*/
     position: relative;
     font-weight: 700;
     font-family: "Poppins", "Open Sans", Helvetica, Arial, sans-serif;
