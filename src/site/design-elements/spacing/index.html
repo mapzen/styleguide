@@ -1,0 +1,82 @@
+<div id="spacing" class="headroom-large">
+  <h2>Spacing</h2>
+  <p>
+    The Mapzen UI is based on spacing in multiples of 6.  Use this scale as a starting point when laying out pages and sizing elements.
+  </p>
+  <div class="text-center">
+    <img src="./images/styleguide-spacing.png">
+  </div>
+
+  <h3>Spacing Utility Classes</h3>
+  <p>
+    To help make the positioning of elements easier, we've incorporated a set of responsive-friendly spacing utility classes (based on <a href="https://v4-alpha.getbootstrap.com/utilities/spacing/">Bootstrap v4 spacing</a>) into the styleguide.  Use these to modify the margins and/or padding around elements.
+  </p>
+  <p>
+    The format for spacing classes is <strong><code>{property}{sides}-{breakpoint}-{size}</code></strong> and allows for the following options:
+  </p>
+
+  <p class="mt-3">
+    <strong><code>{property}</code></strong>
+  </p>
+  <ul>
+    <li><code>m</code><span class="mx-1">-</span> margin</li>
+    <li><code>p</code><span class="mx-1">-</span> padding</li>
+  </ul>
+
+  <p class="mt-3">
+    <strong><code>{sides}</code></strong> (optional)
+  </p>
+  <ul>
+    <li><code>t</code><span class="mx-1">-</span> top</li>
+    <li><code>b</code><span class="mx-1">-</span> bottom</li>
+    <li><code>l</code><span class="mx-1">-</span> left</li>
+    <li><code>r</code><span class="mx-1">-</span> right</li>
+    <li><code>x</code><span class="mx-1">-</span> left and right</li>
+    <li><code>y</code><span class="mx-1">-</span> top and bottom</li>
+    <li> Leave blank to set all sides</li>
+  </ul>
+
+  <p class="mt-3">
+    <strong><code>{breakpoint}</code></strong> (optional)
+  </p>
+  <ul>
+    <li><code>sm</code></li>
+    <li><code>md</code></li>
+    <li><code>lg</code></li>
+    <li> Leave off <code>-{breakpoint}</code> to ignore breakpoints</li>
+  </ul>
+
+  <p class="mt-3">
+    <strong><code>{size}</code></strong>
+  </p>
+  <ul>
+    <li><code>0</code><span class="mx-1">-</span> 0px</li>
+    <li><code>1</code><span class="mx-1">-</span> 6px (<code>$spacer * .25</code>)</li>
+    <li><code>2</code><span class="mx-1">-</span> 12px (<code>$spacer * .5</code>)</li>
+    <li><code>3</code><span class="mx-1">-</span> 24px (<code>$spacer</code>)</li>
+    <li><code>4</code><span class="mx-1">-</span> 36px (<code>$spacer * 1.5</code>)</li>
+    <li><code>5</code><span class="mx-1">-</span> 72px (<code>$spacer * 3</code>)</li>
+  </ul>
+
+  <p class="mt-4">
+    <strong>Examples of these classes</strong>
+  </p>
+  <pre>
+    .mt-0 {
+      margin-top: 0 !important;
+    }
+
+    .ml-1 {
+      margin-left: 6px !important;
+    }
+
+    .px-2 {
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+    }
+
+    .p-3 {
+      padding: 24px !important;
+    }
+  </pre>
+</div>
