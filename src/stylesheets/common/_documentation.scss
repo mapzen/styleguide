@@ -7,12 +7,24 @@
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-
   h1 {
+    
+  }
+  .documentation-header {
+    /* former _documentation.scss documentation-hero h1*/
     padding-top: 20px;
     color: #fff;
+    /* former _documentation.scss h1*/
+    font-weight: $display-font-weight-bold;
+    font-family: $display-font-family;
+    /* former _typography.scss */
+    font-size: 48px;
+    line-height: 1.2em;
+    /* scale back margins on mobile */
+    @media (max-width: $screen-sm) {
+      font-size: 42px;
+    }
   }
-
   p {
     margin-top: 24px;//1em;
   }
@@ -79,6 +91,21 @@
   // Headings
   h1, h2, h3, h4, h5, h6 {
     position: relative;
+  }
+
+  /*smaller for documentation than styleguide*/
+  h1 {
+    font-size: 36px;
+  }
+
+  /*smaller for documentation than styleguide*/
+  h2 {
+    font-size: 24px;
+  }
+
+  /*smaller for documentation than styleguide*/
+  h3 {
+    font-size: 20px;
   }
 
   /*
