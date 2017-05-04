@@ -10,24 +10,19 @@
   h1 {
     
   }
-  .documentation-header{
-    /*former .documentation-hero h1 style*/
+  .documentation-header {
+    /* former _documentation.scss documentation-hero h1*/
     padding-top: 20px;
     color: #fff;
-    /* _documentation.scss style for h1*/
-    position: relative;
-    font-weight: 700;
-    font-family: "Poppins", "Open Sans", Helvetica, Arial, sans-serif;
-    /* from styleguide _typography.scss */
+    /* former _documentation.scss h1*/
+    font-weight: $display-font-weight-bold;
+    font-family: $display-font-family;
+    /* former _typography.scss */
     font-size: 48px;
-    margin-top: 48px;
-    margin-bottom: 12px;
     line-height: 1.2em;
     /* scale back margins on mobile */
     @media (max-width: $screen-sm) {
       font-size: 42px;
-      margin-top: 24px;
-      margin-bottom: 6px;
     }
   }
   p {
@@ -106,6 +101,11 @@
   /*smaller for documentation than styleguide*/
   h2 {
     font-size: 24px;
+  }
+
+  /*smaller for documentation than styleguide*/
+  h3 {
+    font-size: 20px;
   }
 
   /*
