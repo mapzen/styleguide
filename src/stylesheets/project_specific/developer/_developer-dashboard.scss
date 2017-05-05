@@ -38,14 +38,13 @@
       transition: all 1s ease-out;
       opacity: 0;
       height: 0;
+      padding: 12px;
     }
 
     .key-row.show{
       background-color:#f3f3f3;
       opacity:1;
       height:auto;
-      padding-top: 10px;
-      padding-bottom:10px;
       margin-top: 10px;
       margin-bottom: 5px;
     }
