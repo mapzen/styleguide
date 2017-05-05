@@ -7,9 +7,26 @@
     <img src="./images/styleguide-spacing.png">
   </div>
 
+  <h3>Vertical Spacing</h3>
+  <p>
+    We have several responsive classes available to adjust vertical spacing on your page.  Two of the most frequently used are <strong><code>.headroom</code></strong> and <strong><code>.footroom</code></strong>, which provide <code>margin-top</code> and <code>margin-bottom</code> spacing, respectively.
+  </p>
+  <p>
+    Both classes come in a few different sizes.  For example: <code>headroom</code>, <code>headroom-med</code>, <code>headroom-large</code>, and <code>headroom-extra-large</code>
+  </p>
+  <p>
+    To add vertical space between page sections, a good place to start is <code>.headroom-large</code>
+  </p>
+  <div data-xrayhtml>
+    <div class="headroom-large footroom">
+      <h2>Section title</h2>
+      <p>Words about things</p>
+    </div>
+  </div>
+
   <h3>Spacing Utility Classes</h3>
   <p>
-    To help make the positioning of elements easier, we've incorporated a set of responsive-friendly spacing utility classes (based on <a href="https://v4-alpha.getbootstrap.com/utilities/spacing/">Bootstrap v4 spacing</a>) into the styleguide.  Use these to modify the margins and/or padding around elements.
+    If you need more fine-grained spacing control over your elements, we've incorporated a set of responsive-friendly spacing utility classes (based on <a href="https://v4-alpha.getbootstrap.com/utilities/spacing/">Bootstrap v4 spacing</a>) into the styleguide.  Use these to modify the margins and/or padding around elements.
   </p>
   <p>
     The format for spacing classes is <strong><code>{property}{sides}-{breakpoint}-{size}</code></strong> and allows for the following options:
@@ -56,6 +73,7 @@
     <li><code>3</code><span class="mx-1">-</span> 24px (<code>$spacer</code>)</li>
     <li><code>4</code><span class="mx-1">-</span> 36px (<code>$spacer * 1.5</code>)</li>
     <li><code>5</code><span class="mx-1">-</span> 72px (<code>$spacer * 3</code>)</li>
+    <li><code>auto</code><span class="mx-1">-</span> auto (for positioning fixed-width block content)</li>
   </ul>
 
   <p class="mt-4">
@@ -78,5 +96,29 @@
     .p-3 {
       padding: 24px !important;
     }
+
+    // Small grid and above
+    @media (min-width: 768px) {
+      .m-sm-4 {
+        margin: 36px !important;
+      }
+
+      .pb-sm-5 {
+        padding-bottom: 72px !important;
+      }
+    }
+
+    // Use with fixed-width block elements
+    .mx-auto {
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
   </pre>
+
+  <div data-xrayhtml>
+    <div class="little-box ml-1 px-2">I</div>
+    <div class="little-box m-2 my-sm-0 pl-1 pr-5">need</div>
+    <div class="little-box mr-3 px-4 py-2">some</div>
+    <div class="little-box m-2 p-4">space</div>
+  </div>
 </div>
