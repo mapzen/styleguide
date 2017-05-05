@@ -145,6 +145,12 @@ pre[class*="language-"] {
   bottom: 10px;
 }
 
+.little-box {
+  display: inline-block;
+  background:  nth($mz-scarlets, 1);
+  color: white;
+  text-align: center;
+}
 
 .mz-darkpurples1 {
   background-color: nth($mz-darkpurples, 1);
