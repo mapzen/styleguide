@@ -1,38 +1,6 @@
 #dev-dashboard{
-  .login-info {
-    text-align: right;
-    float: right;
-    padding-top: 20px;
-    margin: 20px 0;
-  }
-
-  .info {
-    float: left;
-    font-size:14px;
-    font-weight:400;
-    padding-right: 20px;
-    font-weight:400;
-  }
-
   /*inside of dashboard*/
   #projects {
-
-    .desc {
-      @media(max-width:767px) {
-        margin-bottom: 10px
-      }
-    }
-
-    // temporary to warn users that keys got merged
-    .alert {
-      margin-top: 10px;
-      margin-bottom: 0;
-    }
-
-    .meta {
-      margin: 0;
-    }
-
     .key-row {
       //for animation
       transition: all 1s ease-out;
@@ -42,11 +10,11 @@
     }
 
     .key-row.show{
-      background-color:#f3f3f3;
+      background-color: $mz-lightgray;
       opacity:1;
       height:auto;
       margin-top: 10px;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
     .copy-key {
