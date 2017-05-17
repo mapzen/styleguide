@@ -172,14 +172,13 @@
   color: #333333;
 }
 
-.text-16 {
-  // font-weight: normal;
-  // font-size: 16px;
-  // line-height: 1.6;
+.deemphasize-text {
+  color: #cccccc
 }
 
-.text-18 {
-  // font-weight: normal;
-  // font-size: 18px;
-  // line-height: 1.6;
+// Backgrounds
+// --------------------------------------------------
+
+.background-light {
+  background-color: $background-light;
 }
