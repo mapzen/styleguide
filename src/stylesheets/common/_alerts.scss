@@ -8,6 +8,14 @@
     text-decoration: underline;
     &:hover { color: inherit; }
   }
+  .btn {
+    text-decoration: inherit;
+    white-space: normal;
+  }
+  .btn-mapzen,
+  .btn-mapzen:hover {
+    color: white;
+  }
 }
 .alert-dismissible {
   padding-right: 35px;
