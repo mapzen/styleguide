@@ -201,3 +201,21 @@
   opacity:0.3;
   z-index:1000;
 }
+
+//
+// Dashboard | Account summary module
+// --------------------------------------------------
+
+.account-summary {
+  background-color: $mz-lightgray;
+  border-top: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 24px;
+  line-height: 2;
+}
+
+.account-summary-balance {
+  @extend .pricing-table-cost-amount;
+
+  margin: 0 0.25em;
+}
