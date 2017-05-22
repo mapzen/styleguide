@@ -9,7 +9,7 @@
       padding: 12px;
     }
 
-    .key-row.show{
+    .key-row.show {
       background-color: $mz-lightgray;
       opacity:1;
       height:auto;
@@ -63,7 +63,7 @@
       border-bottom: dashed 1px nth($mz-scarlets, 2);
     }
 
-    .key-badge{
+    .key-badge {
       width: 105px;
       height: 31px;
       margin: 5px 10px 5px 5px;
@@ -104,6 +104,29 @@
       }
     }
 
+    .key-module h4 {
+      padding-bottom: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .key-columns-wrapper {
+      display: table;
+      width: 100%;
+    }
+
+    .key-column-left {
+      display: table-cell;
+      width: 60%;
+      vertical-align: top;
+    }
+
+    .key-column-right {
+      display: table-cell;
+      width: 40%;
+      text-align: right;
+      vertical-align: top;
+    }
+
     //loading spinner animation
     @keyframes spinning {
       0% { transform: rotate(0deg); }
@@ -138,8 +161,11 @@
       .fa {
         color: nth($mz-scarlets, 2);
       }
+      &:last-child {
+        margin-right: 0 !important;
+      }
     }
-    .created-at{
+    .created-at {
       font-size: 14px;
       /* not to make it change height when content is fetched slowly */
       min-height: 30px;
@@ -148,7 +174,7 @@
     }
   }
 
-  .notice{
+  .notice {
     position:fixed;
     top:50%;
     left:50%;
@@ -158,11 +184,11 @@
     color:#666;
     background-color:#fff;
     z-index:1030;
-    &.created{
+    &.created {
       width:100%;
       margin-left:-50%;
     }
-    &.deleted{
+    &.deleted {
       width:100%;
       margin-left:-50%;
     }
@@ -171,7 +197,7 @@
   .delete-confirm {
     margin-bottom: 30px;
   }
-  .error-msg{
+  .error-msg {
     color:$devErrorRed;
     font-weight:400;
   }
@@ -191,7 +217,7 @@
 }
 
 
-.block-body{
+.block-body {
   width:100%;
   height:100%;
   position:fixed;
@@ -218,4 +244,54 @@
   @extend .pricing-table-cost-amount;
 
   margin: 0 0.25em;
+}
+
+//
+// Dashboard | Usage module
+// --------------------------------------------------
+
+.progress {
+  height: 4px;
+}
+.progress-bar {
+  background-color: $mz-purple-1;
+}
+.text-deemphasize .progress-bar {
+  background-color: $mz-scarlet-1;
+}
+
+//
+// Dashboard | Desk support widget
+// --------------------------------------------------
+
+.a-desk-widget:hover,.a-desk-widget:focus  {
+  color: white;
+  background-color: $mz-darkpurple-3 !important;
+}
+.a-desk-widget {
+  border-radius: 80px;
+  font-weight: 400;
+  border: 0;
+  width: 140px !important;
+  padding: 12px 20px;
+  background-image: none !important;
+  background-color: $mz-darkpurple-2 !important;
+  color: white;
+  position: fixed;
+  bottom: 12px;
+  right: 24px;
+  z-index: 1;
+}
+.a-desk-widget:before {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  content: "?";
+  border: 2px solid white;
+  padding: 0px 7px;
+  border-radius: 100%;
+  margin-right: 4px;
+}
+.a-desk-widget:after {
+  content: "Support";
 }

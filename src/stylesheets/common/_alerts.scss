@@ -8,6 +8,14 @@
     text-decoration: underline;
     &:hover { color: inherit; }
   }
+  .btn {
+    text-decoration: inherit;
+    white-space: normal;
+  }
+  .btn-primary,
+  .btn-primary:hover {
+    color: white;
+  }
 }
 .alert-dismissible {
   padding-right: 35px;
