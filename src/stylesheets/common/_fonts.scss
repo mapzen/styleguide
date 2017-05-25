@@ -4,4 +4,52 @@
 
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Open+Sans:300italic,400italic,700italic,400,300,600,700|Playfair+Display:400,700,900,400italic|Montserrat);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,600,700);
+
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/poppins/v1/01M8UnHoM7MaVdT1TD1pbgsYbbCjybiHxArTLjt7FRU.woff2), local('Poppins Light'), local('Poppins-Light') format('woff2');
+  unicode-range: U+02BC, U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200B-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/poppins/v1/MEXWGbc1EWORtBwy9fFeUgsYbbCjybiHxArTLjt7FRU.woff2), local('Poppins Light'), local('Poppins-Light') format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/poppins/v1/D2gN9uyZ9Ucx1fJ1Fhb7swzyDMXhdD8sAj6OAJTFsBI.woff2), local('Poppins Light'), local('Poppins-Light') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/poppins/v1/BAM-XigHGVWzifDv8-EC1QsYbbCjybiHxArTLjt7FRU.woff2), local('Poppins SemiBold'), local('Poppins-SemiBold') format('woff2');
+  unicode-range: U+02BC, U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200B-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/poppins/v1/9VWMTeb5jtXkNoTv949NpQsYbbCjybiHxArTLjt7FRU.woff2), local('Poppins SemiBold'), local('Poppins-SemiBold') format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/poppins/v1/zO07Oxe3SOlw0l2YX2sdIQzyDMXhdD8sAj6OAJTFsBI.woff2), local('Poppins SemiBold'), local('Poppins-SemiBold') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
