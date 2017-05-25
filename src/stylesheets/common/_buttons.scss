@@ -21,10 +21,6 @@ input[type="search"] + .btn {
 }
 
 // Dark purple button
-.btn-mapzen {
-  @extend .btn-primary;
-}
-
 .btn-primary {
   // Inherits from Bootstrap
   &:hover,
@@ -33,48 +29,60 @@ input[type="search"] + .btn {
   }
 }
 
+// Deprecated, use .btn-primary instead
+.btn-mapzen {
+  @extend .btn-primary;
+}
+
+// Inverse button to be used on colored backgrounds
 .btn-inverse {
   background-color: #ffffff;
-  color: nth($mz-darkpurples, 1);
+  color: $mz-darkpurple-1;
+
   &:hover,
   &:focus {
-    background-color: nth($mz-darkpurples, 5);
-    color: nth($mz-darkpurples, 1);
+    background-color: $mz-darkpurple-5;
+    color: $mz-darkpurple-1;
+  }
+
+  &.disabled,
+  &[disabled] {
+    color: $mz-darkpurple-1;
   }
 }
 
-// To be deprecated in favor of btn-inverse
+// Deprecated, use .btn-inverse instead
 .btn-white {
   @extend .btn-inverse;
 }
 
 // White button with outline
 .btn-secondary {
-  background: #ffffff;
-  border: 1px solid nth($mz-darkpurples, 1);
-  color: nth($mz-darkpurples, 1);
+  background: white;
+  border: 1px solid $mz-darkpurple-1;
+  color: $mz-darkpurple-1;
 
   &:hover,
   &:focus {
-    background-color: nth($mz-darkpurples, 5);
-    color: nth($mz-darkpurples, 1);
+    background-color: $mz-darkpurple-5;
+    color: $mz-darkpurple-1;
   }
 
   &.disabled,
   &[disabled] {
     border-color: $mz-gray;
+    color: $mz-darkpurple-1;
   }
 }
 
-// Transparent button (which is no longer transparent and is used in too many places to remove)
+// Deprecated, use .btn-secondary instead
 .btn-transparent {
   @extend .btn-secondary;
 }
 
-
 .btn-with-arrow {
   background-color: transparent;
-  color: nth($mz-scarlets, 2);
+  color: $mz-scarlet-2;
   padding: 12px;
   /* Make only padding right bigger, so we can put arrow image */
   padding-left: 0;
@@ -87,11 +95,19 @@ input[type="search"] + .btn {
 
   &:hover,
   &:focus {
-    color: nth($mz-scarlets, 1);
+    color: $mz-scarlet-1;
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMS42IiBoZWlnaHQ9IjguNjQiIHZpZXdCb3g9IjAgMCAyMS42IDguNjQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkY0OTQ3IiBkPSJNMjAuOCA0LjMybC03IDMuNXYtN3oiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0ZGNDk0NyIgZD0iTS44IDIuODJoMTR2M0guOHoiLz48L3N2Zz4=');
   }
+
   &:active {
     box-shadow: none;
+  }
+
+  &.disabled,
+  &[disabled] {
+    color: $text-muted;
+    background-color: transparent;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMS42IiBoZWlnaHQ9IjguNjQiIHZpZXdCb3g9IjAgMCAyMS42IDguNjQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNzc3Nzc3IiBkPSJNMjAuOCA0LjMybC03IDMuNXYtN3oiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzc3Nzc3NyIgZD0iTS44IDIuODJoMTR2M0guOHoiLz48L3N2Zz4=');
   }
 }
 
