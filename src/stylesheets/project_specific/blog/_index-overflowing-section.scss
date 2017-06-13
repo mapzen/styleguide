@@ -1,4 +1,4 @@
-$overflow-extra-width: 300px;
+$overflow-extra-width: 250px;
 
 .overflowing {
   margin-left: -$overflow-extra-width*0.6;
@@ -16,7 +16,7 @@ $overflow-extra-width: 300px;
     &:after {
       content: ' ';
       max-width: 100%;
-      width: 350px;
+      width: $overflow-extra-width;
       height: 100%;
       position: absolute;
       left: 0;
@@ -45,7 +45,7 @@ $overflow-extra-width: 300px;
     &:after {
       content: ' ';
       max-width: 100%;
-      width: 350px;
+      width: $overflow-extra-width;
       height: 100%;
       position: absolute;
       right: 0;
