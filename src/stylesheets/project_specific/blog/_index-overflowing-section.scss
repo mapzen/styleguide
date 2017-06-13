@@ -16,7 +16,7 @@ $overflow-extra-width: 300px;
     &:after {
       content: ' ';
       max-width: 100%;
-      width: 500px;
+      width: 350px;
       height: 100%;
       position: absolute;
       left: 0;
@@ -26,7 +26,7 @@ $overflow-extra-width: 300px;
         linear-gradient(
           to left,
           rgba(255,255,255,0) 0%,
-          rgba(255,255,255,150) 100%
+          rgba(255,255,255,0.9) 100%
       );
       overflow: hidden;
     }
@@ -45,7 +45,7 @@ $overflow-extra-width: 300px;
     &:after {
       content: ' ';
       max-width: 100%;
-      width: 500px;
+      width: 350px;
       height: 100%;
       position: absolute;
       right: 0;
@@ -55,7 +55,7 @@ $overflow-extra-width: 300px;
         linear-gradient(
         to right,
         rgba(255,255,255, 0) 0%,
-        rgba(255,255,255, 150) 100%
+        rgba(255,255,255, 0.9) 100%
       );
       overflow: hidden;
     }
