@@ -160,6 +160,16 @@ input[type="search"] + .btn {
   margin-left: 10px;
 }
 
+// NOTE: When tooltip or popover is added to the series of buttons, bootstrap script distorts the margin to display the tooltip.
+// This style block for tooltips gets rid of margins for buttons, prevents jittering from displaying tooltip.
+.btn[data-toggle="tooltip"] {
+  margin: 0;
+}
+
+.btn[data-toggle="popover"] {
+  margin: 0;
+}
+
 .btn-flexible {
   width: 100%;
 

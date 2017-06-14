@@ -1,0 +1,30 @@
+<div id="popover" class="headroom-large">
+  <h5>Popover</h5>
+  <p> Popovers add small overlays of content to any element for housing secondary information. </p>
+  <div data-xrayhtml>
+    <a role="button" title="Header" data-toggle="popover" data-placement="left" data-content="Content">Toggle popover on left</a> |
+    <a role="button" data-toggle="popover" title="Header" data-placement="top" data-content="Content">Toggle popover on top</a> |
+    <a role="button" title="Header" data-toggle="popover" data-placement="right" data-content="Content">Toggle popover on left</a>
+  </div>
+
+  <p>
+    Popovers distort the original elements margin to display themselves causing jittering. To prevent this, we had to get rid of margin of the button when the button is used with Popover. In result, when you use <code>.btn-group</code> wrapper for the series of buttons, you will see the buttons leaving no space for each other.
+  </p>
+
+  <div data-xrayhtml>
+    <!-- THIS SNIPPET IS TO SHOW THE ERROR. DON'T USE THIS SNIPPET-->
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary" title="Header" data-toggle="popover" data-placement="left" data-content="Content">Popover on left</button>
+      <button type="button" class="btn btn-primary" title="Header" data-toggle="popover" data-placement="top" data-content="Content">Popover on top</button>
+      <button type="button" class="btn btn-primary" title="Header" data-toggle="popover" data-placement="right" data-content="Content">Popover on right</button>
+    </div>
+  </div>
+  <p>
+    When you need to use a series of buttons with Popover, please use buttons without <code>.btn-group</code> wrapper like below.
+  </p>
+  <div data-xrayhtml>
+    <button type="button" class="btn btn-primary" title="Header" data-toggle="popover" data-placement="left" data-content="Content">Popover on left</button>
+    <button type="button" class="btn btn-primary" title="Header" data-toggle="popover" data-placement="top" data-content="Content">Popover on top</button>
+    <button type="button" class="btn btn-primary" title="Header" data-toggle="popover" data-placement="right" data-content="Content">Popover on right</button>
+  </div>
+</div>
