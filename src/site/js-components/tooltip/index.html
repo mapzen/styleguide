@@ -7,27 +7,3 @@
     <a role="button" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</a> |
     <a role="button" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</a>
   </div>
-
-  <p>
-    Tooltips have the same problem that Popover component has. (Tooltip distorts the original element's margin.) To prevent this problem, do not use <code>.btn-group</code> wrapper for the series of buttons.
-  </p>
-  <div data-xrayhtml>
-    <!-- THIS SNIPPET IS TO SHOW THE ERROR. DON'T USE THIS SNIPPET-->
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
-      <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
-      <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
-    </div>
-  </div>
-
-  <p>
-    If you need to use a series of buttons with Tooltips, please use the buttons without <code>.btn-group</code> wrapper like below.
-  </p>
-
-  <div data-xrayhtml>
-    <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
-    <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
-    <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Tooltip on left">Tooltip on right</button>
-  </div>
-
-</div>
