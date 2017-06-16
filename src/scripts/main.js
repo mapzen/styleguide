@@ -19,10 +19,13 @@ require('bootstrap/js/scrollspy');
 require('bootstrap/js/affix');
 require('bootstrap/js/collapse');
 require('bootstrap/js/modal');
+require('bootstrap/js/tooltip');
+require('bootstrap/js/popover');
 
 require('rangeslider');
 
 // Mapzen-styleguide specific bundled JavaScripts
+var bootstrapComponents = require('./bootstrap-components.js');
 var trackEvent = require('./event-tracking.js');
 var social = require('./social.js');
 var stickynav = require('./sticky-nav.js');
