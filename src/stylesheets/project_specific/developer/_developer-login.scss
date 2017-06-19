@@ -83,15 +83,14 @@ $signupbtnh:45px;
         border:1px solid #666;
       }
 
-      .login-profile-pic{
+      .login-profile-pic {
         @extend .profile-picture;
-        width:100px;
-        height:100px;
-        margin-top:5px;
-        border:1.5px solid nth($mz-darkpurples, 1);
-        display:block;
+        width: 100px;
+        height: 100px;
+        margin-top: 5px;
+        border: 2px solid $mz-darkpurple-1;
+        display: block;
       }
-
 
       .info-box{
         width:100%;
