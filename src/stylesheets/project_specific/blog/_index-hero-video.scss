@@ -1,11 +1,38 @@
-.hero-float-box {
+/* Temp style for video */
+.index-main-hero {
+  min-height: 550px;
+  max-height: 1000px;
+  height: calc(100vh - #{$header-height-mobile});
+  overflow: hidden;
+  position: relative;
+  @media (min-width: $screen-sm) {
+    height: calc(100vh - #{$header-height});
+  }
+}
+
+// iframe to embed video background
+.index-main-hero iframe.background-video-wrapper {
+  width: 100%;
+  height: calc(100% + 80px);
+  z-index: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.index-hero-float-box {
   position: absolute;
   width: 100%;
   z-index: 1;
-  top: 150px;
+  top: 50px;
+  @media (min-width: $screen-sm) {
+    top: 150px;
+  }
 }
 
-.hero-copy-wrapper {
+.index-hero-copy-wrapper {
   width: auto;
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.7);
@@ -16,7 +43,7 @@
     margin-left: -48px;
   }
 }
-.hero-copy-wrapper h1 {
+.index-hero-copy-wrapper h1 {
   margin-bottom: 18px;
   // Our hero logo is way too long to dispay with our original h1 font-size
   font-size: 36px;
@@ -24,6 +51,6 @@
     font-size: 48px;
   }
 }
-.hero-copy-wrapper .btn-with-arrow {
+.index-hero-copy-wrapper .btn-with-arrow {
   margin-bottom: 24px;
 }
