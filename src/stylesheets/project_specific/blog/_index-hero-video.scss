@@ -18,6 +18,11 @@
 }
 .hero-copy-wrapper h1 {
   margin-bottom: 18px;
+  // Our hero logo is way too long to dispay with our original h1 font-size
+  font-size: 36px;
+  @media (min-width: $screen-sm) {
+    font-size: 48px;
+  }
 }
 .hero-copy-wrapper .btn-with-arrow {
   margin-bottom: 24px;
