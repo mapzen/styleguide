@@ -5,13 +5,14 @@
   height: calc(100vh - #{$header-height-mobile});
   overflow: hidden;
   position: relative;
+  background-color: #000;
   @media (min-width: $screen-sm) {
     height: calc(100vh - #{$header-height});
   }
 }
 
 // iframe to embed video background
-.index-main-hero iframe.background-video-wrapper {
+.index-main-hero .hero-background-wrapper {
   width: 100%;
   height: calc(100% + 80px);
   z-index: 0;
@@ -20,7 +21,22 @@
   top: 0;
   left: 0;
   pointer-events: none;
+
+  &.video {
+    display: none;
+    @media (min-width: $screen-sm) {
+      display: block;
+    }
+  }
+
+  &.mobile-image {
+    display: block;
+    @media (min-width: $screen-sm) {
+      display: none;
+    }
+  }
 }
+
 
 .index-hero-float-box {
   position: absolute;
