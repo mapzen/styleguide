@@ -1,11 +1,11 @@
 /* Temp style for video */
 .index-main-hero {
-  min-height: 550px;
   height: auto;
   overflow: hidden;
   position: relative;
   background-color: #000;
   @media (min-width: $screen-sm) {
+    min-height: 550px;
     height: calc(100vh - #{$header-height});
   }
 }
@@ -38,12 +38,13 @@
 
 
 .index-hero-float-box {
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  top: 50px;
+  margin-bottom: calc(#{$header-height-mobile} + 48px);
   @media (min-width: $screen-sm) {
+    position: absolute;
     top: 150px;
+    width: 100%;
+    z-index: 1;
+    top: 50px;
   }
 }
 
@@ -64,7 +65,13 @@
   font-size: 36px;
   @media (min-width: $screen-sm) {
     font-size: 48px;
-    color: nth($mz-darkpurples, 1) !important;
+  }
+}
+.with-background .index-hero-copy-wrapper h1 {
+  // We want to use white h1 for mobile (with background image)
+  // purple h1 for screens (with video background)
+  @media (min-width: $screen-sm) {
+    color: nth($mz-darkpurples, 1);
   }
 }
 .index-hero-copy-wrapper .btn-with-arrow {
