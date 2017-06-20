@@ -4,9 +4,31 @@
   overflow: hidden;
   position: relative;
   background-color: #000;
+  padding-bottom: 72px;
   @media (min-width: $screen-sm) {
     min-height: 550px;
     height: calc(100vh - #{$header-height});
+    padding-bottom: 0;
+  }
+  /* gradation on mobile */
+  &:after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 64px;
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 1)
+      );
+    pointer-events: none; // Gradient overlay should not obscure mouse clicks.
+    @media (min-width: $screen-sm) {
+      content: none;
+    }
   }
 }
 
@@ -38,7 +60,6 @@
 
 
 .index-hero-float-box {
-  margin-bottom: calc(#{$header-height-mobile} + 48px);
   @media (min-width: $screen-sm) {
     position: absolute;
     top: 150px;
