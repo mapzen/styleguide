@@ -40,7 +40,7 @@
   overflow: hidden;
   position: absolute;
   top: 0;
-  left: 0;
+  right: -40px; /* to hide control*/
   pointer-events: none;
 
   &.video {
