@@ -11,6 +11,7 @@ $section-height: 550px;
 @import './section';
 @import './pricing-page';
 
-// @import './hero-section';
-// @import './index-map-gallery';
-// @import './index-project-list';
+// comment these out when dev is ready
+@import './hero-section';
+@import './map-gallery';
+@import './project-list';
