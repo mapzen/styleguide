@@ -72,10 +72,12 @@
 .index-hero-copy-wrapper {
   width: auto;
   display: inline-block;
-  background-color: rgba(255, 255, 255, 0.7);
   padding-left: 36px;
   padding-right: 36px;
   max-width: 700px;
+  @media (min-width: $screen-sm) {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
   @media (min-width: $screen-lg) {
     margin-left: -48px;
   }
