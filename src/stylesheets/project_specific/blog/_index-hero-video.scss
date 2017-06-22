@@ -116,17 +116,13 @@
   margin-bottom: 18px;
   // Our hero logo is way too long to dispay with our original h1 font-size
   font-size: 36px;
+  color: #fff;
   @media (min-width: $screen-sm) {
     font-size: 48px;
-  }
-}
-.with-background .index-hero-copy-wrapper h1 {
-  // We want to use white h1 for mobile (with background image)
-  // purple h1 for screens (with video background)
-  @media (min-width: $screen-sm) {
     color: nth($mz-darkpurples, 1);
   }
 }
+
 .index-hero-copy-wrapper .btn-with-arrow {
   margin-bottom: 24px;
 }
