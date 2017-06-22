@@ -32,7 +32,7 @@
   var ALWAYS_SHOW_BELOW_Y_POSITION = 60
   var SHOW_AFTER_SCROLL_UP_DISTANCE = 10
   var HIDE_AFTER_SCROLL_DOWN_DISTANCE = 4
-  var TRANSITION_BELOW_Y_POSITION = 120
+  var TRANSITION_BELOW_Y_POSITION = 350
 
   // Internal variables
   var windowPreviousYPosition
@@ -78,7 +78,7 @@
 
   // Initialize
 
-  if (IS_INDEX_PAGE) showTransparentMainNav()
+  // if (IS_INDEX_PAGE) showTransparentMainNav()
 
   // Explicitly declare that the main nav should be
   // fixed in place when the page is loaded
@@ -116,11 +116,11 @@
     }
 
     // Always show transparent style when nav is near the top of index page
-    if (windowYPosition < TRANSITION_BELOW_Y_POSITION && IS_INDEX_PAGE) {
-      showTransparentMainNav()
-    } else {
-      hideTransparentMainNav()
-    }
+    // if (windowYPosition < TRANSITION_BELOW_Y_POSITION && IS_INDEX_PAGE) {
+    //   showTransparentMainNav()
+    // } else {
+    //   hideTransparentMainNav()
+    // }
 
     // Set a timer to expire scroll counter after a set time
     window.clearTimeout(scrollCounterLifespanTimer)

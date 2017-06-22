@@ -72,10 +72,53 @@ body {
     margin-top: 0;
     margin-bottom: 0;
 
+    li {
+      text-align: left;
+      border-top: 1px solid nth($mz-darkpurples, 3);
+    }
+
     li > a {
       display: inline-block;
       background: transparent !important;
+      width: 100%;
     }
+
+    // Open dropdown menu by default on mobile
+    .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: transparent;
+      border: 0;
+      box-shadow: none;
+      display: block;
+      > li > a,
+      .dropdown-header {
+        padding: 5px 15px 5px 25px;
+      }
+      > li > a {
+        line-height: $line-height-computed;
+        color: white;
+        &:hover,
+        &:focus {
+          background-image: none;
+        }
+      }
+    }
+
+  }
+
+  .navbar-right {
+    border-top: 1px solid nth($mz-darkpurples, 3);
+
+    li {
+      border-top: none;
+     }
+
+     #sign-up {
+      padding-top: 0;
+     }
   }
 }
 
@@ -91,17 +134,10 @@ body {
 }
 
 
-// Show transparent navbar when anchored to top (used on home page only atm)
-body.transparent-main-nav nav.navbar {
-  background: transparent;
-}
-
-
 // overriding mobile navbar max-height so we don't have to show scroll bar on smaller screen
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
-  max-height: 360px;
+  max-height: 420px;
 }
-
 
 
 .navbar-default .navbar-nav > .active > a,
@@ -109,17 +145,43 @@ body.transparent-main-nav nav.navbar {
 .navbar-default .navbar-nav > .active > a:focus {
   padding-bottom: 10px;
   border-bottom: 5px solid $navbar-active-link-color;
+
+  @media (max-width: $screen-xs-max) {
+    border-bottom: 0;
+    border-left: 5px solid $navbar-active-link-color;
+  }
 }
+
+
+// Transparent nav bar
+// NOTE: This style is not needed with video background index page, needed to clean up
+// Only used on home page ATM
+
+body.transparent-main-nav nav.navbar {
+  @media (min-width: $screen-sm) {
+    background: transparent;
+    padding-top: 12px;
+    height: 68px;
+
+    .navbar-nav > .active > a,
+    .navbar-nav > .active > a:hover,
+    .navbar-nav > .active > a:focus {
+      border-color: white;
+    }
+  }
+}
+
 
 // Navbar and branding size differs on mobile and tablet/desktop+, so
 // there is some more involved CSS overriding here
 .navbar-brand {
   // Match container edge
-  padding: 5px 30px 11px 15px;
+  padding: 9px 10px;
 
   // Branding size at tablet/desktop screen
   @media (min-width: $screen-sm) {
     height: 100%;
+    padding: 5px 30px 11px 15px;
 
     // When the navbar is forced to be full-width
     // of window, apply a padding on the left
@@ -168,7 +230,7 @@ body.transparent-main-nav nav.navbar {
 
 .navbar-nav > li > a#sign-in {
   min-width: 80px;
-  max-width: 225px;
+  max-width: 215px;
   text-overflow: ellipsis;
 }
 
@@ -213,9 +275,19 @@ body.transparent-main-nav nav.navbar {
 .navbar-nav > li > a > .login-txt {
   float: left;
   overflow: hidden;
-  max-width: 160px;
+  max-width: 135px;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.navbar-nav > li > a > .login-arrow {
+  display: none;
+
+  @media (min-width: $screen-sm) {
+    display: inline-block;
+    margin-left: 6px;
+    font-weight: $bold-font-weight;
+  }
 }
 
 .navbar-nav {
@@ -241,5 +313,44 @@ body.transparent-main-nav nav.navbar {
 @media (min-width: $screen-xs-max) {
   #sign-in + .dropdown-menu > li {
     text-align: left;
+  }
+}
+
+// Hamburger to X animation
+.navbar-toggle {
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform: 10% 10%;
+    -moz-transform: 10% 10%;
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform: 10% 90%;
+    -moz-transform: 10% 90%;
+    transform-origin: 10% 90%;
+  }
+
+  &.collapsed {
+    .top-bar,
+    .bottom-bar {
+     -webkit-transform: rotate(0);
+     -moz-transform: rotate(0);
+      transform: rotate(0);
+    }
+    .middle-bar {
+      opacity: 1;
+    }
   }
 }

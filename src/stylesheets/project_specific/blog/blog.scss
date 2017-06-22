@@ -5,11 +5,10 @@ $section-height: 550px;
 // Mapzen common styles
 
 @import '../../styleguide.scss';
-@import './index-page';
+@import './index-hero-video';
 @import './index-overflowing-section';
 @import './index-editor-snippet';
-@import './index-map-gallery';
-@import './index-project-list';
-@import './hero-section';
 @import './section';
 @import './pricing-page';
+
+@import './hero-section';

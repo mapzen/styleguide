@@ -135,6 +135,7 @@
                + '      style="border-radius: 50%; position: absolute; top: 1px; left: 1px;">'
                + ' </div>'
                + ' <div class="login-txt"> ' + label + ' <\/div>'
+               + ' <div class="login-arrow"><i class="fa fa-angle-down"></i></div>'
                + '</a>'
                + '<ul class="dropdown-menu">';
 
@@ -160,7 +161,7 @@
 
   function getSignUpElem () {
     var strVar = '';
-    strVar += '<span class="visible-xs-inline visible-sm-inline visible-md-inline visible-lg-inline btn btn-white">';
+    strVar += '<span class="visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline btn btn-white">';
     strVar += '  sign up';
     strVar += '<\/span>';
     return strVar;
