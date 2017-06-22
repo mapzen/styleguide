@@ -4,7 +4,6 @@
   overflow: hidden;
   position: relative;
   padding-bottom: 72px;
-  background-color: #000;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -13,6 +12,8 @@
     min-height: 550px;
     height: calc(100vh - #{$header-height});
     padding-bottom: 0;
+    background-image: none;
+    background-color: nth($mz-darkpurples, 1);
   }
   /* gradation on mobile */
   &:after {
