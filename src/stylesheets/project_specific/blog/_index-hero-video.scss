@@ -62,6 +62,33 @@
 }
 
 
+@keyframes fadein {
+  from {opacity: 0.5;}
+  to {opacity: 1;}
+}
+/* preview image before video cues up */
+.index-main-hero .preview-image {
+  display: none;
+  @media (min-width: $screen-sm) {
+    width: calc(100% + 40px);
+    height: calc(100% + 80px);
+    z-index: 0;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -40px; /* to hide control*/
+    pointer-events: none;
+    transform: scale(1.004, 1);
+    background-image: url("/resources/placeholders/main-preview.jpg");
+    background-size: 100% 100%;
+    animation-name: fadein;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+}
+
+
 .index-hero-float-box {
   @media (min-width: $screen-sm) {
     position: absolute;
