@@ -1,6 +1,7 @@
 var Promise = require('promise-polyfill');
 require('rangeslider');
 require('whatwg-fetch');
+require('classlist-polyfill');
 
 require('./Object.assign');
 require('./Array.isArray');
