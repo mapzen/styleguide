@@ -32,19 +32,19 @@
     // so assign loginButton value again
     var loginButton = document.querySelector('nav.navbar #sign-in');
     if(loginButton.getAttribute('data-nav-run') !== 'yes') {
-      fetchUserData();
+      fetchUserData(null);
     }
   });
 
 
-  function fetchUserData () {
+  function fetchUserData (customLogoutCall) {
     // Send request to check the user is logged in or not
     var developerRequest = new XMLHttpRequest();
     developerRequest.open('GET', '/api/developer.json', true);
     developerRequest.onload = function() {
       if (developerRequest.status >= 200 && developerRequest.status < 400) {
         var data = JSON.parse(developerRequest.responseText);
-        reflectUserState(data.id, data.nickname, data.avatar, data.admin);
+        reflectUserState(data.id, data.nickname, data.avatar, data.admin, customLogoutCall);
       } else {
         loginButton.parentNode.innerHTML = getNotLoginElem();
         signupButton.innerHTML = getSignUpElem();
@@ -63,12 +63,25 @@
       loginButton.parentNode.innerHTML = getLoginElem(id, nickname, imageurl, admin);
       // After 'sign out element' in the dropdown was injected
       var signOutElem = document.querySelector('nav.navbar #sign-out');
-      signOutElem.addEventListener('click', customLogoutCall||makeLogoutCall);
+      signOutElem.addEventListener('click', function (e) {
+        // metro-extracts has separate login state, so we log out metro-extracts
+        if (customLogoutCall) customLogoutCall(e);
+        // and log out mapzen.com
+        makeLogoutCall(e);
+      });
       hideSignUpButton();
       putActiveTab(true);
     } else {
       showLogOutStatus();
       putActiveTab(false);
+    }
+  }
+
+  function metroExtractsUserState (id, nickname, imageurl, admin, customLogoutCall) {
+    if (id || (nickname && imageurl)) {
+      reflectUserState(id, nickname, imageurl, admin, customLogoutCall);
+    } else {
+      fetchUserData(customLogoutCall);
     }
   }
 
@@ -248,7 +261,7 @@
 
   /* Expose functions Metro Extract needs */
   return {
-    fetchUserData: fetchUserData,
+    metroExtractsUserState: metroExtractsUserState,
     reflectUserState: reflectUserState
   };
 }));
