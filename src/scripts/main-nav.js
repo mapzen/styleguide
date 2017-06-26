@@ -246,8 +246,9 @@
     }
   }
 
-  // Just return a value to define the module export.
+  /* Expose functions Metro Extract needs */
   return {
+    fetchUserData: fetchUserData,
     reflectUserState: reflectUserState
   };
 }));
