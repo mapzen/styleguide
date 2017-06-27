@@ -92,6 +92,7 @@ gulp.task('publish', ['build'], function() {
   ).pipe(s3({
     Bucket: s3bucket,
     ACL: 'public-read',
+    CacheControl: 'max-age=300,public',
     keyTransform: function (relative_filename) {
       return 'common/styleguide/' + relative_filename;
     }
