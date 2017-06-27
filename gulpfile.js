@@ -19,7 +19,6 @@ gulp.task('clean', function() {
 gulp.task('sass', ['clean'], function() {
   [
     './src/stylesheets/project_specific/documentation/documentation.scss',
-    './src/stylesheets/project_specific/blog/blog.scss',
     './src/stylesheets/project_specific/developer/developer.scss',
     './src/stylesheets/project_specific/styleguidepage/styleguidepage.scss',
     './src/stylesheets/styleguide.scss'
@@ -39,6 +38,26 @@ gulp.task('sass', ['clean'], function() {
       .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest('./dist/styles'));
   });
+
+  /* blog style build process */
+  gulp.src('./src/stylesheets/project_specific/blog/blog.scss')
+      .pipe(sourcemaps.init())
+      .pipe(sass().on('error', sass.logError))
+      .pipe(rename({
+        suffix: '2' /* temp version for cache bursting */
+      }))
+      .pipe(gulp.dest('./dist/styles')) // Write unminified CSS first
+      .pipe(cssnano({
+        safe: true, // Primarily to prevent z-index rebasing, which is a terrible idea
+        discardComments: { removeAll: true } // Force removal of noisy /*! "special" comments */
+      }))
+      .pipe(rename({
+        dirname: '',
+        extname: '.min.css'
+      }))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest('./dist/styles'));
+
 });
 
 gulp.task('js', function () {
