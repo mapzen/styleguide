@@ -19,7 +19,7 @@ gulp.task('clean', function() {
 gulp.task('sass', ['clean'], function() {
   [
     './src/stylesheets/project_specific/documentation/documentation.scss',
-    './src/stylesheets/project_specific/blog/blog.scss',
+    './src/stylesheets/project_specific/website/website.scss',
     './src/stylesheets/project_specific/developer/developer.scss',
     './src/stylesheets/project_specific/styleguidepage/styleguidepage.scss',
     './src/stylesheets/styleguide.scss'
