@@ -147,52 +147,69 @@ pre[class*="language-"] {
 
 .little-box {
   display: inline-block;
-  background:  nth($mz-scarlets, 1);
+  background: $mz-scarlet-1;
   color: white;
   text-align: center;
 }
 
-.mz-darkpurples1 {
-  background-color: nth($mz-darkpurples, 1);
+.mz-darkpurples1,
+.mz-darkpurple-1 {
+  background-color: $mz-darkpurple-1;
 }
-.mz-darkpurples2 {
-  background-color: nth($mz-darkpurples, 2);
+.mz-darkpurples2,
+.mz-darkpurple-2 {
+  background-color: $mz-darkpurple-2;
 }
-.mz-darkpurples3 {
-  background-color: nth($mz-darkpurples, 3);
+.mz-darkpurples3,
+.mz-darkpurple-3 {
+  background-color: $mz-darkpurple-3;
 }
-.mz-darkpurples4 {
-  background-color: nth($mz-darkpurples, 4);
+.mz-darkpurples4,
+.mz-darkpurple-4 {
+  background-color: $mz-darkpurple-4;
 }
-
-.mz-scarlets1 {
-  background-color: nth($mz-scarlets, 1);
-}
-.mz-scarlets2 {
-  background-color: nth($mz-scarlets, 2);
-}
-.mz-scarlets3 {
-  background-color: nth($mz-scarlets, 3);
+.mz-darkpurples5,
+.mz-darkpurple-5 {
+  background-color: $mz-darkpurple-5;
 }
 
-.mz-pinks1 {
-  background-color: nth($mz-pinks, 1);
+.mz-scarlets1,
+.mz-scarlet-1 {
+  background-color: $mz-scarlet-1;
 }
-.mz-pinks2 {
-  background-color: nth($mz-pinks, 2);
+.mz-scarlets2,
+.mz-scarlet-2 {
+  background-color: $mz-scarlet-2;
 }
-.mz-pinks3 {
-  background-color: nth($mz-pinks, 3);
+.mz-scarlets3,
+.mz-scarlet-3 {
+  background-color: $mz-scarlet-3;
 }
 
-.mz-purples1 {
-  background-color: nth($mz-purples, 1);
+.mz-pinks1,
+.mz-pink-1 {
+  background-color: $mz-pink-1;
 }
-.mz-purples2 {
-  background-color: nth($mz-purples, 2);
+.mz-pinks2,
+.mz-pink-2 {
+  background-color: $mz-pink-2;
 }
-.mz-purples3 {
-  background-color: nth($mz-purples, 3);
+.mz-pinks3,
+.mz-pink-3 {
+  background-color: $mz-pink-3;
+}
+
+.mz-purples1,
+.mz-purple-1 {
+  background-color: $mz-purple-1;
+}
+.mz-purples2,
+.mz-purple-2 {
+  background-color: $mz-purple-2;
+}
+.mz-purples3,
+.mz-purple-3 {
+  background-color: $mz-purple-3;
 }
 
 .mz-black {
