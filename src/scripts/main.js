@@ -5,7 +5,7 @@ require('./analytics'); // No return value; attaches to window if complete
 
 // Mapzen styleguide; common JS bundle.
 // Browser compatibility: IE9+ and evergreen browsers.
-
+require('./polyfills/index');
 var $ = require('jquery');
 
 // Bootstrap JavaScript components. These are shimmed
@@ -21,8 +21,6 @@ require('bootstrap/js/collapse');
 require('bootstrap/js/modal');
 require('bootstrap/js/tooltip');
 require('bootstrap/js/popover');
-
-require('rangeslider');
 
 // Mapzen-styleguide specific bundled JavaScripts
 var bootstrapComponents = require('./bootstrap-components.js');
