@@ -44,7 +44,8 @@
     "browserify": "^14.1.0",
     "classlist-polyfill": "1.2.0",
     "jquery": "^2.2.0",
-    "promise-polyfill": "6.0.2",
+    "object-assign": "^4.1.1",
+    "promise": "^8.0.0",
     "rangeslider.js": "^2.3.0",
     "whatwg-fetch": "2.0.3"
   },
