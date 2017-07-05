@@ -18,7 +18,7 @@
         <pre><code>&lt;script src=&quot;https://mapzen.com/common/styleguide/scripts/mapzen-styleguide.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 
         <p>
-          This file is about 35kb minified and gzipped. For best results, insert this script tag at the bottom of a webpage, just before the closing <code>&lt;/body&gt;</code> tag. You can see its preferred placement in the <a href="./#boilerplate">HTML Boilerplate</a>.
+          This file is about 50kb minified and gzipped. For best results, insert this script tag at the bottom of a webpage, just before the closing <code>&lt;/body&gt;</code> tag. You can see its preferred placement in the <a href="./#boilerplate">HTML Boilerplate</a>.
         </p>
 
         <p>
@@ -32,6 +32,25 @@
 
         <p>
           In addition, client-side JavaScript is used to make sure our top navigation bar works correctly, and to handle <a href="./design-elements.html#tables">very wide tables</a>. Specific design components that depend on JavaScript are described in greater detail below. If you need other libraries that are not included in this list above, please include them in your page separately. (For instance, jQuery is <em>not</em> provided by the Styleguide.)
+        </p>
+
+        <h3>Polyfills</h3>
+
+        <p>
+          We include some polyfills for the latest standard JavaScript APIs, so that you can write modern code that will continue to work in older browsers that we support. Not all modern JavaScript is polyfilled, but we include the following:
+        </p>
+
+        <ul>
+          <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"><code>Object.assign()</code></a> via <a href="https://github.com/sindresorhus/object-assign">object-assign</a>.</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise</code></a> via <a href="https://github.com/then/promise">promise</a>.</li>
+          <li><a href="https://developer.mozilla.org/en/docs/Web/API/Fetch_API"><code>fetch()</code></a> via <a href="https://github.com/github/fetch">whatwg-fetch</a>.</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList"><code>HTMLElement.classList</code></a> via <a href="https://github.com/yola/classlist-polyfill">classlist-polyfill</a>.</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray"><code>Array.isArray()</code></a> via <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray#Polyfill">MDN</a>.</li>
+          <li><a href=""><code>&lt;input type="range"&gt;</code></a> via <a href="https://github.com/andreruffert/rangeslider.js">rangeslider.js</a>.</li>
+        </ul>
+
+        <p>
+          Please note that polyfills are immediately available in global scope and added as a side effect of including this bundle. If the browser already supports a feature natively, polyfills will defer to the native functionality.
         </p>
 
         <hr>
