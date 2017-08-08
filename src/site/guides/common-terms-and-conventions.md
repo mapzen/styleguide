@@ -12,6 +12,7 @@ This list is a living document that will be added to or changed as terminology i
 - Use 24-hour times, if you can, to consider a global audience.
 - Use [ISO standards](https://en.wikipedia.org/wiki/ISO_8601) for calendar dates in documentation because this is the common format Mapzen uses in developer contexts and code. Example: _YYYY-MM-DD_, or _2016-09-05_ for September 5, 2016.
 - It is okay to use _month day, year_ in social media or a blog post. However, even in less formal content, avoid ambiguous date formatting, such as 9/5, which could be interpreted as September 5 or May 9, depending on the locale.
+- Avoid mentioning seasons, such as a release is "expected in the fall." This sentence is centric to the northern hemisphere and confusing to antipodeans. Use months or calendar quarters instead. If you must use a season, state the hemisphere.
 
 ## Abbreviations and acronyms
 
