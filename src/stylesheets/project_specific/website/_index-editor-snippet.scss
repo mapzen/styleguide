@@ -1,27 +1,40 @@
 $gradient-color: nth($mz-darkpurples, 1);
-$editor-right-margin: 32px;
 
-.editor-snippet {
-  @media (min-width: $screen-sm) {
+.editor-wrapper {
+  width: 100%;
+  height: $section-height - $section-padding*2;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &::before {
     width: 100%;
-    height: $section-height - $section-padding*2;
-    border: 0;
-    color: #fff;
-    background-color: #1e0f33;
-    border-radius: 5px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    margin: 0;
-    padding: 0;
-  }
-  &:before {
-    width: 100%;
-    height: $section-height - $section-padding*2;
+    height: 100%;
     border-radius: 5px;
     content: ' ';
     background: -webkit-linear-gradient(rgba($gradient-color, 0) 25%, $gradient-color 97%);
     background: linear-gradient(rgba($gradient-color, 0) 25%, $gradient-color 97%);
     position: absolute;
+    pointer-events: none;
+  }
+}
+
+.editor-snippet {
+  @media (min-width: $screen-sm) {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    color: #fff;
+    background-color: #1e0f33;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 1.5em;
+    padding-right: 3em;
+  }
+
+  // Scroll bar adjustments, Webkit only
+  &::-webkit-scrollbar-track-piece {
+    background-color: transparent;
   }
 
   // Syntax highlighting
