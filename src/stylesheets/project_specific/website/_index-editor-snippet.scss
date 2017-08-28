@@ -32,11 +32,6 @@ $gradient-color: nth($mz-darkpurples, 1);
     padding-right: 3em;
   }
 
-  // Scroll bar adjustments, Webkit only
-  &::-webkit-scrollbar-track-piece {
-    background-color: transparent;
-  }
-
   // Syntax highlighting
   .cp, .nt {
     color: #FF112F;
