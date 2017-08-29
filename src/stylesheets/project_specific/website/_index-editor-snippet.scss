@@ -1,37 +1,46 @@
-$gradient-color: nth($mz-darkpurples, 1);
-$editor-right-margin: 32px;
+$editor-gradient-color: $mz-darkpurple-1;
+$editor-border-radius: 5px;
+
+.editor-wrapper {
+  width: 100%;
+  height: $section-height - $section-padding*2;
+  border-radius: $editor-border-radius;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: $editor-border-radius;
+    background: -webkit-linear-gradient(rgba($editor-gradient-color, 0) 25%, $editor-gradient-color 97%);
+    background: linear-gradient(rgba($editor-gradient-color, 0) 25%, $editor-gradient-color 97%);
+    position: absolute;
+    pointer-events: none;
+  }
+}
 
 .editor-snippet {
   @media (min-width: $screen-sm) {
     width: 100%;
-    height: $section-height - $section-padding*2;
+    height: 100%;
     border: 0;
     color: #fff;
     background-color: #1e0f33;
-    border-radius: 5px;
     overflow-x: hidden;
     overflow-y: scroll;
     margin: 0;
-    padding: 0;
-  }
-  &:before {
-    width: 100%;
-    height: $section-height - $section-padding*2;
-    border-radius: 5px;
-    content: ' ';
-    background: -webkit-linear-gradient(rgba($gradient-color, 0) 25%, $gradient-color 97%);
-    background: linear-gradient(rgba($gradient-color, 0) 25%, $gradient-color 97%);
-    position: absolute;
+    padding: 1.5em;
+    padding-right: 3em;
   }
 
   // Syntax highlighting
   .cp, .nt {
-    color: #FF112F;
+    color: #ff112f;
   }
   .na {
-    color: nth($mz-pinks, 2);
+    color: $mz-pink-2;
   }
   .s {
-    color: nth($mz-purples, 2);
+    color: $mz-purple-2;
   }
 }
