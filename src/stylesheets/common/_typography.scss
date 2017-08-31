@@ -44,30 +44,33 @@ h2 {
 h3 {
   font-size: 24px;
   @media (max-width: $screen-sm) {
+    font-size: 20px;
+  }
+}
+
+h4, h5, h6 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+
+  // Scale back margins on mobile
+  @media (max-width: $screen-sm) {
+    margin-bottom: 6px;
+  }
+}
+
+h4 {
+  font-size: 20px;
+  @media (max-width: $screen-sm) {
     font-size: 18px;
   }
 }
 
-// For use in blogs
-h4 {
-  font-size: 16px;
-  // margin: 0px;
-  // padding: 0px;
-  margin-top: 24px;
-  margin-bottom: 12px;
-  @media (min-width: $screen-sm) {
-    // font-size: 24px;
-    // margin-top: 30px;
-    // margin-bottom: 10px;
-  }
+h5 {
+  font-size: 18px;
 }
 
-// footer get involved
-h5 {
-  font-size: 14px;
-  margin-top: 24px;
-  margin-bottom: 12px;
-  // color: $mz-mediumgray;
+h6 {
+  font-size: 16px;
 }
 
 // link color was missing from style guide
