@@ -8,6 +8,12 @@ body {
   line-height: 1.5;
 }
 
+// Paragraphs
+p {
+  // Override Bootstrap's computed margin
+  margin-bottom: 1em;
+}
+
 // Headings
 
 h1, h2, h3 {
