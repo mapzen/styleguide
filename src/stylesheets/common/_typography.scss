@@ -19,7 +19,6 @@ p {
 h1, h2, h3 {
   margin-top: 48px;
   margin-bottom: 12px;
-  line-height: 1.2em;
 
   // Scale back margins on mobile
   @media (max-width: $screen-sm) {
@@ -52,7 +51,6 @@ h3 {
 // For use in blogs
 h4 {
   font-size: 16px;
-  // line-height: 27px;
   // margin: 0px;
   // padding: 0px;
   margin-top: 24px;
@@ -69,7 +67,6 @@ h5 {
   font-size: 14px;
   margin-top: 24px;
   margin-bottom: 12px;
-  // line-height: 1.4em;
   // color: $mz-mediumgray;
 }
 
@@ -85,6 +82,8 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+
   a {
     font-weight: inherit;
   }
