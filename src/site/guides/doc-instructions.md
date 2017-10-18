@@ -8,23 +8,6 @@ This site brings together all Mapzen's documentation in one place. The underlyin
 
 As long as a markdown file is listed in the build configuration, changes you make to the source files in the GitHub branch that is being pulled into the help (typically, the master branch) appear automatically on https://mapzen.com/documentation.
 
-## Where do the docs live?
-
-Docs live in either individual repositories in a team's organization, or as a folder in a project's repository. Also, depending on the config of the docs, doc updates may be as simple as pushing to master or need to be in a release.
-
-|                           Product                        | Where does it live? | Updates  |
-|----------------------------------------------------------|---------------------|----------|
-| [Overview](http://www.mapzen.com/documentation/overview) | https://github.com/mapzen/mapzen-docs-generator/tree/master/docs  | Push to Master  | 
-| [Mapzen.js](https://mapzen.com/documentation/mapzen-js/)  | https://github.com/mapzen/mapzen.js/tree/master/docs  | Needs to be in a release  | 
-| [Tangram](https://mapzen.com/documentation/tangram/) | https://github.com/tangrams/tangram-docs | Push to gh-pages   |
-| [Vector Tiles](https://mapzen.com/documentation/vector-tiles/)  | https://github.com/tilezen/vector-datasource/tree/master/docs  | Has versioning |
-| [Search](https://mapzen.com/documentation/search/)  | https://github.com/pelias/pelias-doc  | Push to Master  |
-| [Mobility](https://mapzen.com/documentation/mobility/)  | https://github.com/valhalla/valhalla-docs  | Push to Master |
-| [Metro Extracts](https://mapzen.com/documentation/metro-extracts/)  | https://github.com/mapzen/metro-extracts/tree/master/docs  | Push to Master |
-| [Terrain Tiles](https://mapzen.com/documentation/terrain-tiles/)  | https://github.com/tilezen/joerd  | Needs to be in a release  |
-| [Elevation Service](https://mapzen.com/documentation/elevation/) | https://github.com/valhalla/valhalla-docs  | Push to Master |
-| [Android SDK](https://mapzen.com/documentation/android/) | https://github.com/mapzen/android/tree/master/docs | Push to Master |
-
 ## Build and deploy the help system website
 
 The help system is built with an open-source Python tool called [MkDocs](http://www.mkdocs.org/), which formats GitHub markdown files in to a static, HTML website. MkDocs also creates a table of contents, a simple keyword search, navigation breadcrumbs, and links to move back and forward between topics. Note that while MkDocs reads just one source, Mapzen has enhanced the generator to integrate multiple repositories. There have been additional enhancements to support URL redirects and renaming files in the output help.
@@ -38,11 +21,13 @@ You need to update the config.yml file to add a topic, remove one, or rename it 
 1. Go to https://github.com/mapzen/mapzen-docs-generator/tree/master/config
 2. Find the .yml file for your section of help. For example, Mapzen Mobility can be found in mobility.yml.
 3. Under `pages:`, make the change to the table of contents. The topic in the `Home:` position should always be only `index.md` (under MkDocs rules). Add topics by including a heading, contained in single quotation mark, followed by a colon and the name of the md file. For example, `'API Reference': 'api-reference.md'`
-4. You can add nesting in the table of contents by indenting the lines underneath the heading.
+4. You can add nesting in the table of contents by indenting the lines underneath the heading. 
 ```json
 - Concept overviews:
   - 'The Scene File': 'Scene-file.md'
 ```
+
+Adding nesting like this does not change the URL, so no redirects are needed when reorganizing existing content. However, if files are moved or new folders created in GitHub, these do update the URL and you need to add redirects.
 
 Filenames are case-sensitive, so 'Scene-file.md' is different from 'scene-file.md'. The filename in the config file must exactly match the source file, or else you will get a build error.
 
