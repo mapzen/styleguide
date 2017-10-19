@@ -58,9 +58,9 @@
     developerRequest.send();
   }
 
-  function reflectUserState (id, nickname, imageurl, admin, customLogoutCall) {
-    if (id || (nickname && imageurl)) {
-      loginButton.parentNode.innerHTML = getLoginElem(id, nickname, imageurl, admin);
+  function reflectUserState (id, nickname, avatar, admin, customLogoutCall) {
+    if (id || (nickname && avatar)) {
+      loginButton.parentNode.innerHTML = getLoginElem(id, nickname, avatar, admin);
       // After 'sign out element' in the dropdown was injected
       var signOutElem = document.querySelector('nav.navbar #sign-out');
       signOutElem.addEventListener('click', function (e) {
@@ -77,9 +77,9 @@
     }
   }
 
-  function metroExtractsUserState (id, nickname, imageurl, admin, customLogoutCall) {
-    if (id || (nickname && imageurl)) {
-      reflectUserState(id, nickname, imageurl, admin, customLogoutCall);
+  function metroExtractsUserState (id, nickname, avatar, admin, customLogoutCall) {
+    if (id || (nickname && avatar)) {
+      reflectUserState(id, nickname, avatar, admin, customLogoutCall);
     } else {
       fetchUserData(customLogoutCall);
     }
@@ -125,16 +125,14 @@
     }
   }
 
-  function getLoginElem (id, nickname, githubAvatar, admin) {
-    // default to showing 'account' and default avatar
-    var avatarImageURL = '/common/styleguide/images/default-avatar.svg';
+  function getLoginElem (id, nickname, avatar, admin) {
+    // default to showing 'account'
     var label = 'Account';
     var profileClass = 'login-profile-default';
     var profileSize = '24';
 
     if (nickname) {
-      // github user so show github nickname and avatar instead of default
-      avatarImageURL = githubAvatar;
+      // github user so show github nickname instead of default
       label = nickname;
       profileClass = 'login-profile-github';
       profileSize = '18';
@@ -144,7 +142,7 @@
                + '   data-target="#" data-nav-run="yes" role="button">'
                + ' <div class="' + profileClass + '" id="login-profile">'
                + ' <img width="' + profileSize + '" height="' + profileSize + '"'
-               + '      src="' + avatarImageURL + '"'
+               + '      src="' + avatar + '"'
                + '      style="border-radius: 50%; position: absolute; top: 1px; left: 1px;">'
                + ' </div>'
                + ' <div class="login-txt"> ' + label + ' <\/div>'
