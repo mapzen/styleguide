@@ -33,3 +33,14 @@ $card-content-color: $mz-mediumgray;
   }
 
 }
+
+.cards, .cards div[class^="col-"] {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+
+  .card {
+    -webkit-flex: 1;  /* Safari 6.1+ */
+    -ms-flex: 1;  /* IE 10 */    
+    flex: 1;
+  }
+}
