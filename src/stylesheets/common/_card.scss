@@ -1,0 +1,35 @@
+/*
+ * Card
+ *
+ * .card
+ *  -> .card-image (proposed only)
+ *  -> .card-content
+ *    -> .card-title
+ *    -> .card-icon (proposed only)
+ *    -> .card-action (proposed only)
+ */
+
+$card-border-color: #ccc; //$mz-lightgray;
+$card-content-color: $mz-mediumgray;
+
+.card {
+  border: 1px solid $card-border-color;
+  word-wrap: break-word;
+
+  &.no-border {
+    border-color: transparent;
+  }
+
+  .card-content {
+    margin: 10%;
+    word-wrap: break-word;
+    color: $card-content-color;
+  }
+
+  .card-title {
+    @extend h4;
+    color: nth($mz-darkpurples, 2);
+    word-wrap: break-word;
+  }
+
+}
