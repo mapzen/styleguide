@@ -1,13 +1,4 @@
-/*
- * Card
- *
- * .card
- *  -> .card-image (proposed only)
- *  -> .card-content
- *    -> .card-title
- *    -> .card-icon (proposed only)
- *    -> .card-action (proposed only)
- */
+// Card
 
 $card-border-color: #ccc; //$mz-lightgray;
 $card-content-color: $mz-mediumgray;
@@ -34,6 +25,7 @@ $card-content-color: $mz-mediumgray;
 
 }
 
+// Use "cards" parent div to force cards to same height
 .cards, .cards div[class^="col-"] {
   display: -webkit-flex; /* Safari */
   display: flex;
