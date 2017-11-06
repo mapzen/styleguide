@@ -10,7 +10,6 @@ var fileinclude = require('gulp-file-include');
 var del = require('del');
 var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
-var gulpif = require('gulp-if');
 
 gulp.task('clean', function() {
   return del(['examples/dist/**/*']);
@@ -28,6 +27,8 @@ gulp.task('sass', ['clean'], function() {
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./dist/styles')) // Write unminified CSS first
+        // .pipe(gulpif((gutil.env.target !== "prod"), sourcemaps.write()))
+
       .pipe(cssnano({
         safe: true, // Primarily to prevent z-index rebasing, which is a terrible idea
         discardComments: { removeAll: true } // Force removal of noisy /*! "special" comments */
@@ -50,7 +51,7 @@ gulp.task('js', function () {
   return b.bundle()
     .pipe(source('src/main.js'))
     .pipe(buffer())
-    .pipe(gulpif((gutil.env.target !== "prod"), sourcemaps.init({ loadMaps: true })))
+    .pipe(gutil.env.target !== 'prod' ? sourcemaps.init({ loadMaps: true }): gutil.noop())
       // Add transformation tasks to the pipeline here.
       .pipe(uglify())
       .pipe(rename({
@@ -59,7 +60,7 @@ gulp.task('js', function () {
         extname: '.min.js'
       }))
       .on('error', gutil.log)
-    .pipe(gulpif((gutil.env.target !== "prod"), sourcemaps.write('./')))
+    .pipe(gutil.env.target !== 'prod' ?  sourcemaps.write('./'): gutil.noop())
     .pipe(gulp.dest('dist/scripts/'));
 });
 
