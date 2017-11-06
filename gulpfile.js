@@ -24,7 +24,7 @@ gulp.task('sass', ['clean'], function() {
     './src/stylesheets/styleguide.scss'
   ].forEach(function(file_path) {
     gulp.src(file_path)
-      .pipe(gutil.env.target !== 'prod' ? sourcemaps.init() : gutil.noop())
+      .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('./dist/styles')) // Write unminified CSS first
         // .pipe(gulpif((gutil.env.target !== "prod"), sourcemaps.write()))
@@ -37,7 +37,7 @@ gulp.task('sass', ['clean'], function() {
         dirname: '',
         extname: '.min.css'
       }))
-      .pipe(gutil.env.target !== 'prod' ? sourcemaps.write('.') : gutil.noop())
+      .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest('./dist/styles'));
   });
 });
