@@ -84,7 +84,28 @@
   }
 }
 
-.multimedia-wrapper, .video-wrapper {
+
+.multimedia-wrapper {
+  width: 100%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+
+  @media (min-width: $screen-md-min) {
+    width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+  iframe {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+
+.video-wrapper {
   width: 100%;
   position: relative;
   height: 0;
