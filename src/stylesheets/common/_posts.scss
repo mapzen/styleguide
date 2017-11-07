@@ -84,28 +84,41 @@
   }
 }
 
-.multimedia-wrapper {
+.multimedia-wrapper, .video-wrapper {
   width: 100%;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  position: relative;
+  height: 0;
+  /* if no ratio is passed, assume that the video is 16:9 */
+  padding-bottom: 56.25%;
 
   @media (min-width: $screen-md-min) {
     width: 120%;
     margin-left: -10%;
     margin-right: -10%;
+    /* if no ratio is passed, assume that the video is 16:9 */
+    padding-bottom: 67.5%;
+  }
+
+  &.ratio-16-9 {
+    padding-bottom: 56.25%;
+    @media (min-width: $screen-md-min) {
+      padding-bottom: 67.5%;
+    }
+  }
+  &.ratio-4-3 {
+    padding-bottom: 75%;
+    @media (min-width: $screen-md-min) {
+      padding-bottom: 90%;
+    }
   }
 
   video,
   iframe {
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-  }
-
-  iframe {
-    border: 0;
+    height: 100%;
   }
 }
 
