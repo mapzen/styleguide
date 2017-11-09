@@ -15,6 +15,7 @@ deployment:
     branch: master
     commands:
       - gulp publish --target prod
+      - gulp publish --target dev
 
 general:
   artifacts:
