@@ -10,6 +10,7 @@ var fileinclude = require('gulp-file-include');
 var del = require('del');
 var buffer = require('vinyl-buffer');
 var source = require('vinyl-source-stream');
+var deploy = require('gulp-deploy-git');
 
 gulp.task('clean', function() {
   return del(['examples/dist/**/*']);
@@ -98,6 +99,16 @@ gulp.task('publish', ['build'], function() {
       return 'common/styleguide/' + relative_filename;
     }
   }));
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('dist/**/*', { read: false })
+    .pipe(deploy({
+      message: 'Deploy to gh-pages',
+      prefix: 'dist',
+      remoteBranch: 'gh-pages',
+      repository: 'https://github.com/rfriberg/styleguide.git'
+    }));
 });
 
 gulp.task('build', ['sass', 'js', 'fileinclude']);
