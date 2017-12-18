@@ -11,6 +11,14 @@
   }
 }
 
+/* Use when section needs to be flush with the footer */
+/* This compensates for footer's '.headroom-large' */
+.flush-with-footer {
+  margin-bottom: -24px;
+  @media (min-width: $screen-sm) {
+    margin-bottom: -48px;
+  }
+}
 
 /* For sections with contour image background */
 /* This section doesn't have default background-image */
@@ -70,3 +78,10 @@
     background-image: url('/common/styleguide/images/background/contour_scarlet_lg.png');
   }
 }
+
+/* For sections with background color only (no image) */
+
+.light-purple-background {
+  background-color: $mz-darkpurple-5;
+}
+
