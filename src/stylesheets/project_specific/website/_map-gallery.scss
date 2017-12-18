@@ -55,27 +55,27 @@ $map-gallery-xs-height: 256px;
     }
   }
   .refill {
-    background-image: url(/common/styleguide/images/maps/refill.png);
+    background-image: url(../images/maps/refill.png);
     @media #{$hidpi-screens} {
-      background-image: url(/common/styleguide/images/maps/refill@2x.png);
+      background-image: url(../images/maps/refill@2x.png);
     }
   }
   .tron {
-    background-image: url(/common/styleguide/images/maps/tron.png);
+    background-image: url(../images/maps/tron.png);
     @media #{$hidpi-screens} {
-      background-image: url(/common/styleguide/images/maps/tron@2x.png);
+      background-image: url(../images/maps/tron@2x.png);
     }
   }
   .walkabout {
-    background-image: url(/common/styleguide/images/maps/walkabout.png);
+    background-image: url(../images/maps/walkabout.png);
     @media #{$hidpi-screens} {
-      background-image: url(/common/styleguide/images/maps/walkabout@2x.png);
+      background-image: url(../images/maps/walkabout@2x.png);
     }
   }
   .bubble {
-    background-image: url(/common/styleguide/images/maps/bubble-wrap.png);
+    background-image: url(../images/maps/bubble-wrap.png);
     @media #{$hidpi-screens} {
-      background-image: url(/common/styleguide/images/maps/bubble-wrap@2x.png);
+      background-image: url(../images/maps/bubble-wrap@2x.png);
     }
   }
 }

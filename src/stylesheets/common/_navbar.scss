@@ -203,7 +203,7 @@ body.transparent-main-nav nav.navbar {
 .mapzen-logo {
   width: 130px;
   height: 40px;
-  background-image: url('https://mapzen.com/common/styleguide/images/mapzen-logo-stacked.png');
+  background-image: url('../images/mapzen-logo-stacked.png');
   background-repeat: no-repeat;
   background-size: 130px;
   background-position: 0 0;
@@ -224,7 +224,7 @@ body.transparent-main-nav nav.navbar {
   }
 
   @media #{$hidpi-screens} {
-    background-image: url('https://mapzen.com/common/styleguide/images/mapzen-logo-stacked@2x.png');
+    background-image: url('../images/mapzen-logo-stacked@2x.png');
   }
 }
 

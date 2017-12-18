@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-image: url('/common/styleguide/images/background/contour_purple_xs.png');
+  background-image: url('../images/background/contour_purple_xs.png');
   @media (min-width: $screen-sm) {
     min-height: 550px;
     height: calc(100vh - #{$header-height});
@@ -81,7 +81,7 @@
     right: -40px; /* to hide control*/
     pointer-events: none;
     transform: scale(1.004, 1);
-    background-image: url('/common/styleguide/images/main-preview.jpg');
+    background-image: url('../images/main-preview.jpg');
     background-size: 100% 100%;
     animation-name: fadein;
     animation-duration: 1s;
