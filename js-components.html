@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Mapzen Styleguide 2.0</title>
+    <meta name="description" content="Mapzen Styleguide">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='apple-touch-icon' href='https://mapzen.com/common/styleguide/images/favicons/apple-touch-icon.png' sizes='180x180'>
+    <link rel='icon' type='image/png' href='https://mapzen.com/common/styleguide/images/favicons/favicon-16x16.png' sizes='16x16'>
+    <link rel='icon' type='image/png' href='https://mapzen.com/common/styleguide/images/favicons/favicon-32x32.png' sizes='32x32'>
+    <link rel='manifest' href='https://mapzen.com/common/styleguide/images/favicons/manifest.json'>
+    <link rel='mask-icon' href='https://mapzen.com/common/styleguide/images/favicons/safari-pinned-tab.svg' color='#2C1E3F '>
+    <link rel="stylesheet" type="text/css" href="styles/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleguidepage.css">
+    <link rel="stylesheet" type="text/css" href="./lib/X-rayHTML.css">
+    <link rel="stylesheet" type="text/css" href="./lib/prism.css">
+</head>
+
+<body data-spy="scroll" data-target=".side-nav" data-offset="30">
+  <div class="documentation-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h1>Mapzen Web Styleguide 2.0</h1>
+        <p>
+          “You can’t connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future. You have to trust in something&#8202;&mdash;&#8202;your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life.” &mdash;&#8202;Steve Jobs
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row headroom-large">
+      <div class="side-nav styleguide-side-nav col-xs-12 col-md-3">
+        <div class="toc hidden-print affix-top" role="directory" id="toc">
+  <ul class="nav toc-nav">
+    <li class="toc-top-level" id='toc-get-started'>
+      <a class="toc-subnav-toggle" href="./">Get Started</a>
+    </li>
+    <li class="toc-top-level" id='toc-design-elements'>
+      <a class="toc-subnav-toggle" href="./design-elements.html">Design Elements</a>
+      <ul class="toc-subnav">
+        <li><a href="./design-elements.html#grids">Grids</a></li>
+        <li><a href="./design-elements.html#spacing">Spacing</a></li>
+        <li><a href="./design-elements.html#fonts">Fonts</a></li>
+        <li><a href="./design-elements.html#colors">Colors</a></li>
+        <li><a href="./design-elements.html#typography">Typography</a></li>
+        <li><a href="./design-elements.html#icons">Icons</a></li>
+        <li><a href="./design-elements.html#buttons">Buttons</a></li>
+        <li><a href="./design-elements.html#forms">Forms</a></li>
+        <li><a href="./design-elements.html#tables">Tables</a></li>
+        <li><a href="./design-elements.html#lists">Lists</a></li>
+        <li><a href="./design-elements.html#alerts">Alerts</a></li>
+      </ul>
+    </li>
+    <li class="toc-top-level" id='toc-ui-components'>
+      <a class="toc-subnav-toggle" href="./ui-components.html">UI Components</a>
+      <ul class="toc-subnav">
+        <li><a href="./ui-components.html#breadcrumb">Breadcrumbs</a></li>
+        <li><a href="./ui-components.html#pagination">Pagination</a></li>
+        <li><a href="./ui-components.html#user-avatar">User Avatars</a></li>
+        <li><a href="./ui-components.html#author-blurb-single">Author Blurb</a></li>
+        <li><a href="./ui-components.html#signup-cta">Sign Up CTA</a></li>
+        <li><a href="./ui-components.html#card">Cards</a></li>
+        <li><a href="./ui-components.html#switcher">Switcher</a></li>
+        <li><a href="./ui-components.html#loading-spinner">Loading Spinners</a></li>
+      </ul>
+    </li>
+    <li class="toc-top-level" id='toc-js-components'>
+      <a class="toc-subnav-toggle" href="./js-components.html">JS Components</a>
+      <ul class="toc-subnav">
+        <li><a href="./js-components.html#social-share">Social Share</a></li>
+        <li><a href="./js-components.html#side-navigation">Side Navigation</a></li>
+        <li><a href="./js-components.html#popover">Popover</a></li>
+        <li><a href="./js-components.html#tooltip">Tooltip</a></li>
+      </ul>
+    </li>
+    <li class="toc-top-level" id='toc-resources'>
+      <a class="toc-subnav-toggle" href="./resources.html">Resources</a>
+      <ul class="toc-subnav">
+        <li><a href="./resources.html#content-guides">Content Guides</a></li>
+        <li><a href="./resources.html#downloads">Downloads</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+  (function () {
+    // The current page is set by an option in @@fileinclude
+    var currentPage = 'js-components';
+    var activeNavItemId = 'toc-' + currentPage;
+    var activeEl = document.getElementById(activeNavItemId);
+    if (activeEl) {
+      // Highlight the current page
+      if (activeEl.classList) activeEl.classList.add('toc-current');
+      // Expand the 2nd-level menu
+      var subMenuEl = activeEl.querySelector('.toc-subnav');
+      if (subMenuEl) {
+        if (subMenuEl.classList) subMenuEl.classList.add('toc-expand');
+        // Modify the links to point to internal ids; this
+        // helps scrollspy function correctly
+        var subMenuLinks = subMenuEl.querySelectorAll('a');
+        for (var i = 0, j = subMenuLinks.length; i < j; i++) {
+          var link = subMenuLinks[i];
+          link.setAttribute('href', '#' + link.href.split('#')[1]);
+        }
+      }
+    }
+  })();
+</script>
+
+      </div>
+
+      <div class="col-xs-12 col-md-9">
+        <h2>JS Components</h2>
+
+        <p>
+          Some components will require JavaScript in order to function correctly. In addition, we assume that all of our pages will be measured by <a href="https://www.google.com/analytics/">Google Analytics</a>. So, we've bundled all of the baseline JavaScript requirements into one package:
+        </p>
+
+        <pre><code>&lt;script src=&quot;https://mapzen.com/common/styleguide/scripts/mapzen-styleguide.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+        <p>
+          This file is about 50kb minified and gzipped. For best results, insert this script tag at the bottom of a webpage, just before the closing <code>&lt;/body&gt;</code> tag. You can see its preferred placement in the <a href="./#boilerplate">HTML Boilerplate</a>.
+        </p>
+
+        <p>
+          These third-party libraries are included:
+        </p>
+
+        <ul>
+          <li><a href="http://getbootstrap.com/javascript/">Bootstrap JavaScript</a> <em>(version 3.3.6)</em> for these plugins: Transitions, Dropdown, Scrollspy, Collapse, and Affix. Other Bootstrap plugins are not supported by our styleguide at this time.</li>
+          <li><a href="https://www.google.com/analytics/">Google Analytics</a> using Mapzen's Universal Analytics ID. We also include a helper function for tracking specific events <em>(documentation forthcoming)</em>.</li>
+        </ul>
+
+        <p>
+          In addition, client-side JavaScript is used to make sure our top navigation bar works correctly, and to handle <a href="./design-elements.html#tables">very wide tables</a>. Specific design components that depend on JavaScript are described in greater detail below. If you need other libraries that are not included in this list above, please include them in your page separately. (For instance, jQuery is <em>not</em> provided by the Styleguide.)
+        </p>
+
+        <h3>Polyfills</h3>
+
+        <p>
+          We include some polyfills for the latest standard JavaScript APIs, so that you can write modern code that will continue to work in older browsers that we support. Not all modern JavaScript is polyfilled, but we include the following:
+        </p>
+
+        <ul>
+          <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"><code>Object.assign()</code></a> via <a href="https://github.com/sindresorhus/object-assign">object-assign</a>.</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise</code></a> via <a href="https://github.com/then/promise">promise</a>.</li>
+          <li><a href="https://developer.mozilla.org/en/docs/Web/API/Fetch_API"><code>fetch()</code></a> via <a href="https://github.com/github/fetch">whatwg-fetch</a>.</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList"><code>HTMLElement.classList</code></a> via <a href="https://github.com/yola/classlist-polyfill">classlist-polyfill</a>.</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray"><code>Array.isArray()</code></a> via <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray#Polyfill">MDN</a>.</li>
+          <li><a href=""><code>&lt;input type="range"&gt;</code></a> via <a href="https://github.com/andreruffert/rangeslider.js">rangeslider.js</a>.</li>
+        </ul>
+
+        <p>
+          Please note that polyfills are immediately available in global scope and added as a side effect of including this bundle. If the browser already supports a feature natively, polyfills will defer to the native functionality.
+        </p>
+
+        <hr>
+
+        <div id="social-share" class="headroom-large">
+  <h5>Social Share</h5>
+  <p>Social share buttons are a combination of HTML and JavaScript. The example below shares <a href="https://mapzen.com/blog/our-magna-carto">Magno Carto post</a> from the Mapzen blog. You can replace the properties to share in the mark up.</p>
+  <div data-xrayhtml>
+<div class="social-buttons hidden-print">
+  <ul>
+    <li class="social-button social-button-twitter">
+
+      <a href="http://twitter.com/home?status=Our Magna Carto%20@mapzen%20https://mapzen.com/blog/our-magna-carto" class="social-popup" title="Twitter">
+        <span class="icon">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+          <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32
+            c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155
+            C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965
+            C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683
+            c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851
+            C26.275,7.229,25.39,8.196,24.253,8.756z"></path>
+          </svg>
+        </span>
+        <span class="sr-only">twitter</span>
+      </a>
+    </li>
+    <li class="social-button social-button-facebook">
+
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://mapzen.com/blog/our-magna-carto" class="social-popup" title="Facebook">
+        <span class="icon">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+            <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434
+              c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726
+              c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"></path>
+          </svg>
+        </span>
+        <span class="sr-only">facebook</span>
+      </a>
+    </li>
+    <li class="social-button social-button-pinterest">
+
+      <a href="http://pinterest.com/pin/create/button/?url=https://mapzen.com/blog/our-magna-carto&amp;media=https://s3.amazonaws.com/assets-staging.mapzen.com/images/our-magna-carto/Shiten.jpg&amp;description=Our Magna Carto" class="social-popup" title="Pinterest">
+        <span class="icon">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+          <path d="M14.021,1.57C6.96,1.57,1.236,7.293,1.236,14.355c0,7.062,5.724,12.785,12.785,12.785c7.061,0,12.785-5.725,12.785-12.785
+            C26.807,7.294,21.082,1.57,14.021,1.57z M15.261,18.655c-1.161-0.09-1.649-0.666-2.559-1.219c-0.501,2.626-1.113,5.145-2.925,6.458
+            c-0.559-3.971,0.822-6.951,1.462-10.116c-1.093-1.84,0.132-5.545,2.438-4.632c2.837,1.123-2.458,6.842,1.099,7.557
+            c3.711,0.744,5.227-6.439,2.925-8.775c-3.325-3.374-9.678-0.077-8.897,4.754c0.19,1.178,1.408,1.538,0.489,3.168
+            C7.165,15.378,6.53,13.7,6.611,11.462c0.131-3.662,3.291-6.227,6.46-6.582c4.007-0.448,7.771,1.474,8.29,5.239
+            c0.579,4.255-1.816,8.865-6.102,8.533L15.261,18.655z"></path>
+          </svg>
+        </span>
+        <span class="sr-only">pinterest</span>
+      </a>
+    </li>
+    <li class="social-button social-button-email">
+
+      <a href="mailto:?subject=Our Magna Carto&amp;body=https://mapzen.com/blog/our-magna-carto" class="social-popup" title="E-mail">
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g><path d="M20.111 26.147c-2.336 1.051-4.361 1.401-7.125 1.401c-6.462 0-12.146-4.633-12.146-12.265 c0-7.94 5.762-14.833 14.561-14.833c6.853 0 11.8 4.7 11.8 11.252c0 5.684-3.194 9.265-7.399 9.3 c-1.829 0-3.153-0.934-3.347-2.997h-0.077c-1.208 1.986-2.96 2.997-5.023 2.997c-2.532 0-4.361-1.868-4.361-5.062 c0-4.749 3.504-9.071 9.111-9.071c1.713 0 3.7 0.4 4.6 0.973l-1.169 7.203c-0.388 2.298-0.116 3.3 1 3.4 c1.673 0 3.773-2.102 3.773-6.58c0-5.061-3.27-8.994-9.303-8.994c-5.957 0-11.175 4.673-11.175 12.1 c0 6.5 4.2 10.2 10 10.201c1.986 0 4.089-0.43 5.646-1.245L20.111 26.147z M16.646 10.1 c-0.311-0.078-0.701-0.155-1.207-0.155c-2.571 0-4.595 2.53-4.595 5.529c0 1.5 0.7 2.4 1.9 2.4 c1.441 0 2.959-1.828 3.311-4.087L16.646 10.068z"></path></g></svg>
+        </span>
+        <span class="sr-only">email</span>
+      </a>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+        <div id="side-navigation" class="headroom-large">
+  <div>
+    <h5>Side Navigation</h5>
+    <p>
+      The sub-navigation is used when there are multiple pages in a section. It can have up to three levels of information.
+    </p>
+    <p>
+      This component will take up 100% width of its parent container. To put it on the side of a page, place it inside a grid containing element, such as <code>.col-sm-2</code> for a two-column wide navigation element. On mobile screens, this component should be the full width of the device.
+    </p>
+    <ul>
+      <li>Use the ARIA roles 'directory', 'navigation', or 'complementary' where appropriate</li>
+      <li>Use the <code>.affix-*</code> classes to force it to never scroll off the page</li>
+      <li>The <code>.nav</code> base class is from Bootstrap and some functionality is inherited from it</li>
+    </ul>
+
+    <div class="headroom" data-xrayhtml>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-3">
+            <div class="toc" role="directory">
+              <ul class="nav toc-nav">
+                <li class="toc-top-level">
+                  <a href="#">Home</a>
+                </li>
+                <li class="toc-top-level">
+                  <a href="#">Pods</a>
+                </li>
+                <li class="toc-top-level">
+                  <a href="#">Speeders</a>
+                </li>
+                <li class="toc-top-level toc-current">
+                  <a href="#" class="toc-subnav-toggle">Starfighters</a>
+                  <ul class="toc-subnav toc-expand">
+                    <li class="main active"><a href="#">TIE Fighter</a></li>
+                    <li><a href="#">X-Wing</a></li>
+                    <li><a href="#">Y-Wing</a></li>
+                    <li><a href="#">B-Wing</a></li>
+                    <li><a href="#">ETA-2 Jedi Starfighter</a></li>
+                  </ul>
+                </li>
+                <li class="toc-top-level">
+                  <a href="#" class="toc-subnav-toggle">Spacecraft</a>
+                  <ul class="toc-subnav">
+                    <li class="main active"><a href="#">Millenium Falcon</a></li>
+                    <li><a href="#">Sith Infiltrator</a></li>
+                    <li><a href="#">Tantive IV</a></li>
+                    <li><a href="#">Slave I</a></li>
+                  </ul>
+                </li>
+                <li class="toc-top-level">
+                  <a href="#" class="toc-subnav-toggle">Supermassives</a>
+                  <ul class="toc-subnav">
+                    <li class="main active"><a href="#">Imperial Star Destroyer</a></li>
+                    <li><a href="#">Mon Calamari Star Cruiser</a></li>
+                    <li><a href="#">GR-75 Medium Transport</a></li>
+                    <li><a href="#">Trade Federation Battleship</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        <div id="popover" class="headroom-large">
+  <h5>Popover</h5>
+  <p> Popovers add small overlays of content to any element for housing secondary information. </p>
+  <div data-xrayhtml>
+    <a role="button" title="Header" data-toggle="popover" data-placement="left" data-content="Content">Toggle popover on left</a> |
+    <a role="button" data-toggle="popover" title="Header" data-placement="top" data-content="Content">Toggle popover on top</a> |
+    <a role="button" title="Header" data-toggle="popover" data-placement="right" data-content="Content">Toggle popover on left</a>
+  </div>
+        <div id="tooltip" class="headroom-large">
+  <h5>Tooltip</h5>
+  <p> Tooltip is a small pop-up box that appears when an element is hovered or focused. Tooltips with zero-length titles are never displayed. </p>
+  <div data-xrayhtml>
+    <a role="button" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</a> |
+    <a role="button" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</a> |
+    <a role="button" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</a> |
+    <a role="button" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</a>
+  </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+  <div class='container hidden-print footer-no-background'>
+  </div>
+
+  <div class='headroom-large footer-background'>
+    <div class='container'>
+      <div class='row headroom-large footer-menu hidden-print'>
+        <div class='col-xs-5 col-xs-offset-2 col-sm-5 col-sm-offset-0'>
+          <div class='row'>
+            <div class="col-xs-12 col-sm-6">
+              <h6><a href="https://mapzen.com/products/">Products</a></h6>
+              <ul>
+                <li><a href="https://mapzen.com/products/maps/">Maps</a></li>
+                <li><a href="https://mapzen.com/products/search">Mapzen Search</a></li>
+                <li><a href="https://mapzen.com/products/turn-by-turn">Mapzen Mobility</a></li>
+                <li><a href="https://mapzen.com/projects/mobile/">Mobile</a></li>
+                <li><a href="https://mapzen.com/pricing/">Pricing</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <h6><a href="https://mapzen.com/products/#data">Data</a></h6>
+              <ul>
+                <li><a href="https://mapzen.com/data/metro-extracts/">Metro Extracts</a></li>
+                <li><a href="https://mapzen.com/projects/vector-tiles/">Vector Tile Service</a></li>
+                <li><a href="https://mapzen.com/documentation/terrain-tiles/">Terrain Tile Service</a></li>
+                <li><a href='https://whosonfirst.mapzen.com/'>Who's On First</a></li>
+                <li><a href='https://transit.land/'>Transitland</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class='col-xs-5 col-sm-7'>
+          <div class='row'>
+            <div class="col-xs-12 col-sm-5">
+              <h6>Developers</h6>
+              <ul>
+                <li><a href="https://mapzen.com/dashboard">Developer Platform</a></li>
+                <li><a href="https://mapzen.com/documentation/">Documentation</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <h6>About</h6>
+              <ul>
+                <li><a href="https://mapzen.com/about/">Who we are</a></li>
+                <li><a href="https://mapzen.com/jobs/">Jobs</a></li>
+                <li><a href="https://mapzen.com/terms/">Terms</a></li>
+                <li><a href="https://mapzen.com/privacy/">Privacy policy</a></li>
+                <li><a href="https://mapzen.com/media-resources/">Media resources</a></li>
+                <li><a href="http://status.mapzen.com">Status</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <h6>Hello</h6>
+              <ul>
+                <li><a href="https://mapzen.com/blog/"><i class='fa fa-fw fa-rss'></i>Blog</a></li>
+                <li><a href='https://github.com/mapzen/'><i class='fa fa-fw fa-github'></i>GitHub</a></li>
+                <li><a href='https://twitter.com/mapzen/'><i class='fa fa-fw fa-twitter'></i>Twitter</a></li>
+                <li><a href='mailto:hello@mapzen.com'><i class='fa fa-fw fa-envelope'></i>E-mail</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='row headroom-large footroom-large'>
+        <div class='col-xs-12 text-center'>
+          <div class="compass-logo"></div>
+          <small class='copyright'>&#169; 2017 Mapzen</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="./scripts/mapzen-styleguide.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="./lib/X-rayHTML.js"></script>
+  <script src="./lib/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

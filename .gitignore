@@ -1,6 +1,0 @@
-node_modules
-dist/styles/*
-dist/scripts/*
-dist/*.html
-.DS_Store
-*.log

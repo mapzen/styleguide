@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Mapzen Styleguide 2.0</title>
+    <meta name="description" content="Mapzen Styleguide">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='apple-touch-icon' href='https://mapzen.com/common/styleguide/images/favicons/apple-touch-icon.png' sizes='180x180'>
+    <link rel='icon' type='image/png' href='https://mapzen.com/common/styleguide/images/favicons/favicon-16x16.png' sizes='16x16'>
+    <link rel='icon' type='image/png' href='https://mapzen.com/common/styleguide/images/favicons/favicon-32x32.png' sizes='32x32'>
+    <link rel='manifest' href='https://mapzen.com/common/styleguide/images/favicons/manifest.json'>
+    <link rel='mask-icon' href='https://mapzen.com/common/styleguide/images/favicons/safari-pinned-tab.svg' color='#2C1E3F '>
+    <link rel="stylesheet" type="text/css" href="styles/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleguidepage.css">
+    <link rel="stylesheet" type="text/css" href="./lib/X-rayHTML.css">
+    <link rel="stylesheet" type="text/css" href="./lib/prism.css">
+</head>
+
+<body data-spy="scroll" data-target=".side-nav" data-offset="30">
+  <div class="documentation-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h1>Mapzen Web Styleguide 2.0</h1>
+        <p>
+          “You can’t connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future. You have to trust in something&#8202;&mdash;&#8202;your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life.” &mdash;&#8202;Steve Jobs
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row headroom-large">
+      <div class="side-nav styleguide-side-nav col-xs-12 col-md-3">
+        <div class="toc hidden-print affix-top" role="directory" id="toc">
+  <ul class="nav toc-nav">
+    <li class="toc-top-level" id='toc-get-started'>
+      <a class="toc-subnav-toggle" href="./">Get Started</a>
+    </li>
+    <li class="toc-top-level" id='toc-design-elements'>
+      <a class="toc-subnav-toggle" href="./design-elements.html">Design Elements</a>
+      <ul class="toc-subnav">
+        <li><a href="./design-elements.html#grids">Grids</a></li>
+        <li><a href="./design-elements.html#spacing">Spacing</a></li>
+        <li><a href="./design-elements.html#fonts">Fonts</a></li>
+        <li><a href="./design-elements.html#colors">Colors</a></li>
+        <li><a href="./design-elements.html#typography">Typography</a></li>
+        <li><a href="./design-elements.html#icons">Icons</a></li>
+        <li><a href="./design-elements.html#buttons">Buttons</a></li>
+        <li><a href="./design-elements.html#forms">Forms</a></li>
+        <li><a href="./design-elements.html#tables">Tables</a></li>
+        <li><a href="./design-elements.html#lists">Lists</a></li>
+        <li><a href="./design-elements.html#alerts">Alerts</a></li>
+      </ul>
+    </li>
+    <li class="toc-top-level" id='toc-ui-components'>
+      <a class="toc-subnav-toggle" href="./ui-components.html">UI Components</a>
+      <ul class="toc-subnav">
+        <li><a href="./ui-components.html#breadcrumb">Breadcrumbs</a></li>
+        <li><a href="./ui-components.html#pagination">Pagination</a></li>
+        <li><a href="./ui-components.html#user-avatar">User Avatars</a></li>
+        <li><a href="./ui-components.html#author-blurb-single">Author Blurb</a></li>
+        <li><a href="./ui-components.html#signup-cta">Sign Up CTA</a></li>
+        <li><a href="./ui-components.html#card">Cards</a></li>
+        <li><a href="./ui-components.html#switcher">Switcher</a></li>
+        <li><a href="./ui-components.html#loading-spinner">Loading Spinners</a></li>
+      </ul>
+    </li>
+    <li class="toc-top-level" id='toc-js-components'>
+      <a class="toc-subnav-toggle" href="./js-components.html">JS Components</a>
+      <ul class="toc-subnav">
+        <li><a href="./js-components.html#social-share">Social Share</a></li>
+        <li><a href="./js-components.html#side-navigation">Side Navigation</a></li>
+        <li><a href="./js-components.html#popover">Popover</a></li>
+        <li><a href="./js-components.html#tooltip">Tooltip</a></li>
+      </ul>
+    </li>
+    <li class="toc-top-level" id='toc-resources'>
+      <a class="toc-subnav-toggle" href="./resources.html">Resources</a>
+      <ul class="toc-subnav">
+        <li><a href="./resources.html#content-guides">Content Guides</a></li>
+        <li><a href="./resources.html#downloads">Downloads</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+  (function () {
+    // The current page is set by an option in @@fileinclude
+    var currentPage = 'get-started';
+    var activeNavItemId = 'toc-' + currentPage;
+    var activeEl = document.getElementById(activeNavItemId);
+    if (activeEl) {
+      // Highlight the current page
+      if (activeEl.classList) activeEl.classList.add('toc-current');
+      // Expand the 2nd-level menu
+      var subMenuEl = activeEl.querySelector('.toc-subnav');
+      if (subMenuEl) {
+        if (subMenuEl.classList) subMenuEl.classList.add('toc-expand');
+        // Modify the links to point to internal ids; this
+        // helps scrollspy function correctly
+        var subMenuLinks = subMenuEl.querySelectorAll('a');
+        for (var i = 0, j = subMenuLinks.length; i < j; i++) {
+          var link = subMenuLinks[i];
+          link.setAttribute('href', '#' + link.href.split('#')[1]);
+        }
+      }
+    }
+  })();
+</script>
+
+      </div>
+
+      <div class="col-xs-12 col-md-9">
+        <p>
+          Mapzen Styleguide makes it easy for us to create right-looking websites that
+          work well across platforms and into the future. If you’re publishing Mapzen
+          stuff, the guide is for you.
+        </p>
+
+        <h4>Batteries included:</h4>
+
+        <ul>
+          <li>Basic page structure with standard linked CSS and Javascript resources.</li>
+          <li><a href="ui-components.html">Sample UI components</a> like navigation, social buttons, search boxes, and pagination that can be combined to make new kinds of pages.</li>
+          <li><a href="#sample-pages">Complete sample pages</a> like blog posts and developer documentation showing how all the pieces fit together.</li>
+        </ul>
+
+        <h2>Get started</h2>
+        <div id="how-to">
+  <p>
+    <a href="https://github.com/mapzen/styleguide">Find the Mapzen Styleguide on GitHub at <code>mapzen/styleguide</code></a>.
+  </p>
+  <div>
+  <h3 class="headroom-large" id="boilerplate">HTML boilerplate</h3>
+  <p> To make a <a href="./src/site/boilerplate/index.html">Mapzen-branded page</a>, copy the HTML below. This creates the basic page structure ready to receive your content.</p>
+<div class="xrayhtml boilerplate">
+<div class="source-panel">
+<pre class=" language-markup"><code class="  language-markup"><span class="token entity" title="<">&lt;</span>!DOCTYPE html<span class="token entity" title=">">&gt;</span>
+<span class="token entity" title="<">&lt;</span>html<span class="token entity" title=">">&gt;</span>
+<span class="token entity" title="<">&lt;</span>head<span class="token entity" title=">">&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>x-ua-compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie<span class="token punctuation">=</span>edge<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>[YOUR PAGE TITLE] · Mapzen<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://mapzen.com/common/styleguide/styles/styleguide.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token entity" title="<">&lt;</span>/head<span class="token entity" title=">">&gt;</span>
+<span class="token entity" title="<">&lt;</span>body<span class="token entity" title=">">&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-md-8 col-md-offset-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Hello world!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This is Mapzen Styleguide: HTML Boilerplate.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://mapzen.com/common/styleguide/scripts/mapzen-styleguide.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token entity" title="<">&lt;</span>/body<span class="token entity" title=">">&gt;</span>
+<span class="token entity" title="<">&lt;</span>/html<span class="token entity" title=">">&gt;</span></code><button class="btn btn-transparent copy-btn hide" data-clipboard-text="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  <meta charset=&quot;utf-8&quot;>
+  <meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;ie=edge&quot;>
+  <title>[YOUR PAGE TITLE] · Mapzen</title>
+  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  <link rel=&quot;stylesheet&quot; href=&quot;https://mapzen.com/common/styleguide/styles/styleguide.css&quot;>
+&lt;/head&gt;
+&lt;body&gt;
+  <div class=&quot;container&quot;>
+    <div class=&quot;row&quot;>
+      <div class=&quot;col-md-8 col-md-offset-2&quot;>
+        <h1>Hello world!</h1>
+        <p>This is Mapzen Styleguide: HTML Boilerplate.</p>
+      </div>
+    </div>
+  </div>
+  <script src=&quot;https://mapzen.com/common/styleguide/scripts/mapzen-styleguide.min.js&quot;></script>
+&lt;/body&gt;
+&lt;/html&gt;
+"> Copy snippet </button></pre>
+    </div>
+  </div>
+  </div>
+  <div class="headrooom">
+    <h3 id="sample-pages">Sample page layouts</h3>
+    <p>
+    <ul>
+      <li><a href="./samples/blog-main.html"> Blog Feed</a></li>
+      <li><a href="./samples/blog-post.html"> Blog Post </a></li>
+      <li><a href="./samples/documentation.html"> Documentation</a></li>
+      <li><a href="./samples/projects-tangram.html"> Project Detail</a></li>
+      <li><a href="./samples/accept-term.html"> Accept term for sign up</a></li>
+    </ul>
+    </p>
+  </div>
+</div>
+
+        <h2>Browser support</h2>
+
+<p>
+  We aim to support the following browsers and devices:
+</p>
+
+<ul>
+  <li>Browsers</li>
+  <ul>
+    <li>Chrome (latest) <em>&mdash; Mac OSX / Windows</em></li>
+    <li>Firefox (latest) <em>&mdash; Mac OSX / Windows</em></li>
+    <li>Safari (latest) <em>&mdash; Mac OSX only</em></li>
+    <li>Internet Explorer (version 9+) <em>&mdash; Windows only</em></li>
+  </ul>
+  <li>Devices (tbd)</li>
+  <ul>
+    <li>iPhone 5+</li>
+    <li>iPad 2</li>
+    <li>Android</li>
+  </ul>
+</ul>
+
+<p>
+  We’ll review browser and device usage about every six months and adjust this list as necessary. We plan to support browsers and devices that are still used by a certain threshold of users and viewers.
+</p>
+
+<div class="alert alert-info" role="alert">
+  <strong>Tangram</strong> requires WebGL, which is not supported in Internet Explorer 9 and 10. WebGL can also be disabled by an administrator. If a map or demo uses Tangram but WebGL is unavailable, please provide a fallback raster map (if possible), a link to an alternative map, or a helpful message explaining why the map cannot be viewed.
+</div>
+
+<h3>Testing</h3>
+
+<p>
+  We have a shared Browserstack account for testing on all supported browsers, platforms and devices.
+</p>
+
+<p>
+  You can also test Internet Explorer locally. We recommend using <a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/">Microsoft’s virtual machines</a> in your VM platform of choice (e.g. <a href="https://www.virtualbox.org/wiki/VirtualBox">VirtualBox</a>).
+</p>
+
+      </div>
+    </div>
+  </div>
+  <footer>
+  <div class='container hidden-print footer-no-background'>
+  </div>
+
+  <div class='headroom-large footer-background'>
+    <div class='container'>
+      <div class='row headroom-large footer-menu hidden-print'>
+        <div class='col-xs-5 col-xs-offset-2 col-sm-5 col-sm-offset-0'>
+          <div class='row'>
+            <div class="col-xs-12 col-sm-6">
+              <h6><a href="https://mapzen.com/products/">Products</a></h6>
+              <ul>
+                <li><a href="https://mapzen.com/products/maps/">Maps</a></li>
+                <li><a href="https://mapzen.com/products/search">Mapzen Search</a></li>
+                <li><a href="https://mapzen.com/products/turn-by-turn">Mapzen Mobility</a></li>
+                <li><a href="https://mapzen.com/projects/mobile/">Mobile</a></li>
+                <li><a href="https://mapzen.com/pricing/">Pricing</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <h6><a href="https://mapzen.com/products/#data">Data</a></h6>
+              <ul>
+                <li><a href="https://mapzen.com/data/metro-extracts/">Metro Extracts</a></li>
+                <li><a href="https://mapzen.com/projects/vector-tiles/">Vector Tile Service</a></li>
+                <li><a href="https://mapzen.com/documentation/terrain-tiles/">Terrain Tile Service</a></li>
+                <li><a href='https://whosonfirst.mapzen.com/'>Who's On First</a></li>
+                <li><a href='https://transit.land/'>Transitland</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class='col-xs-5 col-sm-7'>
+          <div class='row'>
+            <div class="col-xs-12 col-sm-5">
+              <h6>Developers</h6>
+              <ul>
+                <li><a href="https://mapzen.com/dashboard">Developer Platform</a></li>
+                <li><a href="https://mapzen.com/documentation/">Documentation</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <h6>About</h6>
+              <ul>
+                <li><a href="https://mapzen.com/about/">Who we are</a></li>
+                <li><a href="https://mapzen.com/jobs/">Jobs</a></li>
+                <li><a href="https://mapzen.com/terms/">Terms</a></li>
+                <li><a href="https://mapzen.com/privacy/">Privacy policy</a></li>
+                <li><a href="https://mapzen.com/media-resources/">Media resources</a></li>
+                <li><a href="http://status.mapzen.com">Status</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <h6>Hello</h6>
+              <ul>
+                <li><a href="https://mapzen.com/blog/"><i class='fa fa-fw fa-rss'></i>Blog</a></li>
+                <li><a href='https://github.com/mapzen/'><i class='fa fa-fw fa-github'></i>GitHub</a></li>
+                <li><a href='https://twitter.com/mapzen/'><i class='fa fa-fw fa-twitter'></i>Twitter</a></li>
+                <li><a href='mailto:hello@mapzen.com'><i class='fa fa-fw fa-envelope'></i>E-mail</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='row headroom-large footroom-large'>
+        <div class='col-xs-12 text-center'>
+          <div class="compass-logo"></div>
+          <small class='copyright'>&#169; 2017 Mapzen</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="./scripts/mapzen-styleguide.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="./lib/X-rayHTML.js"></script>
+  <script src="./lib/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
+  <script src="main.js"></script>
+
+  <script>
+  //we tweaked the code snippet part that is automated on other pages to show raw html
+  //so we are manually putting clipboard event only for this page
+  (function() {
+    //Safari doesn't support copy command, detecting ti and not enabling copy button
+    if(!isThisSafari()) {
+      var sourcePanel = document.querySelector('.source-panel');
+      var copyBtn = document.querySelector('.copy-btn');
+        sourcePanel.addEventListener('mouseenter', function(e) {
+          copyBtn.setAttribute('class', 'btn btn-transparent copy-btn show');
+        });
+        sourcePanel.addEventListener('mouseleave', function(e) {
+          copyBtn.setAttribute('class', 'btn btn-transparent copy-btn hide');
+        });
+        var clipboard = new Clipboard('.copy-btn');
+        clipboard.on('success', function(e) {
+            e.trigger.setAttribute('class', 'btn btn-transparent copy-btn copied');
+            e.clearSelection();
+        });
+        clipboard.on('error', function(e) {
+          e.trigger.setAttribute('class', 'btn btn-transparent copy-btn no-copied');
+        });
+        copyBtn.addEventListener('mouseleave', function(e) {
+          e.currentTarget.setAttribute('class', 'btn btn-transparent copy-btn');
+        });
+      }
+
+      function isThisSafari() {
+        return navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && !navigator.userAgent.match('CriOS');
+      }
+    })();
+  </script>
+</body>
+</html>

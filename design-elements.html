@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Mapzen Styleguide 2.0</title>
+    <meta name="description" content="Mapzen Styleguide">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='apple-touch-icon' href='https://mapzen.com/common/styleguide/images/favicons/apple-touch-icon.png' sizes='180x180'>
+    <link rel='icon' type='image/png' href='https://mapzen.com/common/styleguide/images/favicons/favicon-16x16.png' sizes='16x16'>
+    <link rel='icon' type='image/png' href='https://mapzen.com/common/styleguide/images/favicons/favicon-32x32.png' sizes='32x32'>
+    <link rel='manifest' href='https://mapzen.com/common/styleguide/images/favicons/manifest.json'>
+    <link rel='mask-icon' href='https://mapzen.com/common/styleguide/images/favicons/safari-pinned-tab.svg' color='#2C1E3F '>
+    <link rel="stylesheet" type="text/css" href="styles/styleguide.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleguidepage.css">
+    <link rel="stylesheet" type="text/css" href="./lib/X-rayHTML.css">
+    <link rel="stylesheet" type="text/css" href="./lib/prism.css">
+</head>
+
+<body data-spy="scroll" data-target=".side-nav" data-offset="30">
+  <div class="documentation-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h1>Mapzen Web Styleguide 2.0</h1>
+        <p>
+          “You can’t connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future. You have to trust in something&#8202;&mdash;&#8202;your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life.” &mdash;&#8202;Steve Jobs
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row headroom-large">
+      <div class="side-nav styleguide-side-nav col-xs-12 col-md-3">
+        <div class="toc hidden-print affix-top" role="directory" id="toc">
+  <ul class="nav toc-nav">
+    <li class="toc-top-level" id='toc-get-started'>
+      <a class="toc-subnav-toggle" href="./">Get Started</a>
+    </li>
+    <li class="toc-top-level" id='toc-design-elements'>
+      <a class="toc-subnav-toggle" href="./design-elements.html">Design Elements</a>
+      <ul class="toc-subnav">
+        <li><a href="./design-elements.html#grids">Grids</a></li>
+        <li><a href="./design-elements.html#spacing">Spacing</a></li>
+        <li><a href="./design-elements.html#fonts">Fonts</a></li>
+        <li><a href="./design-elements.html#colors">Colors</a></li>
+        <li><a href="./design-elements.html#typography">Typography</a></li>
+        <li><a href="./design-elements.html#icons">Icons</a></li>
+        <li><a href="./design-elements.html#buttons">Buttons</a></li>
+        <li><a href="./design-elements.html#forms">Forms</a></li>
+        <li><a href="./design-elements.html#tables">Tables</a></li>
+        <li><a href="./design-elements.html#lists">Lists</a></li>
+        <li><a href="./design-elements.html#alerts">Alerts</a></li>
+      </ul>
+    </li>
+    <li class="toc-top-level" id='toc-ui-components'>
+      <a class="toc-subnav-toggle" href="./ui-components.html">UI Components</a>
+      <ul class="toc-subnav">
+        <li><a href="./ui-components.html#breadcrumb">Breadcrumbs</a></li>
+        <li><a href="./ui-components.html#pagination">Pagination</a></li>
+        <li><a href="./ui-components.html#user-avatar">User Avatars</a></li>
+        <li><a href="./ui-components.html#author-blurb-single">Author Blurb</a></li>
+        <li><a href="./ui-components.html#signup-cta">Sign Up CTA</a></li>
+        <li><a href="./ui-components.html#card">Cards</a></li>
+        <li><a href="./ui-components.html#switcher">Switcher</a></li>
+        <li><a href="./ui-components.html#loading-spinner">Loading Spinners</a></li>
+      </ul>
+    </li>
+    <li class="toc-top-level" id='toc-js-components'>
+      <a class="toc-subnav-toggle" href="./js-components.html">JS Components</a>
+      <ul class="toc-subnav">
+        <li><a href="./js-components.html#social-share">Social Share</a></li>
+        <li><a href="./js-components.html#side-navigation">Side Navigation</a></li>
+        <li><a href="./js-components.html#popover">Popover</a></li>
+        <li><a href="./js-components.html#tooltip">Tooltip</a></li>
+      </ul>
+    </li>
+    <li class="toc-top-level" id='toc-resources'>
+      <a class="toc-subnav-toggle" href="./resources.html">Resources</a>
+      <ul class="toc-subnav">
+        <li><a href="./resources.html#content-guides">Content Guides</a></li>
+        <li><a href="./resources.html#downloads">Downloads</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+  (function () {
+    // The current page is set by an option in @@fileinclude
+    var currentPage = 'design-elements';
+    var activeNavItemId = 'toc-' + currentPage;
+    var activeEl = document.getElementById(activeNavItemId);
+    if (activeEl) {
+      // Highlight the current page
+      if (activeEl.classList) activeEl.classList.add('toc-current');
+      // Expand the 2nd-level menu
+      var subMenuEl = activeEl.querySelector('.toc-subnav');
+      if (subMenuEl) {
+        if (subMenuEl.classList) subMenuEl.classList.add('toc-expand');
+        // Modify the links to point to internal ids; this
+        // helps scrollspy function correctly
+        var subMenuLinks = subMenuEl.querySelectorAll('a');
+        for (var i = 0, j = subMenuLinks.length; i < j; i++) {
+          var link = subMenuLinks[i];
+          link.setAttribute('href', '#' + link.href.split('#')[1]);
+        }
+      }
+    }
+  })();
+</script>
+
+      </div>
+
+      <div class="col-xs-12 col-md-9">
+        <h2>Design Elements</h2>
+        <hr>
+        <div id="grids" class="headroom-large">
+  <h2>Grids</h2>
+  <p>
+    We use Bootstrap's 12-column responsive grid, on both desktop and mobile, and prebuilt grid classes for layouts that scale and stack based on device and viewport size. Columns allow us to adjust the placement and size of modules within layouts, making the best use of the space available at each breakpoint and maintaining hierarchy within layouts.
+  </p>
+  <p>
+  This is a sample two-column layout where the columns stack using the full width on mobile.
+  </p>
+  <div data-xrayhtml>
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <p>
+          That blast came from the Death Star! That thing's operational! Home One, this is Gold Leader. We saw it. All craft prepare to retreat. You won't get another chance at this, Admiral.
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <p> We have no choice, General Calrissian. Our cruisers can't repel firepower of that magnitude. Han will have that shield down. We've got to give him more time.
+          </p>
+        </div>
+      </div>
+  </div>
+  This is a sample three-column layout where only the third column stacks on mobile.
+  <div data-xrayhtml>
+    <div class="row">
+      <div class="col-xs-6 col-md-4">
+        <p> sRawwwrr! Well, it's gonna be rough, pal. I didn't want to speak for you. That's one. Uh, General... count me in. I'm with you, too! What is it? Ask me again sometime.
+        </p>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <p> You are a protocol droid, are you not? I am See-Threepio, human-cy... Yes or no will do. Oh. Well, yes. How many languages do you speak? I think you'll fit in nicely.
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <article>
+          <ul>
+            <li> We're coming! </li>
+            <li> Come on! Come on! </li>
+            <li> Oh, Artoo, hurry! </li>
+            <li> My goodness! </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+  <p>
+    You can find more grid examples at <a href="http://getbootstrap.com/css/#grid-options">here.</a>
+  </p>
+  <p class="caption">(Protip: Pages with text only should not be more than 10 columns wide or text lines become too wide and  hard to read.)</p>
+
+  <p>
+    We use the following <a href="http://getbootstrap.com/css/#grid-media-queries">Bootstrap media queries</a>to mark where there are big changes to our grid. This allows us to optimise the page layout for all screen widths across many devices.
+  </p>
+  <p>
+    We are currently using the following breakpoints:
+    <ul>
+      <li><strong>Extra Small</strong> - 480px (Phones)</li>
+      <li><strong>Small</strong> - 768px (Tablets)</li>
+      <li><strong>Medium</strong> - 992px (Desktops)</li>
+      <li><strong>Large</strong> - 1200px (Wide Screens)</li>
+    </ul>
+  </p>
+</div>
+        <div id="spacing" class="headroom-large">
+  <h2>Spacing</h2>
+  <p>
+    The Mapzen UI is based on spacing in multiples of 6.  Use this scale as a starting point when laying out pages and sizing elements.
+  </p>
+  <div class="text-center">
+    <img src="./images/styleguide-spacing.png">
+  </div>
+
+  <h3>Vertical Spacing</h3>
+  <p>
+    We have several responsive classes available to adjust vertical spacing on your page.  Two of the most frequently used are <strong><code>.headroom</code></strong> and <strong><code>.footroom</code></strong>, which provide <code>margin-top</code> and <code>margin-bottom</code> spacing, respectively.
+  </p>
+  <p>
+    Both classes come in a few different sizes.  For example: <code>headroom</code>, <code>headroom-med</code>, <code>headroom-large</code>, and <code>headroom-extra-large</code>
+  </p>
+  <p>
+    To add vertical space between page sections, a good place to start is <code>.headroom-large</code>
+  </p>
+  <div data-xrayhtml>
+    <div class="headroom-large footroom">
+      <h2>Section title</h2>
+      <p>Words about things</p>
+    </div>
+  </div>
+
+  <h3>Spacing Utility Classes</h3>
+  <p>
+    If you need more fine-grained spacing control over your elements, we've incorporated a set of responsive-friendly spacing utility classes (based on <a href="https://v4-alpha.getbootstrap.com/utilities/spacing/">Bootstrap v4 spacing</a>) into the styleguide.  Use these to modify the margins and/or padding around elements.
+  </p>
+  <p>
+    The format for spacing classes is <strong><code>{property}{sides}-{breakpoint}-{size}</code></strong> and allows for the following options:
+  </p>
+
+  <p class="mt-3">
+    <strong><code>{property}</code></strong>
+  </p>
+  <ul>
+    <li><code>m</code><span class="mx-1">-</span> margin</li>
+    <li><code>p</code><span class="mx-1">-</span> padding</li>
+  </ul>
+
+  <p class="mt-3">
+    <strong><code>{sides}</code></strong> (optional)
+  </p>
+  <ul>
+    <li><code>t</code><span class="mx-1">-</span> top</li>
+    <li><code>b</code><span class="mx-1">-</span> bottom</li>
+    <li><code>l</code><span class="mx-1">-</span> left</li>
+    <li><code>r</code><span class="mx-1">-</span> right</li>
+    <li><code>x</code><span class="mx-1">-</span> left and right</li>
+    <li><code>y</code><span class="mx-1">-</span> top and bottom</li>
+    <li> Leave blank to set all sides</li>
+  </ul>
+
+  <p class="mt-3">
+    <strong><code>{breakpoint}</code></strong> (optional)
+  </p>
+  <ul>
+    <li><code>sm</code></li>
+    <li><code>md</code></li>
+    <li><code>lg</code></li>
+    <li> Leave off <code>-{breakpoint}</code> to ignore breakpoints</li>
+  </ul>
+
+  <p class="mt-3">
+    <strong><code>{size}</code></strong>
+  </p>
+  <ul>
+    <li><code>0</code><span class="mx-1">-</span> 0px</li>
+    <li><code>1</code><span class="mx-1">-</span> 6px (<code>$spacer * .25</code>)</li>
+    <li><code>2</code><span class="mx-1">-</span> 12px (<code>$spacer * .5</code>)</li>
+    <li><code>3</code><span class="mx-1">-</span> 24px (<code>$spacer</code>)</li>
+    <li><code>4</code><span class="mx-1">-</span> 36px (<code>$spacer * 1.5</code>)</li>
+    <li><code>5</code><span class="mx-1">-</span> 72px (<code>$spacer * 3</code>)</li>
+    <li><code>auto</code><span class="mx-1">-</span> auto (for positioning fixed-width block content)</li>
+  </ul>
+
+  <p class="mt-4">
+    <strong>Examples of these classes</strong>
+  </p>
+  <pre>
+    .mt-0 {
+      margin-top: 0 !important;
+    }
+
+    .ml-1 {
+      margin-left: 6px !important;
+    }
+
+    .px-2 {
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+    }
+
+    .p-3 {
+      padding: 24px !important;
+    }
+
+    // Small grid and above
+    @media (min-width: 768px) {
+      .m-sm-4 {
+        margin: 36px !important;
+      }
+
+      .pb-sm-5 {
+        padding-bottom: 72px !important;
+      }
+    }
+
+    // Use with fixed-width block elements
+    .mx-auto {
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+  </pre>
+
+  <div data-xrayhtml>
+    <div class="little-box ml-1 px-2">I</div>
+    <div class="little-box m-2 my-sm-0 pl-1 pr-5">need</div>
+    <div class="little-box mr-3 px-4 py-2">some</div>
+    <div class="little-box m-2 p-4">space</div>
+  </div>
+</div>
+        <div id="fonts" class="headroom-large">
+  <h2>Fonts</h2>
+  <p>We use <strong>Poppins</strong> for headings, buttons and main navigation for it's bold, modern and friendly character. <strong>Open Sans</strong> get's used for everything else. </p>
+  <div class="color-value">
+    <div class="row">
+      <div class="col-xs-8"><p class="poppins">Start where you are.</p></div>
+      <div class="col-xs-4"><code>Poppins</code></div>
+    </div>
+  </div>
+  <div class="color-value">
+    <div class="row">
+      <div class="col-xs-8"><p class="opensans">Start where you are.</p></div>
+      <div class="col-xs-4"><code>Open Sans</code></div>
+    </div>
+  </div>
+</div>
+        <div id="colors" class="headroom-large">
+  <h2>Colors</h2>
+  <div>
+    <p class="headroom">Below is the full Mapzen color palette. Dark purples and scarlets are the most visible on the website and the pinks and purples play a supportive role to add some pop in when necessary.</p>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-4 color-swatch mz-darkpurple-1">
+          <h4>Dark Purple 1</h4>
+          <div class="color-swatch-value">
+            <p>#1e0e33</p>
+            <p>rgb(30, 14, 51)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-darkpurple-1</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch mz-darkpurple-2">
+          <h4>Dark Purple 2</h4>
+          <div class="color-swatch-value">
+            <p>#2c1e3f</p>
+            <p>rgb(44, 30, 63)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-darkpurple-2</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch mz-darkpurple-3">
+          <h4>Dark Purple 3</h4>
+          <div class="color-swatch-value">
+            <p>#635378</p>
+            <p>rgb(99, 83, 120)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-darkpurple-3</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 color-swatch mz-darkpurple-4">
+          <h4>Dark Purple 4</h4>
+          <div class="color-swatch-value">
+            <p>#ad9cc2</p>
+            <p>rgb(172, 156, 193)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-darkpurple-4</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch color-swatch-inverse mz-darkpurple-5">
+          <h4>Dark Purple 5</h4>
+          <div class="color-swatch-value">
+            <p>#eee7f8</p>
+            <p>rgb(238, 231, 248)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-darkpurple-5</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 color-swatch mz-scarlet-1">
+          <h4>Scarlet 1</h4>
+          <div class="color-swatch-value">
+            <p>#ff4947</p>
+            <p>rgb(255, 73, 70)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-scarlet-1</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch mz-scarlet-2">
+          <h4>Scarlet 2</h4>
+          <div class="color-swatch-value">
+            <p>#ff7b7b</p>
+            <p>rgb(255, 122, 123)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-scarlet-2</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch color-swatch-inverse mz-scarlet-3">
+          <h4>Scarlet 3</h4>
+          <div class="color-swatch-value">
+            <p>#fcdbdb</p>
+            <p>rgb(253, 219, 218)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-scarlet-3</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 color-swatch mz-pink-1">
+          <h4>Pink 1</h4>
+          <div class="color-swatch-value">
+            <p>#f9a293</p>
+            <p>rgb(249, 161, 147)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-pink-1</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch color-swatch-inverse mz-pink-2">
+          <h4>Pink 2</h4>
+          <div class="color-swatch-value">
+            <p>#f7beb4</p>
+            <p>rgb(247, 190, 179)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-pink-2</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch color-swatch-inverse mz-pink-3">
+          <h4>Pink 3</h4>
+          <div class="color-swatch-value">
+            <p>#fbe6e3</p>
+            <p>rgb(251, 230, 227)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-pink-3</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 color-swatch mz-purple-1">
+          <h4>Purple 1</h4>
+          <div class="color-swatch-value">
+            <p>#7f2de3</p>
+            <p>rgb(126, 45, 226)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-purple-1</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch mz-purple-2">
+          <h4>Purple 2</h4>
+          <div class="color-swatch-value">
+            <p>#985fdd</p>
+            <p>rgb(151, 95, 220)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-purple-2</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch mz-purple-3">
+          <h4>Purple 3</h4>
+          <div class="color-swatch-value">
+            <p>#bda2dd</p>
+            <p>rgb(190, 162, 221)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-purple-3</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p class="headroom">Tertiary colors complement the main palette and are used for text, inactive states and borders.</p>
+
+    <div class="container-fluid">
+      <div class="row">
+      <div class="col-xs-3 color-swatch mz-black">
+        <h4>Off Black</h4>
+        <div class="color-swatch-value">
+          <p>#191919</p>
+          <p>rgb(25, 25, 25)</p>
+        </div>
+        <div class="color-swatch-name">
+          <p>$mz-black</p>
+        </div>
+      </div>
+      <div class="col-xs-3 color-swatch mz-darkgray">
+        <h4>Dark Gray</h4>
+        <div class="color-swatch-value">
+          <p>#444</p>
+          <p>rgb(68, 68, 68)</p>
+        </div>
+        <div class="color-swatch-name">
+          <p>$mz-darkgray</p>
+        </div>
+      </div>
+      <div class="col-xs-3 color-swatch mz-mediumgray">
+        <h4>Medium Gray</h4>
+        <div class="color-swatch-value">
+          <p>#666</p>
+          <p>rgb(102, 102, 102)</p>
+        </div>
+        <div class="color-swatch-name">
+          <p>$mz-mediumgray</p>
+        </div>
+      </div>
+      <div class="col-xs-3 color-swatch color-swatch-inverse mz-lightgray">
+        <h4>Light Gray</h4>
+        <div class="color-swatch-value">
+          <p>#f8f8f8</p>
+          <p>rgb(248, 248, 248)</p>
+        </div>
+        <div class="color-swatch-name">
+          <p>$mz-lightgray</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+   <div>
+    <h3>Theme colors</h3>
+    <p class="headroom">Theme colors are meant to differentiate top level product categories (roll up pages). </p>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-4 color-swatch mz-forestgreen-1">
+          <h4>Forest green</h4>
+          <div class="color-swatch-value">
+            <p>#366026</p>
+            <p>rgb(54, 96, 38)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-forestgreen-1</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch mz-forestgreen-2">
+          <h4>Forest green (light)</h4>
+          <div class="color-swatch-value">
+            <p>#77966d</p>
+            <p>rgb(119, 150, 109)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-forestgreen-2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-4 color-swatch mz-steelblue-1">
+          <h4>Steel blue</h4>
+          <div class="color-swatch-value">
+            <p>#1581a1</p>
+            <p>rgb(21, 129, 161)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-steelblue-1</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch mz-steelblue-2">
+          <h4>Steel blue (light)</h4>
+          <div class="color-swatch-value">
+            <p>#86c8d7</p>
+            <p>rgb(134, 200, 215)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-steelblue-2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-4 color-swatch mz-earthbrown-1">
+          <h4>Earth brown</h4>
+          <div class="color-swatch-value">
+            <p>#563c33</p>
+            <p>rgb(86, 60, 51)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-earthbrown-1</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch mz-earthbrown-2">
+          <h4>Earth brown (light)</h4>
+          <div class="color-swatch-value">
+            <p>#a5857a</p>
+            <p>rgb(165, 133, 122)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-earthbrown-2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-4 color-swatch mz-goldyellow-1">
+          <h4>Gold yellow</h4>
+          <div class="color-swatch-value">
+            <p>#c48933</p>
+            <p>rgb(196, 137, 51)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-goldyellow-1</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch mz-goldyellow-2">
+          <h4>Gold yellow (light)</h4>
+          <div class="color-swatch-value">
+            <p>#d1a565</p>
+            <p>rgb(209, 165, 101)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-goldyellow-2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-4 color-swatch mz-brickred-1">
+          <h4>Brick red</h4>
+          <div class="color-swatch-value">
+            <p>#8e2726</p>
+            <p>rgb(142, 39, 38)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-brickred-1</p>
+          </div>
+        </div>
+        <div class="col-xs-4 color-swatch mz-brickred-2">
+          <h4>Brick red (light)</h4>
+          <div class="color-swatch-value">
+            <p>#935454</p>
+            <p>rgb(147, 84, 84)</p>
+          </div>
+          <div class="color-swatch-name">
+            <p>$mz-brickred-2</p>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+
+  <h3>Background Colors</h3>
+  <div data-xrayhtml>
+    <div class="p-2 background-light">Background light</div>
+  </div>
+
+</div>
+
+        <div id="typography" class="headroom-large">
+  <h2>Typography</h2>
+
+  <p>This is the basic paragraph text style.</p>
+
+  <div data-xrayhtml>
+    <p>
+      It is the name of your true self. You've only forgotten. I know there is good in you. The Emperor hasn't driven it from you fully. That is why you couldn't destroy me. That's why you won't bring me to your Emperor now. I see you have constructed a new lightsaber. Your skills are complete. Indeed, you are powerful, as the Emperor has foreseen. Come with me.
+    </p>
+  </div>
+
+  <p>This is the basic style emboldened.</p>
+  <div data-xrayhtml>
+    <p>
+      <strong>
+        Leave that to me! Damn fool. I knew that you were going to say that!
+      </strong>
+    </p>
+  </div>
+  <p>H1 <strong>should only be used</strong> as page title. A page should not have more than one H1.</p>
+  <p>H2 is used as page titles for sub-sections and post titles blog posts.</p>
+  <p>H3 and H4 are used regularly in blog posts as subheaders.</p>
+  <p>H5 is used on project, data and documentation pages and sometimes in blog posts as subheaders.</p>
+  <div data-xrayhtml>
+    <h1>This is the H1 text style</h1>
+    <h2>This is the H2 text style</h2>
+    <h3>This is the H3 text style</h3>
+    <h4>This is the H4 text style</h4>
+    <h5>This is the H5 text style</h5>
+  </div>
+  <div data-xrayhtml>
+    <p>This is a <a href="/">link style</a>.</p>
+  </div>
+  <div data-xrayhtml>
+    <p class="caption">This is a caption/attribution style for images and demos on the blog.</p>
+  </div>
+  <div data-xrayhtml>
+    <code>This is how code snippets are styled.</code>
+  </div>
+  <p>This blockquote style can be used to quote something from an external source, probably from interview, other website or blog, movie or a TV show a reference to which is not in the content of the post.</p>
+  <div data-xrayhtml>
+    <quote>“Laugh it up, Fuzz ball.”</quote> — Han Solo (The Empire Strikes Back)
+  </div>
+  <p>A pullquote (according to <a href="https://www.wikiwand.com/en/Pull_quote">Wikipedia</a>) is a key phrase, quotation, or excerpt that has been pulled from an article and used as a graphic element, serving to entice readers into the article or to highlight a key topic.</p>
+  <div data-xrayhtml>
+    <p>Are they away? They have just made the jump into hyperspace. You're sure the homing beacon is secure aboard their ship? I'm taking an awful risk, Vader. This had better work.
+      <pullquote>
+        I'm taking an awful risk, Vader. This had better work.
+      </pullquote>
+    Luke! Luke! Luke! Luke! Luke, Luke, grab a hold of this. Blast it, will you! My gun's jammed. Where? Anywhere! Oh!! Luke! Luke! Grab him!</p>
+  </div>
+
+  <h3>Text Helpers</h3>
+  <p>Both Bootstrap and the Mapzen Styleguide offer several different classes to help you align, transform, and add meaning to your text through color and other treatments.</p>
+  <div data-xrayhtml>
+    <div class="text-deemphasize">I have been deemphasized / disabled. Nothing to see here.</div>
+    <div class="text-muted">I've been muted so as not to distract from the primary message.</div>
+    <div class="text-primary">Bootstrap's default "primary" text. (We don't really use this.)</div>
+    <div class="text-success">Keep up the good work!</div>
+    <div class="text-info">Hey, just to let you know...</div>
+    <div class="text-warning">Whoa there, hold your horses.</div>
+    <div class="text-danger">Danger, Will Robinson!</div>
+  </div>
+  <div data-xrayhtml>
+    <div class="text-lowercase">lowercase text</div>
+    <div class="text-uppercase">uppercase text</div>
+    <div class="text-capitalize">capitalized text</div>
+  </div>
+  <div data-xrayhtml>
+    <p class="text-center">Centered text</p>
+    <p class="text-left">Left-aligned text</p>
+    <p class="text-right">Right-aligned text</p>
+    <p class="text-justify">Text-justify really only makes sense with multiple lines of text, as the last line will not expand to fill the entire space. So, here is a short paragraph to show you how it works. How do I look?</p>
+    <p class="text-nowrap">This is a long string of text that will not wrap once it hits the other side of its parent container, making it very hard to read.</p>
+  </div>
+
+</div>
+        <div id="icons" class="headroom-large">
+  <h2>Icons</h2>
+  <p> We have some custom icons designed for Mapzen UI's but also use <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome</a> for vector icons that allow more size and color customization. Icons use colors from the <a href="http://localhost:3000/design-elements.html#colors">Mapzen color palette</a>.</p>
+
+  <p>All icons share the same root URL:<code>https://mapzen.com/common/styleguide/images/</code></p>
+
+  <table class="table headroom icons">
+      <thead>
+        <tr>
+          <th>Icons as Images</th>
+          <th>Filename</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center"><img src="./images/divider/compass-primary-lg.png"></td>
+          <td>
+            <code>divider/compass-primary-lg.png</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><img src="./images/divider/compass-primary.png"></td>
+          <td>
+            <code>divider/compass-primary.png</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><img src="./images/divider/compass-secondary-lg.png"></td>
+          <td>
+            <code>divider/compass-secondary-lg.png</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><img src="./images/divider/compass-secondary.png"></td>
+          <td>
+            <code>divider/compass-secondary.png</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><img src="./images/marker.png"></td>
+          <td>
+            <code>marker.png</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><img src="./images/marker1.png"></td>
+          <td>
+            <code>marker1.png</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><img src="./images/key.svg"></td>
+          <td>
+            <code>key.svg</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><img src="./images/feedback.svg"></td>
+          <td>
+            <code>feedback.svg</code>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>v2.0 icons</h3>
+
+    <p>
+      <span class="icon-sm icon-dollar-sign-circle"></span>
+      <span class="icon-sm icon-award-ribbon-circle"></span>
+      <span class="icon-sm icon-folding-map-circle"></span>
+    </p>
+
+    <h3>Font Awesome icons</h3>
+
+    <p>To use Font Awesome icons, add the following class names to any HTML tag.</p>
+    <div data-xrayhtml>
+      <i class="fa fa-trash-o"></i>
+    </div>
+
+    <table class="table headroom">
+      <thead>
+        <th>Icons from <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome</a></th>
+        <th>Description</th>
+        <th>Classnames</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center"><i class='fa fa-fw fa-rss'></i></td>
+          <td>RSS feed</td>
+          <td>
+            <code>
+              class='fa fa-fw fa-rss'
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><i class='fa fa-fw fa-github'></i></td>
+          <td>GitHub</td>
+          <td>
+            <code>
+              class='fa fa-fw fa-github'
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><i class='fa fa-fw fa-twitter'></i></td>
+          <td>Twitter</td>
+          <td>
+            <code>
+              class='fa fa-fw fa-twitter'
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><i class='fa fa-fw fa-pinterest'></i></td>
+          <td>Pinterest</td>
+          <td>
+            <code>
+              class='fa fa-fw fa-pinterest'
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><i class='fa fa-fw fa-envelope'></i></td>
+          <td>Email</td>
+          <td>
+            <code>
+              class='fa fa-fw fa-envelope'
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><i class="fa fa-bar-chart"></i></td>
+          <td>Chart</td>
+          <td>
+            <code>
+              class='fa fa-fw fa-bar-chart'
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center"><i class="fa fa-trash-o"></i></td>
+          <td>Delete</td>
+          <td>
+            <code>
+              class='fa fa-fw fa-trash-o'
+            </code>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+        <div id="buttons" class="headroom-large">
+  <h2>Buttons</h2>
+  <p>Use verbs on buttons as they are there to perform actions. Make it clear what the button does – users shouldn’t need to read any other text to understand what they do. Negative actions can be shorter, as the positive action
+  makes their context clear. The button text should make sense in both these
+  contexts, “Would you like to [button text]?” and “I would like to [button text]”?
+  If a button leads to another screen, then the title of that following screen should match the button.</p>
+
+  <p>This is the primary button style for important calls to action. Two primary buttons cannot be used next to each other. If there are many buttons on a single page or screen, use the primary button sparingly for the most important actions on that page.</p>
+  <div class="alert alert-info" role="alert">The `.btn-primary` class replaces the old `.btn-mapzen` class, which is now deprecated.</div>
+  <div data-xrayhtml>
+    <button class="btn btn-primary">Primary button</button>
+  </div>
+
+  <p>This is the secondary button style. Used next to a primary style if there are two buttons next to each other. If there are many buttons on a single page or screen, use the secondary button for the majority of buttons, so that the most important actions on a page (using the primary buttons) stand out.</p>
+  <div data-xrayhtml>
+    <button class="btn btn-secondary">Secondary button</button>
+  </div>
+
+  <p>This is the inverse button style. Use it on non-white backgrounds.</p>
+  <div data-xrayhtml class="mz-darkpurples1">
+    <button class="btn btn-inverse">Inverse button</button>
+  </div>
+
+  <p>If a button should be full-width on mobile, add the <code>.btn-flexible</code> class.</p>
+  <div data-xrayhtml>
+    <button class="btn btn-primary btn-flexible">Flexible button</button>
+  </div>
+
+  <p>A series of buttons can be placed next to each other, and spacing will be applied. This works for buttons that are in line as well as flexible buttons that will be stacked vertically on mobile.</p>
+  <div data-xrayhtml>
+    <button class="btn btn-primary btn-flexible">Button one</button>
+    <button class="btn btn-secondary btn-flexible">Button two</button>
+    <button class="btn btn-secondary btn-flexible">Button three</button>
+  </div>
+
+  <p>This style is used for calls to action after paragraphs of text and draws less attention than a proper button.</p>
+  <div data-xrayhtml>
+    <button class="btn btn-with-arrow">Learn more</button>
+  </div>
+
+  <p>Buttons require JavaScript to handle clicks and perform actions. If you are just using a button to link to another page, use an anchor tag.</p>
+  <div data-xrayhtml>
+    <a class="btn btn-primary" href="#buttons">Primary button</a>
+    <a class="btn btn-secondary" href="#buttons">Secondary button</a>
+    <a class="btn btn-with-arrow" href="#buttons">Learn more button</a>
+  </div>
+</div>
+
+        <div id="forms" class="headroom-large">
+  <h2>Forms</h2>
+
+  <h3 class="headroom-large footroom">Text Inputs</h3>
+
+  <p>Below is the style for a left-aligned form, with labels and inputs on the same line. You'll want to tweak the width and proportion of your form, based on the label length and required text input. Choose an appropriate column width for the <code>form</code> class, and then adjust the <code>col-xs-*</code> classes such that the total number in each <code>form-group</code> is 12.</p>
+  <div data-xrayhtml>
+    <div class="row">
+      <form class="wide col-xs-12 col-sm-6">
+        <div class="form-group row">
+          <label class="col-xs-5">Start Point:</label>
+          <input type="text" name="start-point" placeholder="start point" class="col-xs-7" />
+        </div>
+        <div class="form-group row">
+          <label class="col-xs-5">End Point:</label>
+          <input type="text" name="end-point" placeholder="end point" class="col-xs-7" />
+        </div>
+        <input type="submit" class="btn btn-mapzen">
+      </form>
+    </div>
+  </div>
+
+  <p>If you have limited horizontal space, or don't want to deal with left-aligned lables, there is a second form style. The text inputs will be 100% width of the form, so control their widths with the <code>col-xs-*</code> in the <code>form</code> tag.</p>
+  <div data-xrayhtml>
+    <div class="row">
+      <form class="tall col-xs-8 col-sm-4">
+        <div class="form-group">
+          <label>Start Point:</label>
+          <input type="text" name="start-point" placeholder="start point" />
+        </div>
+        <div class="form-group">
+          <label>End Point:</label>
+          <input type="text" name="end-point" placeholder="end point" />
+        </div>
+        <input type="submit" class="btn btn-mapzen">
+      </form>
+    </div>
+  </div>
+
+  <p>If you need to input a bunch of text, try a textarea!</p>
+  <div data-xrayhtml>
+    <textarea placeholder="start typing here"></textarea>
+  </div>
+
+  <p>For form validation, try these handy classes:</p>
+  <div data-xrayhtml>
+    <div class="form-group has-success">
+      <label class="control-label" for="inputSuccess1">Input with success</label>
+      <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
+    </div>
+    <div class="form-group has-warning">
+      <label class="control-label" for="inputWarning1">Input with warning</label>
+      <input type="text" class="form-control" id="inputWarning1">
+    </div>
+    <div class="form-group has-error">
+      <label class="control-label" for="inputError1">Input with error</label>
+      <input type="text" class="form-control" id="inputError1">
+    </div>
+  </div>
+
+  <h3 class="headroom-large footroom">Search Input</h3>
+
+  <div data-xrayhtml>
+    <input type="search" placeholder="type in an address">
+  </div>
+
+  <p>There is a condensed style for buttons adjacent to a text field:</p>
+  <div data-xrayhtml>
+    <form class="row">
+      <div class="form-group inline-submit col-sm-7 col-xs-12">
+        <input type="search" class="col-xs-8 col-sm-9" placeholder="type in an address">
+        <input type="submit" value="submit" class="col-xs-4 col-sm-3 btn btn-transparent">
+      </div>
+    </form>
+  </div>
+
+  <p>Want to add google search of mapzen.com?</p>
+  <div data-xrayhtml>
+    <form action="https://www.google.com/search" method="get" class="row">
+      <div class="form-group inline-submit col-sm-7 col-xs-12">
+        <input type="hidden" name="as_sitesearch" value="mapzen.com" />
+        <input type="search" class="col-xs-8 col-sm-9" name="q" placeholder="search mapzen.com" />
+        <input type="submit" class="col-xs-4 col-sm-3 btn btn-transparent" value="search">
+      </div>
+    </form>
+  </div>
+
+  <h3 class="headroom-large footroom">Selections</h3>
+
+  <p>This is the drop-down menu style:</p>
+  <div data-xrayhtml>
+    <select>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </select>
+  </div>
+
+  <p>The checkbox pattern uses a background image to act as the checkbox. To make it appear, the checkbox input must have an adjacent sibling element in the wrapper div, to access the <code>::before</code> pseudoselector. For an increased hit area on the form elements, use a <code>label</code> after the <code>input</code>, and connect the two with the <code>id</code> and <code>for</code> attributes.</p>
+  <div data-xrayhtml>
+    <form>
+      <div class="form-group-header">Select Options:</div>
+      <div class="form-group">
+        <input type="checkbox" id="check-1" name="option-one">
+        <label for="check-1">First Option</label>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" id="check-2" name="option-two" checked>
+        <label for="check-2">Second Option</label>
+      </div>
+    </form>
+  </div>
+
+  <p>Likewise, here are radio button styles:</p>
+  <div data-xrayhtml>
+    <form>
+      <div class="form-group-header">Select One Option:</div>
+      <div class="form-group">
+        <input type="radio" id="radio-1" name="options">
+        <label for="radio-1">First Option</label>
+      </div>
+      <div class="form-group">
+        <input type="radio" id="radio-2" name="options" checked>
+        <label for="radio-2">Second Option</label>
+      </div>
+    </form>
+  </div>
+
+  <p>Finally, here is the slider style:</p>
+  <div data-xrayhtml>
+    <input type="range">
+  </div>
+
+</div>
+
+        <div id="tables" class="headroom-large">
+  <h2>Tables</h2>
+
+  <p>
+    Tables can be written in HTML, as in the snippet below. To ensure that it picks up the correct styling and behavior, add the <code>.table</code> class to the table element. In projects that support Markdown, tables can be created in <a href="https://help.github.com/articles/github-flavored-markdown/#tables">GitHub-flavored Markdown syntax</a>, and they will be rendered in the same way.
+  </p>
+
+  <h3 class="headroom-large footroom">Basic table</h3>
+
+  <div data-xrayhtml>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Character Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Anakin Skywalker (Darth Vader)</td>
+          <td>Jedi (Dark side)</td>
+        </tr>
+        <tr>
+          <td>Luke Skywalker</td>
+          <td>Jedi (Light side)</td>
+        </tr>
+        <tr>
+          <td>Han Solo</td>
+          <td>Smuggler</td>
+        </tr>
+        <tr>
+          <td>Leia Organa</td>
+          <td>Light Side</td>
+        </tr>
+        <tr>
+          <td>Chewbacca</td>
+          <td>Wookie</td>
+        </tr>
+        <tr>
+          <td>C-3PO</td>
+          <td>Droid</td>
+        </tr>
+        <tr>
+          <td>R2-D2</td>
+          <td>Droid</td>
+        </tr>
+        <tr>
+          <td>Jabba the Hutt</td>
+          <td>Gangster</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="headroom-large footroom">Extra wide tables</h3>
+
+  <p>
+    Tables will attempt to fit in the space it's allotted. However, if a table’s content prevents it from fitting, then the table is allowed to scroll horizontally so that it cannot break the page layout. This is made possible by a <code>&lt;div class=".table-wrapper"&gt;</code> element that wraps the table element. If you do not provide this element yourself, we will automatically add one.
+  </p>
+
+  <div data-xrayhtml>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Craft</th>
+          <th>Type</th>
+          <th>Length</th>
+          <th>Weapons</th>
+          <th>Crew</th>
+          <th>Top Speed</th>
+          <th>Troop Capacity</th>
+          <th>Cargo Capacity</th>
+          <th>Passengers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Modified YT-1300 Corellian Transport</td>
+          <td>Stock Light Freighter</td>
+          <td>27 Meters</td>
+          <td>2 Quad Laser Cannons, 2 Concussion Missile Launchers, 1 Retractable Light Laser Cannon</td>
+          <td>2</td>
+          <td>100 MGLT</td>
+          <td>6</td>
+          <td>100 Metric Tons</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>Imperial I-class Star Destroyer</td>
+          <td>Star Destroyer</td>
+          <td>1,600 Meters</td>
+          <td>60 Turbolasers Cannons, 60 Ion Cannons, 10 Tractor Beam Projectors</td>
+          <td>36,810 On-Board Personnel, 275 Gunners</td>
+          <td>60 MGLT</td>
+          <td>9,700 Ground Troops</td>
+          <td>36,000 Metric Tons, 0 AT-ATs, 30 AT-STs, 72 TIE Fighters, 5 Assault Gunboats, 8 Lambda-class Imperial Shuttles, 15 Imperial Landing Craft, 12 Landing Barges</td>
+          <td>9,700</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    If you do not desire the horizotal scroll and wish to minimize its effect, consider the following content guidelines:
+  </p>
+
+  <ul>
+    <li>Avoid writing extremely long, unbreakable strings of text, such as <code>very_long_variable_names</code>. You can force long variable names to break by applying a <code>.table-word-break</code> class to the table element (see below; this is not available in Markdown).
+    <li>Similarly, avoid showing full URL strings. URLs should be written as links with readable text labels.</li>
+    <li>Keep the number of columns to the minimum necessary to convey information. It may be desirable to present information across several tables instead of one large table.</li>
+    <li>Not all information is best presented as tables. Consider whether this data is tabular in nature and if there are other ways of presenting it. See the <a href="resources.html#content-guides">content guidelines</a> for more information.</li>
+    <li>On mobile devices, this behavior may be necessary and unavoidable.</li>
+  </ul>
+
+  <h3 class="headroom-large footroom">Breaking code blocks in tables</h3>
+
+  <p>
+    Currently, we do not implement word breaking or hyphenation, due to poor cross-browser support. However, it may be desirable in some situations to break code elements containing <code>long_variable_names_such_as_this_one</code> with minimal impact on readability. This is available by adding a <code>.table-word-break</code> class to the table element, and it takes effect <em>only</em> on screens smaller than 768 pixels wide (e.g. on mobile devices). It must be written in HTML manually; it is not available for tables that are generated through Markdown.
+  </p>
+
+  <div data-xrayhtml>
+    <table class="table table-word-break">
+      <thead>
+        <tr>
+          <th>Variable name</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>this_is_the_first_extremely_long_variable_for_this_example_table</code></td>
+          <td>Star Destroyer</td>
+        </tr>
+        <tr>
+          <td><code>this_is_the_second_extremely_long_variable_for_this_example_table</code></td>
+          <td>Stock Light Freighter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
+
+        <div id="lists" class="headroom-large">
+  <h2>Lists</h2>
+
+  <h3>Regular lists</h3>
+  <p>Pretty straightforward…</p>
+  <p class="caption">(The content for these lists is taken from the "The Definitive Ranking Of "Star Wars" Planets" article posted on <a href="http://www.buzzfeed.com/jamiewalker/where-to-live-in-the-star-wars-universe-j6dg">Buzzfeed</a>)</p>
+  <div data-xrayhtml>
+    <ol>
+      <li>Naboo</li>
+      <li>Coruscant</li>
+      <li>Yavin 4</li>
+      <li>Bespin</li>
+      <li>Alderaan</li>
+    </ol>
+  </div>
+  <div data-xrayhtml>
+    <ul>
+      <li>Kashyyyk</li>
+      <li>Cato Neimoidia</li>
+      <li>Kamino</li>
+      <li>Endor</li>
+      <li>Utapau</li>
+    </ul>
+  </div>
+
+  <h3>List with checkmark bullets</h3>
+  <p>Great for listing a series of features.</p>
+  <div data-xrayhtml>
+    <ul class="list-checkmarks">
+      <li>Mygeeto</li>
+      <li>Saleucami</li>
+      <li>Mustafar</li>
+      <li>Felucia</li>
+    </ul>
+  </div>
+</div>
+
+        <div id="alerts" class="headroom-large">
+  <h2>Alerts</h2>
+  <p>Make it clear that an error has occurred (in language the user can understand), and that the user needs to do something. Buttons and links inside alerts should provide the user with a way to solve the problem.</p>
+  <p>Inform users of errors in a friendly way. Don’t make them feel bad for making a mistake. Also avoid exclamation marks – this can make the error look more significant than it really is.</p>
+
+  <div data-xrayhtml>
+    <div class="alert alert-success" role="alert">Keep up the good work!</div>
+    <div class="alert alert-info" role="alert">Hey, just to let you know...</div>
+    <div class="alert alert-warning" role="alert">Whoa there, hold your horses.</div>
+    <div class="alert alert-danger" role="alert">Danger, Will Robinson!</div>
+    <div class="alert alert-upsell" role="alert">You should buy this!</div>
+  </div>
+
+  <p>If you need to dismiss an alert:</p>
+  <div data-xrayhtml>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <a class="fa fa-times close" data-dismiss="alert" aria-label="Close" aria-hidden="true"></a>
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+  <footer>
+  <div class='container hidden-print footer-no-background'>
+  </div>
+
+  <div class='headroom-large footer-background'>
+    <div class='container'>
+      <div class='row headroom-large footer-menu hidden-print'>
+        <div class='col-xs-5 col-xs-offset-2 col-sm-5 col-sm-offset-0'>
+          <div class='row'>
+            <div class="col-xs-12 col-sm-6">
+              <h6><a href="https://mapzen.com/products/">Products</a></h6>
+              <ul>
+                <li><a href="https://mapzen.com/products/maps/">Maps</a></li>
+                <li><a href="https://mapzen.com/products/search">Mapzen Search</a></li>
+                <li><a href="https://mapzen.com/products/turn-by-turn">Mapzen Mobility</a></li>
+                <li><a href="https://mapzen.com/projects/mobile/">Mobile</a></li>
+                <li><a href="https://mapzen.com/pricing/">Pricing</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <h6><a href="https://mapzen.com/products/#data">Data</a></h6>
+              <ul>
+                <li><a href="https://mapzen.com/data/metro-extracts/">Metro Extracts</a></li>
+                <li><a href="https://mapzen.com/projects/vector-tiles/">Vector Tile Service</a></li>
+                <li><a href="https://mapzen.com/documentation/terrain-tiles/">Terrain Tile Service</a></li>
+                <li><a href='https://whosonfirst.mapzen.com/'>Who's On First</a></li>
+                <li><a href='https://transit.land/'>Transitland</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class='col-xs-5 col-sm-7'>
+          <div class='row'>
+            <div class="col-xs-12 col-sm-5">
+              <h6>Developers</h6>
+              <ul>
+                <li><a href="https://mapzen.com/dashboard">Developer Platform</a></li>
+                <li><a href="https://mapzen.com/documentation/">Documentation</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <h6>About</h6>
+              <ul>
+                <li><a href="https://mapzen.com/about/">Who we are</a></li>
+                <li><a href="https://mapzen.com/jobs/">Jobs</a></li>
+                <li><a href="https://mapzen.com/terms/">Terms</a></li>
+                <li><a href="https://mapzen.com/privacy/">Privacy policy</a></li>
+                <li><a href="https://mapzen.com/media-resources/">Media resources</a></li>
+                <li><a href="http://status.mapzen.com">Status</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <h6>Hello</h6>
+              <ul>
+                <li><a href="https://mapzen.com/blog/"><i class='fa fa-fw fa-rss'></i>Blog</a></li>
+                <li><a href='https://github.com/mapzen/'><i class='fa fa-fw fa-github'></i>GitHub</a></li>
+                <li><a href='https://twitter.com/mapzen/'><i class='fa fa-fw fa-twitter'></i>Twitter</a></li>
+                <li><a href='mailto:hello@mapzen.com'><i class='fa fa-fw fa-envelope'></i>E-mail</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='row headroom-large footroom-large'>
+        <div class='col-xs-12 text-center'>
+          <div class="compass-logo"></div>
+          <small class='copyright'>&#169; 2017 Mapzen</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="./scripts/mapzen-styleguide.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="./lib/X-rayHTML.js"></script>
+  <script src="./lib/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
