@@ -9,9 +9,3 @@
     content: none;
   }
 }
-
-// This is to get rid of header and footer with dates for printed content
-@page {
-  margin: 0;
-  size: auto;
-}
