@@ -42,7 +42,7 @@ Please look at [Google Analytics page](https://support.google.com/analytics/answ
 `MPZN.nav`is a read-only component dealing with user's log-in status on the navbar.
 
 | Method     | Return            | Description           |
-|------------|-------------------|---------|-----------------------|
+|------------|-------------------|-----------------------|
 | `reflectUserState(<String> userID, <String> userNickname, <String> userAvatarImage, [<Function> customLogoutCall])` |`null` | Manipulate navigation bar state with passed user data. To show not-logged-in status, pass `null` or empty string as parameters. Optionally provide a custom logout handler to override the default. |
 
 
